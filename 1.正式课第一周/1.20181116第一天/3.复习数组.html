@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list"></ul>
+<script>
+    // 数组
+    // 如果作为值存在，那么这个值一定是数据类型中的一种；
+    // 基本数据类型值都存储到栈内存中；引用数据类型的值存储到堆内存中；
+    var b =100;
+    var  a = [1,2,3,"12",{},function(){},[]];
+    // 数组的特点
+    // 1.数组成员有索引；
+    // 2.数组有length
+    // 数组的方法
+    // 1. push  pop   unshift  shift  splice slice  sort  reverse  indexOf lastIndexOf  concat  join toString forEach  includes
+    // 原有数组发生变化 ：push  pop   unshift  shift  splice  sort  reverse
+    //var  ary = [10,27,34,46,42];
+    //console.log(ary.sort());
+    //ary.splice(2)
+    //ary.splice(2,1)
+    //ary.splice(2,1,5555)
+    // ary.slice(1)
+    // ary.slice(1,3)
+    // ary.slice(-3,-1)
+    /*ary.sort(function (a,b) {
+        return a-b
+    })*/
+    //console.log(ary.join("&"));
+    // tostring
+
+    //console.log(ary.toString());
+    // forEach : 循环；
+    var  ary = [10,27,34,46,42,9];
+    var str = "";
+    var a = ary.forEach(function (item,index) {
+        // item ： 数组成员
+        // index : 索引
+        /*console.log(item);
+        console.log(index);*/
+        str+="<li>"+item+"</li>"
+        //return 100;
+    });
+    //console.log(a);
+    list.innerHTML = str;
+    // 数组的算法
+    // map: 映射;有返回值；
+    var b= ary.map(function (item,index) {
+        // item ： 数组成员
+        // index : 索引
+        /*console.log(item);
+        console.log(index);*/
+        return 77;
+    });
+    console.log(b);
+
+</script>
+</body>
+</html>

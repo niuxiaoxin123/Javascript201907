@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 过一秒之后，执行这个回调函数；
+    // 当浏览器从上到下解析代码时，解析到setTimeout，浏览器马上记录一个时间；过一秒之后，执行函数；
+    // 每隔浏览器有自己的最小识别时间；谷歌的时间大概是5~6ms;火狐时间8~10之间； IE 的时间是13~15之间；
+    // 定时器的返回值代表在当前页面中是第几个定时器；
+    // clearTimeout  clearInterval
+    /*var a = setTimeout(function () {
+        console.log(999);
+    },5);*/
+    //console.log(a);
+    //console.log(2);
+    // 每隔一秒执行一次回调函数；
+    /*var b = setInterval(function () {
+        console.log(100);
+    },1000);*/
+    //console.log(b);
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" index="201812" class="yyy">
+    <!--aaaa-->
+    <!--<div id="box">yyywww
+        <div></div>
+        <div></div>
+    </div>-->
+    <div class="a"></div>
+</div>
+<script>
+    // 1.四种节点；节点是一个对象数据类型{}
+    // DOM树是由节点组成；
+    // 先形成DOM树，再形成css树，最后这两个合并成render树；
+    // 节点类型      nodeType       nodeName        nodeValue
+    // 元素节点          1          大写的标签名          null
+    // 文本节点          3            #text            文本内容
+    // 注释节点          8            #comment          注释内容
+    // document         9            #document          null
+    var  box = document.getElementById("box");// {}
+    var a = document.getElementsByClassName("a")[0];// [{}]
+    //console.log(a);
+    // console.log(document.body.parentNode.parentNode.parentNode);
+    // 2.元素节点属性
+    // 1. childNodes : 当前元素有的子节点
+    // 2. children： 所有的子元素节点；【IE8以下不兼容的；】
+    // 3. parentNode : 父亲节点 body-->html-->document-->null;
+    // 4. previousSibling : 上一个哥哥节点；
+    //   previousElementSibling : 上一个哥哥元素节点 【IE8以下不兼容的；】
+    // 5. nextSibling   :下一个弟弟节点
+    //   nextElementSibling  : 下一个弟弟元素节点 【IE8以下不兼容的；】
+    // 6.firstChild   : 第一个子节点
+    //   firstElementChild : 第一个子元素节点 【IE8以下不兼容的；】
+    // 7.lastChild   : 最后一个子节点
+    //   lastElementChild : 最后一个子元素节点；【IE8以下不兼容的；】
+
+    // 3.动态操作DOM的方法
+    // 1. document.createElement() : 创建一个元素
+    // 2. appendChild  :向容器的末尾添加一个元素；
+    // 3. removeChild : 删除某个元素
+    // 4. replaceChild(newChild,oldChild) : 替换某个节点；
+    // 5. insertBefore(newChild,oldChild) 在某个子节点的前面添加子元素；
+    // 6. cloneNode : 复制节点 true ：深克隆   false ：浅克隆
+    // 7. get/set/removeAttribute : 获取行间属性
+    // 8.  classList  : add  remove  replace(old,new)
+    /*var p = document.createElement("p")
+    p.innerHTML="欢迎大家来到珠峰";
+    box.appendChild(p);*/
+     //box.removeChild(a);
+    //var  span = document.createElement("span");
+    //box.replaceChild(span,a);
+    //box.insertBefore(span,a)
+    //console.log(box.cloneNode(true));
+    //console.log(box.getAttribute("index"));
+    //box.setAttribute("a",112233)
+   // box.removeAttribute("index")
+    //box.setAttribute("class","a")
+    //console.log(box.classList);
+    //box.classList.remove("yyy")
+    box.classList.replace("yyy","www")
+</script>
+</body>
+</html>
