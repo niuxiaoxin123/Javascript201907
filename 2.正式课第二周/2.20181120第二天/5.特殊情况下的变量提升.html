@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.不管条件是否成立，都要进行变量提升；
+    //   1)： 在新版的浏览器，function在条件语句中，只声明，不定义；
+    //   2): 在旧版本浏览器中，function在条件语句中，不仅声明而且定义；
+    //console.log(a);//undefined
+    /*console.log(b);
+    if([]){
+        // 在条件语句中，进来之后，首先会把带function的进行定义；
+        console.log(b);
+        var  a = 10;
+        function b() {
+
+        }
+    }
+    //console.log(a);// undefined
+    console.log(b);*/
+    /*console.log(a);// undefined
+    if(!("a" in window)){
+        var a = 100;
+    }
+    console.log(a);*/// undefined
+
+
+    // 2. 变量提升只发生在等号的左边；右边不升进行变量提升
+    /*console.log(f);
+    var obj = {
+        fn : function f() {
+
+        }
+    }*/
+    /*console.log(g);
+    var  g = function a() {
+
+    }*/
+
+
+    // 3.return 后面的代码不进行变量提升;但是return下面的代码需要进行变量提升；
+    /*function a() {
+        //console.log(b);
+        console.log(hello);
+        return function b() {
+
+        };
+        var c = 99;
+        function hello(){
+
+        }
+        console.log(c);
+    }
+    a()*/
+    // 4.如果变量名重复，那么变量不再进行重复声明，但是要重新定义；
+    /*console.log(a);
+    var  a = "hello";
+    console.log(a);
+    var  a = "world";
+    console.log(a);*/
+   /* fn();//  2
+    function fn(){
+        console.log(1)
+    }
+    fn();// 2
+    function fn() {
+        console.log(2)
+    }
+    fn();// 2
+    var fn=18;
+    fn();*/// 报错 fn is  not a function ; fn不是一个函数；
+   /* f()// 2
+    var f;
+    console.log(f);// 82行函数
+    function f() {
+        console.log(1);
+    }
+    f();// 2
+    function f() {
+        console.log(2);
+    }
+    f()// 2
+     f = function () {
+       console.log(3);
+     }
+     f()// 3*/
+
+     // 5.自执行函数不进行变量提升；
+    // 当代码从上到下解析到这一行时，先进行定义，然后再执行；
+    /*console.log(f);
+    (function () {
+
+    })();*/
+    var obj = {
+        num : 10,
+        fn : (function () {
+            // obj的fn属性存储的是自执行函数的返回值；
+            var num = 1;
+            console.log(88);
+            return function () {
+                console.log(num);
+            }
+        })()
+    }
+    console.log(obj.fn);// 存储的值是自执行函数的返回值；
+
+    var obj1 = {
+        num : 10,
+        fn : function () {
+            var n = 0;
+            return function () {
+                console.log(111);
+            }
+        }
+    }
+    console.log(obj1.fn);//整个函数
+
+
+</script>
+</body>
+</html>

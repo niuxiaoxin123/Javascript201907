@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 全局作用域
+    // 私有作用域
+    // 块级作用域；
+
+    // 私有作用域： 函数执行时形成的供函数体代码执行的环境，是一个栈内存；
+    // 当代码从上到下执行时，遇到function定义函数；直接跳过；
+    function sum(a) {
+        console.log(a);// 函数；
+        function a() {
+            
+        }
+    }
+    sum(100);
+    //声明不赋值；声明不定义；
+    // 函数执行；
+    // 1. 形成一个私有的作用域；
+    // 2. 形参赋值
+    // 3. 变量提升；
+    // 4. 代码从上到下执行；
+    // 5. 作用域是否销毁；
+    console.log(f);// undefined
+    var f = 1;
+    var f;
+    console.log(f);// 1
+
+
+
+</script>
+</body>
+</html>

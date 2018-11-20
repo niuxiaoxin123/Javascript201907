@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+<script>
+    var  oLis = document.getElementsByTagName("li");
+    // let  : 是es6中新增的定义变量的语法
+    // const : 是es6新增的定义常量的语法；
+    // ECMAScript : 是一个国际定义es6规范的组织；组织里面各大浏览器厂商的核心开发人员；他们来定义es6的规范；
+    // 一旦在JS中遇到报错，那么下面的代码都不再执行；
+    //console.log(a);// undefined
+    //console.log(b);
+    // webpack ;
+    //var  a = 10;
+   /* let  b = 18;
+    console.log(a);// 10
+    console.log(b);*/// 18
+    // let定义变量的特点
+    // 1) : let定义的变量不存在变量提升；
+    // 2) : 低版本的浏览器（IE10以下）不支持let；
+    // 3) : let不能定义相同的变量在同一个作用域下；
+    // 4) : let在for循环的块级作用域中，存储了变量i的值；
+    // 5) : 在全局作用域通过let定义的变量不会给window新增键值对；
+    // 当浏览器形成作用域之后，进行变量提升阶段；把带let也会进行声明；如果当前作用域下名字相同，那么就会在变量提升阶段就抛出错误；
+    /*console.log(100);
+    let  d = "你很帅";
+    let  d = "我很帅";
+    function a() {
+        let  d = "我很帅"
+    }
+    a();*/
+    /*console.log(a);
+    let  a =10;*/
+   /* let a = 100;
+    if(1==1){
+        console.log(a);
+        // 如果此块级作用没有let；那么会获取上一层作用域变量a的值；
+        // 如果这个块级作用域有let，并且定义变量也是a;那么不能获取外界的a;会报错；
+        // es6新增块级作用域；  if条件{}  for  while   switch case ;
+        //let  a = 10;
+    }
+    console.log(a);*/
+
+    /*for(var i=0;i<3;i++){
+        oLis[i].index = i;
+        oLis[i].onclick = function () {
+            divs[this.index].className = "select";
+        }
+    }
+    console.log(i);// 3*/
+
+    /*for(let i=0;i<3;i++){
+        {
+            i=0;
+            oLis[0].onclick = function () {
+            console.log(i);
+        }
+        }
+        {
+            i=1;
+            oLis[1].onclick = function () {
+                console.log(i);
+            }
+        }
+        {
+            i=2;
+            oLis[2].onclick = function () {
+                console.log(i);
+            }
+        }
+
+    }*/
+    //console.log(i);
+    /*var  u = 19;
+    let  a = 78;*/
+    // const  : 定义一个常量；
+    // let 和const定义的量不能重名；
+
+    const a = 10;
+
+
+
+</script>
+</body>
+</html>
