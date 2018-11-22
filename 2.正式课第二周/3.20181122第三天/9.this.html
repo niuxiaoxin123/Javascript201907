@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>1</div>
+<div>2</div>
+<div>3</div>
+<script>
+    // this : this是一个关键字；
+    // 关键字： 在JS中，有特殊意义的一些词；
+
+    //var that = 2;
+    //console.log(this);//
+    // 1. 在全局作用域下，this和window指向同一块堆内存，代表同一个空间地址；
+    /*var a = 1;// 会给window新增属性
+    console.log(window.a);// 1
+    console.log(this.a);*/
+    // 2. 给元素的事件绑定方法，方法中的this指向当前被绑定的那个元素
+    /*var divs = document.getElementsByTagName("div");
+    divs[1].onclick = function () {
+        console.log(this);
+    }
+    divs[0].onclick = function () {
+        console.log(this);
+    }*/
+
+    // 3.看函数执行前有没有".",如果有“.”,点前面是谁，this就指向谁；如果没有“.”,那么会直接指向window；
+    /*var obj = {
+        n:1,
+        fn:{
+            m:2,
+            f:function () {
+                console.log(this);
+            }
+        }
+    }
+    obj.fn.f();*/// this--->obj.fn;
+   /* var f = obj.fn;
+    f();*/// this--->window
+
+    // 4. 自执行函数中的this永远指向window；
+    /*(function () {
+        console.log(this);
+    })();*/
+    var  obj = {
+        fn:(function () {
+            console.log(this);
+            return function () {
+                console.log(this);
+            }
+        })()
+    }
+    var f = obj.fn;
+    f();// this : 函数的执行主体；谁让函数执行的；
+    obj.fn();
+
+
+</script>
+</body>
+</html>

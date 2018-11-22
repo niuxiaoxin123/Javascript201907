@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*console.log(a);// undefined
+    var a=12;
+    function fn(){
+        console.log(a);//undefined
+        var a=13;
+    }
+    fn();
+    console.log(a);// 12*/
+    // 私有变量
+    // 1. 在当前作用域下，被var过；
+    // 2. 在当前作用域下，被function过
+    // 3. 形参也是私有变量；
+
+
+   /* console.log(a);// undefined
+    var a=12;// 13
+    function fn(){
+        console.log(a);// 12
+        a=13;
+    }
+    fn();
+    console.log(a);// 13*/
+
+
+    /*console.log(a);// a is  not defined
+    a=12;
+    function fn(){
+        console.log(a);
+        a=13;
+    }
+    fn();
+    console.log(a);*/
+
+  /*  var foo=1;
+    function bar(){
+        if(!foo){
+            var foo=10;
+        }
+        console.log(foo);
+    }
+    bar();*/
+
+
+    /*var a=10,b=11,c=12;// var a =10; var b =11; var c =12;
+    function test(a){
+        // a 是私有的；
+        a=1;var b=2;c=3;
+    }
+    test(10);
+    alert(a);  alert(b);   alert(c);*/
+    /*console.log(a);
+    var a = b = c=10;
+    function fn(a) {
+        a =100;
+        b = 2;
+        c=3;
+    }
+    fn(a)
+    console.log(a, b, c);// 10  2  3;*/
+   /* var  ary = [1,2,3,4];// [100,2,3,4]
+    function fn(ary) {// ary [1,2,3,4]  形参和实参存储了同一个空间地址；
+        // 在JS中，遇到{}、[] 都会开辟一个新的空间地址；
+        ary[0] = 100;// [100,2,3,4]
+        ary = [];
+        ary[0] = 1;
+        return ary;
+    }
+    console.log(fn(ary));// [1]
+    console.log(ary);*/// [100,2,3,4]
+  /*  var a = b =c = 10;
+    b = 1;
+    console.log(a);// 10
+    var d=e=f = {}
+    f.a  =100;
+    f ={1:2}
+    console.log(d);//{a:1}*/
+
+    /*var a=4;
+    function b(x,y,a) {
+        alert(a);
+        arguments[2]=10;
+        alert(a);
+    }
+    a=b(1,2,3);
+    alert(a);*/
+
+ /*   var foo='hello';
+    (function(foo){
+        console.log(foo);
+        var foo=foo||'world';
+        console.log(foo);
+    })(foo);
+    console.log(foo);*/
+
+ var n = 100;
+ var obj = {
+     n:8,
+     fn : (function (n) {
+         // 在函数中使用obj，obj 是在定义的第二阶段，此时obj还没有被赋值空间地址；那么obj此时存储的是undefined；
+         console.log(obj);
+         n+=1;
+         return function () {
+             console.log(n)
+         }
+     })(obj.n)//
+ };
+ obj.fn();
+
+</script>
+</body>
+</html>
