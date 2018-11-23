@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1.
+    // 1. 在块级作用域中，用let定义的变量不能被外界使用
+    // 2. 在块级作用域下定义的函数只声明，不定义；
+    // 3. 在块级作用域下，var和function定义的变量不能重名；
+    console.log(getA);// undefined
+    if("a" in window){
+        // 对函数进行定义；getAway=xxxfff111;
+        var a="1";
+        function getA(a) {
+            a=a||this.a;
+            console.log(a);
+        }
+        getA(a);
+    }
+
+
+
+    //2.
+    var a=2;
+    var obj1={
+        a:1,
+        fn1:(function (a) {
+            this.a=a;
+            a++;
+            return function () {
+                this.a=a++;
+                console.log(a);
+            }
+        })(a)
+    };
+    obj1.fn1();
+    var fn1=obj1.fn1;
+    fn1();
+
+
+
+    //3.
+    var b="b";
+    var obj2={
+        b:"B",
+        getB:function (b) {
+            this.b=b+this.b;
+            return this.b
+        }
+    };
+    console.log(obj2.getB("是"));
+
+
+
+    //4.
+    var c=3;// 2  3  4
+    function getC() {
+        this.c++;
+        return function (c) {
+            c=this.c*2;
+            console.log(c);
+        }
+    }
+    var obj3={
+        c:2,// 3
+        getC:(function () {
+            this.c-=1;// window
+            return this.getC
+        })()
+    };
+    getC();
+    obj3.getC();
+    var f3=obj3.getC;
+    f3();
+    console.log(window.c);
+    console.log(obj3.c);
+
+
+
+//5.
+    function g1() {
+        this.g1="gg"
+    }
+    var obj4={
+        g1:g1,
+        gg:function () {
+            // this-->obj4
+            g1();
+        }
+    };
+    obj4.gg();
+    obj4.g1();
+    console.log(obj4);
+    console.log("g1" in window);
+
+    // 6
+    f = function () {return true;};
+    g = function () {return false;};
+    (function () {
+        // g=undefined
+        if (g() && [] == ![]) {
+            f = function () {
+                return false;
+            };
+            function g() {
+                return true;
+            };
+        }
+    })();
+    f();
+    g();
+
+
+    //7
+    var number=2;// 4  8
+    var obj={
+        number:4,// 8
+        fn1:(function () {
+            this.number*=2;
+            number=number*2;// 3  9  27
+            var number=3;
+            return function () {
+                this.number*=2;
+                number*=3;
+                alert(number);// 9   27
+            }
+        })()
+    };
+    var fn1=obj.fn1;alert(number);fn1();obj.fn1();
+    alert(window.number);
+    alert(obj.number);
+</script>
+</body>
+</html>
