@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 不管条件是否成立，都要进行变量
+    // 1) : 在最新的版本浏览器中，在条件语句中的function只声明，不定义
+    // 2) : 在旧版本浏览器中，在条件语句中的function不仅声明，而且定义
+    /*console.log(a);// undefined
+    console.log(b);
+    if(NaN == NaN){
+        var a=18;
+        function b() {
+            
+        }
+    }
+    */
+    // 2.变量提升只发生等号的左边
+    /*console.log(f);
+    var  obj = {
+        fn:function () {// 当执行到这一行时，开辟的空间；以键值对存储时，开辟的空间地址；
+
+        }
+    }
+    console.log(f);
+    var  f = function () {
+
+    }*/
+
+    // 3.return 后面的代码不进行变量提升，但是return下面的代码要进行变量提升；
+   /* function a() {
+        b();
+        console.log(f);
+        console.log(b);
+        return  function () {
+
+        }
+        var  f = 1;
+        function b() {
+
+        }
+    }
+    a();*/
+
+   // 4. 自执行函数定义和执行是一起进行的；先定义，后执行；
+    /*console.log(f)
+    (function f() {
+
+    })();*/
+
+    // 5. let定义变量  const 定义常量；
+    //let 定义的变量不进行变量提升；
+    // let 在同一个作用域下，定义的变量不能重名；
+    //console.log(a);
+    console.log(a);
+    let a=100;
+    if(""){
+        // 块级作用域；
+        let a =1;
+        let a =1;
+    }
+
+</script>
+</body>
+</html>

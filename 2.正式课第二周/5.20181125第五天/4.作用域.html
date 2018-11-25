@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="abc">1111</div>
+<script>
+   /* var a = document.getElementsByClassName("abc")[0];
+    /!*console.log(a);
+    console.log(a.style);*!/
+    a.style.color = "red";*/
+    // JS： 全局作用域  私有作用域  块级作用域（es6新增）
+    // 栈内存 ： 1.提供代码的运行环境 2. 存储基本数据类型值；
+
+    // 全局作用域：
+    // 1. 当打开页面时，首先会形成一个全局的作用域；
+    // 2. 进行全局作用域下的变量提升
+    // 3. 代码从上到下执行；
+
+    // 全局变量：
+    // 在全局作用域下定义的变量是全局变量；
+    // 全局变量会给window这个对象新增键值对；
+  /*  var a = 100;
+    var obj = {a:1}
+    function b(v) {
+        console.log(1)
+        console.log(v);
+        function v() {
+
+        }
+    }
+    b(199);*/
+
+    // 函数定义
+    // 1. 开辟一个堆内存
+    // 2. 把函数体中的代码当做字符串存到堆内存中
+    // 3. 把函数的空间地址赋值给函数名；
+
+    // 函数执行
+    // 私有作用域
+    // 1.函数执行首先都会形成一个私有的作用域，供函数体中的代码运行；
+    // 2. 形参赋值
+    // 3. 变量提升
+    // 4. 代码从上到下运行
+    // 5. 作用域是否销毁；
+
+    // 私有变量 ：
+    // 1. 在私有作用域下用var定义的变量
+    // 2. 形参也是私有的变量
+    // 3. function 定义的函数；
+    /*function g(a) {
+        var f = 1;
+        function h() {
+            //var f=100;
+            console.log(f);
+        }
+        h();
+        return f;
+    }
+    g(3);
+    console.log(a);
+    h();*/
+   /* var  s = 1;
+    function a() {
+        var s = 100;
+        return function (s) {
+            console.log(s)
+            //var s = 50;
+        }
+    }
+    var f  = a();
+    f();
+    // 上一级作用域；函数的上一级作用域跟函数在哪执行没有关系，函数在哪个作用域定义的，上一级作用域就是谁；
+    var  obj = {m:1,n:2};
+
+    console.log(obj.o);*///   undefined  cannot read property "style" of undefined
+    var num =10;
+    var  obj = {
+        num:1,
+        fn:function () {
+            console.log(num);// 10
+        }
+    }
+    obj.fn();
+
+
+    // 块级作用域 es6新的解析规则
+    if([]){
+
+    }
+
+    // 1.允许在块级作用域内声明函数。
+    // 2.函数声明类似于var，即会提升到全局作用域或函数作用域的头部。
+    // 3.同时，函数声明还会提升到所在的块级作用域的头部。
+
+
+</script>
+</body>
+</html>

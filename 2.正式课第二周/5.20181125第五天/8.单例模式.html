@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   // 单例模式  工厂模式  构造函数模式  原型模式
+
+   /*fn();
+    function fn() {
+    console.log(1);
+    }
+    fn();
+    function fn() {
+    console.log(2);
+    }
+    fn();*/
+
+   /*var  name = "康建东";
+   var  age = 80;
+
+   var  name = "郝元烨";
+   var  age = 3;
+   console.log(name);*/
+
+   var  kangjiandong = {name:"康建东",age:80};
+   var  haoyuanye = {name:"郝元烨",age:3};
+   console.log(kang.name);
+   console.log(hao.name);
+
+   // 把描述同一个事物的属性放在同一个空间下，避免了全局变量的污染；这种模式-->"单例模式"；
+
+    var obj1 = {
+        fn:function () {
+
+        },
+        f:function(){
+
+        }
+    };
+    var obj2 = {
+        fn:function () {
+
+        },
+        f:function(){
+
+        }
+    }
+    obj1.fn();
+</script>
+</body>
+</html>

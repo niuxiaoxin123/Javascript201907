@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">111</div>
+<script>
+    // 浏览器形成的两个虚拟的内存，一个栈内存 一个堆内存
+    // 堆内存：
+    // 谷歌： 每隔一段时间对所有的引用数据类型的地址进行检测，如果该地址不被占用，那么直接回收；
+    // IE 和火狐
+    // 采用计数规则，如果当前地址被占用一次，+1；如果不再占用，那就-1；如果该地址被占用0次；那么该地址会马上回收；
+
+   /* var  obj =ccc={a:100,b:10};
+    obj = null;*/
+    
+    // 栈内存
+    
+    // 全局作用域: 属于不销毁的作用域；只有关闭页面或关闭浏览器时，全局作用域才会随着销毁；
+    // 私有作用域：
+    // 1. 立即销毁；
+    // 函数一般情况下，执行完代码之后会立即销毁；
+    // 函数每执行一次都会形成一个新的私有作用域；
+
+    // 2. 不销毁作用域
+    // 1. 返回一个引用的数据类型
+    // 2. 返回值需要被外界占用；
+    /*box.onclick = function () {
+        console.log(1);
+    }*/
+
+    // 3.不立即销毁
+    // 需要等待里面的小函数执行完毕，外层a形成的作用域才会销毁；
+    /*function a() {
+        var v =1;
+        return function () {
+            console.log(v);
+        }
+    }
+    /!*var f =  a();
+    console.log(f.v);*!/
+    a()();*/
+
+    // 块级作用域
+    //b();// b is not  a function
+    if([]){
+        let a = 10;
+        var b =100;
+        function b() {
+            console.log(1);
+        }
+    }
+    b();
+    function fn() {
+        if([]){
+            function b() {
+
+            }
+        }
+    }
+    fn()
+</script>
+</body>
+</html>
