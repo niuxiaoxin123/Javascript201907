@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 单例模式   高级单例模式   工厂模式；
+    var obj = {name:"小明",age:17};
+    var obj1 = {name:"小亮",age:27};
+
+    var utils = (function () {
+        var s = 10;
+        function fn() {
+
+        }
+        return {
+            fn:fn
+        }
+    })()
+
+    //
+    function createName(name,age) {
+        var obj = {};
+        obj.name = name;
+        obj.age = age;
+        return obj;
+    }
+    createName("小刚",18)
+    // 面向过程
+    // 面向对象--> 基于对象；类的继承，封装，多态；
+    // 对象：万物皆对象；
+    // 类 ：具有相同特征的一类事物；
+    // 实例：表示一个具体的事物；
+    /*var  a = {};
+    var arr = [];
+    var a = [];
+    ///typeof 19 --> "number"
+    var num = 19;
+    num.toFixed()*/
+
+   /* var arr = [128,88,6,27];
+    var ary = [283,8,8];
+    arr.pop();
+    ary.pop();*/
+    // 类分为两种： 内置的类  自定义类；
+
+    // Number Array
+    console.log(Number);
+    // 创建实例
+    // new + 类名： 创建一个实例；
+    var a = [1,2,4];
+    var b  = new Array(5,6,7);
+    console.log(b);
+
+    function Fn() {
+
+    }
+    console.log(new Fn());// {}
+
+
+</script>
+</body>
+</html>
