@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn() {
+        this.a=10;
+        this.b = 20;
+        this.getB= function () {
+            console.log(this.a);
+        }
+    }
+    Fn.prototype.a=100;
+    Fn.prototype.getA = function () {
+        console.log(this);
+        console.log(Fn.prototype.a);
+    };
+    var  f = new Fn;
+    //f.getA();// this--> f
+    Fn.prototype.getA();// this--> Fn.prototype
+    Fn.prototype.getB();// this--> Fn.prototype
+    f.getB();
+    var  h = Fn.prototype.getA;
+    h()// this--> window
+    // 原型中的this： 看函数执行前有没有点，点前面是谁，this就指向谁；
+
+
+
+</script>
+</body>
+</html>

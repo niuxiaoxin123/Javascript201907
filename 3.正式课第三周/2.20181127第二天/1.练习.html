@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn(){
+        // this--> 实例
+        //var obj = {};
+        //this-->obj
+        this.x = 100;
+        this.y = 10;
+        this.getX  = function () {
+            return this.x
+        }
+        //return obj;
+    }
+    Fn.prototype.getX = function () {
+        return this.x;
+    }
+    var f = new Fn;//Fn 是一个构造函数，又是一个自定义类
+    console.log(f);// {x:100,y:10,getX:function(){}}
+    console.log(f.getX === f.__proto__.getX);// false
+    console.log(f.getX === Fn.prototype.getX);// false
+    console.log(f.__proto__.getX === Fn.prototype.getX);// true
+    console.log(f.__proto__.__proto__.getX === Fn.prototype.getX);// false
+    console.log(f.toString);// f toString(){[native code]}
+    console.log(Fn.constructor);// Function;
+    console.log(f.constructor);// Fn;
+
+
+    var f = {getX:function(){},__proto__:{getX:function(){}}}
+    Fn={prototype:{getX:function(){}}}
+
+</script>
+</body>
+</html>

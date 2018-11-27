@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 普通函数：
+
+    // 构造函数：
+    /*function Fn() {
+        //var obj  ={} this-->obj
+        this.x = 100;
+        this.y =200;
+        //return obj
+        var z = 10;
+        return 10;
+    }
+    Fn();
+    var f = new Fn();// {x:100,y:200}
+    console.log(f.x);*/
+    // 1. 如果return一个基本数据类型值，不影响返回的实例；如果return一个引用地址，那么会把默认的空间地址覆盖；
+    // 2. instanceof : 检测实例是否属于某个类的；是返回true不是返回false；
+
+    // 内置类： Number  String  Boolean  Null Undefined Function  Object  Array...
+    /*var  obj = {};
+    console.log(obj.a);// undefined;
+    console.log(obj instanceof Object);
+    obj.hasOwnProperty()
+    console.log(typeof obj.constructor);// "function"
+
+
+    //
+    var  ary = [2,3,4];
+    console.log(ary.constructor);
+    ary.hasOwnProperty()
+    console.log(ary.hasOwnProperty === obj.hasOwnProperty);*/
+
+    // Object
+
+    //原型：
+    // 1. 每一个函数数据类型（函数、类）都天生自带一个prototype属性，prototype的属性值是一个对象
+    // 2. 在prototype这个属性值中，天生自带一个constructor属性，constructor的属性值指向当前原型对应的这个类；
+    // 3. 每一个对象数据类型(对象、数组、实例)都天生自带一个__proto__属性，这个属性的属性值指向当前实例所属类的原型；
+
+    /*var obj = {};
+    console.log(obj.__proto__.__proto__);*///  null
+
+    function Fn() {
+        this.x =100;
+        this.y = 200;
+    }
+    Fn.prototype.x = 1000;
+    Fn.prototype.getX=function () {
+        console.log(this.x + this.y);
+    }
+    var f = new Fn;
+    console.log(f.hasOwnProperty === f.__proto__.hasOwnProperty);// true
+    f.getX();// 300
+    f.__proto__.getX();// NaN
+    Fn.prototype.getX();// NaN
+
+
+</script>
+</body>
+</html>
