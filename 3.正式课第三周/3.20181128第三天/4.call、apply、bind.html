@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  call  apply  bind: 在Function的原型上，所以只有函数或类可以调用这三个方法；
+    // Function的__proto__指向它自己的原型；
+    // Function.call();
+    // call、apply、bind 是用来改变函数的this指向的；
+    /*function fn() {
+        //console.log(this);// window
+        // 改变当前作用域下的this指向；this 在作用域中不可以直接更改赋值；
+        console.log(this);// obj
+    }*/
+    //var obj = {a:1};
+    //fn();.//this--->window
+    //fn.call(obj);
+    // 1.先通过fn找到Function原型中的call方法，并且让这个call方法执行
+    //2. 当call运行时，call中的this指向fn,call执行时并且让fn[call中的this]执行；函数fn中的this指向了call方法执行时传进去的第一个参数；
+    // 3.call 执行时，让fn运行；并且改变fn中的this指向call的第一个参数；
+
+    /*function fn(m,n) {
+        /!*console.log(m, n);
+        console.log(arguments);*!/
+        console.log(this);
+    }
+    var obj = {a:1};
+    //fn.call(obj,1,2);
+    fn.call();*/
+    //fn 通过__proto__找到Function原型上的call方法，并且让call方法执行；call方法执行时，让fn执行，并且改变了fn中的this指向，指向call的第一个参数；
+    // call方法执行时，让call中的this执行，并且改变了this中的this指向；
+    // call 方法的第二个参数及以后，会把参数一一传给fn;
+    // 1.非严格模式下， 如果call方法不传参数，或传null，传undefined，那么this指向window；
+    // 2.在严格模式下，如果call不传或传undefined，那么this就指向undefined，如果传null，就指向null；
+
+
+    /*function fn1() {
+        console.log(this);
+    }
+    function fn2() {
+        console.log(this);
+        console.log(100);
+    }
+    fn1.call.call.call(fn2,2);*/
+    // 1.第二个call执行，call2中的this指向fn1.call;改变fn1.call中的this指向fn2;
+    // 2.让fn1.call()执行，当这个执行时，会让这个fn1中this执行；
+
+    //2.apply:
+    // apply: 改变this中的this指向，指向第一个参数；
+    // 不同点： apply 的第二个参数需要是一个数组；但是fn接收到的参数是数组的每一项；
+    function fn(m,n) {
+        console.log(m,n);
+        console.log(arguments);
+        console.log(this);// {a:1}
+    }
+    var obj = {a:1};
+    //fn.apply(obj,[1,2])
+
+    // 3. bind : 预处理this指向；提前改变this，但是不让fn执行；
+    // bind的这个方法返回一个改变this之后的fn;
+    // 传参和call一样，一个个传；
+    var f = fn.bind(obj,1,2);
+    f(3,4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
