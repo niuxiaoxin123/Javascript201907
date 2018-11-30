@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.ary.sort
+    //
+    /*var ary = [1,2,4,2,88,35,66,6];
+    // 只能排相同位数的数组成员
+    ary.sort(function (a,b) {
+        return a-b;
+    })
+    console.log(ary);*/// 原有数组发生改变；
+
+    var ary = [{age:20},{age:10},{age:60},{age:50}];
+    // 要按照数组成员的age属性值排；
+    ary.sort(function (a,b) {
+        //console.log(a-b);//
+        return a.age-b.age;
+    })
+    console.log(ary);
+</script>
+</body>
+</html>

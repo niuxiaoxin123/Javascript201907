@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<ul id="container">
+    <!--这个容器放的是动态的li-->
+    <!--<li>李克强与这位港商的对话意味深长</li>
+    <li>遥隔四万里的'好知音'习近平再访阿根廷</li>-->
+</ul>
+<div>1111</div>
+<script>
+    var ary = ["李克强与这位港商的对话意味深长","遥隔四万里的'好知音' 习近平再访阿根廷","司马义·艾买提在新闻联播里再也听不到了|跨境电商零售政策将调整","李克强与这位港商的对话意味深长","遥隔四万里的'好知音' 习近平再访阿根廷","司马义·艾买提在新闻联播里再也听不到了|跨境电商零售政策将调整","李克强与这位港商的对话意味深长","遥隔四万里的'好知音' 习近平再访阿根廷","司马义·艾买提在新闻联播里再也听不到了|跨境电商零售政策将调整"];
+    var con = document.getElementById("container");
+  /*  var con = document.getElementById("container");
+    for(var i=0;i<ary.length;i++){
+        var cur = ary[i];
+        // 让代码停止到这一行
+        // debugger
+        // 动态创建li;并且将数组放入li中；
+        var li = document.createElement("li");
+        li.innerHTML = cur;
+        con.appendChild(li);
+    }*/
+    // 文档碎片
+    /*var con = document.getElementById("container");
+    var  frg= document.createDocumentFragment();
+    for(var i=0;i<ary.length;i++){
+        var cur = ary[i];
+        var li = document.createElement("li");
+        li.innerHTML = cur;
+        // 创建一个DOM的容器；临时存储DOM元素；
+        frg.appendChild(li);
+    }
+    con.appendChild(frg);
+    frg  = null;*/
+
+    // 3.字符串拼接
+    /*var str = "";
+    for(var i=0;i<ary.length;i++){
+        var cur =ary[i];
+        str+="<li>"+cur+
+            "</li>"
+    }
+    con.innerHTML = str;*/
+
+   // 4.es6的模板字符串
+    var str = ``;
+    for(var i=0;i<ary.length;i++){
+        var cur =ary[i];
+        str+=`<li>${cur}</li>`
+    }
+    con.innerHTML = str;
+
+    // DOM的回流： 当页面中的元素的大小，位置发生改变，会引起浏览器对其他盒子的位置进行重新计算，那么这样会引发DOM的回流，这样是很耗浏览器的性能；
+
+    // DOM的重绘：当页面中的元素的背景，字体大小，字体颜色，透明度发生变化后，浏览器要对元素进行重新描绘，这就是重绘；
+
+
+
+
+</script>
+</body>
+</html>
