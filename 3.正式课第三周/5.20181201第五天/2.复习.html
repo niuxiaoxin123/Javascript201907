@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<script>
+    // 案例
+    // DOM 映射：在JS中有一个元素对象和HTML中的标签是一一对应的，当JS的元素对象的位置，那么HTML中的标签也会随着发生改变；
+    var  box = document.getElementById("box");
+    var  divs = box.getElementsByTagName("div");
+    // 元素集合类，是一个引用数据类型的地址；它能够及时响应页面元素发生变化，对这个集合的影响；
+    // 元素集合类和元素之间存在映射的关系；
+    console.log(divs);// [div,div,div,div]
+    var  newDiv = document.createElement("div");
+    box.appendChild(newDiv);
+    console.log(divs)
+
+    // DOM的回流： 当页面中某个元素的位置大小发生改变，那么会让浏览器对其他的元素的位置进行重新计算
+
+    // DOM的重绘：当页面中元素的背景，字体，透明度发生改变，那么会引发浏览器对元素的重新描绘；
+
+    //  JSON： 数据格式
+    //
+    var obj = {a:1,b:2};
+    var obj = {"a":1,"b":2}
+    var str = '{"a":1,"b":2}'; // 从后端返回前端的一般都是以JSON的方式返回；
+    // JSON.parse
+    // JSON.stringify
+    // eval
+    // 封装一个兼容的方法，把JSON格式的字符串转成JSON格式的对象；
+    function toJSON(str) {
+        /*var newStr = "";
+        try{
+            newStr = JSON.parse(str);
+        }catch (e){
+            newStr = eval("("+str+")");
+        }
+        return newStr;*/
+       return "JSON" in window?JSON.parse(str):eval("("+str+")")
+    }
+    toJSON(str);
+    //登录注册：
+
+    // 数据绑定
+    // 1. 创建DOM元素，添加到页面中；
+    // 2. 引入文档碎片，临时存储DOM的一个容易；
+    // 3. 字符串拼接
+    // 4. es6模板字符串
+
+
+
+
+
+</script>
+</body>
+</html>
