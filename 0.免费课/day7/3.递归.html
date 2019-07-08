@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 什么是递归？
+    // 1-100  3和5的倍数的和
+    function sum(num) {
+        if(num===0){
+            return 0;
+        }
+        if(num%3===0&&num%5===0){
+            return num+sum(num-1)
+        }else{
+            return sum(num-1)
+        }
+    }
+    sum(100)
+
+
+
+
+
+</script>
+</body>
+</html>

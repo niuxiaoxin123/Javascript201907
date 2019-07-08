@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <div></div>
+    </div>
+    <div></div>
+    <div></div>
+    <p></p>
+    <div id="a"></div>
+    <!---->
+    <div></div>
+<script>
+    // 函数  判断（if else）  循环；
+    // 三个循环
+    // 1. for 循环
+    // for循环四部曲：1.初始化变量 2. 判断 3. 执行循环体 4.i++;
+    /*var  a = 10;
+    console.log(a++);// 10
+    console.log(a);// 11
+    ++a;
+    console.log(a);*/// 10
+    /*function fn() {
+
+    }*/
+
+    /*setInterval(function () {
+
+    },100);
+    var ary = [];
+    for(var i=0;i<5;i++){
+        var t =setInterval(function () {
+            console.log(1);
+        },1000);
+        ary.push(t);
+    }
+    var btn=document.getElementById("btn");
+    btn.onclick = function () {
+        for(var i=0;i<ary.length;i++){
+            clearInterval(ary[i])
+        }
+    }*/
+
+    // 2.continue  break;
+    for(var i=0;i<10;i++){
+        if(i<6){
+            continue;// 结束本轮循环
+        }
+        console.log(i);// 6789
+        if(i==0){
+            break;// 结束整个循环
+        }
+    }
+
+    if(true){
+
+    }
+    function fn() {
+        if(num<1){
+            return;
+        }
+        fn()
+        for(var i=0;i<10;i++){
+            break;
+        }
+    }
+    // for in : 循环对象
+    // 会先循环数字；
+   /* var  obj ={name:"zhfueng",age:10,20:1,10:2}
+    for(var key in obj){
+        //key : 字符串  "name"  "age"
+        //key这个变量代表每一次循环的属性名,并且是字符串格式的；
+        console.log(obj[key]);
+        debugger// 让代码停到这一行；
+    }
+*/
+
+   // while : 不知道循环多少次
+
+    function getBro(curEle) {
+        if("previousElementSibling" in curEle){
+            return curEle.previousElementSibling;
+     }
+    var pre=curEle.previousSibling;// 哥哥节点
+    while(pre){
+        if(pre.nodeType===1){
+            return pre;
+        }
+        pre = pre.previousSibling;
+    }
+    return null;
+    }
+    //  当前元素在兄弟元素中的索引位置；
+</script>
+</body>
+</html>

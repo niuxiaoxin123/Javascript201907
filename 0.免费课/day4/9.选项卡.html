@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #tab{
+            width:400px;
+            height:280px;
+            margin: 100px auto;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            float:left;
+            width:80px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid pink;
+            margin-right:3px;
+            cursor: pointer;
+        }
+        ul li.select{
+            background: blue;
+            color:white;
+        }
+
+       #tab div{
+           display: none;
+           width:400px;
+           height:280px;
+           border:1px solid pink;
+           text-align: center;
+           line-height: 280px;
+       }
+        #tab div.select{
+            display: block;
+            color:blue;
+        }
+
+    </style>
+</head>
+<body>
+<div id="tab" class="abc">
+    <ul>
+        <li class="select">音乐</li>
+        <li>电影</li>
+        <li>书本</li>
+    </ul>
+    <div class="select">林中鸟</div>
+    <div>速度与激情8</div>
+    <div>高程3</div>
+</div>
+
+<script>
+    // 在JS中想给元素绑定事件，先把对应的元素获取到
+    // 选项卡；
+    // 1. 获取所有的li;
+    // 2. 循环所有的li,给每一个li绑定点击事件；
+    // 3. 点击当前li,移除其他li的select的class名，并且移出所有div的class;
+    // 4. 点击li,让被点击的li新增class类名是select;并且让与之对应的div新增class；
+    //  通过标签名获取所有的li;
+    var oTab = document.getElementById("tab");
+    /*oTab.className="abc"
+    oTab.className=""*/
+    var oLis = oTab.getElementsByTagName("li");// 类数组集合
+    var divs = oTab.getElementsByTagName("div");// div集合；
+    // 循环所有的li,给每一个li绑定点击事件；
+    for(var i=0;i<oLis.length;i++){
+        //在JS中，获取到的每一个元素，都是对象数据类型的；
+        //console.log(oLis);
+       /* oLis[0].index =0;
+        oLis[0].onclick = function(){
+            console.log(this);// oLis[0].index  0
+        };
+        oLis[1].index =1;
+        oLis[1].onclick =function () {
+            console.log(this);// oLis[1].index   1
+            divs[this.index].className="select";
+        }
+        oLis[2].index =2;
+        oLis[2].onclick =function () {
+            console.log(this);// oLis[2].index  2
+        }*/
+        oLis[i].index = i;
+        oLis[i].onclick = function () {
+            // 点击，让所有li的class都清除；
+            for(var j=0;j<oLis.length;j++){
+                oLis[j].className="";
+                divs[j].className="";
+            }
+            // 点击的li新增class
+            // 当点击li时，触发这个点击的事件函数；此时，外层的for循环早已经循环完成；i已经变成了3；
+            // console.log(i);
+            // this --> 这个；关键字；在函数体中有特殊的意义；
+            // this 代表了被绑定的那个li；被点击那个li;
+            // console.log(this);
+            this.className = "select";
+            divs[this.index].className="select"
+        }
+    }
+    //Cannot set property 'className' of undefined:不能设置undefined的className属性
+
+
+  /*  for(var i=0;i<oLis.length;i++){
+        oLis[i].index = i;
+        oLis[i].onclick = function () {
+            for(var j=0;j<oLis.length;j++){
+                oLis[j].className="";
+                divs[j].className="";
+            }
+            this.className = "select";
+            divs[this.index].className="select"
+        }
+    }
+*/
+
+    var ary = [40,12,4,30,567,9]
+    //
+    ary.sort(function (a,b) {
+        return a-b;
+    })
+    console.log(ary);
+</script>
+</body>
+</html>

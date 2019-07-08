@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 两个数字的求和；
+    /*function fn(m,n) {
+       var  t = m+n;
+        console.log(t);
+    }
+    fn(1,2)*/
+    function sum(a,b,c) {
+        // 在函数体中，有个实参集合叫arguments;
+        // instanceOf : 校验一个实例是否属于某个类；是返回true，不是返回false；
+        /*console.log(arguments instanceof Array);// false
+        console.log(arguments);*/// 类数组集合；
+
+        // for 循环
+        //console.log(arguments);
+       /* a=300;
+         console.log(arguments);*/
+        arguments[0]=900;
+        console.log(a);
+        // 函数中形参和实参是一一映射的关系的；当改变形参a的值，那么arguments也会随着发生变化；
+        var total =0;
+        for(var i=0;i<arguments.length;i++){
+            var total = 0;// 不能将total的定义放在循环体中，这样每循环一次，都会讲total的值覆盖成0；
+            //console.log(i);// 0 1  2 3 4 5  ... 9
+            //console.log(arguments[i]);
+            // total += val; 在自身的基础上+val;
+            total+=arguments[i];
+        }
+        console.log(total);
+    }
+    sum(100,2,3,45,6,7,7,8,9,9)
+
+
+
+</script>
+</body>
+</html>

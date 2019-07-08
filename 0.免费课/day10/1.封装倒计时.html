@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--12:00-->
+<div id="first"></div>
+<!--15:00-->
+<div id="second"></div>
+<!--18:00-->
+<div id="third"></div>
+<script>
+    // 1.显示的元素是一个可变的
+    // 2.目标时间是可变的；
+   var first = document.getElementById("first")
+   var second = document.getElementById("second")
+   var third = document.getElementById("third")
+    function countDown(box,targetTime) {
+        var currentTime = new Date();
+        var difTime = targetTime-currentTime;
+        if(difTime<=0){
+            clearInterval(t);
+            return;
+        }
+        var hours = Math.floor(difTime/(1000*60*60));
+        var minutes =Math.floor((difTime-hours*1000*60*60)/(1000*60));
+        var seconds = Math.floor((difTime-hours*1000*60*60-minutes*1000*60)/1000)
+        var  millSeconds = difTime%1000;
+        box.innerHTML = addZero(hours)+":"+addZero(minutes)+":"+addZero(seconds)+":"+addZero(millSeconds);
+    }
+    countDown(first,new Date("2019/07/06 12:00:00"));
+    var t = setInterval(countDown,1000,first,new Date("2019/07/06 12:00:00"));
+    function addZero(val) {
+        return val<10?"0"+val:val;
+    }
+
+    setTimeout(function () {
+
+    },2000)
+
+
+</script>
+</body>
+</html>

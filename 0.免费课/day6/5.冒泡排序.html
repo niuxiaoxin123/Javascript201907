@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* ary.sort(function (a,b) {
+        // 从小到大
+        return a-b;
+    });
+    console.log(ary);*/
+   //var ary = [12,4,25,88,66,56,37,89,70];
+   var ary=[12,14,16,34,56,67,78,75]
+   //var ary =[12,32,45,67,76,78,80,87,89]
+    // 冒泡排序原理： 相邻两项进行比较，如果前面一项比后面一项大，则让这两项互换位置，如果前面比后面小，不进行交换；当循环一次之后将数组的最大值放到了数组的最后面；
+
+       // 当外层循环一次，里面循环ary.length-1次；
+       // j=0;  里面循环完成之后，最大值放到数组的最后面
+       // j=1; 里面循环完成之后，第二大值放到倒数第二个；
+       // j=2  里面循环完成之后，第三大值放到倒数第二个；
+       // ....
+       // 1. 第一个优化： ary.length-1；由于循环体内部有i+1；当i=ary.length-2时，就可以取到最后一项；
+       // 2. 第二个优化： ary.length-1-j;外层每循环一轮，就会解决一个最大值的问题，这些最大值在以后的循环中，不需要在进行比较；
+       // 3. 第三个优化，外层循环-1；解决了8个最大值，剩下一个一定是最小值，不需要在进行比较；
+      // 4. 第四个优化，每次进行两两比较，如果存在前面比后面大，说明该数组没有排好顺序，将flag=false;那么就不会直接break;
+   for(var j=0;j<ary.length-1;j++){
+       var flag = true;
+       for(var i=0;i<ary.length-1-j;i++){
+          console.log(100);
+           // 当i=ary.length-2时，就可以获取数组的最后一项值；
+           if(ary[i]>ary[i+1]){
+               // 只要这个if条件成立，说明存在前面一项比后面一项大；
+               var temp = ary[i];
+               ary[i]=ary[i+1];
+               ary[i+1]=temp;
+               flag=false;
+           }
+       }
+       if(flag){
+           break;
+       }
+   }
+   console.log(ary);
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数据类型和引用数据类型
+    // 基本数据类型：number  string  boolean  null undefined
+    // 引用数据类型:对象 数组  函数  正则  Date的实例  Math...
+    // 基本数据类型和引用数据类型区别： 基本数据是操作值的，引用数据类型是操作空间地址的；
+    // a和b都是存储到栈内存中，存放在不同的空间下；obj和obj1是一个空间地址类型，obj 和obj1指向同一个堆内存；当改变obj1时，obj也会发生改变；
+   /* var a = b = 10;
+    var  obj = obj1 = {};
+    b=11;
+    console.log(a);// 10
+    obj1.a=18;
+    console.log(obj);*/// {a:18}
+
+    // Number :
+    // 1.isNaN:
+    var  num = 10.88999;
+    // NaN和自己都不相等；
+    console.log(NaN == NaN);
+    console.log(isNaN("3px"))// true;有效数字返回false；
+    // 如果isNaN不是一个数字，先默认调用Number方法把其转换成数字，再进行校验；
+    // 2.parseInt
+    // parseInt("36.7px789")//36
+    // 3.parseFloat
+    //  parseFloat("36.7px789")// 36.7
+    // 4.Number（数字、NaN）
+    // 强制转化
+    // 5.toFixed ：会看后面一位，进行四舍五入；
+    // 保留小数点位数 num.toFixed(位数)
+    /*var  num = 10.8555;
+    console.log(num.toFixed(2));
+    console.log(Number(num.toFixed(2)) + 100);//110.89
+
+    // string
+    // 1.length   2.索引  3. +-*!/
+    console.log("30px" / 5);*///NaN
+
+    // Boolean ;
+    // true 和false
+    // 0 NaN null undefined  ""
+   //  ![]
+
+    // null
+
+    // undefined
+    //1.如果变量只声明，没有赋值，那么默认存储值就是undefined
+    /*var yy;
+    console.log(yy);
+    // 2. 获取对象属性名对应的属性值，如果属性名不存在，那么得到属性值是undefined；
+    var obj = {};
+    console.log(obj.a);*/// undefined
+
+    // 对象
+   // var  obj = {a:10,a:20}
+    // 1.获取
+    // 对象名.属性名
+    // 对象名["属性名"]
+    // 2. 增加
+    /*obj.b=19;
+    // 3.修改
+    obj.a=100;
+    // 4.delete
+    delete obj.a;*/
+
+    // 引用数据类型
+    /*var obj = {
+        n:20,
+        num:obj.n+10
+    }*/
+    // 1.开辟一个堆内存空间地址
+    // 2.把键值对存储到这个堆内存中
+    // 3.把这个空间地址给了对象名；
+    var obj = {1:10,a:20};
+    console.log(obj["a"]);
+
+
+</script>
+</body>
+</html>

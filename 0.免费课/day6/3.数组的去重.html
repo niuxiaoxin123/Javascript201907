@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数组的去重  冒泡排序  快速排序 插入排序
+    var ary = [12,3,12,5,6,3,12,8,6]
+    // 数组去重:将数组的重复项删除
+    // 1. indexOf
+    //  1) 创建一个新的数组，循环原有的数组
+    //  2) 将原有的数组每一项新增到新数组中，但是新增之前判断一下，当前项是否在新数组中存在；
+    var  newAry = [];
+    for(var i=0;i<ary.length;i++){
+        // 第一轮循环： cur=12   []    -1   [12]
+        // 第二轮循环： cur=3    [12]  -1   [12,3]
+        // 第三轮循环： cur=12   [12,3] 0   [12,3]
+        // ....
+        var  cur = ary[i];
+        // 如果检测返回-1；那么将这一项放入新数组中；
+        if(newAry.indexOf(cur)===-1){
+            newAry.push(cur);
+        }
+    }
+    console.log(newAry);
+
+    var ary = [12,3,12,5,6,3,12,8,6];
+    // var  obj = {1:10,1:100};
+    // 在对象中，属性名是不可以重复的；如果重复，后面会将前面的覆盖
+    // 1.循环数组，给新对象新增键值对；对象属性名不能重复
+    // 2.循环对象，获取对象中每一个键值对，再把其属性值存到数组中；
+    // var ary = [12,3,12,5,6,3,12,8,6];
+   /* var  obj = {};// {12:12}
+    for(var i=0;i<ary.length;i++){
+        // 第一轮：{12:12}
+        // 第二轮：{12:12,3:3}
+        // 第三轮：{12:12,3:3,5:5,6:6,8:8,key:12}
+        var cur = ary[i];
+        obj[cur] = cur;// 新增键值对；
+        // obj.cur = cur;
+        console.log(obj);
+    }
+    var newAry = [];
+    for(var key in obj){
+        newAry.push(obj[key]);
+    }*/
+    //console.log(newAry);
+</script>
+</body>
+</html>

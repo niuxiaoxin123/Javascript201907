@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+   // null : 空对象指针；表示没有；
+   // 1. 当通过id获取元素时，如果id对应的这个元素不存在，那么获取的结果就是null;
+   // 2. 正则捕获如果捕获不到内容，那么得到结果也是null;
+   // 3. 当获取元素的哥哥元素节点时，如果不存在，获取到的结果也是null；
+   /* var oBox = document.getElementById("box1");
+   console.log(oBox);// null
+    Number(null)// 0
+    Boolean(null)//false*/
+
+   // undefined
+   // 1. 如果获取对象的属性名对应的属性值，如果属性名不存在，那么得到的属性值就是undefined；
+   // 2. 如果变量只声明，没有赋值，那么默认存储值是undefined；
+   // 3. 函数如果只有形参，没有传递实参，那么形参默认存储值是undefined；
+   // 4. 函数如果没有return，默认函数的返回值就是undefined；
+  /* var num;
+   console.log(num);//
+   var obj = {a:100}
+    console.log(obj.b);*/// 100
+   //console.log(100);
+   //console.log(num);
+
+   // JS代码是从上到下，从左到右运行；如果遇到代码报错，那么下面的代码将不再执行；
+   //num is not defined : num 没有被定义；
+   // = : 赋值；代码解析从右到左；
+    //var a = 100;
+    //var a = b = c = 10;
+
+    // 为什么要有数据类型；
+    // JS规定了数据类型，在JS中数据是规范的，不能乱写
+   // 如果放在等号的右边，那么是作为值存在，如果是一个值，那么一定是数据类型中的一种；
+   var str = "63738hd";
+   var s = 123;
+   var t = true;
+   var r = null;
+
+
+
+
+
+
+</script>
+</body>
+</html>

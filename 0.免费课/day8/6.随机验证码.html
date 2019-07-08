@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #code{
+            margin:50px auto;
+            width:200px;
+            height:80px;
+            line-height: 80px;
+            text-align: center;
+            border: 5px solid greenyellow;
+            color: greenyellow;
+            font-size: 25px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="code"></div>
+<script>
+    var box = document.getElementById("code");
+    // 1. 给box绑定点击事件
+    // 2. 点击需要生成一个随机的验证码，并且把code中原有的内容覆盖掉；
+
+    // Math.round(Math.random()*(n-m)+m) 随机数字
+    function getCode() {
+        var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        var i=0;
+        var newStr = "";
+        while(i<4){
+            // [0-61] 产生一个0-61的索引；
+            var index = Math.round(Math.random()*61);
+            newStr+=str[index];
+            // 每循环一次，获取到一个最新的随机字符，那么需要i++一次；
+            i++;
+        }
+        box.innerHTML = newStr;
+    }
+    getCode();
+    box.onclick = getCode;
+
+
+
+</script>
+<!--<script src="index.js"></script>
+<script>
+    console.log(100);
+</script>-->
+</body>
+</html>

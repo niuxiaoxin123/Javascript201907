@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // JS 是单线程的；每次只能执行一行代码
+    // 在函数体内部调用函数自己本身，每执行一次都会重新调用一次函数；这种函数执行现象就是函数的递归；
+    // 在递归函数中，一般都会有函数终止条件；
+   /* var a = 1;
+    function fn() {
+        a++;
+        if(a>100){
+            return;
+        }
+        fn();
+    }
+    fn();*/
+
+   // 1.求1-100之间能被3整除的和；%
+   /* var t = 0;
+    for(var i=1;i<101;i++){
+        if(i%3===0){
+            t+=i;
+        }
+    }
+    console.log(t);*/
+
+   // 2. 递归求和
+    function sum(num) {
+        // num=100  return   99+96+93+sum(92)...+3+0
+        // num =99  return  99+sum(98)
+        // num =98  return  sum(97)
+        // num =97  return  sum(96)
+        // num=96   return  96+sum(95)
+        // num =95   return  sum(94)
+        // num =94   return  sum(93)
+        // num =93   return  num+sum(92)
+        if(num===1){
+            // 当递归到num=1时，返回0；下面递归停止，不再执行；
+            return;
+        }
+        if(num%3===0){
+            // 如果这个数字是3的倍数；那么把其加起来；
+           return num+sum(num-1)
+        }else{
+            return sum(num-1)
+            // return 是sum(100)的返回值；
+        }
+    }
+    var s = sum(100);
+    console.log(s);
+
+</script>
+</body>
+</html>

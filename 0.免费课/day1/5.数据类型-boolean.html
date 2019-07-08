@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var t = true;
+    // 布尔中只有两个值 ： true和false;
+    // Number: Number(true)
+    // console.log(Number(true));// 1
+    // Number(false) // 0
+
+    // Boolean： 将其他数据类型强制转换成布尔值；所以这个函数的返回值只能由两个，true false;
+    console.log(Boolean(""));
+    console.log(Boolean("123"));
+    console.log(Boolean([]));
+    console.log(Boolean({}));
+    console.log(Boolean(0));
+    // 有且只有5个值转布尔是false:  0  "" NaN  undefined  null ;其他都是true；
+
+    // ! : 取反
+    console.log(!true);// false
+    console.log(!NaN);// true; 先把取反符号后面的值转换成布尔值；然后再取反；
+    !isNaN("[]")//false 先把isNaN 中的字符串调用Number方法转成数字，
+
+   Number("[]")// NaN
+   Number([])  // 0 先把数组调用toString 方法转成"";空字符串转数字是0；
+
+    Number("12.5")// 12.5
+    Number("12.5.6")// NaN
+</script>
+</body>
+</html>

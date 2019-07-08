@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.代码阅读能力；
+    // 2.代码的编写能力
+    // 3.代码的解决bug能力；
+
+    // 数据类型   操作语句    函数
+
+    // 基本数据类型和引用数据类型
+    var num =1;
+    var  str ="";
+    var  t = true;
+    // null  undefined
+    // {}  []   /\d/  Math  new Date() function(){}
+
+
+    // 数据类型-number:数字和NaN
+    // Number  isNaN   parseInt  parseFloat   toFixed
+    // Number([])  0   Number({}) Number(null) Number(undefined) NaN
+    // Number(true)  1  Number("90x")
+
+    // isNaN : 先把后面的值用Number方法转成数字，然后再判断
+    // isNaN("90")// false  isNaN("90px")  true  isNaN(NaN) isNaN(90)
+    // parseInt : 将字符串的数字从左到右提出来
+    parseInt("i12.6px")// NaN
+    // parseFloat : 能识别小数点
+
+    // toFixed : 返回一个字符串
+
+
+    // 字符串
+    // 1. 索引   2.length     3. +-*/
+
+    /*var  a = 89;
+    var str = "89";*/// "a";在字符串中的每一个字符都代表自己本身的意思；
+
+
+    // 布尔
+    // true  false; true--> 1   false -->0
+    // var t = true;
+    // Boolean : 将其他数据类型的值转成布尔值；
+    // 0 NaN "" null undefined
+   /* Boolean([])// true
+    if(Number(":")){
+
+    }
+   */
+    // ! : 先将后面的值转成布尔值，再取反；
+    //![]==false    []==false
+
+    // null  undefined；
+
+
+    // 数据类型-对象
+
+  /*  var obj = {a:1,b:2,index:10};
+    obj.index = 10;
+    obj.a = 100;
+    obj["index"]=10;
+    var r = obj.a;
+    delete obj.b;*/
+
+    // 没有length 属性；
+    // 由键值对组成；:冒号前面是属性名，后面的是属性值；
+    //
+    var  obj = {name:"zfpx",age:10};
+    // in : 检测属性名是否在这个对象中存在;如果存在返回true，不存在返回false；
+    console.log("name" in obj);
+    console.log("name1" in obj);
+
+
+    //
+
+
+</script>
+</body>
+</html>

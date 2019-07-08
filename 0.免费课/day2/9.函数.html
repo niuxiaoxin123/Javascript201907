@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. JS中为什么要有函数
+    // 2. 函数的定义、执行
+    // 3. 函数的形参和实参
+    // 4. 函数的arguments
+    // 5. 函数体中的return
+    // 6. 匿名函数
+
+    // function： 关键字；在JS中有特殊的意义；
+    // function 函数名(){函数体}
+    /*var num1 = 12.893;
+    var num2 = 30.678;
+    var total = Number(num1.toFixed(2))+Number(num2.toFixed(2));
+    console.log(total);
+
+    var num3 = 20.867;
+    var num4 = 23.568;
+    var total1 = Number(num3.toFixed(2))+Number(num4.toFixed(2));
+    console.log(total1);*/
+
+    // 把实现同一个功能的代码放到一个函数体中，当想实现这个功能时，直接执行这个函数就可以；减少了代码的冗余，高内聚，低耦合；这就是函数封装；
+    function sum(m,n) {// 函数的定义；
+        // 函数定义的括号中的参数叫形参；
+        // 函数的实参和形参是一一对应的；
+        var total= Number(m.toFixed(2))+Number(n.toFixed(2));
+        console.log(total);
+    }
+    sum(12.893,30.678);// 函数的执行
+    sum(20.867,23.568);
+    sum(20.24,893);
+
+
+  /*  for(var i=3;i<12;i++){
+        if(i<3){
+            i++
+            break;
+        }
+        if(i>9){
+            i+=2;
+            continue;
+        }
+        i++;
+    }
+    console.log(i);*/
+    // 14
+    
+    for(var i=0;i<10;i++){
+        if(i>5){
+            i+=2;
+            break;
+        }else{
+            i++;
+            continue;
+        }
+        i+=2;
+    }
+    // 8
+
+
+
+
+</script>
+</body>
+</html>

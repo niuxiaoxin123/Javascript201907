@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div>空调</div>
+</div>
+<script>
+    var box= document.getElementById("box");
+    // 在元素对象中有两个属性名，一个叫innerHTML,一个叫innerText;
+    // innerHTML : 获取到当前元素标签中的文本内容
+    // innerHTML : 获取到当前元素标签中的文本内容
+    // 获取到的内容都是字符串；
+    /*console.log(box.innerHTML);
+    console.log(box.innerText);*/
+    // innerHTML 可以识别元素内的标签；innerText是不可以识别标签的；
+    // 如果原有元素中有内容，会直接将原来的进行覆盖
+    box.innerHTML+="<a href='http://www.baidu.com'>百度一下</a>";
+    /*box.innerText="<a href='http://www.baidu.com'>百度一下</a>"*/
+
+    // input文本框  button用于显示true和false；
+
+
+
+</script>
+</body>
+</html>

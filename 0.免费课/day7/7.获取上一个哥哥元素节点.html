@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tab">
+
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <!--你很好-->
+    <div id="third">老三</div>
+</div>
+<script>
+    var third = document.getElementById("third");
+    // console.log(third.previousElementSibling);// undefined
+    // previousSibling :兼容所有的浏览器；
+    function getBrother(curEle) {
+        // 判断是不是IE9以上
+        if("previousElementSibling" in curEle){
+            return curEle.previousElementSibling;
+        }
+        // while  nodeType
+        var pre = curEle.previousSibling;//
+        while(pre){
+            // 不知道循环多少次
+            if(pre.nodeType===1){
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+        return null;
+    }
+    getBrother(third)
+
+
+</script>
+</body>
+</html>

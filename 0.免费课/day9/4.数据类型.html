@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // number  string  boolean   null  undefined
+    // object  []   正则 Math  Date的实例  function
+
+    // number-数据类型
+    // Number("4567890.88") Number([]) 0 Number({}) Number("")
+    // parseInt("12px")
+    // parseFloat
+    // isNaN
+    // toFixed
+   /* var num= 12;
+    12.233.toFixed(2)*/
+
+    // 字符串;
+    // 字符串在进行拼接时，如果当前值不是一个字符串类型的，那么需要转成字符串再连接；
+    /*var num=100
+    var str = "100"+true;/*///"100100,200"
+
+      var  url = "https://www.baidu.com/s?wd=京东&rsv_spt=1&rsv_iqid=0xdd505e6a000043df&issp=1";
+    // {wd:"京东",rsv_spt:1,rsv_iqid:0xdd505e6a000043df,issp:1}
+    // 封装一个处理url地址的方法
+    // 1. 先找出?的索引，然后根据索引截取到问号后面的内容；
+    // 2. 把截取出来的字符串按照&进行分隔成数组的每一项；
+    // 3. 循环数组，把数组的每一项再次用split按照=分隔成数组的每一项；
+    // 4. 得到的每一个数组的第一项就是属性名，第二项就是属性值；把其放入对象中；
+    /*function queryUrl(url) {
+        var index = url.indexOf("?");
+        var newStr = url.substring(index+1);
+        var ary = newStr.split("&");
+        // ary.split is not a function
+        // 处理数组的每一项
+        // console.log(ary);//["wd=京东", "rsv_spt=1", "rsv_iqid=0xdd505e6a000043df", "issp=1"]
+        var obj = {};
+        for(var i=0;i<ary.length;i++){
+            var  a = ary[i].split("=");
+            obj[a[0]] =a[1];// 新增键值对；
+        }
+        return obj;
+    }
+    console.log(queryUrl(url));*/
+
+    // 布尔
+    // true --> 1 false-->0
+    // 0  ""  NaN null  undefined 转布尔是false；
+    if("3px"){
+        // Boolean("3px")
+    }
+    if(Number("3px")){
+
+    }
+    var obj = {};
+    if(obj.name){}
+
+    // ! : 先把后面的值转出布尔值；然后再取反；Boolean
+    // !isNaN({})
+    // !isNaN([])==[]
+
+    // null  undefined
+    // 1.id获取元素
+    // 2.哥哥元素节点
+    // 3.获取行间属性
+
+    // undefined
+    // 1. 变量只是声明，没有赋值，那么默认值是undefined、、
+    // 2. 对象属性名不存在，获取值是undefined
+    // 3. 函数形参没有对应的实参，那么形参的值就是undefined
+    // 4. 函数中return没有return出内容，函数的返回值就是undefined；
+
+    var  ary = [10,2,234,5,9];
+    console.log(ary[10]);// undefined
+
+
+</script>
+</body>
+</html>

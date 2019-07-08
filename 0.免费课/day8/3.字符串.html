@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数据类型   for  if   function；
+    // number  string  boolean  null  undefined
+    // {}  []  正则  Math  Date的实例  函数
+    // 字符串： 在JS中，被单引号或双引号包起来的内容
+    // 1.索引
+    //var str = "zhufeng";
+    // 2. length
+    // 3. 字符串的运算
+    // + - * /;
+    // - *  / 先把字符串转成数字，然后运算；
+    // + : 字符串的拼接
+    //console.log(str + 1234);
+    //var name = "培训";
+    // 单双引不能连着用；不能在双引号直接使用双引号
+    //"<img src=''>"+name+"</img>"
+
+    // 1.toUpperCase : 小写转大写；
+    /*var str="zhufeng";
+    console.log(str.toUpperCase());
+    console.log(str);*/
+
+    // 2.  toLowerCase : 把大写字母转成小写的字母
+    /*var str = "zhuFENG";
+    console.log(str.toLowerCase());*/
+    // var str = "zhuFENG"
+    // 3. charAt: 通过索引获取对应的字符；
+    // console.log(str.charAt(3));
+
+    // 4. charCodeAt : 获取当前字符对应uniCode编码值；
+    //console.log(str.charCodeAt(0));
+    //5. substr(m,n) : 从索引m开始，截取n个字符
+    //console.log(str.substr(2, 3));
+    // 6. substring : 从索引m开始，截取到索引n,但不包含n;
+    // 如果n小于0；那么从索引m开始向前截取，但不包含m;
+    // 如果只有一个参数，那么是从索引m开始，截取到末尾
+    //console.log(str.substring(3,-1));
+    // 7.slice : slice支持参数是负数；
+    /*console.log(str.slice(1, -1));
+    console.log(str.slice());
+    console.log(str.slice(1));*/
+    // 8.indexOf: 检测字符在字符串中出现的索引位置；
+    /*var str="malaoshi";
+    console.log(str.indexOf("o"));*/
+    // 9. lastIndexOf: 检测字符在字符串中最后一次出现的索引位置
+    // 如果字符不存在，返回-1；
+    // 10. concat: 字符串拼接；
+    /*var  str1 = "zhufeng";
+    var str2 = "peixun";
+    var str3 = "a";
+    console.log(str1.concat(str2,str3));*/
+   /* var  str1 = "zhufeng";
+    var str2 = "peixun";
+    var str3 = "a";
+    console.log(str1.concat(str2).concat(str3));
+    var  ary = [12,3,4,5];
+     ary.pop().pop();*/
+    // 11. split : 将字符串按照特定的字符分隔成数组的每一项；
+    //var  str1 = "2019/07/03 12:45:30";
+    /*var ary = str1.split(" ");//["2019/07/03","12:45:30"]
+    var  a = ary[0].split("/")// ["2019","07","03"]
+    var b  = ary[1].split(":")
+    console.log(a.concat(b));*/
+    /*var  str = "zhufeng";
+    console.log(str.split(""));*/
+    var  str = "zhufeng ";
+    // 12. replace(old,new) 字符串替换
+    // console.log(str.replace("feng", "fengpeixun"));
+    // 13. trim: 去开头和结束空格
+    // trimLeft ： 去左边的空格
+    // trimRight : 去右边的空格
+</script>
+</body>
+</html>

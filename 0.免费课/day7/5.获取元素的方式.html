@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a">
+    <div class="box"></div>
+</div>
+<div id="b">
+    <div class="box"></div>
+</div>
+<input type="text" name="a">
+<script>
+    // JS : ECMAScript :一些核心规范；
+    //    DOM : 文档对象模型；提供了操作DOM一些方法或者属性
+    //    BOM : 浏览器对象模型
+    // 1.获取DOM元素的方法；
+    // DOM元素和html中的标签是一一对应的；可以通过操作改变JS中的DOM元素来改变HTML的标签的样式；
+    // DOM元素在JS中都是一个对象；
+    //console.dir(oBox);
+
+    // 1. document.getElementById :
+    // document : 上下文
+    // get : 获取得到；
+    // element :元素
+    // By : 通过
+    // id: id名
+
+    /*var oBox= document.getElementById("box");
+    var  first = oBox.getElementsByTagName("first");*/
+    //console.log(box);
+
+    // 2.document.getElementsByClassName: 是一个元素集合
+    // 在IE8以下是不兼容的；
+    // console.log(document.getElementsByClassName("box"));
+    // 3. document.getElementsByTagName:通过标签名获取元素
+    //var a = document.getElementsByTagName('div')
+   // 4. document.getElementsByName();一般用于获取表单元素
+    // 在IE9及以下，能把id名和name名字相同，都可以获取到；
+    //console.log(document.getElementsByName("a"));
+    // 5.document.body : 获取body
+    // 6. document.documentElement:获取html;
+    // console.log(document.getElementsByTagName("body"));
+
+    // 7.document.querySelector()
+    // id名+ #  class  + .
+    /*console.log(document.querySelector("#a"));
+    console.log(document.querySelector(".box"));*/
+    // 8.document.querySelectorAll(); 复数集合；
+    // 子代选择器；
+    //console.log(document.querySelectorAll("#a>div"));
+</script>
+</body>
+</html>

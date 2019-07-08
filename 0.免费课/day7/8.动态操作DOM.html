@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #tab{
+            width:100px;
+        }
+    </style>
+</head>
+<body>
+<div id="tab" zfpx="珠峰培训" class="box book" style="width:100px" width="100px">
+    <div id="first">1</div>
+    <div>2</div>
+    <div>3</div>
+</div>
+<button id="btn">删除</button>
+<script>
+    var tab = document.getElementById("tab");
+    var btn = document.getElementById("btn");
+    var first = document.getElementById("first");
+    console.log(tab.getAttribute("width"));
+    console.log(tab.style.width);
+    /*var i=1;
+    btn.onclick = function () {
+        var a  = document.createElement("p");
+        a.innerHTML= i++;
+        tab.appendChild(a)
+    }*/
+   /* btn.onclick = function () {
+        tab.removeChild(first)
+    }*/
+    // 动态操作DOM的方法；
+    // 1. 动态创建元素document.createElement("标签名")
+    // 2. appendChild: 向容器的末尾添加一个子元素
+    // 父.appendChild(子)
+    // 3. removeChild: 删除容器中的子节点；
+    // 父节点.removeChild(子节点)
+    // 4. replaceChild :替换子节点
+    // 父.replaceChild(newChild,oldChild)
+    /*var a  = document.createElement("p");
+    tab.replaceChild(a,first);*/
+    // 5. insertBefore :在父节点中的某个子节点的前面插入新元素；
+    // 父.insertBefore(newChild,oldChild)
+    /*var a  = document.createElement("p");
+    tab.insertBefore(a,first)*/
+    // 6.getAttribute : 获取行间属性；如果行间属性不存在，那么得到结果是null;
+    //  setAttribute : 设置行间属性
+    //console.log(tab.getAttribute("zf"));
+    //  removeAttribute: 删除行间属性
+     //tab.removeAttribute("zfpx")
+
+    // 7.classList
+    //tab.classList.add("box")
+    //tab.classList.remove("box")
+    // add 新增  remove  删除   replace(old,new) 替换
+    // tab.classList.replace("box","a")
+
+
+    // 1.作业
+    // 1.输入框输入内容，当失去鼠标焦点时，input框下新增一条li;把input的内容放到li中，并清空input框；
+    // 2. 每一个li上有一个button删除按钮；点击删除按钮，删除整个li;
+
+</script>
+</body>
+</html>

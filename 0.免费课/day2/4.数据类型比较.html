@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // = ： 赋值
+    // == ： 相对比较
+    // === ： 绝对比较
+
+    // == ： 相对比较；返回一个布尔值;如果数据类型左右两边不同，那么会进行默认的转换，再进行比较；
+    // 数据类型之间比较的规律；
+    // 数字==字符串 ：先把字符串转成number，然后再和number进行比较
+    // 数字==布尔 ：先把布尔值转换成数字，然后再进行比较 true-->1 false-->0
+    // 数字==对象({}、[]): 对象先调用toString转成字符串，然后再转成数字，然后和数字进行比较；所有的对象转字符串都是"[object Object]"
+    // 对象==对象 ：比较的是空间地址
+    // 对象==字符串 ：把对象转成字符串，然后再和字符串直接比较；
+    // 对象==布尔：对象先调用toString 转成字符串，然后再转成数字；布尔直接转成数字，进行比较
+    // 在JS中，只要遇到{}、[]，会马上开辟一个新的空间地址；
+    /*console.log(1 == "1px");
+    console.log(1 == true);
+    console.log(1=={a:1})
+    console.log(({}).toString())//"[object Object]"
+    console.log(0 == null);// false 是一个空对象指针
+    console.log(0 == undefined);// false
+    console.log(null=={})*/// false
+    // console.log(1 == [1]);
+    /*var obj = obj1= {}
+    console.log(obj == obj1);
+    console.log([] == []);*/
+    // console.log({}=="[object Object]")
+    // console.log({}==true)
+    /*console.log(null == undefined);
+    console.log(NaN == NaN);*/// NaN 和自己不相等；
+
+    // 对象： 都是先转字符串，然后再数字；
+    /*{}=={} false
+    {}==[] false
+    {}=="" false
+    []==false  true*/
+
+    // === : 绝对比较；必须保证一模一样的才返回true
+    console.log(1 == "1");
+    console.log(1 === "1");// false
+    console.log(1 === 1);// false
+    console.log([] === []);
+    console.log(null === undefined);
+
+
+</script>
+</body>
+</html>

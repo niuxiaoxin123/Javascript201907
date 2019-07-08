@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  undefined
+    // 1. 获取对象的属性名对应的属性值，如果属性名不存在，属性值就是undefined；
+    // 2. var如果只是声明变量，不赋值，那么默认存储值是undefined；
+    // 3. 如果函数有形参，没有对应的实参，那么函数的形参值默认就是undefined
+
+    // 函数封装：可以接受不同的值，来处理不同的值；
+    function sum(m=19,n=2) {// 函数定义处小括号的参数叫形参
+        // m,n是函数sum的形参
+        // undefined和任何数字运算都是NaN；
+        // console.log(m+n);// NaN
+        // 形参可以赋默认值，如果有实参，那么实参会把默认值给覆盖掉；
+        var  total = m+n;
+        console.log(total)
+    }
+    /*sum(1,2);
+    sum(200,400);*/
+    sum(undefined,10)
+    // 函数执行的小括号中传递的是实参；
+</script>
+</body>
+</html>

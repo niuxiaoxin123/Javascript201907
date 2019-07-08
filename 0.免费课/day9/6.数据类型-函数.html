@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数分为定义和执行；
+    // fn :
+  /*  var  obj = {};
+    function fn() {
+        obj.a=100;
+        for(var i=0;i<100;i++){
+            if(isNaN(i)){
+            }
+        }
+    }
+    console.log(obj);
+    fn();
+    fn();*/
+
+    // 函数执行：
+    // 1. 函数名()
+    // 2. 事件
+    //  box.onclick = function(){}
+    // 3. 回调函数；
+    // setTimeout(function(){},1000)
+    // ary.sort(function(a,b){return a-b})
+    // 4. 自执行函数
+    // (function(){})();
+
+    // 形参和实参
+    /*function countDown(targetTime,ele) {
+        // 函数定义的位置就是形参
+        //  函数的形参可以赋默认值
+
+    }
+    countDown("2019/07/05 20:00:00",box);
+    countDown("2019/07/05 22:00:00",box1);*/
+    // 函数封装：
+/*    var num1 = 10;
+    var num2 = 20
+
+
+    var num3 = 100;
+    var num4 =200;
+    function sum(x,y) {
+        console.log(x + y);
+    }
+    sum(10,20)
+    sum(12,34,5,66)*/
+
+
+   // arguments : 函数的实参集合
+/*  function fn(x,y,z) {
+      //console.log(arguments);// 实参集合
+      // arguments[0]
+      /!*console.log(arguments.callee===fn);
+      fn()*!/
+      //arguments.callee()
+      x=2;
+      console.log(arguments);
+  }
+  fn(12,3,4567,7,8)*/
+
+// return
+
+    // 1.把函数体中的值返回函数外面;这个值就是函数的返回值；
+    // 2.中止函数体中下面的代码不再执行；
+   /* function addZero(val) {
+       return val<10?"0"+6:val;
+    }
+    addZero(6);
+    var k = "3px"+3?"1":"0";
+    console.log(k);//*/
+
+
+   function fn() {
+       if(true==0){
+           return;
+       }
+       var num=10;
+   }
+   fn();
+
+   /*function fn() {
+       for(var i=0;i<19;i++){
+           console.log(i)
+           if(i>7){
+               return;
+           }
+       }
+       var u = 1;
+   }*/
+
+ /*  function fn(a) {
+       for(var i=0;i<a;i++){
+           if(3<i<7){
+               continue;
+           }
+           if(i>8){
+               return i;
+           }
+           console.log(i);
+           // 没有输出；
+       }
+       console.log(i);// 10
+   }
+    console.log(fn(10));*/// undefined
+
+    for(var i=0;i<10;i++){
+
+    }
+
+    // 自执行函数: 定义和执行是在一起完成的
+    (function () {
+
+    })();
+
+
+
+</script>
+</body>
+</html>

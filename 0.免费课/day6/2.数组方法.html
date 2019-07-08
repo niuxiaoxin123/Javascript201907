@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数组： 对象数据类型的；是工作最常见的一种数据类型；后台在和前端进行数据交互时，经常以数组的数据格式返给前端；
+    // 数组给我们提供了好多内置的方法；供咱们操作或者处理数组；
+    // 数组的方法 ： pop  push  shift  unshift  slice
+    // splice  sort  reverse  indexOf  lastIndexOf  concat join   map   forEach  toString
+    // 后面的课程： filter  every  find   reduce
+    // var  ary = [12,3,4,6,3,7,9,10];
+    // 1. pop : 删除数组最后一项
+    // ary.pop();
+    // 2. push : 向数组的末尾添加一项或多项
+    // 3. shift : 删除数组的第一项
+    // 4. unshift : 向数组的开头新增一项或多项
+    // 5. slice : 从数组中截取
+    // slice(m,n): 从索引m开始截取到索引n，不包含n
+      // m>n  : []
+      // m>-n : 先让length+(-n);然后再进行截取
+    // slice(m) : 从缩影m开始截取到末尾
+    // slice() : 复制一份一样的数组
+    // console.log(ary.slice() === ary);
+
+    // var  ary = [15,3,9,60,"a",3,77,5,83];
+    // 6.splice
+   /* console.log(ary.splice(2, 3));
+    console.log(ary);*/
+    //ary.splice(ary.length-1,1)
+    //ary.length--;
+    // ary.splice(2,0,6,8)
+    /*ary.splice(1,2)
+    console.log(ary);*/
+
+    // 7. sort : 默认只能排相同位数的数组；
+    /*var  a = ary.sort(function (a,b) {
+        // a=3  b=15
+        console.log(a,b);
+        // 根据这个函数的返回值的正负判断是否进行位置的交换；
+        return a-b;// 12
+    });
+    console.log(ary);
+    console.log(a);*/
+
+    // var  ary = [15,3,9,60,3,77,5,83];
+    /*console.log(ary.reverse());
+     console.log(ary);*/
+    //var  ary = [15,3,9,60,3,77,5,83];
+    // indexOf :
+    /*console.log(ary.indexOf(3));
+    console.log(ary);
+    console.log(ary.lastIndexOf(30));*/
+
+    // 11. concat :数组的连接'
+    //var t = ary.concat([12, 2, 3, 56])
+   // console.log(t);
+    //console.log(ary.concat([12, 2, 3, 56]));
+    /*console.log(ary.concat(100,99));
+    console.log(ary.concat());*/
+    //console.log(ary);
+ /*   var  ary = [15,3,9,60,3,77,5,83];
+    // console.log(ary.join(""));
+   var a = ary.map(function (item,index,all) {
+        //console.log(item); 数组的每一项
+        //console.log(index); 数组成员的索引
+        //console.log(all===ary);//true代表原数组；
+        // 数组成员有几项，那么这个回调函数执行几次；
+        //return item+=1;
+        //all[index]=item+1;
+        return 100;
+    });
+    console.log(a);
+    console.log(ary);*/
+    /*var  ary = [15,3,9,60,3,77,5,83];
+    var  a = ary.forEach(function (item,index,all) {
+        //console.log(item);
+        //console.log(index);
+        //console.log(all==ary);
+        return 100
+    })
+    console.log(a);*/
+    // 15.toString
+    var ary = [1,2,3]
+    console.log(ary.toString());
+    console.log(ary);
+
+
+    var ary = ["光浩","君成","庆红"];
+    // [<li>光浩</li>]
+
+   var ary = [100,4,67,6]
+
+    var  tt = ary.map(function (item,index,all) {
+        return 1;
+    })
+    console.log(tt);//[1,1,1,1]
+
+
+</script>
+</body>
+</html>

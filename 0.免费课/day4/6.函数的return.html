@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 函数的形参和实参
+    // arguments : 实参集合；类数组但不是一个数组；可以循环
+    /*console.log(null + 10);
+    console.log(undefined + 10);/*/// NaN
+
+    //4. 如果函数体中没有return，或者return后面没有跟着内容，那么函数默认的返回值就是undefined；
+
+    function sum() {
+        var total = null;// 19  108
+        // arguments:[19,89,76,56,36,89,27]
+        for(var i=0;i<arguments.length;i++){
+            // 每循环一次，取到arguments中的每一项
+            //  第一轮：i=0  arguments[0] 19   total+=19
+            //  第二轮：i=1  arguments[1] 89   total+=89
+            //  第二轮：i=2  arguments[2] 76   total+=76
+            total+=arguments[i];
+            return 1;
+        }
+        console.log(i);
+        //return 1;
+        /*console.log(total);
+        return 100;*/
+        // return：1.函数的出口；return后面的值也叫函数的返回值；也是函数的运行结果；
+        // 2. return可以终止函数体中的代码的运行，return下面的代码都不再执行了；
+        // return total；仅仅是把total这个变量存储的值返回到函数体外面，并不是把total返回到函数体外；;
+        //console.log(total);// 仅仅用于在控制台输出这个值；作用就是调试代码；
+        //return 392;return 只能出现在函数体中
+
+    }
+    // 需要在函数的外面使用求和的结果；
+    var t = sum(19, 89, 76, 56, 36, 89, 27)
+    console.log(t);
+
+    // sum(19,89,76,56,36,89,27) 代表了函数的返回值；也是函数体中return后面的值；
+    // 在函数体中定义的变量，函数执行形成私有作用域会对其进行保护；函数体外不可以使用该变量；
+    //console.log(t);
+
+
+
+</script>
+</body>
+</html>

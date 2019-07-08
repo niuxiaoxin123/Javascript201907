@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
++
+<input type="text">
+<script>
+    // 1. 字符串的方法
+    // 1. toUpperCase
+    // 2. toLowerCase
+    // 3. charAt
+    // charCodeAt   substr   substring   slice  indexOf  lastIndexOf  concat  split  replace  trim
+    /*var  str = "zhufeng";
+    console.log(str.slice(1, -14));*/
+
+    // 随机验证码
+    // Math :
+    // Math.abs  Math.max  Math.min  Math.floor Math.ceil Math.round
+    // Math.random()  Math.round(Math.random()*(m-n)+n)  Math.pow  Math.sqrt
+
+    // 时间Date
+    // new Date(): 当前系统时间
+    // 1. getFullYear
+    // 2. getMonth
+    // 3. getDate
+    // 4. getDay
+    // 5. getHours
+    // 6. getMinutes
+    // 7. getSeconds
+    // 8. getMilliseconds
+    // 9. getTime : 毫秒差
+    // 10. Date.now() : 获取当前时刻距离19700101的毫秒差
+
+    // 定时器
+    //setTimeout  setInterval
+    //定时器最小的识别时间；
+    //定时器传参
+    //定时器的返回值：代表当前定时器在页面中是第几个
+    //清除定时器： clearTimeout  clearInterval
+
+    var  timer = setInterval(function () {
+        console.log(200);
+    },500)
+    setTimeout(function () {
+        clearInterval(timer)
+    },5000)
+
+    /*for(var i=0;i<10000;i++){
+         // for循环需要2000ms;
+    }*/
+</script>
+</body>
+</html>

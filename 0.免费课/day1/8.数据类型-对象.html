@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = 100;
+    var  obj = {a:1,b:123,gghs:{}};// 十六进制的空间地址
+    var  obj1= {a:1,b:123,gghs:{}};
+    console.log(obj);
+    // 对象： 对象是由大括号包起来，里面由键值对组成；键值对由逗号隔开；键值对由属性名和属性值组成，冒号前面是属性名，冒号后面是属性值；
+    // 属性值一定是咱们学过的数据类型
+    // 属性名默认就是一个字符串类型的；
+
+    // 解析JS时，会形成两种虚拟的内存；一个栈内存，一个堆内存；
+    // 引用数据类型的值都放到了堆内存中；基本数据类型值都存储到了栈内存中；
+    // 1.对象的定义：
+    // 1. 开辟一个堆内存的空间地址；
+    // 2. 把键值对存储到这个空间中
+    // 3. 把对象的空间地址赋值给对象名；
+    // console.log(obj);// 当浏览器识别出这是一个空间地址，马上根据这个空间地址找到对应的堆内存，把里面东西一起输出；
+    var  str = "123";
+    var  obj = {a:1,b:123,gghs:{},50:66,1:100};
+    var a = [];
+    //2. 获取；放在等号右边是获取
+       // 1) 对象名.属性名
+       // 2) 对象名["属性名"]
+    console.log(obj.a);
+    console.log(obj.gghs);
+    console.log(obj["1"]);
+    console.log(obj["a"]);
+    //var w = obj.a;
+    Number(obj.a);
+    if(obj.a){};
+    // 2.把obj中属性名为a的属性值修改成“w”
+    // 等号左边是修改
+    obj.a="v";
+    obj["a"]="v";
+    // 3.新增键值对；
+    obj.c=100;
+    obj["c"]=100;
+    console.log(obj);
+    // 4. 删除
+    delete obj.a;
+    console.log(obj);
+
+    // 增  删   改  查；
+    // 函数视频 看一遍；
+
+    var e = [1,2,3];
+    obj[[123]]=100;
+    console.log(obj);
+
+
+</script>
+</body>
+</html>

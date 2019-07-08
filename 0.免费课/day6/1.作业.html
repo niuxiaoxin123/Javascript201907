@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="form">
+<button id="show"></button>
+<script>
+    // onkeydown  onkeyup    onblur: 失去焦点
+    var form = document.getElementById("form");
+    /*form.onkeydown = function () {
+        // this就代表了被绑定的那个元素
+        console.log(this.value);
+    }
+    form.onkeyup = function () {
+        // this就代表了被绑定的那个元素
+        console.log(this.value);
+    }*/
+    /*form.onblur = function () {
+        console.log(this.value);
+    }*/
+    var form = document.getElementById("form");
+    var show = document.getElementById("show");
+    form.onkeyup = function () {
+        if(this.value==="马老师"){
+            show.innerHTML = "true";
+        }
+        if(this.value==="马老师，真的很帅吗"){
+            show.innerHTML="真的";
+        }
+    }
+
+
+</script>
+</body>
+</html>

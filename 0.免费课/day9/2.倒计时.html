@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #time{
+            width:300px;
+            height:80px;
+            border: 3px dashed  greenyellow;
+            border-radius: 5px;
+            margin: 30px auto;
+            line-height: 80px;
+            text-align: center;
+            font-size: 40px;
+            color:greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div id="time">12:00:00</div>
+<script>
+    // 需求===>分析(分析知识点)===>思路===> 代码
+    // innerHTML 或 innerText
+    // 定时器setInterval;
+    //1.操作谁，就要获取谁
+    //2.需要一个结束的时间
+    //3.计算当前时间距离结束时间有多少个小时，多少个分钟，多少个秒；
+    //4.利用定时器让其每秒页面更新一次
+    // 1. 第一种方法
+   /* var time = document.getElementById("time");
+    var  targetTime = new Date("2019/07/05 17:00:00")
+    function countDown() {
+        var hours = targetTime.getHours()-new Date().getHours()-1;
+        var minutes = 60-new Date().getMinutes()-1;
+        var seconds = 60-new Date().getSeconds()-1;
+        time.innerHTML=addZero(hours)+":"+addZero(minutes)+":"+addZero(seconds);
+    }
+    countDown();
+    setInterval(countDown,1000);
+    // 如果得到的val小于10，那么在前面补0；
+    function addZero(val) {
+        return val<10?"0"+val:val;
+    }*/
+
+   // 第二种方法
+    var  time = document.getElementById("time");
+    var  targetTime = new Date("2019/07/05 11:23:00");
+    function countDown() {
+        var currentTime = new Date();
+        var difTime = targetTime-currentTime;// 计算出两个时间的毫秒差
+        // 计算这个时间差中有多少个小时，多少个分钟，多少个秒
+        if(difTime<=0){
+            clearInterval(t);
+            return;
+        }
+       var hours = Math.floor(difTime/(1000*60*60));
+       var minutes =Math.floor((difTime-hours*1000*60*60)/(1000*60));
+       var seconds = Math.floor((difTime-hours*1000*60*60-minutes*1000*60)/1000)
+       time.innerHTML = addZero(hours)+":"+addZero(minutes)+":"+addZero(seconds);
+    }
+    countDown();
+    var t = setInterval(countDown,1000);
+    function addZero(val) {
+        return val<10?"0"+val:val;
+    }
+
+
+</script>
+</body>
+</html>

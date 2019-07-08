@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 数据类型检测：检测当前值是属于哪种数据类型；
+    var str = "aaa*^%$"
+    var num = 100;
+    var bol = true;
+    var n= null;
+    var u = undefined;
+    var obj = {a:1};
+    var a = [1,2];
+    function fn() {}
+    // 1. typeof
+    // 2. instanceOf : 检测实例是否属于某个类
+    // 3. constructor ：通过实例的构造函数进行判断
+    // 4. Object.prototype.toString.call()
+   // typeof  值；
+    // 1.返回一个字符串，字符串中代表了当前值对应的数据类型
+    // 2.如果检测null ,则返回"object";
+    // 3.typeof 不能区分对象数据类型中具体的数据类型；但是可以检测函数；
+    console.log(typeof str);// "string"
+    console.log(typeof num);// "number"
+    console.log(typeof bol);// "boolean"
+    console.log(typeof n);  // "object"
+    console.log(typeof u);  // "undefined"
+    console.log(typeof obj);// "object"
+    console.log(typeof a);  // "object"
+    console.log(typeof fn); // "function"
+
+
+
+
+</script>
+</body>
+</html>

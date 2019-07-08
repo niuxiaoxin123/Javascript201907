@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a" b="c">
+    <p></p>
+    <div>
+        <p></p>
+    </div>
+</div>
+
+<script>
+    // 数组的插入排序  快速排序
+    // DOM
+    // 1. 获取元素  8种;
+    // 1.document.getElementById
+    // 2.document.getElementsByClassName
+    // 3.document.getElementsByTagName
+    // 4. document.getElementsByName
+    // 5. document.body
+    // 6. document.documentElement
+    // 7.document.querySelector("div"){}
+    // 8.document.querySelectorAll()
+    // >  子代  空格  ：后代；
+    /*var p=document.querySelectorAll(".a p");// [{}]元素对象
+    console.log(p);*/
+
+    // 节点类型和节点属
+    //  节点类型       nodeType     nodeName    nodeValue
+    // 元素节点            1        大写的标签名     null
+    // 文本节点            3          #text       文本内容
+    // 注释节点            8          #comment     注释内容
+    // document          9          #document     null
+
+
+    // 节点属性
+    // 1. childNodes : 所有子节点
+    // 2. children : 所有子元素节点
+    // 3. parentNode : 父亲元素节点
+    // 4. previousSibling : 上一个哥哥节点
+    //    previousElementSibling : 上一个哥哥元素节点
+    // 5. nextSibling : 下一个弟弟节点
+    //    nextElementSibling  : 下一个弟弟元素节点
+    // 6.firstChild : 第一个子节点
+    //    firstElementChild : 第一个子元素节点
+    // 7. lastChild : 最后一个子节点
+    //    lastElementChild : 最后一个子元素节点
+
+    // 动态操作DOM
+    // 0.document.createElement
+    //1 appendChild
+    //2. removeChild
+    //3. replaceChild(new,old)
+    //4. insertBefore(new,old)
+    //5.getAttribute: 获取行内属性的属性值
+    // setAttribute
+    // removeAttribute
+    // 6.classList.add
+    // classList.remove
+    // classList.replace;
+    // 7.cloneNode : 克隆 ; 如果不传参数，默认是false，那么则只克隆当前元素自己,是浅克隆；
+    // 如果是true；深度克隆，将其元素以及子节点都克隆一份；
+
+    /*var  a = document.getElementById("a");
+    var b = a.cloneNode(true);
+    document.body.appendChild(b);*/
+    //var  a = document.getElementById("a");
+    /*a.index = 100;
+    console.log(a.getAttribute("index"));*/
+    //console.log(a.b);
+    var  a = document.getElementById("a");
+    a.uuu = 100;
+    console.log(a.getAttribute("uuu"));
+</script>
+</body>
+</html>

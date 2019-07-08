@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 冒泡排序  插入排序   快速排序
+    var  ary =[6,3,8,43,88,56,27];
+    var newAry = [];//[3,6]
+    newAry.push(ary[0]);//[3,6,8,8]
+    for(var i=1;i<ary.length;i++){
+        var cur = ary[i];// 3 8  43
+        for(var j=0;j<newAry.length;j++){
+            // j=0  [3,6]
+            // j=1
+            // j=2
+            if(cur>=newAry[j]){
+                // 当前项比所有的值都大时，j是newAry.length-1；需要把该项值放到数组的最后面；
+                if(j===newAry.length-1){
+                    newAry.push(cur);
+                    break;
+                }
+            }else{
+                // 从前向后比较，当发现获取的这一项比数组中的值小的时候，才把当前项放进来；
+                newAry.splice(j,0,cur);
+                break;
+            }
+        }
+    }
+
+    console.log(newAry);
+
+</script>
+</body>
+</html>

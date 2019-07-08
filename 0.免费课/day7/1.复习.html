@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     // 背： 知识点多、散
+     // 1. 数组
+     var ary = [12,3,456,6];
+     // 1. length  2.索引
+     // 数组的方法
+     // 1. pop : 删除数组的最后一项
+     // 2. push :向数组末尾新增一项
+     // 3. shift: 删除第一项
+     // 4. unshift :数组开头新增一项
+     // 5. slice : 截取
+     // slice()
+     // slice(m)
+     // slice(m,n)
+     // 6.splice
+     // splice(m,n)
+     // splice(m)
+     // splice(m,0,n)
+     // 7.sort : 排序
+     // ary.sort(function(a,b){return a-b})
+     // ary.sort(function(a,b){return b-a})
+     // 8.reverse : 将数组进行颠倒
+     // 9.indexOf : 检测数组成员在数组中第一次出现的索引位置；不存在返回-1；
+     // indexOf(m,n): 从索引n开始检测，m第一次出现的索引位置
+     // 10.lastIndexOf : 检测数组成员最后一次出现的索引位置
+     // 11. concat : 数组的拼接
+     // 12. join : 按照特定的字符连接成一个字符串
+     // 13. map ： 映射、循环
+     // 14.forEach : 循环
+     // 15.toString: 转字符串
+    /* var ary = [12,3,456,6,12,3,6,12];
+     console.log(ary.indexOf(12, 3));*/
+     /*parseInt("3px")
+     Number();
+     isNaN()
+     Boolean()*/
+
+  /*   var ary = [12,3,456,6,12,3,6,12];
+     ary.map(function (item,index,all) {
+          all[index]=item+1;
+     })
+     console.log(ary);*/
+
+    // 去重：
+    // 1. 循环原有数组，把每一项放入新的数组中，放入之前先用indexOf进行判断；检查该项是否在新数组中出现过
+    // 2. 把数组中的每一项循环放入对象中，对象属性名不能重复，再次循环对象，把对象的属性名的属性值放入新数组中
+    // 3. 对象的属性名不能重复；直接操作原有数组；循环原有数组，放入对象中，在放入对象之前，判断该项是否已经存在，如果存在，将数组的最后一项覆盖当前项，删除最后一项，i--，重新对当前项进行判断；
+
+    // 冒泡排序
+    // 利用了相邻两项进行比较，如果前面一项比后面一项大，则让这两个交换位置
+     var ary = [12,3,4,56,32,45,678,6,58,88];
+     // 1.
+     // 2.
+     // 3.
+     // 4.
+      var  ary = [9,8,7,6,5,1]
+      for(var j=0;j<ary.length-1;j++){
+          var  a=true;
+          for(var i=0;i<ary.length-1-j;i++){
+              if(ary[i]>ary[i+1]){
+                  var temp = ary[i];
+                  ary[i]=ary[i+1];
+                  ary[i+1]=temp;
+                  a=false;
+              }
+          }
+          if(a){
+              break;
+          }
+      }
+     console.log(ary);
+
+
+</script>
+</body>
+</html>

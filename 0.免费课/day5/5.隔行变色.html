@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #list{
+            list-style: none;
+            width:600px;
+            margin:50px auto;
+
+        }
+        #list li{
+            text-align: center;
+            width: 100%;
+            height:50px;
+            line-height: 50px;
+            font-size: 18px;
+            border: 1px dashed red;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<ul id="list">
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>水幕电影项目疑层层转包 官方:已成立专项调查组</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+    <li>央视独家视频：中美元首举行会晤</li>
+</ul>
+
+<div id="box">点一点</div>
+<script>
+    /*var box = document.getElementById("box");
+    box.onclick = function () {
+        console.log(this);// this 和元素的空间地址是一样的；this就代指了点击的那个元素；
+        // 元素是对象，this也是对象
+    }*/
+    // 隔行变色
+    // 奇数行的背景颜色是红色，偶数行的背景颜色是黄色；
+    //1. 要操作谁，就要先获取谁；
+    //2. 通过循环所有的li;如果当前li是奇数则增加class的名字bg;偶数的增加bg1;
+    //3. 给每一个li绑定onmouseover事件（鼠标划上）；当鼠标滑到这个li上时，让当前li的背景颜色编程蓝色；
+   /* var oLis = document.getElementsByTagName("li");
+        for(var i=0;i<oLis.length;i++){
+            if(i%2===0){ // i 0  2  4  6
+                oLis[i].style.background="red";
+            }else{  //// i 1  3  5  7
+                oLis[i].style.background="yellow";
+            }
+            // 进行事件循环绑定；这里面可以得到每一个li；
+            // 当鼠标划上这个元素时，触发这个函数执行；
+            // oLis[i].style.background : 只能获取行内设置的样式；如果是css中的样式，这是获取不到的；
+           // 给每一个li新增一个属性名是oldBg;存储了当前li的原有的背景颜色；
+            oLis[i].oldBg = oLis[i].style.background;
+            // oLis[0].oldBg = "red"
+            // oLis[1].oldBg = "yello"
+            //....
+            oLis[i].onmouseover=function () {
+                // this : 代表划上的这个元素
+                this.style.background="blue";
+            }
+            // 鼠标滑出
+            oLis[i].onmouseout =function () {
+                // 获取到当前鼠标滑出li的oldBg属性名所存储的属性值；并且赋值给每一个li的style的background属性；
+                this.style.background=this.oldBg;
+            }
+        }*/
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

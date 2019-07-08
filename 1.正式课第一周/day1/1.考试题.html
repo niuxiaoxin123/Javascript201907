@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="code"></div>
+<script>
+    // 基本数据类型：number  string  boolean  null  undefined  symbol
+    // 和引用数据类型: 对象  数组  正则 Math  Date的实例  function...
+    /*var num =1;
+    var str = "124";
+    var r = true;*/
+    //1. 开辟一个堆内存
+    //2. 把对象中的键值对存储到这个堆内存中
+    //3. 把空间地址赋值给对象名；
+    /*var  obj = {
+        y:10,
+        t:(function (num) {
+            return 1
+        })(100)// Cannot read property 'y' of undefined
+    }
+    console.log(obj.t);*/
+
+    /* var  obj = {
+        y:10,
+        t:function (num) {
+            return num;
+        }// Cannot read property 'y' of undefined
+    }*/
+    /*var  obj = {
+        y:10,
+        t:(function (num) {
+            return function () {
+                return "zhufeng";
+            };
+        })()
+    }
+    console.log(obj.t);*/// 代表是自执行函数返回的小函数；
+    // if else  for   switch  while   function  for in
+    /*if([]==[]){
+        var  t = 100;
+    }*/
+   /* var  a = undefined;
+    console.log(a.y);
+    var num = 1;
+    num();*/// num is not  a function
+    // 过程；
+
+
+    // 基本数据类型和引用数据类型；
+    // 基本数据类型是值类型，引用数据类型是空间地址类型；
+    // 值类型会直接存储到栈内存中,引用数据类型存储到堆内存中；
+    /*var num =100;
+    var ary = [];// ary 实际存储了一个堆内存的空间地址；十六进制的字符串；
+    var obj = {a:10};
+    var obj1 = {a:100}
+    console.log(num);
+    console.log(ary[0]);*/
+
+    /*var a = b = c = 10;
+    var d = e = f = {h:1};
+    /!*c=11;
+     console.log(a)*!/
+    f.h =100;
+    console.log(d);*/// {h:100}
+
+   // 2. typeof  instanceOf  constructor  toString.call()
+    //typeof NaN  --> "number"  typeof null --> "object"
+    //typeof [] "object"
+
+    // 二；
+    //document.getElementsByClassName("box")[0]
+    document.body.appendChild(document.createElement("p"));
+    // previousSibling
+    // substr  substring  slice  replace(old,new)
+
+    // 三
+    // push  ary[ary.length]=1  ary.splice(ary.length,0,1) ary.concat(100)
+    // pop  ary.length  ary.splice(ary.length-1,1)
+    // slice(n-1,m)
+
+    // 四  【60-90】
+    // Math.round(Math.random()*(90-60)+60)
+
+    // function : 方法；求和的方法
+    // 定义
+    // 1. 开辟一个堆内存，就会有一个十六进制的空间地址
+    // 2. 把函数体中的代码当做字符串存储到堆内存下
+    // 3. 把这个空间地址赋值给函数名
+    function sum() {
+        (function () {
+            console.log(100);
+        })()
+    }
+
+    // 函数执行
+    // 1. 形成一个私有作用域
+    // 2. 形参赋值
+    // 3. 变量提升
+    // 4. 代码从上到下执行
+    // 5. 作用域是否销毁
+
+
+  /*function sum(a,b) {
+        // arguments ： 实参集合
+        var total = 0;
+        var len = arguments.length;
+        for(var i=0;i<len;i++){
+        var  cur= Number(arguments[i]);
+        if(!isNaN(cur)){
+            total+=cur;
+        }
+    }
+        return total;
+    }
+    sum(1,2,"",NaN,"3px");*/
+
+    // 随机抽奖
+    var code = document.getElementById("code");
+    var t=0;// 1
+    function getCode() {
+        t++;
+        if(t===10){
+            clearInterval(a);
+        }
+        var i=0;
+        var str = "";
+        while(i<4){
+            var num = Math.round(Math.random()*9);
+            if(str.indexOf(num)===-1){
+                str+=num;
+                i++;
+            }
+        }
+        code.innerHTML = str;
+    }
+    getCode();
+    var a  = setInterval(getCode,1000);
+    /*setTimeout(function () {
+        clearInterval(a);
+    },10000)*/
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

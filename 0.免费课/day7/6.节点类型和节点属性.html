@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="tab">
+        <p></p>
+        <div></div>
+        <!--风很大-->
+        <div id="box">珠峰培训</div>
+    </div>
+<script>
+    // DOM元素
+    // 在JS中，页面由节点组成；一个节点就是一个对象；
+    // 在JS中一共分为4种类型节点： 元素节点、文本节点、注释节点、document；
+    // 换行和空格都是文本节点
+    var  tab = document.getElementById("tab");
+    var  box = document.getElementById("box");
+    //console.dir(tab);// [text, div, text, comment, text, div#box, text]
+    // 每一个节点类型都有自己特殊的属性
+    //   节点类型          nodeType      nodeName      nodeValue
+    //   元素节点              1         大写的标签名     null
+    //   文本节点              3         #text          文本内容
+    //   注释节点              8         #comment       注释内容
+    //   document             9         #document      null
+
+    // 根据节点的nodeType、nodeName、nodeValue 来判断当前节点的类型
+    // 节点属性
+    // 1. childNodes: 获取到当前元素的所有子节点
+    // 2. children :获取当前元素所有的子元素节点
+    // 3. parentNode : 父亲元素节点；
+    // body-->html-->document-->null
+    // 4. previousSibling : 上一个哥哥节点
+    //    previousElementSibling ： 上一个哥哥元素节点(IE8及以下不兼容)
+    // 如果哥哥元素节点不存在，得到的结果是null;
+    // 5. nextSibling  ： 下一个弟弟节点
+    //    nextElementSibling : 下一个弟弟元素节点(IE8及以下不兼容)
+    //console.log(box.previousElementSibling);
+    // 6. firstChild : 第一个子节点
+    //   firstElementChild : 第一个子元素节点 (IE8及以下不兼容)
+    // 7.lastChild  : 最后一个子节点
+    // lastElementChild  : 最后一个子元素节点(IE8及以下不兼容)
+
+
+</script>
+</body>
+</html>

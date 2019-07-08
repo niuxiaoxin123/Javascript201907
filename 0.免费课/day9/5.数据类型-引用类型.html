@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 基本数据类型和引用类型
+    // 1. 基本数据类型是操作值的，引用数据类型操作的是空间地址；
+    // 2. 基本数据类型存储在栈内存中，引用数据类型存储到堆内存中
+    /*var num =m=10;
+    m=0
+    console.log(num);
+    var obj =o= {}*/
+    var yy = 19;
+    var obj = {
+        fn:100,
+        name:1,
+        hg:yy,
+        22:1,
+        20:"wqw"
+    }
+    //console.log(obj);//
+   // var a = obj.fn
+   // var a = obj["fn"]
+    //console.log(obj.f);// undefined
+    /*obj.m = 19;
+    obj["m"] = 19;
+    obj.fn=0;
+    delete obj.fn;*/
+
+    // 1. 没有length
+    // 2. 属性名不能重复
+    // 3. 先把数字放入堆内存
+    // 4. in : 检测属性名是否存在；
+    // 5.for in ;
+
+    /*for(var key in obj){
+        console.log(key);// 属性名
+        //console.log(obj[key]);// 属性值
+    }
+    console.log(key);*/
+
+
+</script>
+</body>
+</html>

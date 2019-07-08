@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<script>
+    // 编程语言都有数据类型；浏览器会根据不同的形式进行不同数据类型的解析
+    //
+    var num = 123;
+    // number : 整数、小数、NaN；
+    // isNaN: 校验当前的值是否是一个有效数字；如果是有效数字，则返回false，不是返回true；
+    // 当调用isNaN时，如果校验的值不是数字，那么会默认先将值强制转换成number类型，然后再进行校验；
+    console.log(isNaN(1));// false
+    console.log(isNaN(NaN));// true
+    console.log(isNaN("100"));// false
+    console.log(isNaN("100px"));// true
+
+    // Number : 将其他数据类型强制转换成数字；
+    /*console.log(Number("100"));// 100
+    console.log(Number("100px"));// NaN
+    //Number("{}[]/sjsodi")// NaN
+    Number("")// 0
+    console.log(Number(null));
+    Number(null)// 0
+    Number("")// 0
+    Number(undefined)//NaN
+    Number([])// 0
+    Number({})// NaN*/
+
+
+    // parseFloat : 可以把字符串中的数字从左到右提取出来，直到遇到一位非有效数字
+    console.log(parseFloat("100.5px200"));//100.5
+    console.log(parseFloat(""));// NaN
+    console.log(parseFloat("px100"));// NaN
+
+    // parseInt :不能识别小数点；
+    console.log(parseInt("100.5px200"));
+
+
+    // toFixed : 保留小数点位数方法；toFixed的返回值是个字符串；保留小数点位数，需要看下一位决定是否进行四舍五入；
+    var n = 12.678228;
+    console.log(n.toFixed(3));
+
+</script>
+</body>
+</html>

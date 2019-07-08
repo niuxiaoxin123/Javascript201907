@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = [60,45,66,78,62,56,35,88,68];
+    // 快速排序： 获取数组的中间项，让数组中的每一项都和该值进行比较，比它小的放左边，比它大的放右边；然后再将左边和右边的数组进行同样的操作，直到当前数组的长度小于1；不需要再进行比较，最后将所有的左边数组和中间项和右面的数组连接到一起；实现排序
+
+    function quickSort(ary) {
+        //console.log(ary);// [56]
+        //console.log(1);
+        if(ary.length<=1){
+            // 如果传递进来的数组的length小于等于1；那么该数组不需要进行下面的比较；
+            return ary;
+        }
+        var middleIndex = Math.floor(ary.length/2);// 向下取整
+        var middle = ary.splice(middleIndex,1)[0];//splice:删除那几项组成一个新数组
+        var left = [];
+        var right = [];
+        for(var i=0;i<ary.length;i++){
+            var cur = ary[i];
+            if(cur<middle){
+                left.push(cur);
+            }
+            if(cur>=middle){
+                right.push(cur);
+            }
+        }
+        return quickSort(left).concat(middle,quickSort(right));
+    }
+    console.log(quickSort(a));
+
+
+</script>
+</body>
+</html>

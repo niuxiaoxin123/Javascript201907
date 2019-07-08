@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="insert">
+<ul id="tab"></ul>
+<script>
+    // 1. 要操作谁就要获取谁
+    var  insert = document.getElementById("insert");
+    var  tab = document.getElementById("tab");
+    // 2. input失去鼠标焦点时，把input中的内容放入li;并将li放入tab元素中
+    //3. 向每一个li中放入button元素；
+    // 4. 给每一个button绑定一个点击事件，当点击button时，删除这个button对应的li;
+    // 事件： 当触发这个元素的某些行为时，会执行这些事件绑定的函数；
+    insert.onblur = function () {
+        var li = document.createElement("li");
+        li.innerHTML = insert.value;
+        // 向每一个li中放入一个button
+        var btn = document.createElement("button");
+        btn.innerHTML = "删除";
+        li.appendChild(btn);
+        tab.appendChild(li);
+        var oLis = document.getElementsByTagName("li");
+        for(var i=0;i<oLis.length;i++){
+            if(i%2===0){
+                oLis[i].style.background = "red";
+            }else{
+                oLis[i].style.background = "yellow"
+            }
+        }
+        // 清空input的value
+        insert.value="";
+        var lis = document.getElementsByTagName("li");
+        var btns  = document.getElementsByTagName("button")
+        for(var i=0;i<lis.length;i++){
+            btns[i].index = i;
+            btns[i].onclick = function () {
+                console.log(lis[this.index]);
+                tab.removeChild(lis[this.index])
+            }
+        }
+//        btn.onclick = function () {
+//            tab.removeChild(this.parentNode)
+//        }
+    }
+
+//    var  a = false
+//    var ary = [100,200];
+//    console.log(ary[+false]);
+
+</script>
+</body>
+</html>

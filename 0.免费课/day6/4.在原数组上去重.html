@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* var ary = [12,66,12];
+    // 1. 对象名不能重复，直接操作原有的数组；
+    // 2. for循环遍历数组每一项，放入对象中
+    // 3. 判断obj中是否存在和当前数组成员值相同的键值对；如果存在，说明该项值是重复项；
+    // 4. 如果是重复，那么在原有的数组上删除该项；
+    var obj = {};
+    for(var  i=0;i<ary.length;i++){
+        var cur= ary[i];
+        if(obj[cur]===cur){
+            // 获取obj这个对象下，属性名是66的属性值；
+            // 如果这个条件成立，说明此项在前面出现过，应当将其删除；
+            // ary.splice(i,1);// 数组塌陷；当删除数组中的某一项时，会导致该项后面的数组成员的索引进行重新计算；这样非常消耗性能；
+            ary[i]=ary[ary.length-1];// 获取数组最后一项，覆盖当前项，需要对该项进行重新判断；删除数组最后一项，并且对当前项再次校验；
+            ary.length--;// 删除最后一项
+            i--;
+            continue;// 如果该项是重复的；处理之后，中止本轮循环
+        }
+        obj[cur]=cur;//{12:12，66:66,88:88}
+    }
+    console.log(ary);*/
+
+   /* var ary = [12,3,12];
+   var obj={};
+   for(var i=0;i<ary.length;i++){
+       var cur = ary[i];
+       if(obj[cur]===cur){
+           var e = ary.pop();
+           ary[i]=e;
+           i--;
+           continue
+       }
+       obj[cur]=cur
+   }
+   console.log(ary);*/
+
+
+    /*var  ary = [12,3,4,567,8];
+    //var r = ary[ary.length-1]
+   /!*console.log(ary.length);// 6
+   ary.length--;
+   console.log(ary.length)*!/
+   ary.length=2;
+   console.log(ary);*/
+</script>
+</body>
+</html>

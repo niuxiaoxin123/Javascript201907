@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 求出里面所有数字的和；
+    // 1. arguments循环求和
+    // 2. 用变量接收一下计算的和；
+    // 3. 判断选出是数字的实参
+   /* function sum() {
+        var total = 0;
+        for(var i=0;i<arguments.length;i++){
+            // 每次循环只能获取其中一个值；
+            // isNaN : 返回false，说明数字
+            var  cur = arguments[i];
+            if(typeof cur==="number"&&!isNaN(cur)){
+                total+=cur;
+            }
+        }
+        return total;
+    }
+    var s = sum(12,89,"67",null,undefined,[],"3px",35,NaN);
+    console.log(s);*/
+
+    function sum() {
+        var total = 0;
+        for(var i=0;i<arguments.length;i++){
+            var cur = Number(arguments[i]);
+            if(!isNaN(cur)){
+                total+=cur;
+            }
+        }
+        return total;
+    }
+    var s = sum(12,89,"67",null,undefined,"88","3px",35,NaN);
+    console.log(s);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 算法：培养大家的编程思想;
+    var  ary = [12,3,90,80,56,76,66];
+    var newAry = [];
+    newAry.push(ary[0]);
+    //  8   10  11  12  6
+    // 循环获取到数组的每一项
+    // 插入排序： 循环原数组，获取到原数组的每一项，把每一项放入新数组中；让得到该项和新数组从后往前依次进行比较，如果比新数组中的值小，继续向前进行比较，如果遇到了比新数组中该项值大，直接将这一项放入到该项的后面；如果比新数组中所有的项都小，直接放入到新数组的最前面；
+    for(var i=1;i<ary.length;i++){
+        var cur = ary[i];
+        for(var j=newAry.length-1;j>=0;j--){
+            if(cur<newAry[j]){
+               if(j===0){
+                   // 如果j=0;说明已经比较到了第一项
+                   newAry.unshift(cur);
+               }
+            }else{
+                newAry.splice(j+1,0,cur);
+                // 由于需要将该项放到j的后面，需要+1；
+                break;// 如果将此项放到新数组中，那么不需要再继续向前进行比较，应当终止里面的循环；
+            }
+        }
+    }
+    console.log(newAry);
+    // 实现插入排序（从前往后）
+
+
+</script>
+</body>
+</html>
