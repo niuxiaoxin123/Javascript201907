@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(fn);
+    fn();
+    // 变量提升  var  function;
+    // 带function不仅声明，而且还要定义（赋值）；
+    // 函数定义三步：
+    // 1. 开辟一个堆内存，会有一个十六进制的空间地址
+    // 2. 把函数体中的代码当做字符串存储进行
+    // 3. 把空间地址赋值给函数名；
+
+    // 函数的定义发生在代码运行之前的变量提升阶段；
+    // 代码从上到下解析到20行，会直接跳过；
+    function fn() {
+        console.log(100);
+    }
+    console.log(fn);
+    var num=100;
+
+    function sum() {
+        console.log(num);// undefined
+        console.log(f);// 整个函数；
+        var num = 1;
+        function f() {
+        }
+        f()
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button></button>
+<div id="code"></div>
+<button id="start">开始</button>
+<script>
+    var code = document.getElementById("code");
+    var start = document.getElementById("start");
+    // getCode: 是产生一个随机的4位随机验证码，并且把这个验证码赋值给code元素
+    function getCode() {
+        var i=0;
+        var str = "";
+        while(i<4){
+            var num = Math.round(Math.random()*9);
+            if(str.indexOf(num)===-1){
+                str+=num;
+                i++;
+            }
+        }
+        code.innerHTML = str;
+    }
+    getCode();
+    
+    //启动事件
+    /*var flag = true;
+    var  timer;
+    start.onclick = function () {
+        if(flag){
+            // 函数执行都会形成一个新的私有作用域；里面的定义的变量都是相互独立，互相不能访问；
+            timer = setInterval(getCode,100);
+            start.innerHTML = "暂停";
+            flag=false;
+        }else{
+            console.log(timer);// undefined
+            clearInterval(timer);
+            start.innerHTML = "开始";
+            flag=true;
+        }
+    }*/
+
+    // 方案二
+
+    var  timer=100;
+    var index =0;
+    start.onclick = function () {
+        // 说明当前作用域存在私有变量timer
+        index++;
+        if(index%2===1){
+            // 函数执行都会形成一个新的私有作用域；里面的定义的变量都是相互独立，互相不能访问；
+            var timer = setInterval(getCode,100);
+            start.innerHTML = "暂停";
+        }else{
+            console.log(timer);// undefined
+            clearInterval(timer);
+            start.innerHTML = "开始";
+        }
+    }
+
+    // 获取元素当前索引；
+
+
+
+
+</script>
+</body>
+</html>

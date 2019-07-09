@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 全局变量： 在全局作用域下声明或定义的变量都是全局变量；
+    /*var num=1;// 声明一个变量
+    //var  m = 1; //声明并且定义(赋值)一个变量
+    function fn() {
+        //var  num =100;// 私有变量
+        num=100;
+        console.log(num);
+    }
+    console.log(num);// 1
+    fn();*/
+    // 函数执行会形成一个私有的作用域，会保护里面的私有变量不受外界的干扰；
+    //1. 函数体内部可以获取函数体外部的变量；而且还可以修改外部的值；但是函数体外部不能获取函数内的私有变量；
+    //2. 全局变量或全局下定义函数都会给window新增键值对；属性名是变量名，属性值是变量所存储的值
+    //3. let声明的变量不会给window新增键值对；
+   // var a=b=c=100;// b和c没有被var;
+    /*var a =100
+    b=100;// 给window新增键值对；
+    c=100;*/
+    //var d,e,f=100;
+    //var d;f=100;
+   /* var  d;
+    var  e;
+    var f=100;*/
+    //console.log(d);
+    //console.log(b);
+    /*var a =1;
+     function fn() {
+     // 私有作用域： 函数执行会形成私有作用域；
+     function abc() {
+
+     }
+     }
+     fn();*/
+     //let a=100;
+
+    /*var  tt=100;
+    yy=10;
+    function f() {
+
+    }*/
+    function g() {
+       var  b=1;
+    }
+    g();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 不管条件是否成立，都要进行变量提升
+    //    1)在新版本的浏览器中， 在块级作用域下，function只声明不定义；
+    //    2) 在老版本浏览器中，function不仅声明而且还要定义；
+   /* console.log(a);// undefined
+    if([]==![]){
+        // 条件不成立，代码一定不运行；
+        var  a=100;
+    }
+    console.log(a);*/// undefined
+    /*console.log(a);// undefined
+    if(!("a" in window)){
+        var a = 100;
+    }
+    console.log(a);*/// undefined
+    // 全局变量给window新增键值对发生在变量提升阶段；
+    // in : 检测当前属性名是否在对象中存在；
+    /*var  obj = {a:1};
+    console.log("a" in obj);// true
+    console.log("c" in window);
+    var c = 1;*/
+    /*console.log(fn);
+    if([]){
+        // 函数只要进到块级作用域中，会立即对函数进行赋值；
+        fn();
+        function fn() {
+            console.log(100);
+        }
+    }*/
+
+    // 2. 变量提升只发生在等号的左边；
+   // console.log(foo);
+    /*var fn = function foo() {
+        console.log(100);
+    }
+    fn();*/
+    /*console.log(f);
+    var obj = {
+        fn:function f() {
+
+        }
+    }*/
+
+    // 3.return 下面的代码不执行，但是要进行变量提升的
+
+/*    function sum() {
+        console.log(a);
+        console.log(b);
+        console.log(g);
+        var a = 1;
+        return a;//
+        var b=2;
+        function g() {
+
+        }
+    }
+    sum()*/
+
+// 4.如果变量名重复，不需要再重复声明，但是要重新定义；
+    /*console.log(s);// 函数
+    var s=100;
+    console.log(s);// 100
+    function s() {
+
+    }
+    s();//
+    console.log(s);// 100;*/
+    // fn : 1
+    fn()// 3
+    function fn() {
+        console.log(1);
+    }
+    fn()// 3
+    function fn() {
+        console.log(2);
+    }
+    var fn=1;
+    function fn() {
+        console.log(3);
+    }
+    fn()// 报错
+    var fn = function () {
+        console.log(4);
+    }
+    //typeof fn-->"function"
+    fn();
+
+
+   // 5.当代码运行到这一行时，先开辟堆内存，然后马上执行；
+   // 匿名函数不进行变量提升；
+    (function () {
+
+    })();
+    var fn = function () {
+
+    }
+
+
+</script>
+</body>
+</html>

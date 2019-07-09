@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 私有变量： 在私有作用域下声明或定义的变量都是私有变量
+    // 如果当前变量是私有的，就不再更改全局的变量；
+    // 私有变量
+    // 1. 在私有作用域下被var的变量
+    // 2. 形参；
+    // 3. 函数体内声明的函数也是私有的变量；
+    // 如果私有的存在，就不会更改全局的；
+    var y =100;
+    function sum() {
+        function y() {
+
+        }
+        y=10;
+        console.log(y);
+    }
+    sum(100);
+
+    console.log(y);
+    //console.log(y);
+
+
+</script>
+</body>
+</html>

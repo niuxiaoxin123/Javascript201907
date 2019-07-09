@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 变量提升是浏览器解析代码的一个过程阶段；
+    // 代码的解析过程；浏览器到底加载当前代码时做了什么；
+    // 先形成一个全局作用域--> 变量提升
+    // 变量提升： 浏览器形成全局作用域之后，会把全局作用域的所有代码过滤，把带var的进行变量提升，function的进行声明加定义；
+
+    // 变量提升： 在当前作用域下，代码运行之前，把带var的和带function进行提前声明，带var的只声明，不定义（不赋值）；带function不仅声明，而且还要进行定义；这就是变量提升；
+
+    // 声明:通知当前作用域下有这么一个变量了；
+
+    /*console.log(num);// undefined
+    var num = 100;
+    console.log(num);*/// 100
+    //console.log(str);//
+    /*function fn() {
+        console.log(str);
+        var str="hello";
+    }*/
+    /*console.log(a);// undefined
+    console.log(b);// 报错； b is not  defined；
+    var a =0;
+    b=1;
+    console.log(a);
+    console.log(b);*/
+
+    //console.log(a);// undefined
+    //console.log(b);// undefined
+    //var a=b=c =100;
+    //var a,b,c=1;
+
+ /*   var num =1;
+    function sum() {
+        console.log(num);// undefined
+        // 如果是私有变量，就不再往上查找；如果不是私有变量，那么就需要继续往外查找；
+        num=10;
+    }
+    sum();*/
+
+/* var name="对象"
+ function foo(name) {
+      console.log(name);// "对象"
+      var name="马班长";
+ }
+ foo(name);
+    console.log(name);
+    console.log(a);// 如果一个变量只声明，没有赋值，当你想输出这个变量，浏览器会给一个默认值undefined；
+    var  a = 100*/
+
+var name = "hello";
+function fn() {
+    // var name;
+    if(typeof name==="undefined"){
+        var name=1;
+        console.log(100)
+    }else if(typeof name==="string"){
+        console.log(200);
+    }else{
+        console.log(300);
+    }
+}
+fn()
+
+    // 1. 形成私有作用域
+    // 2. 形参赋值
+    // 3. 变量提升；
+    // 4. 代码从上到下运行
+    // 5. 作用域是否销毁
+
+
+
+
+
+
+</script>
+</body>
+</html>
