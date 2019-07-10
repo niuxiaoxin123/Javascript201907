@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // 变量提升   作用域   this   面向对象；
+    // this： 关键字： 在JS中有特殊意义的一些词；
+    /*var  num =1;
+    function fn() {
+
+    }*/
+    // this： 在不同的作用域，this代表了什么；
+    // this： 代表了函数的执行主体；谁让这个函数执行；
+    // 1.在全局作用域下，this指向window；this就是window，this指向window的空间地址
+    // 2. 函数执行中this，看函数执行前有没有".",如果没有“.",那么函数体中的this指向window，如果有点，那么点前面是谁，this就是指向谁；
+    // 3. 给元素的事件行为绑定方法，那么方法中的this指向当前被绑定的这个元素；
+    // 4. 自执行函数体中的this永远指向window；
+    // 5. 回调函数体中的this一般情况下指向window;
+    /*window.a=100;
+    this.b=10;
+    console.log(this===window);*/
+   /* function fn() {
+        console.log(this);
+    }
+    fn()
+    var obj = {
+        num:1,
+        f:function () {
+            console.log(this);// this--> obj;
+        }
+    }
+    obj.f();
+    var y = obj.f;
+    y();
+*/
+   /*box.onclick = function () {
+       console.log(this);// box
+   }*/
+   /* var num=1;
+    (function () {
+        console.log(this);
+    })(this.num)
+    var obj = {
+        f:(function () {
+            console.log(this);
+        })()
+    }
+    function fn() {
+        (function () {
+            console.log(this);
+        })()
+    }
+    fn()*/
+    /*var a = this;
+    console.log(this);*/
+   /*setInterval(function () {
+       console.log(this);
+   },1000)*/
+
+    /*var ary = [12,3,4]
+    ary.map(function (a,b) {
+        console.log(this);
+    })*/
+
+    var num =100;
+    var obj = {
+        num:2,
+        fn:function () {
+            //this--> obj;
+            //this--> window
+            var num =1;
+            (function (num) {
+                // 自执行函数体中的this永远指向window
+                console.log(this.num+num);
+            })(this.num)// 实参中的this指向自执行函数的上一级作用域的this；
+        }
+    }
+    obj.fn();// 2
+    var f = obj.fn;
+    f()// 100
+
+</script>
+</body>
+</html>

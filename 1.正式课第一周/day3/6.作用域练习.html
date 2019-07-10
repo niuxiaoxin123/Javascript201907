@@ -8,7 +8,7 @@
 <script>
     // var n ; a=aabbcc  var c;
 
-    var n=0;
+   /* var n=0;
     function a(){
         // var n; b=bbccdd
         // n=10
@@ -22,7 +22,75 @@
     }
     var c=a();
     c();
-    alert(n);// 0
+    alert(n);// 0*/
+
+ /*  function fn(n) {
+       // n=7   n=8   fn 执行的作用域不销毁；
+       // n=1
+       return function (m) {
+           console.log(m+ ++n)
+       }
+   }
+   var f = fn(7);// f 代表fn中的返回值；
+   f(5);// 13
+   f(6);// 15
+   fn(1)(2);// 4
+   fn(3)(4);*/// 8
+
+   /* var num =1;
+    var obj = {
+        num:10,
+        fn:(function (num) {
+            // 这个作用域不销毁；在私有作用域中有个私有的变量存储num=1
+               var num =2;// 3  4  5
+               return function (n) {
+                   console.log(n*(num++));
+               }
+        })(num)
+    }
+    var f = obj.fn;
+    f(10);// 20
+    f(20);// 60
+    obj.fn(30);//120
+    obj.fn(40);//200*/
+
+
+
+
+  /*  var obj1 = {
+        f:(function () {
+            // 自执行函数当以键值对存储时，这个代码就运行了；会把自执行函数的结果赋值给obj1的f属性名；
+            return 1;
+        })()
+    }
+    console.log(obj1);//{f:1}*/
+
+/*   var i =2;// 4  5  6 12 13 26
+   function fn(m) {
+      i*=2;
+      return function (n) {
+          console.log(n+ ++i)
+      }
+   }
+    var f = fn(3);
+    f(4)//9
+    f(5)//11
+    fn(6)(7)//20
+    fn(8)(9)//36 */
+
+
+    var a=9;//0  1  0  1 2
+    function fn(){
+        a=0;
+        return function(b){
+            return b+a++;
+        }
+    }
+    var f=fn();
+    var m=f(5);alert(m);// 5
+    var n=fn()(5);alert(n);// 5
+    var x=f(5);alert(x);// 6
+    alert(a);// 2
 
 
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #tab{
+            width:400px;
+            height:280px;
+            margin: 100px auto;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            float:left;
+            width:80px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid pink;
+            margin-right:3px;
+            cursor: pointer;
+        }
+        ul li.select{
+            background: blue;
+            color:white;
+        }
+
+        #tab div{
+            display: none;
+            width:400px;
+            height:280px;
+            border:1px solid pink;
+            text-align: center;
+            line-height: 280px;
+        }
+        #tab div.select{
+            display: block;
+            color:blue;
+        }
+
+    </style>
+</head>
+<body>
+<div id="tab" class="abc">
+    <ul>
+        <li class="select">音乐</li>
+        <li>电影</li>
+        <li>书本</li>
+    </ul>
+    <div class="select">林中鸟</div>
+    <div>速度与激情8</div>
+    <div>高程3</div>
+</div>
+<script>
+    // 选项卡：通过class来控制li的样式以及显示的div；当点击li时，首先清空所有的li和div上的class；然后点击谁，给这个li新增class，给对应的div新增class；
+    var tab = document.getElementById("tab");
+    var oLis = tab.getElementsByTagName("li");
+    var divs = tab.getElementsByTagName("div");
+    //for(var i=0;i<oLis.length;i++){
+        // 给每一个li绑定点击事件
+        // 每一个li身上新增一个自定义的属性；存储了当前li的索引；
+        //1. 自定义属性的方式
+        /*oLis[i].index=i;
+        oLis[i].onclick = function () {
+            // 清空所有的li和div身上的class;
+            for(var j=0;j<oLis.length;j++){
+                 oLis[j].className="";
+                 divs[j].className="";
+            }
+            // this--> 点击的li;
+            this.className="select";
+            divs[this.index].className="select";
+        }*/
+
+        /*oLis[0].onclick ={n=0  function(){}  aabb00}
+        oLis[1].onclick ={n=1  function(){}  aabb11}
+        oLis[2].onclick ={n=2  function(){}  aabb22}*/
+
+       /* oLis[i].onclick = (function (n) {
+            // 循环就会执行，并且当前作用域不销毁
+            // 形成三个不销毁的作用域；其中第一个存储n=0;
+            return function () {
+                for(var j=0;j<oLis.length;j++){
+                    oLis[j].className="";
+                    divs[j].className="";
+                }
+                oLis[n].className="select";
+                divs[n].className="select";
+            }
+        })(i)*/
+
+        /*(function (i) {
+            // 如果在这个作用域给某个元素事件行为绑定了方法，那么该作用域也不会销毁；
+            oLis[i].onclick = function () {
+                for(var j=0;j<oLis.length;j++){
+                    oLis[j].className="";
+                    divs[j].className="";
+                }
+                oLis[i].className="select";
+                divs[i].className="select";
+            }
+        })(i);*/
+        // 形成了三个不销毁的作用域；
+    //}
+
+
+
+    for(let i=0;i<oLis.length;i++){
+        // let 会让for循环没循环一次，都会形成一个子作用域，这个子作用域存储了每一次循环i对应的值；
+         oLis[i].onclick = function () {
+             // 清空所有的li和div身上的class;
+             for(var j=0;j<oLis.length;j++){
+                 oLis[j].className="";
+                 divs[j].className="";
+             }
+             // this--> 点击的li;
+             this.className="select";
+             divs[i].className="select";
+         }
+    }
+
+
+</script>
+</body>
+</html>
