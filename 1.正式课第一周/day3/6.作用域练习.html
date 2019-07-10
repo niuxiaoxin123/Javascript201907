@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var n ; a=aabbcc  var c;
+
+    var n=0;
+    function a(){
+        // var n; b=bbccdd
+        // n=10
+        var n=10;// 11  12
+        function b(){
+            n++;
+            alert(n);// 11  12
+        }
+        b();
+        return b;
+    }
+    var c=a();
+    c();
+    alert(n);// 0
+
+
+
+
+</script>
+</body>
+</html>

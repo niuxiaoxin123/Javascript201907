@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 上一级作用域：是当前作用域和它相邻的外层作用域；
+    /*var num = 100;
+    function fn() {
+        console.log(num);
+        var num =10;
+    }*/
+
+    var total = 10;
+    function sum() {
+        var total = 100;
+        return function () {
+            // 当获取变量对应的值时，先看是否是私有变量；
+            // console.log(name);
+        }
+    }
+    var s = sum();// s是sum函数执行的返回值；就是sum返回的小函数；
+    s();
+    // 上一级作用域： 当前函数执行的作用域的上一级作用域跟函数在哪定义有关，跟函数执行没有关系；当前函数在哪个作用域定义的，那么上一级作用域就是谁；
+
+    // 在作用域中获取变量对应值时，先看是否是私有变量，如果不是私有的，那么需要向上一级作用域查找；如果上一级作用域也没有，那么会继续向上查找；直到找到window位置，如果window中也不存在，那么就报错；这样一级一级向上查找的，就会形成一个作用域链；
+
+    var n=100;
+    var  obj ={
+        n:10,
+        f:(function () {
+            // 上一级作用域是全局作用域；
+            console.log(obj.n);
+        })()
+    }
+
+</script>
+</body>
+</html>

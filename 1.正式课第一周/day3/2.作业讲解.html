@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    console.log(a);// undefined
+    var a=12;
+    function fn(){
+        // var a;
+        console.log(a);// undefined
+        var a=13;
+    }
+    fn();
+    console.log(a);// 12
+
+
+
+
+    /*console.log(a);// undefined
+     var a=12;
+     function fn(){
+     console.log(a);// 12
+     a=13;
+     }
+     fn();
+     console.log(a);// 13*/
+
+
+   /* console.log(a);
+    a=12;
+    function fn(){
+        console.log(a);
+        a=13;
+    }
+    fn();
+    console.log(a);*/
+
+    /*var foo=1;
+    function bar(){
+        // var foo;
+        if(!foo){
+            var foo=10;
+        }
+        console.log(foo);// 10
+    }
+    bar();*/
+
+    // var a;var b;var c;function  test
+    var a=10,b=11,c=12;// 3
+    function test(a){
+        // a=10; var b;
+        // a=1
+        // b=2
+        // c=3
+        a=1;var b=2;c=3;
+    }
+    test(10);
+    alert(a);
+    alert(b);
+    alert(c);
+
+    // var a=4; b=aabbcc
+   /* var a=4;
+    var f = 3;
+    function b(x,y,a) {
+        // x =1 y=2 a=3
+        alert(a);// 3  10
+        // 形参和arguments存在映射关系；
+        arguments[2]=10;
+        alert(a);// 10
+    }
+    a=b(1,2,f);
+    alert(a);// undefined
+    console.log(f);*/
+
+    /*var ary = [1,2,3,4];//
+    function fn(ary) {
+        // 实参和形参代表同一个空间地址；
+        // ary是形参，是私有变量，和外面的ary是不同的；
+        ary[0]=100;
+        ary=[];// JS 遇到{}、[]都会开辟新的空间地址
+        ary[0]=1;
+        console.log(ary);// [1]
+    }
+    fn(ary)
+    console.log(ary);// [100,2,3,4]
+
+    var a=b ={}
+    b=[];
+    console.log(a);*/
+
+
+    var foo='hello';
+    (function(foo){
+        // foo :"hello"
+        console.log(foo);
+        var foo=foo||'world';
+        // 如果||前面值转布尔是true，那么直接返回这个值；如果是false，那么直接取第二个后面的值；
+        console.log(foo);
+    })(foo);
+    console.log(foo);
+    if([]==[]||1==1){
+
+    }
+</script>
+</body>
+</html>

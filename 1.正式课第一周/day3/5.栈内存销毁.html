@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="btn"></button>
+<script>
+    // 栈内存：全局作用域和私有作用域
+    // 全局作用域: 属于不销毁的作用域；当关闭页面或者浏览器时，全局作用域才会随之销毁；
+    /*var num =1;
+    btn.onclick = function () {
+        console.log(num);
+    }*/
+
+    // 私有作用域
+    //立即销毁作用域： 一般情况下，函数执行完成，那么形成的作用域也会随着销毁；
+    /*function fn() {
+        var num =100;
+        num++;
+        return num;
+    }
+    fn();
+    fn();*/
+
+    // 不销毁作用域
+    // 满足两个条件：1)函数体中需要return出一个引用的数据类型
+    //            2)函数返回引用类型的值需要被外界接收；
+    // 栈内存：栈内存回收，那么里面存储的值也会被回收；
+    var total =1;
+    function fn() {
+        // total=100这个变量存储到了fn形成私有作用域中；
+        var total =100;
+        return function () {
+            var a =1;
+            console.log(total);
+        }
+    }
+    fn();
+    //var f = fn();// f占用了fn中return的空间地址；
+    //console.log(f.a);
+    //f()
+
+
+    // 不立即销毁: 当里面的小函数运行时，它的上一级作用域还在；当里面的小函数运行完之后，小函数会立即销毁，那么同时外层作用域也会随着销毁；那么这种作用域就是不立即销毁的；
+    fn()()
+
+
+
+</script>
+</body>
+</html>

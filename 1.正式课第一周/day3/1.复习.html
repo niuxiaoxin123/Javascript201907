@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // ECMAScript : JS的核心规范；
+    // let num=1;
+    // 在es6之前只有两种作用域： 全局作用域和私有作用域
+    // 浏览器支持es6之后，新增一种块级作用域；
+    // let num =10;
+
+    // 全局作用域：大的栈内存；
+    // 1) : 提供代码运行环境
+    // 2) : 存储基本数据类型值；
+    // 3) : 全局作用域形成之后，会在此作用域中有一个window对象；
+
+
+    // 全局变量
+    // 1.变量提升阶段 var和function给window新增键值对；
+
+
+    /*var  num =1;
+    console.log(num);// 1
+    function fn() {
+        b=100;// 同样会给window新增键值对；
+    }
+    fn();
+    c=1;*/
+    /*console.log(window);//
+    var a =100;*/
+
+    /*var f = 100;
+    function fn() {
+        return function () {
+            f=1
+        }
+    }
+    console.log(fn()());//输出里面的小函数
+    console.log(f);//100*/
+
+    // 私有作用域
+    // 1. 函数执行会首先形成一个新的私有作用域
+    // 2. 形参赋值
+    // 3. 变量提升
+    // 4. 代码从上到下运行
+    // 5. 作用域是否销毁
+    /*var foo =12;
+    function fn(foo) {
+        console.log(foo);// 12
+        var foo=1;
+        console.log(foo);// 1
+    }
+    fn(foo);*/
+
+   /* var foo =12;
+    function fn(foo) {
+        console.log(foo);//函数foo
+        function foo() {
+            return 1;
+        }
+        foo()
+        console.log(foo);// 函数；
+    }
+    fn(foo);*/
+
+   // 私有变量：
+    // 1. 形参
+    // 2. 在私有作用域被var
+    // 3. 被function过
+
+   /* var t =100;
+    function fn() {
+        console.log(t);
+        //var  t = 1;
+        function t() {
+
+        }
+    }
+    fn()*/
+
+   // 变量提升；当代码从上到下加载之前的一个过程；
+    // 变量提升：
+    /*console.log(t);
+     fn();
+     var t = 1;
+     function fn() {
+
+     }*/
+    // 变量提升特殊情况：
+    // 1. 不管条件成不成立，都要进行变量提升
+    // 2. 变量只发生在等号的左边
+    // 3. return 下面的要进行变量提升，右面不进行变量提升
+    // 4. 变量名重复，不再重复声明，但是要重新定义
+    // 5. 匿名函数不进行变量提升；
+    /*function fn() {
+        var a =1;
+        function a() {
+        }
+    }*/
+
+
+
+</script>
+</body>
+</html>
