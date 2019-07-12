@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // this : 关键字；在不同的作用域下，代表了不同的值；
+    // this： 函数的执行主体；谁让这个函数执行的，this就是谁；
+
+    //1 . 全局作用域下的this指向window；
+    /*console.log(window == this);// true
+    window.a = 100;
+    this.a = 100;*/
+    // 2. 函数体中的this，要看函数执行前有没有点，点前面是谁，this就指向谁；没有点this指向window；
+   /* function fn() {
+        console.log(this);
+    }
+    fn()
+
+    var obj = {
+        f:function () {
+            console.log(this);
+        }
+    }
+    var y = obj.f;
+    y();
+    obj.f();*/
+    // 3. 给元素的事件行为绑定方法，那么方法中的this指向当前被绑定的元素；
+    // 4. 自执行函数中的this永远指向window；
+    // 5. 回调函数中this一般指向window；
+    // 6. 构造函数中的this指向当前的实例
+    // 7. call\apply\bind可以改变this的指向；
+    /*(function () {
+
+    })(this)*/
+
+  /*  function A(b) {
+     b();
+     var  obj = {}
+     obj.c = b;
+     obj.c()
+     }
+     A(function () {
+     console.log(this);// window
+     })*/
+   /* ary.sort(function () {
+
+    })*/
+
+    /*console.log(b);
+    b();
+    var b = 1;
+    function b() {
+        console.log(1);
+    }
+    b();*/
+
+
+  /*  function f1() {
+        console.log(a);// 函数
+        var a = 1;
+        return a;
+        function a() {
+        }
+    }
+    f1();*/
+
+
+   // var x1;f2=aa11  f3=aa22
+ /*   f2();
+    f3();
+    var x1 = x2 = 10;
+    function f2() {
+        console.log(x1);// undefined
+    }
+    function f3() {
+        console.log(x2);// 报错
+    }
+*/
+
+   /* function f5() {
+        f=ff();
+        return f;
+        function ff() {
+            return "f" in window;
+        };
+        //var f;
+    }
+    console.log(f5());*/
+
+  /*  var a = b = c = [1, 2, 3, 4];
+    b = 9;
+    a[1] = 0;
+    console.log(b[0]);// undefined
+    a = [1, 2, 3, 4];
+    c = [1, 2, 3, 4];
+    a[0] = b;
+    console.log(c);
+    console.log(a);
+*/
+
+  /*var i =1 ;
+    function fn(i){
+        // i=2 3 4
+        return function (n){
+            console.log(n+(++i))
+        }
+    }
+    var f = fn(2);
+    f(3)// 6
+    fn(5)(6)// 12
+    fn(7)(8)// 16
+    f(4)// 8*/
+
+
+    var i =2;// 4  6
+    function fn (){
+        i +=2;
+        return function (n){
+            console.log(n+(--n))
+        }
+    }
+    var f =fn();
+    f();// NaN
+    f(3)// 5
+    fn()(2);// 3
+    fn()(3);// 5
+    f(4)// 7
+
+</script>
+</body>
+</html>

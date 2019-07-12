@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 作用域： 全局作用域 私有作用域 块级作用域
+    // 全局作用域：
+    // 1. 提供运行环境
+    // 2. 是一个栈内存，存储基本数据类型值
+    // 3. 全局作用域下提供内置的window对象；
+   /* console.log(window);
+    var num =10;
+    function f() {
+
+    }
+    h = 1;*/
+
+   /*function t() {
+        a=1;
+        function foo() {
+            var a =0;
+        }
+        foo();
+    }
+    t();*/
+
+
+    // 私有作用域：
+    // 函数执行
+    // 形成私有作用域--> 形参赋值-->变量提升-->代码从上到下运行-->作用域是否销毁
+    // 私有变量
+    // 1. 带var   2.带function  3.是不是形参；
+  /*  var num =2;
+    function sum(uu) {
+        // var num;  fn=aabbcc
+        num=num*3;
+        console.log(num);// NaN
+        var num =1;
+        function fn() {
+
+        }
+    }
+    sum();*/
+
+    // 作用域销毁
+    // 立即销毁   不立即销毁  不销毁
+    // 在s形成的作用域中，返回一个一个引用的空间地址；那么f和这个作用域中空间地址进行了关联；那么这个作用域就不能再销毁了；
+    // 不销毁1
+    /*function s() {
+        var  num = 1;
+        return function () {
+            console.log(num);
+        }
+    }
+    var  t = s();
+    t()*/
+    // 不销毁2
+
+ /*  var obj = {
+        fn:(function () {
+            return function () {
+
+            }
+        })()
+   }*/
+   // 不销毁3
+    // 当前作用域下，如果有空间地址被外界接收或者占用，那么当前作用域就不销毁；
+    var  obj = {};
+   (function () {
+       var a = 1;
+       obj.f = function () {
+           console.log(a);
+       }
+       box.onclick = function () {
+
+       }
+       obj.b = {};
+   })()
+    obj.f();
+   
+   // 不立即销毁
+    function s() {
+       return function () {
+           
+       } 
+    }
+   s()();
+
+
+
+</script>
+</body>
+</html>

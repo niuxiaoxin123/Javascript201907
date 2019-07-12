@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // git : SVN
+    // git : 工作区、暂存区、历史区
+    // git  init : 初始化一个本地的仓库
+    // git add . : 将工作区代码提交到暂存区；
+    // git rm --cached  文件名；删除暂存区的内容
+    // git  commit -m"注释"： 提交到历史区；每提交一次，会产生一个唯一的版本号；后期可以根据版本号，让代码回滚到这个版本的代码的状态；
+    // git  push  origin master : 把代码推送到中央仓库
+    // git  remote  add origin 地址： 让本地仓库和远程仓库进行关联；
+    // git  clone : 将中央仓库的代码拉取到本地；
+    // git  pull :拉取最新的代码
+
+
+    // 1.变量提升 ： 在当前作用域下，代码运行之前，浏览器先把带var,和function的进行提前的声明,带var只声明，不定义；带function的不仅声明还要定义；
+    /*console.log(a);// undefined
+    console.log(fn());// 函数
+    var a = 1;
+    function fn() {// 存储了函数的空间地址
+
+    }
+    console.log(b);
+    b=100;*/
+    //console.log(100);
+    // 1. let声明的变量不进行变量提升；
+    // 2. let 不允许重复声明；在变量阶段，浏览器对代码进行过滤，如果有let重复声明同一个变量，那么就会报错；
+    // 3. let声明的变量不会给window新增键值对；
+    //let c = 100;
+    //let c = 100;
+    /*console.log(d);
+    d=1;*/
+    // console.log(window);
+   /* console.log(num);// 函数
+    var num = 100;
+    function num() {
+
+    }
+    console.log(num);*/// 100
+    /*if([]){
+        // 先对function进行变量提升，然后再对var进行；
+        var num = 100;
+        function num() {
+
+        }
+    }*/
+
+    // 2.变量提升的特殊情况
+    // 1. 不管条件是否成立，都要进行变量提升
+    // 新版本浏览器： function 只声明，不定义；
+    // 老版本浏览器，既声明，而且定义;
+
+    // 2. 变量提升只发生在等号的左边
+    // 3. return下面的代码不执行但是要进行变量提升；但是return后面的代码不进行变量提升
+    // 4. 如果变量名重复，不再重复声明，但是要重新定义；
+    // 5. 匿名函数不进行变量提升
+    /*fn();
+    if([]){
+        function fn() {
+
+        }
+    }*/
+    // console.log(f);
+    /*f = function () {return true;};
+
+    g = function () {return false;};
+    (function () {
+        // g  : 在IE10及以下
+        if (g() && [] == ![]) {
+            f = function () {
+                return false;
+            };
+            function g() {
+                return true;
+            };
+        }
+    })();
+    f();// false
+    g();*/// false
+
+  /*  console.log(fn);
+    if([]){
+        function fn() {
+        }
+        var a = 100;
+        let num =1;// let 声明的变量在块级作用域中是私有的，不能被外界访问；
+    }
+    console.log(fn);
+    console.log(a);
+    console.log(num);*/
+/*  let num = 1;
+  if([]){
+      // 在块级作用域中，只要进来，马上对函数进行定义；
+      function fn() {
+          console.log(1);
+      }
+      fn();
+      function fn() {
+          console.log(num);
+      }
+  }*/
+    /*function s() {
+
+    }*/
+    // 当代码运行到这一行时，先开辟一个堆内存，然后马上开辟一个栈内存；
+   /* (function () {
+
+    })()
+
+    var obj ={
+        fn:(function () {
+            // 当键值对存储时执行一次
+
+            return function f() {
+
+            }
+
+        })()
+    }
+    obj.fn();
+    obj.fn();*/
+
+   //
+    /*function fn(num) {
+        console.log(num);// 函数
+        var num =1;
+        function num() {
+            num=2;
+        }
+        num();
+        console.log(num);//
+    }
+    fn(100);
+
+    function r() {
+        function r() {
+
+        }
+        return;
+        function f() {
+            var a =1;
+        }
+    }
+*/
+
+</script>
+</body>
+</html>
