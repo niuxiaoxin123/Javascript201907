@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 原型模式
+
+    function Fn(x,y) {
+        this.x =x;
+        this.y = y;
+        /*this.getX = function () {
+            console.log(this.x);// 输出this.x的值；
+        }*/
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x);
+    };
+    var f1 = new Fn(100,200);// f1 instanceOf Fn true
+    // {x:100,y:200,getX:function(){}}
+    var f2 = new Fn(300,400);
+    var f3 = new Fn(300,400);
+    // {x:300,y:400,getX:function(){}}
+    console.log(f1);
+    console.log(f1===f2);//false
+    console.log(f1.x === f2.x);// true
+    console.log(f1.getX === f2.getX);// true
+    console.log(f1.getX);
+    f1.getX();
+    f2.getX();
+    console.log(Fn.prototype === f1.__proto__);
+    //console.log(f1 instanceof Array);// false
+    // 原型模式： 构造函数模式解决了私有属性的问题；原型模式解决的是公有属性的问题；
+    // 类一定是函数；
+
+    // 原型模式：
+    // 1. 每一个函数数据类型（函数、类）都天生自带一个prototype属性，prototype的属性值是一个对象数据类型的；
+    // 2. prototype的属性值天生自带一个constructor属性，其属性值指向当前原型所属的类；
+    // 3. 每一个对象数据类型天生自带一个__proto__属性，这个属性的属性值指向当前实例所属类的原型；
+
+    // Fn:{prototype:{constructor:Fn}}
+
+
+
+
+</script>
+</body>
+</html>

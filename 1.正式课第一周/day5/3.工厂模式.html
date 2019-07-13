@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 单例模式也叫“手工作业模式”
+    // person1或person2就是一个单例；
+    var person1 ={name:"马冲冲",age:20}
+    var person2 ={name:"唐开放",age:13};
+
+
+    function createPerson(name,age) {
+        var obj ={};// 定义一个对象
+        obj.name=name;
+        obj.age=age;
+        return obj;// 再返回一个对象；
+    }
+    var person1 = createPerson("马冲冲",20);
+    var person2 = createPerson("唐开放",13);
+
+    // 把实现同一个功能的代码放到一个函数中，当想实现这个功能时，直接执行这个函数就可以；减少了代码的冗余，实现了高内聚、低耦合的特点；这就是函数的封装---> 工厂模式；
+    //
+
+
+
+</script>
+</body>
+</html>

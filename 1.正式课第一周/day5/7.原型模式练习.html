@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Function
+    function Fn(x,y) {
+        this.x = x;
+        this.y=y;
+        this.getX = function () {
+            console.log(this.x);
+        }
+    }
+    // 向Fn的原型上新增getX;
+    Fn.prototype.getX=function () {
+        console.log(this.x);
+    }
+    Fn.prototype.getY = function () {
+        console.log(this.y);
+    }
+    var f1 = new Fn(100,200)// {x:100,y:200,getX:function(){}}
+    f1.__proto__.a=300;
+    var f2 = new Fn(100,200);// {x:100,y:200,getX:function(){}}
+    console.log(f1.getX == f2.getX);// false
+    console.log(f1.getY == f2.getY);// true
+    console.log(f1.x == f2.x);// true
+    console.log(Fn.prototype.getX === f1.getX);// false
+    console.log(Fn.prototype.getX === f1.__proto__.getX);// true
+    f1.getX()// 100
+    Fn.prototype.getX();// 300
+    f2.__proto__.getX();// 300
+    Fn.prototype.getY();// undefined
+    console.log(f1.a);// 300
+    console.log(f1.toString);
+
+    // 获取一个对象属性名对应的属性值，如果属性名不存在，就返回undefined；
+
+    // 如果私有属性存在，那么不需要继续往原型上查找；
+
+    // Object的实例；
+    /*var obj = {a:1,b:2};// __proto__
+    console.log(obj.c);// undefined
+    console.log(obj.toString);
+    console.log(obj.hasOwnProperty);*/
+
+   // 获取一个对象属性名对应的属性值，如果属性名不存在,会默认通过__proto__属性继续向上查找，如果实例的原型上也不存在，那么会继续通过原型中__proto__继续向上查找，直到找到Object的原型为止；如果Object的原型也不存在，那么返回undefined；这样一级一级向上查找就会形成原型链；
+
+
+    /*var ary1 = [12,3,45]
+    var ary2=[1,2,34];
+    console.log(ary1.pop === ary2.pop);// true
+    ary1.pop();
+    var  str ="hello";*/
+    // String
+    // str.pop();
+    // ary1和ary2共用一个pop方法；
+    // ary1、ary2都是Array的实例；
+    //console.log(ary1 instanceof Array);
+
+   /* var ary = [1,3,4,5];
+    ary.slice(1,3).concat([1,2,4,8]).sort(function (a,b) {
+        return a-b;
+    }).pop().pop();*/
+
+  /*  var num =1.23;
+   num.toFixed(1);*/ //toFixed是Number类原型上的方法
+  /*  console.log([] == false);// true
+    console.log({} == false);// false
+    console.log([].toString())// ""
+    // 数组.toString 是Array原型上的toString方法
+    console.log(({}).toString());//"[object Object]"
+    // Object身上的toString；
+    var str = "1";
+    str.substring()*/
+
+    var str = "1";
+    console.log(str.hasOwnProperty);
+    var ary = [1.2,3,4]
+    var obj ={};
+    //str--> String.prototype--> Object.prototype
+    //ary---> Array.prototype-->Object.prototype;
+    //obj --> Object.prototype
+    //一般情况下，类的原型中的__proto__都直接指向Object的原型；
+</script>
+</body>
+</html>

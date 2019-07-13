@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 单例模式--> 工厂模式--->构造函数模式--> 原型模式
+    // 单例模式
+   /* var  name = "马冲冲";
+    var  age = 20;
+
+    var name="唐开放";
+    var age = 13;
+    console.log(name);//*/
+
+/*    var person1 ={name:"马冲冲",age:20,hasGirlFriend:false}
+    var person2 ={name:"唐开放",age:13,hasGirlFriend:true};
+    var person3 ={name:"唐开放",age:13,hasGirlFriend:true};*/
+    // 单例模式： 把描述同一件事物的不同属性放在同一个空间下，那么避免了全局变量的干扰；这种模式就是单例模式；
+
+    //console.log(person1.name);
+    var num =100;
+    // 封装方法
+    var ma={
+        toArray:function () {
+
+        },
+        toLike:function () {
+
+        }
+    }
+  /*  var  tang={
+        toArray:function () {
+
+        }
+    }*/
+    ma.toArray()
+
+
+    // 高级单例模式
+    var utils = (function () {
+        var num =100;
+        return {
+            toArray:function () {
+
+            },
+            toLike:function () {
+
+            }
+        }
+    })()
+
+
+
+</script>
+</body>
+</html>
