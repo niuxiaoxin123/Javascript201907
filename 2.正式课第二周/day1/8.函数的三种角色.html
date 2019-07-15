@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn(a,b) {
+
+    }
+    // 函数、类、对象
+    // 1.函数
+    // 形成私有作用域 --
+    // 形参赋值
+    // 变量提升
+    // 代码从上到下执行
+    // 作用域是否销毁；
+
+    // 类
+    // 1. 执行前面加new ,可以省略小括号；
+    // 2. 函数体中的this指向当前的实例
+    // 3. 执行时，代码运行之前，先创建空对象，让this指向这个空对象；最后代码运行完之后，又默认返回了this；
+    // 4. return ;
+
+    /*var f =  new Fn;
+    Fn();*/
+    // 对象
+   /* Fn.a =1;
+    console.log(Fn.name);//"Fn"
+    //Fn.prototype.getX =100;
+    Fn(1,2,3)*/
+
+
+    var num = 0;// 20
+    function Fn(num) {
+        arguments[0] = 10;// 私有num=10
+        this.num = 20;
+        return num;// 10
+    }
+    Fn.num = 40;// 对象
+    Fn.prototype.num = 30;
+    Fn.prototype.getNum = function () {
+        console.log(this.num);
+    };
+    var f = new Fn(num);// {num:20}
+    console.log(f.num);// 20
+    f.getNum();// 20
+    Fn.prototype.getNum();// 30
+    console.log(num);// 0
+    var n = Fn(num);// 普通函数执行
+    console.log(n);// 10
+    console.log(num);// 20
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

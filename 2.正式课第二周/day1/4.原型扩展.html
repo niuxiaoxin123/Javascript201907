@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 内置类： Number String Boolean  Null Undefined
+    //       Object Function Array  RegExp Date...
+    // 自定义类
+    // 新增键值对；
+    // 给数组原型上新增一个方法；执行实现数组去重；
+    // 原型上添加一个方法；实现原型的扩展；
+
+  /*  Array.prototype.unique = function () {
+        // this--> ary
+        // console.log(this); this和ary是同一个空间地址；
+        /!*this.push(100);*!/
+        // 对象的属性名不重复；
+        var obj = {};
+        for(var i=0;i<this.length;i++){
+            var cur = this[i];
+            if(obj[cur]===cur){
+                this[i]=this[this.length-1];
+                this.length--;
+                i--;
+                continue;
+            }
+            obj[cur]=cur;
+        }
+    };
+    var ary = [12,12,89,78,89,46,78];
+    ary.unique();
+    console.log(ary);
+    var ary1 = [1,1,8,78,8,46,78];
+    ary1.unique();*/// this--> ary1
+
+/*    var obj = {};
+    for(var i=0;i<ary.length;i++){
+        var cur = ary[i];
+        if(obj[cur]===cur){
+            //ary.splice(i,1);
+            ary[i]=ary[ary.length-1];
+            ary.length--;
+            i--;
+            continue;
+        }
+        obj[cur]=cur;
+    }*/
+
+
+    // 如果扩展和内置的方法重名，那么扩展会将内置的方法覆盖；
+    /*Array.prototype.pop = function () {
+        console.log("马老师很帅")
+    }
+    var ary = [12,3,4,567,7,0]
+    ary.pop();
+    console.log(ary);*/
+
+    // 2. 扩展 类.prototype={};
+    // 会导致constructor丢失；
+   /* function Fn() {
+        this.x = 100;
+        this.y =200;
+    }
+    Fn.prototype.getY = function () {
+        console.log(100);
+    }
+    Fn.prototype={
+        getX:function () {
+
+        }
+    };
+    var f = new Fn;
+    f.getX();
+    f.getY();
+    console.log(f.constructor);// Object
+    console.log(Fn.prototype);*/
+
+   // 2.内置类的原型的空间地址不能进行修改
+   Array.prototype={// 这种写法无效；
+       foo:function () {
+           console.log(100);
+       }
+   }
+   var ary =[1,2,3];
+    ary.pop();
+    console.log(ary);
+    //ary.foo();
+
+
+</script>
+</body>
+</html>

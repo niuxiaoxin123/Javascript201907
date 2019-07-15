@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //可枚举属性：如果是私有属性，或者在原型上自定义的公有属性都是可枚举属性；
+    //不可枚举属性： 内置的属性都是不可枚举属性；
+    function Fn() {
+        this.x=100;
+        this.y = 200;
+    }
+    Fn.prototype.getX = function () {
+
+    }
+    var f  = new Fn;// {x:100,y:200}
+    for(var key in f){//
+        console.log(key);
+    }
+    Object.prototype.c= function () {
+        
+    }
+    var obj = {a:1,b:2};// obj的__proto__指向Object的原型；
+    for(var key in obj){
+        console.log(key);
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

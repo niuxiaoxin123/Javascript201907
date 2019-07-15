@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Fn() {
+        this.x=10;
+        this.y=20;
+    }
+    Fn.prototype.x = 100;
+    Fn.prototype.getX = function () {
+            console.log(this);
+    }
+    var f = new Fn;
+    f.getX();
+    Fn.prototype.getX();
+    f.constructor.prototype.getX();
+    //f.constructor.getX();
+    var a = f.getX;
+    a();
+
+    // 原型中的this；函数执行前有没有，点前面是谁，this就是指向谁；
+
+
+
+
+
+</script>
+</body>
+</html>

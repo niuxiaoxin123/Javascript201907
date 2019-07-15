@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 字面量方式创建
+    //var num = 1;
+    // 实例创建： new 类： 会创建一个实例；实例都是对象数据类型的；
+    /*var num1 = new Number(1);
+    console.log(num1);
+    console.log(typeof num1);// "object"
+    console.log(num == num1);
+    //
+    console.log(num1 + 100);*/
+    // num1从具体来说是一个Number的类型；笼统说法又是一个对象数据类型；万物皆对象；
+    //console.log(num.hasOwnProperty);
+    // 1. 通过字面量方式创建的基本数据类型的实例不是一个标准的实例，不能通过instance进行检测；
+    // 2. 通过typeOf进行数据类型检测，字面量方式创建返回"数据类型"；实例创建"object";
+
+   /* var  num = 11;
+    console.log(num instanceof Number);
+    var num1 = new Number(12);
+    console.log(num1 instanceof Number);*/
+
+    // typeof num--> "number"
+    // typeof num1 --> "object"
+    // Number String  Boolean  Null  Undefined
+    // Null和Undefined浏览器不允许调用；
+    // var n = new Null;
+    // 如果只要一个参数，那么代表当前数组的长度；两个及以上，会成为数组的成员项；
+    /*var  ary = new Array()
+    console.log(ary);*/
+
+    // 只要当前类在当前实例的原型链上，用instanceOf检测都返回true；
+    var  ary = [];
+    var a = new Number(1);
+    console.log(ary instanceof Array);
+    console.log(ary instanceof Object);
+    console.log(a instanceof Object);
+    console.log(a instanceof Number);
+</script>
+</body>
+</html>

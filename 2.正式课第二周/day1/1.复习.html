@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 代码是如何运行的
+    // 变量提升  作用域   this  面向对象
+    // var  a =100;
+    // for循环
+    // if else
+    // function
+   /* function fn(){
+        for(var i=0;i<10;i++){
+            oLis.onclick  =function () {
+            }
+        }
+    }
+    fn()*/
+
+   //
+    console.log(a);// undefined
+    //fn : 函数的空间地址；
+    // 函数的定义发生在变量提升阶段；
+    console.log(fn);//
+    var a = 100;
+    function fn() {// 不仅声明而且还要定义；
+
+    }
+
+    // 在当前作用域；
+    var  a = 1;
+    function fn() {
+        console.log(a);// undefined
+        var a = 100;
+    }
+    fn();
+    // 全局作用域和私有作用域；
+
+    // 一个页面只有一个全局作用域；
+    // 在全局作用域定义的变量是全局变量； 会给window新增键值对；
+
+    // 私有作用域： 函数执行会形成私有作用域；
+    // 在私有作用域中定义的变量都是私有变量；
+    // 1. 带var  2. 带function   3. 形参
+
+    // 上一级作用域：
+    //
+
+    /*var  obj = {
+        num:1,
+        fn:function () {
+            // this--> obj
+            return function () {
+                console.log(this);// window
+            }
+        }
+    }
+    var f = obj.fn();
+    f();// window
+    obj.fn()();
+
+    function hh() {
+
+    }
+    hh()*/
+
+    // 堆栈内存 ：栈内存 和堆内存
+    // 引用类型的存储；
+    // 栈内存： 1.存储基本数据类型和引用空间地址
+    //        2.提供代码运行环境
+
+    // 堆内存：
+    // 栈内存：
+    // 立即销毁、不销毁、不立即销毁；
+    /*function f() {
+        return {}
+    }
+    var b = f();
+    f()();*/
+
+    // this
+    // 1.全局作用域下的this指向window
+    // 2. 给元素的事件行为绑定方法，方法中的this指向被绑定的元素；
+    // 3. 函数执行前有没有点，点前面this就是谁；没有点指向window；
+    // 4. 自执行函数this永远指向window
+    // 5.回调函数中的this一般指向window；
+    // 6.构造函数中的this指向当前实例
+    // 7. call、apply、bind会改变this指向
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
