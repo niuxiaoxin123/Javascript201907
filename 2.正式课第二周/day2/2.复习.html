@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 原型的扩展
+    /*function Fn() {
+
+    }
+    Fn.prototype.getX = function () {
+
+    }
+    Fn.prototype={
+        // 失去constructor属性；
+        constructor:Fn,
+        getX:function () {
+
+        }
+    }*/
+    // 内置类原型扩展
+   /* Array.prototype.unique =function () {
+    }
+    var ary = [];
+    ary.unique();
+    // 如果新增重名会将内置的方法进行覆盖；
+    Array.prototype.push = function () {
+
+    }*/
+    // 内置类的原型的空间地址不能被覆盖；
+    /*Array.prototype={
+        pop:function () {
+            console.log(1);
+        }
+    }
+    var ary = [1,2,4];
+    ary.pop();// 原有的方法
+    console.log(ary);*/
+
+    // pop  push
+   /* Array.prototype.myPop=function () {
+        // 先把数组的最后一项利用变量存储起来
+        var last = this[this.length-1];
+        this.length--;// 删除最后一项
+        return last;// 把最后一项return出去；
+    }
+    var ary = [1,2,4];
+    // ary.pop()
+    //ary.myPop();
+    console.log(ary.myPop());
+    console.log(ary);*/
+
+ /*  Array.prototype.myPush = function (...a) {
+       // 剩余运算符；将所有的实参放到数组a中
+        /!*for(var i=0;i<arguments.length;i++){
+            this[this.length]=arguments[i]
+        }
+        return this.length;*!/
+       console.log(a);
+   }*/
+    /*var ary = [1,2,4];
+    ary.myPush(10,100,300)
+
+    var a = [1,2,3]
+    var b = [4,5,6];
+    var c = [...a,...b];
+    console.log(c);*/
+
+
+    // shift  unshift  sort  reverse  indexOf lastIndexOf  concat  join  map  forEach
+    // slice  splice
+
+
+    //原型深入：
+    // Function Object
+    // 私有属性和公有属性
+    // 函数的三种角色： 函数、类、对象
+    /*Fn.a=100;
+    Fn.prototype.a=1;*/
+
+</script>
+</body>
+</html>

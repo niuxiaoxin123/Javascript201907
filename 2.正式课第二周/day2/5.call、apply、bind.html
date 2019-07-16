@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Function 的原型上有call\appy\bind方法；
+    // 只有Function的实例可以使用这三个方法；改变函数体中的this指向；
+    // this : 是一个关键字；在特殊情景有特殊的意义；
+    // this不能直接被修改；或者说不能放到等号的左边；
+   /* var obj = {a:10};
+    function fn(name,age) {
+        console.log(name);
+        console.log(age);
+        console.log(this);// --> obj;
+    }
+    fn.call(obj,1,2);*/
+    // 1. fn会通过__proto__找到Function原型中的call方法；
+    // 2. 找到call方法，并且让call方法运行,把obj当做实参传给call方法
+    // 3. 当call运行时，让fn也运行，同时改变了fn中this指向，指向call的第一个参数；
+    //  当call运行时，让call中的this运行，同时改变了this中的this指向，指向call的第一个参数；
+   /* function fn1() {
+        console.log(100);
+    }
+    function fn2() {
+        console.log(200);
+        console.log(this);
+    }
+    fn1.call.call(fn2);*/
+    // 1. fn1通过__proto__找到Function原型的call方法，call继续通过__proto__再次找到Function原型中的call方法；让其运行
+    // 2.最后一个call,让自己的this（fn1.call）运行,改变了fn1.call方法中的this，指向fn2;
+    // 3.fn1.call运行时，让自己的this（fn2）运行，让fn2中的this指向window;
+  /* "use strict";
+    function f() {
+        console.log(this);
+    }
+    f.call();*/
+    // 1. 在非严格模式下，如果call方法不传参，或传null\undefined,那么函数中的this都指向window
+    // 2在严格模式下，传undefined或者不传，都指向undefined；传null，就指向null；
+
+
+    // apply : 传参不一样；apply第二个参数只能传数组或者类数组；
+    function fn(a,b,c) {
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        console.log(this);
+        s.apply({a:1},arguments)
+    }
+    fn(12,3,4,7)
+    function s(a,b,c,d) {
+        console.log(this);
+    }
+
+//  bind :预处理this；提前把this改了，但是不运行；会返回一个处理this之后的新函数，新函数运行中的this指向了bind的第一个实参；
+    function fn() {
+        console.log(this);
+    }
+    var f = fn.bind({},12)
+    f();
+    fn();
+
+
+
+
+
+
+</script>
+</body>
+</html>

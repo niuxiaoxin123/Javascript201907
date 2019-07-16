@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //
+
+   // var f = new Fn;// f生成时，里面__proto__指向了Fn.prototype;当执行14行时，只是给Fn.prototype新增了getX属性；所以f可以获取getX;
+   /* function Fn() {
+        this.x =100;
+    }
+    Fn.a =1;// {a:1,arguments:null,prototype:{}}
+    Fn.prototype.getX = function () {
+       console.log(this.x);
+    }
+    var f = new Fn;
+    f.getX();*/// f通过__proto__找到父类Fn原型中的方法，也就是说f继承了Fn原型中的方法；
+    // console.log(f.a);
+    function A() {
+        this.getX=function () {
+            console.log(100);
+        }
+        function getY() {
+        }
+    }
+    A.prototype.haowan=function () {
+        console.log("天下雨了快")
+    }
+    function B() {
+    }
+    B.prototype=new A;// {getX:function(){}}
+    //var a = new A;//
+    var b = new B;
+    //a.haowan();
+    b.haowan();
+    b.getX();
+    // 原型继承：通过类Anew出来的实例覆盖了B的默认原型的空间地址，那么通过类B创建的实例既可以使用类A实例的私有属性，也可以调用类A原型上的公有属性；类继承了类A公有和私有属性，这种继承方式就是原型继承；
+    B.prototype=new A;// {getX:function(){}}
+    var a = new A;//
+    var b = new B;
+    //a.haowan();
+    b.haowan();
+    b.getX();
+    //b.getY();
+
+
+</script>
+</body>
+</html>

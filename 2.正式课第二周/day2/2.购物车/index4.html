@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="price.css"/>
+</head>
+
+<body onselectstart="return false;">
+<div class="wrap">
+    <div class="box">
+        <ul class="list">
+            <li>
+                <i></i>
+                <em>0</em>
+                <i></i>
+                <span>
+							单价：<strong>12.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+            </li>
+            <li>
+                <i></i>
+                <em>0</em>
+                <i></i>
+                <span>
+							单价：<strong>10.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+            </li>
+            <li>
+                <i></i>
+                <em>0</em>
+                <i></i>
+                <span>
+							单价：<strong>8.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+            </li>
+            <li>
+                <i></i>
+                <em>0</em>
+                <i></i>
+                <span>
+							单价：<strong>8元 </strong> 小计：<strong>0元</strong>
+						</span>
+            </li>
+            <li>
+                <i></i>
+                <em>0</em>
+                <i></i>
+                <span>
+							单价：<strong>14.5元 </strong> 小计：<strong>0元</strong>
+						</span>
+            </li>
+        </ul>
+        <div class="info">
+            <span>商品公合计：<em>0</em>件</span>
+            <span>共花费了：<em>0</em>元</span>
+            <br/>
+            <br/>
+            <span>其中最贵的商品单价是：<em>0</em>元</span>
+        </div>
+    </div>
+</div>
+<script>
+    // 1.获取到所有的li;并且给当前li下面的第每一个i绑定点击事件
+    // 2.当点击+或-时，需要修改数量、总价、商品个数、总花费、最贵的；
+    var oLis=document.getElementsByTagName("li");
+    var info = document.getElementsByClassName("info")[0];
+    var ems = info.getElementsByTagName("em");
+    for(var i=0;i<oLis.length;i++){
+        addClick(oLis[i]);
+    }
+
+    function addClick(curLi) {
+        var tagI = curLi.getElementsByTagName("i");
+        var strong = curLi.getElementsByTagName("strong");
+
+        // 给-绑定点击事件
+        tagI[0].onclick = function () {
+            var val = Number(this.nextElementSibling.innerHTML);
+            val-=1;
+            if(val<=0){
+                this.nextElementSibling.innerHTML=0;
+                val=0;
+            }else{
+                this.nextElementSibling.innerHTML=val;
+            }
+            strong[1].innerHTML = parseFloat(strong[0].innerHTML)*val + "元";
+            computed()
+        }
+        // 给+绑定点击事件
+        tagI[1].onclick = function () {
+            var val = Number(this.previousElementSibling.innerHTML);
+            val+=1;
+            this.previousElementSibling.innerHTML=val;
+            strong[1].innerHTML = parseFloat(strong[0].innerHTML)*val + "元";
+            computed()
+        }
+
+    }
+    function computed() {
+        var val1 =0;
+        var val2 = 0;
+        var ary = [0];
+        for(var i=0;i<oLis.length;i++){
+            var em = oLis[i].getElementsByTagName("em")[0];
+            var strong = oLis[i].getElementsByTagName("strong");
+
+            val1+=Number(em.innerHTML);
+            val2+=parseFloat(strong[1].innerHTML)
+            if(Number(em.innerHTML)>=1){
+                ary.push(parseFloat(strong[0].innerHTML))
+            }
+        }
+        ems[0].innerHTML = val1;
+        ems[1].innerHTML = val2;
+        ary.sort(function (a,b) {
+            return a-b;
+        })
+        ems[2].innerHTML=ary[ary.length-1];
+    }
+</script>
+</body>
+
+</html>

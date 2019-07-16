@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sum() {
+        //console.log(arguments);
+        // 把arguments中__proto__指向了数组Array 的原型；那么arguments就可以通过__proto__找到数组中原型中的方法，并且使用；
+        // 在IE10及以下，不兼容；
+        arguments.__proto__=Array.prototype;
+        arguments.pop();
+        // console.log(arguments);
+    }
+    sum(12,3,4,5,73,6);
+
+
+
+</script>
+</body>
+</html>

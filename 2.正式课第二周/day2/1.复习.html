@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function C1(name) {
+        if (name) {
+            this.name = name;
+        }
+    }
+    function C2(name) {
+        this.name = name;
+    }
+    function C3(name) {
+        this.name = name || 'join';
+    }
+    C1.prototype.name = 'Tom';
+    C2.prototype.name = 'Tom';
+    C3.prototype.name = 'Tom';
+    console.log(new C1().name);// {}  "Tom"
+    console.log(new C2().name);//{name:undefined}  undefined
+    console.log(new C3().name);//{name:"join"} "join"
+    // 1. 函数执行上；先默认创建对象，把this指向这个空对象，最后代码运行完成之后，返回这个this；
+    // 2. this 指向实例；
+    // 3. 小括号可以省略
+    // 4. return +基本不能修改默认返回的实例；return+引用会覆盖默认返回的实例
+
+
+/*    function fun() {
+        this.a = 0;
+        this.b = function () {
+            alert(this.constructor);
+        }
+    }
+    //console.dir(fun);
+    var my_fun1 = new fun();// 在原型被重写之前，创建了一个实例
+    // my_fun1 的__proto__的属性占用了fun的内置的原型空间地址；这样原来的空间地址不能被回收；内置的protoType中有constructor属性；属性值是fun;
+    fun.prototype = {
+        b: function () {
+            this.a = 20;
+            alert(this.a);
+        },
+        c: function () {
+            this.a = 30;
+            alert(this.constructor)
+        }
+    }
+    var my_fun = new fun();//{a:0,b:function () {alert(this.a);}}
+    //my_fun.b();// 0
+    //my_fun.c();// 30
+    my_fun1.b();*/
+
+
+
+    /*var  obj = {};
+    console.log(obj);
+    obj.a = 100;*/
+
+
+    function Foo() {
+        getName = function () {
+            console.log(1);
+        };
+        return this;
+    }
+    Foo.getName = function () {
+        console.log(2);
+    };
+    Foo.prototype.getName = function () {
+        console.log(3);
+    };
+    var getName = function () {
+        console.log(4);
+    };
+    function getName() {
+        console.log(5);
+    }
+    Foo.getName();// 2
+    getName();//  4
+    Foo().getName();// 1
+    getName();// 1
+    new Foo.getName();// 2  点的优先级高于new;
+    new Foo().getName();// 3  ()优先级很高；
+    new new Foo().getName()//  3
+    // ()  高于点  点高于new
+    /*function a() {
+
+    }
+    console.dir(a)*/// {arguments:null,caller:null,prototype:{},getName:f}
+
+
+    function Fn() {
+        this.x = 100;
+        this.y = 200;
+        this.getX = function () {
+            console.log(this.x);
+        }
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x);
+    };
+    Fn.prototype.getY = function () {
+        console.log(this.y);
+    };
+    var f1 = new Fn;
+    var f2 = new Fn;
+    console.log(f1.getX === f2.getX);// false
+    console.log(f1.getY === f2.getY);// true
+    console.log(f1.__proto__.getY === Fn.prototype.getY);// true
+    console.log(f1.__proto__.getX === f2.getX);// false
+    console.log(f1.getX === Fn.prototype.getX);// false
+    console.log(f1.constructor);// Fn
+    console.log(Fn.prototype.__proto__.constructor);// Object
+    f1.getX();// 100
+    f1.__proto__.getX();// undefined
+    f2.getY();// 200
+    Fn.prototype.getY()// undefined
+
+
+
+/*    var name = 'zhufengpeixun';
+    var Fn =function (name) {
+        var name = 'world';
+        this.name = 'zhufeng';
+        this.sex = function () {
+            this.name = 'hello';
+        }
+    }
+    var f1 = new Fn(name);// {name:"hello",sex:function(){}}
+    var f2 = new Fn('age');//{name:"zhufeng",sex:function(){}}
+    console.log(f1.name);
+    console.log(f2.age);// undefined
+    f1.sex();
+    console.log(f1);
+    f1.sex === f2.sex
+    Fn.name == f1.name  *///false
+
+
+    function Fn() {
+        var a = 1
+        this.a = a
+    }
+    Fn.prototype.say = function () {
+        this.a = 2
+    }
+    Fn.prototype = new Fn;// {a:1}
+    var f1 = new Fn;
+    f1.__proto__.b = function () {
+        this.a = 3
+    };
+    console.log(f1.a)//1   f1{a:1}
+    console.log(f1.prototype)// undefined
+    console.log(f1.b)// 函数
+    f1.hasOwnProperty('b')// false
+    'b' in f1 // true
+    console.log(f1.constructor == Fn)// true
+
+
+
+    let n=10,// 11 32  53
+        obj = {
+            n:20// 73
+        }
+    let fn = obj.fn = (function () {
+        n++;
+        return function (m) {
+            // m=11
+            n+=10+(++m);
+            this.n+=n;
+            console.log(n);// 32   53
+        }
+    })(obj.n)
+    fn(10);
+    obj.fn(10);
+    console.log(n,obj.n)
+
+
+</script>
+</body>
+</html>
