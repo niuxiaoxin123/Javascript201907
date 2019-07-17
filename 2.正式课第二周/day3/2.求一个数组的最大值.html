@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary = [1,33,2,55,34,66,88,3];
+    // 1.sort 先将数组从大到小排序；然后获取第一项
+    /*ary.sort(function (a,b) {
+        return b-a;
+    })
+    var max= ary[0];*/
+
+    // 2.两两相比；
+    /*for(var i=0;i<ary.length;i++){
+        if(ary[i]>ary[i+1]){
+            /!*var temp = ary[i];
+            ary[i]=ary[i+1];
+            ary[i+1]=temp;*!/
+            var a = ary[i]+ary[i+1];
+            var b = ary[i]-ary[i+1];
+            ary[i]=(a-b)/2;
+            ary[i+1]=(a+b)/2;
+        }
+    }
+    console.log(ary[ary.length - 1]);*/
+    // 3.假设法
+    // 假设第一项是最大值；然后去循环数组每一项，分别和max进行比较；如果比max大，那么直接将max覆盖掉；max最终存储的一定是最大值；
+    /*var  max = ary[0];
+    for(var i=1;i<ary.length;i++){
+        if(ary[i]>max){
+            max=ary[i];
+        }
+    }
+    console.log(max);*/
+
+    // 4. apply : 改变参数传递方式
+    // console.log(Math.max.apply(null, ary));
+
+    // 5. 扩展运算符...
+    console.log(Math.max(...ary));
+    var obj = {a:1,b:2}
+    var obj1 = {a:100,c:{d:1}};
+    var o = {...obj1,...obj};
+    // obj1中c对应的属性值和o中c对应的属性值是同一个空间地址，当改变其中一个，另一个也会随着发生改变，这就是浅克隆；
+    obj1.c.d=200;
+    console.log(o);
+    var  g = {z:1}
+    console.log(Object.assign(g, obj, obj1));
+    console.log(g);
+    // 封装Object.assign
+
+    /*Object.prototype = Array.prototype;
+    console.log(obj.concat(obj1));*/
+    /*a=b=10;
+    b=2;
+    console.log(a);*/
+
+
+</script>
+</body>
+</html>

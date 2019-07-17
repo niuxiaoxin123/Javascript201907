@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Object.assign
+    // Object.create : 创建一个空对象；让当前空对象中__proto__指向了Object.create这个方法第一个实参；
+    /*var obj = {a:100,b:2};
+    var o = Object.create(obj);
+    console.log(o);
+    console.log(o.__proto__ === obj);*/
+    /*var a = Object.create(Array.prototype)
+    console.log(a);*/
+
+
+    // 寄生组合继承；
+    function A() {
+        this.x=100;
+    }
+    A.prototype.getX =function () {
+
+    }
+    function B() {
+        A.call(this)
+    }
+    // 让B的原型中的__proto__指向A的原型；那么通过类B创建的实例；既可以使用A的私有属性，也可以使用公有属性；
+    //B.prototype=A.prototype;
+    B.prototype = Object.create(A.prototype);// {__proto__:A.prototype}
+    B.prototype.getY = function () {
+    }
+    var b = new B;
+    console.log(b.constructor);// A
+
+
+</script>
+</body>
+</html>

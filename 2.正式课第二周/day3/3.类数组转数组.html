@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>3</div>
+<div>1</div>
+<div>2</div>
+<button>排序</button>
+<script>
+    // arguments  元素集合
+    /*function ave() {
+        // console.log(arguments instanceof Array);// false
+        // arguments.pop();// arguments不能使用Array原型中的方法；
+        // arguments.__proto__ = Array.prototype;
+        // 把arguments转成一个数组
+        /!*var ary = [];
+        // 通过循环把arguments中的每一项放入新的数组ary中；
+        for(var i=0;i<arguments.length;i++){
+            ary.push(arguments[i]);
+        }*!/
+        // slice
+        // 利用call方法改变了slice方法中的this指向；让其指向当前作用域下的arguments;那么当slice运行时，循环遍历的this就是arguments；所以最后会通过arguments映射出一个新的数组来；
+        var ary = Array.prototype.slice.call(arguments)
+    }
+    ave(99,97,92,90,100,67,95,98)
+
+    var  a=[12,233,35,5,7];
+    a.slice();
+    Array.prototype.slice=function () {
+        var ary = [];
+        for(var i=0;i<this.length;i++){
+            ary[i]=this[i];
+        }
+        return ary;
+    }*/
+    // JS的异常捕获；try catch
+    var divs = document.getElementsByTagName("div");
+    function toArray(likeAry) {
+        var ary=[];
+        try{
+            ary = Array.prototype.slice.call(likeAry);
+            //1. Array先找自己原型中的slice方法；通过slice这个函数__proto__找到Function原型中call方法；
+            // 2.让call方法运行，改变了call中的this(Array.prototype.slice)的this指向likeAry(类数组)；
+            // 3. 让Array.prototype.slice运行，此时方法中this指向了likeAry；
+            // console.log(n);
+        }catch(e){
+            // 当try语句报错，就会走catch，如果try语句正常运行，那么catch不会执行；
+            //console.log(e);// e指的是报错信息
+            //console.log(200);
+            for(var i=0;i<likeAry.length;i++){
+                ary[i]=likeAry[i];
+            }
+        }
+        return ary;
+    }
+    var a = toArray(divs);
+    a.pop();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 原型继承： 私有和公有
+    // 中间类继承： 公有属性
+    // call 继承： 继承私有属性
+    // 寄生组合继承： 继承公有和私有
+
+     function A() {
+         this.x =100;
+         this.getX=function () {
+         }
+     }
+     A.prototype.getY = function () {
+     }
+     function B() {
+         // this --> b;B的实例
+         this.z =1;
+         A.call(this);// 改变A中的this，指向类B的实例；让A函数运行
+     }
+     // A.call(B)//
+     // 类B继承了类A的私有属性;不能使用类A的公有属性；所有类B创建的实例，都可以使用类A的私有属性；
+     var b = new B;
+     console.log(b.getY);
+
+
+</script>
+</body>
+</html>

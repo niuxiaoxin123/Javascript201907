@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 商品排序
+    // 实现去重；
+    // 字符串拼接
+    /*var  ary = [{a:1,b:2},{a:2,b:1},{a:3,b:4},{a:1,b:2},{a:1,b:21},{a:12,b:1}]*/
+    // sort
+    /*var  ary=[32,12,45,71,81,83];
+    ary.sort(function (a,b) {
+        console.log(a,b);
+        // a和b代表了相邻的两项；如果a-b小于0；就会发生位置的交换；
+        return a-b;
+    });*/
+
+    var a = [{a:1},{a:10,b:2},{a:3},{a:9}];
+    a.sort(function (a,b) {
+        // a和b代表数组成员项；
+        return a.a-b.a;
+    })
+    console.log(a);
+
+
+</script>
+</body>
+</html>

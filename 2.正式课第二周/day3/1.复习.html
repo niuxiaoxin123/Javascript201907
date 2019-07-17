@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 继承：
+    // 原型继承、中间类继承
+    function A(){
+
+    }
+    function B() {
+
+    }
+    B.prototype = new A;// A 的实例
+    var b = new B;
+    // 类B继承类A的私有属性和公有属性；
+
+
+    function ff() {
+        // 中间类继承
+        //arguments.__proto__ = Array.prototype;
+        arguments.__proto__ =new Array;
+        // arguments 的__proto__这个属性指向了Object的原型；相当于改变了arguments的原型链；
+         arguments.pop();
+         arguments.hasOwnProperty();
+    }
+
+    // call、apply、bind: 改变函数中的this指向
+    // call： 改变this指向
+    // Function原型中的方法；fn是Function一个实例；
+    // 实例和类： 实例是由类创建出来的，实例可以使用类原型上公有属性
+    /*function fn(a,b) {
+        console.log(this);
+    }
+    fn.call(1,2,3);*/
+
+    // apply :
+    function fn(a,b) {
+        console.log(this);
+    }
+    fn.apply({},[100,200]);
+
+    // bind: 预处理this；传参和call方法一样；
+    // 在IE8以下是不兼容的；
+    var  f= fn.bind({},12,3);
+    f();
+    fn();
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

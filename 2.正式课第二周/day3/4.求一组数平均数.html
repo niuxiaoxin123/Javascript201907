@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="utils.js"></script>
+<script>
+    //console.log(1);
+    // 去掉最大值，去掉最小值；然后取平均数求和
+    function sum() {
+        var ary = utils.toArray(arguments);
+        ary.sort(function (a,b) {
+            return a-b;
+        })
+        ary.pop();
+        ary.shift();
+        /*var total = 0;
+        for(var i=0;i<ary.length;i++){
+            total+=ary[i];
+        }
+        console.log(total / ary.length);*/
+
+        // join :
+        //"88+94+94+95+96+97+97+99"
+        // eval: 能将字符串解析成JS代码并且让其运行；
+        console.log(eval(ary.join("+"))/ary.length);
+    }
+    sum(97,96,100,88,60,95,99,94,97,94)
+
+//    function fn() {
+//        console.log(100);
+//        console.log(this);
+//    }
+//    var obj = {
+//        fn:fn
+//    }
+//    eval('obj.fn()')
+
+
+
+
+</script>
+</body>
+</html>
