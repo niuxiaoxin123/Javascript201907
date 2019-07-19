@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // call  apply  bind
+    // call
+/*    function fn(a,b) {
+
+    }
+    fn.call([],1,2)
+
+    //apply : 传参不同
+    fn.apply(12,[])
+    // bind : 预处理this;
+    var f  = fn.bind({})
+    f();*/
+
+    // 求数组的最大值
+    // 排序
+    // 两两相比
+    // 假设法
+    // Math.max.apply
+    // ...
+
+
+    // 类数组转数组
+
+    /*try{
+        var ary = [].slice.call(oLis)
+    }catch(e){
+
+    }*/
+
+    // sort
+    // 数组的方法
+    /*var ary = [{a:1},{a:88}]
+
+   ary.sort(function (a,b) {
+       return a.a-b.a
+   })*/
+
+    // JSON : 是一种数据格式；不是一种数据类型
+    // JSON.parse ：将JSON格式的字符串转成JSON格式的对象
+    // JSON.stringify : 将JSON格式对象转成JSON格式字符串；
+    var obj ='{"a":1}';
+    var o = "{'a':1}";
+    // JSON.parse  JSON.stringify
+    //console.log(JSON.stringify(obj));
+   // console.log(JSON.stringify(o));
+    console.log(JSON.parse(obj));
+    console.log(JSON.parse(o));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<div>
+    <ul id="list"></ul>
+</div>
+<div>好好学习，天天向上</div>
+<div></div>
+<script>
+    // SEO : 搜索引擎；
+    // SEM : 百度竞价；
+    // 数据：从后端来；后端从数据库获取的数据；数据库中数据数据采集；
+    // 前端 ===> 获取后端的数据；数据交互；
+    // ajax : 请求数据（）；把服务器；服务器跑着后端的代码；网络建立连接；
+
+    var ary = ["原创微视频 | 习近平眼中的科技创新","在内蒙古，习近平讲了这样一堂“公开课","做好立法监督等工作 更好助力经济社会发展和改革攻坚","环球时报：中美谁在铸成历史错误，实践说了算","人民日报：多开路 少添堵（国际论坛） 延安脱贫了"];
+    var list = document.getElementById("list");
+    //1.动态创建DOM；
+    // 1.有多少条数据创建多少个li;
+    // 2.把ary中数据放到li里面；
+    // 3.把有内容的li放到list中；
+    /*for(var i=0;i<ary.length;i++){
+        var  li =document.createElement("li");
+        li.innerHTML=ary[i];
+        // 页面每添加一次li；页面都要回流一次；
+        list.appendChild(li);
+        // debugger
+    }*/
+    // DOM 的回流: 当页面中的元素的大小、位置发生改变，浏览器要对其他元素的位置进行重新的计算和排布；这种现象就是DOM的回流；这样非常消耗性能；
+
+    // 文档碎片：是一个JS中的容器；可以存储DOM元素；
+
+    // 2. 文档碎片: 减少了DOM的回流次数；提高了浏览器的性能；
+    /*var frg = document.createDocumentFragment();
+    for(var i=0;i<ary.length;i++){
+        var  li =document.createElement("li");
+        li.innerHTML=ary[i];
+        // 页面每添加一次li；页面都要回流一次；
+        frg.appendChild(li);
+        //debugger
+    }
+    list.appendChild(frg)*/
+
+    // 3. 字符串拼接
+//    var str = "";
+   /*for(var i=0;i<ary.length;i++){
+        str+="<li>"+ary[i]+
+                "<img src=''>"+
+            "</li>"
+   }
+   list.innerHTML = str;*/// 只引发一次回流；
+
+    // 4. es6模板字符串: 简化了字符串的拼接；
+    var str = ``;
+    for(var i=0;i<ary.length;i++){
+        str+=`<li>${ary[i]}</li>`
+    }
+    list.innerHTML = str;
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

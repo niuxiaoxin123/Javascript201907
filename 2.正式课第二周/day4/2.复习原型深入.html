@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var ary = [];
+    // Function 是所有函数数据类型的基类；
+    Function.prototype.isPrototypeOf(ary);
+    // Array 具有__proto__和prototype属性；但是Array的prototype只有__proto__;直接指向了Object的原型；
+    // ary---> Array.prototype--> Object.prototype
+    // Array : {prototype:{__proto__:Object.prototype},__proto__:{}}
+    // Function Object : 互为指向 Object.__proto__-->Function;
+    // Function首先是一个函数，然后是一个对象；所以Function是自己的一个实例；Function__proto__---> Function.prototype--> Object.prototype;
+
+    // 继承： 原型继承、中间类继承 call继承 寄生组合继承
+    /*function A() {
+        this.a  =10;
+    }
+    function B() {
+        A.call(this)
+    }
+    B.prototype.getX = function () {
+
+    }
+    B.prototype = new A;
+    var f = new B;
+    f.getX()*/
+
+    // 中间类：直接修改实例的__proto__
+    // call 继承
+    // call和Object.create
+
+
+
+</script>
+</body>
+</html>
