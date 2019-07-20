@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<div a="123"></div>
+<script>
+    // String ： toUpperCase  toLowerCase  charAt  charCodeAt   substr  substring  slice  indexOf  lastIndexOf  split  replace  concat  trim
+    // var str = "1,234,567,654,321"
+    // 正则:经常用于表单验证；
+     // 正则： 是一个处理字符串的规则；
+    /*var  reg = /\d/;// : 代表的包含一个0-9的数字；
+    // reg.test ： 匹配；检测当前的字符串中是否符合这个正则；
+    console.log(reg.test("px123px"));
+    console.log(reg.test("abc"));
+    console.log(reg.test(""));*/
+
+    //var  reg = /^\d$/;
+    // ^ : 以什么什么开头
+    // $ : 以什么结尾
+    // {}: 修饰前面的；出现的次数；
+    // \ : 转义字符；
+    /*console.log(reg.test("11"));// false
+    var reg = /^2\d{2}/;
+    console.log(reg.test("167"));
+    console.log(reg.test("3456"));*/
+    /*var reg = /\d/;
+    console.log(reg.test("a"));*/
+
+    /*console.log(reg instanceof RegExp);*/
+
+
+    // exec : 捕获；
+    // exec 返回值是一个数组；
+    // 第一项： 代表捕获到的内容
+    // 第二项： index是捕获到的内容在原字符串中的索引位置
+    // 第三项： input 属性值代表要捕获的整个字符串内容；
+   // ["1", index: 2, input: "px1234px", groups: undefined]
+    // 如果正则捕获内容，捕获不到，返回null;
+    //console.log(reg.exec("px1234px") instanceof  Array);
+    /*var reg = /\d{4}/;
+    console.log(reg.test("px12.34px"));*/
+
+
+</script>
+</body>
+</html>
