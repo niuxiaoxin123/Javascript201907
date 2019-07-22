@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // replace : 替换
+    // replace(old,new);
+    /*var  str = "2019-10-14";
+    str.replace("-","").replace("-","")*/
+    /*var str="zhufengzhufeng";
+    console.log(str.replace("zhufeng", "zhufengpeixun").replace("zhufeng", "zhufengpeixun"));*///"zhufengpeixunpeixunzhufeng"
+    var str="zhufengzhufeng";
+    /*console.log(str.replace("zhufeng", "11"));
+    console.log(str);*/
+    var newStr = str.replace(/zhufeng/g,function () {
+        // 1.回调函数匹配几次，那么这个回调函数执行几次；
+        // 2.回调函数的返回值会把匹配到的内容替换掉；
+        // 3.arguments:是每一次捕获到的内容，以及要捕获的索引；
+        // replace内置方法中对自己的参数进行判断；如果第一个参数是正则，第二个函数，就会利用当前这个正则对当前str进行捕获，把捕获的的内容、开始的索引、整个字符串传递给这个回调函数的实参；
+        console.log(arguments);
+        return 'zhufengpeixun'
+    })
+    console.log(newStr);
+    console.log(str);
+
+
+</script>
+</body>
+</html>

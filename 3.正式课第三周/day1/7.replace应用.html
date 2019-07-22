@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* var str = "my  name  is  666,i am 22 years old,i like study";
+    // 单词边界 replace；
+    var newStr = str.replace(/\b[a-z]/g,function (a,b,c) {
+        // arguments
+        // return arguments[0].toUpperCase()
+        /!*console.log(a);
+        console.log(b);
+        console.log(c);*!/
+        return a.toUpperCase();
+    })
+    console.log(newStr);*/
+
+   /*var str ="20190722";
+   var ary = ["零","壹","贰","叁","肆","伍","陆","柒","捌","玖","万"，"仟"];
+    
+   var newStr=str.replace(/\d/g,function () {
+       return ary[arguments[0]]
+   })
+   console.log(newStr);*/
+
+/*  var  str = "2019-07-22 16:40:30";
+   var  ary = ["年","月","日","时","分","秒"];
+   var i=0;
+   var s = "";
+   var newStr = str.replace(/\d+/g,function () {
+       s+=arguments[0] + ary[i++]
+   })
+   console.log(s);*/
+
+
+   // 千分符
+   var str = "13234567753224";
+   // 分析：正则分为两部分;
+   // 第一部分：数字有1位，两位，3位；
+   // 第二部分：位数一定是3的倍数；
+/*    var  reg = /^(\d{1,3})((\d{3})+)$/
+    var newStr = str.replace(reg,function (a,b,c) {
+        var part1 = arguments[1];
+        var part2 = arguments[2];
+        //
+        //console.log(arguments);
+        var newStr=part2.replace(/\d{3}/g,function () {
+            //console.log(arguments);
+            return ","+arguments[0];
+        })
+        return part1+newStr;
+    })
+   console.log(newStr);*/
+
+   var str = "13234567753224";
+   
+   var  newStr = str.replace(/\d/g,function () {
+       // arguments:["",0]
+       // 当捕获到当前这一项，要不要加逗号，取决于这一项后面的字符串的长度；如果后面的字符串长度是3的倍数；那么该项需要逗号；
+       // 如何计算当前项后面项所有字符的长度；字符串总长度-(当前项索引+1)
+       // 后面的长度%3===0那么该项应该拼接逗号；
+       // 并且要求不是最后一项；
+       if((str.length-(arguments[1]+1))%3===0&&str.length-1!==arguments[1]){
+           return arguments[0]+","
+       }else{
+           return arguments[0]
+       }
+   })
+   console.log(newStr);
+</script>
+</body>
+</html>

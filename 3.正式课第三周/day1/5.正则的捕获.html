@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // exec: 在RegExp的原型上；所以所有正则的实例都可以使用这个方法
+    // 返回一个数组；数组的第一项就是咱们捕获的内容
+    // 如果没有合适的，那么捕获结果就是null；
+   /* var reg = /\d{2}/;
+    console.log(reg.exec("zhufeng20"));//["20", index: 7, input: "zhufeng20", groups: undefined]
+    console.log(reg.exec("zhufeng2"));// null
+    console.log(reg.exec("zhufeng20peixun19"));*/
+    // console.log(reg.exec("zhufeng20peixun19"));
+
+    // 修饰符： i g  m;
+    // g ：global 正则的捕获具有懒惰性；
+    // 如果正则有g修饰符，捕获一次，正则的lastIndex 会默认记录上一次捕获的内容最后一个字符的索引，当再次捕获时，从上一次记录的索引+1开始捕获；
+    // 如果不加g;每次捕获结果都是从0开始；
+ /*   var reg = /\d+/g;
+    console.log(reg.lastIndex);
+    console.log(reg.exec("zhufeng2009peixun2019"));
+    console.log(reg.lastIndex);
+    console.log(reg.exec("zhufeng20peixun19"));*/
+
+    // 贪婪性
+    // ? 放在量词的后面，取消捕获的贪婪性；
+    // ? :0次或1次
+    // ?=
+    // ?!
+    // 量词?
+   /* var reg = /\d?/g;
+    console.log(reg.exec("zhufeng2009peixun2019"));
+    console.log(reg.exec("zhufeng2009peixun2019"));
+    console.log(reg.exec("zhufeng2009peixun2019"));*/
+   /*var str = "zhufeng2009peixun2019";
+    console.log(str.match(/\d+?/));
+*/
+
+    // 分组
+    // 1.大正则要捕获，分组的小正则也要进行捕获；从左到右依次进行捕获；
+</script>
+</body>
+</html>

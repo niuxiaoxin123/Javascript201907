@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则的创建方式
+    /*var  num = 1;
+    var  n  = new Number(1);*/
+    /*var  name = "zhufeng";
+    var  reg = /\d"+name+"/;
+    console.log(reg.test('9""""namee"'));*/
+
+    var  name = "zhufeng";
+    // 正则的第二种创建方式 实例创建
+    var reg = new RegExp("\\d"+name+"\\w");
+    console.log(reg);
+
+
+</script>
+</body>
+</html>

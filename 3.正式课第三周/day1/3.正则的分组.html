@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正则的分组
+    /*var reg = /^[+-]?((\d|[1-9])\d+)(\.\d+)?$/;
+    console.log(reg.test("0001"));*/
+
+    //1.括号；改变了正则的优先级；
+    /*var reg = /^z|food$/;// 以z开头或者以food结尾都返回true；
+    console.log(reg.test("z"));// true
+    console.log(reg.test("zood"));// true
+    console.log(reg.test("food"));// true
+    console.log(reg.test("zaaa"));
+    console.log(reg.test("aafood"));*/
+
+/*    var reg = /^(z|food)$/;// 以z开头或者以food结尾都返回true；
+    console.log(reg.test("z"));// true
+    console.log(reg.test("zood"));// false
+    console.log(reg.test("food"));// true
+    console.log(reg.test("zaaa"));// false
+    console.log(reg.test("aafood"));*/// false
+
+
+    // 2. 括号引用
+    // \1 \2 : 代表和第一个分组或第二个分组出现一模一样的内容；
+    /*var reg = /^(a)(n)\2\1/
+    console.log(reg.test("annna"));*/
+    /*var  reg = /^ad{3}w$/;
+    console.log(reg.test("addw"));*/
+
+
+    // 3. 分组也要进行捕获
+    // 分组捕获:从左到右依次进行捕获；
+    var reg = /^[+-]?(\d|([1-9]\d+))(\.\d+)?$/;
+    console.log(reg.exec("12.889"));
+
+    /*var reg = /^(\d{6})([12]\d{3})((0[1-9])|(1[0-2]))((0[1-9])|([12]\d)|(3[01]))(\d{3}([0-9]|X))$/;
+    console.log(reg.exec("130283199001011834"));*/
+</script>
+</body>
+</html>
