@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+
+
+
+    var oBox = document.getElementById("box");
+    function getCss(curEle,attr) {
+        var val;
+        if("getComputedStyle" in window){
+            val=getComputedStyle(curEle)[attr]
+        }else{
+            val=curEle.currentStyle[attr]
+        }
+        // 如果传递的属性是width\height....;那么需要去掉单位px;变成数字；
+        var reg =/^(width|height|left|top|bottom|right|margin|padding|fontSize)$/;//
+        ///^width$/
+        if(reg.test(attr)){
+            val=parseFloat(val);
+        }
+        return val;
+    }
+
+    function setCss(curEle,attr,val) {
+        var reg =/^(width|height|left|top|bottom|right|margin|padding|fontSize)$/;
+        // 通过正则判断是否需要拼接"px";如果需要拼接，并且是number类型，直接拼接"px";
+        if(reg.test(attr)){
+            if(typeof val==="number"){
+                val =val+"px";
+            }
+        }
+        curEle.style[attr]=val;
+    }
+    setCss(oBox,"width",100);
+    setCss(oBox,"opacity",0.5);
+    setCss(oBox,"height",300);
+
+    function setGroupCss(curEle,obj) {
+        // 遍历传递进来的对象
+        for(var key in obj){
+            setCss(curEle,key,obj[key])
+        }
+    }
+    setGroupCss(oBox,{width:100,opacity:0.3,height:300})
+
+    // css(curEle,attr)
+    // css(curEle,attr,val)
+    // css(curEle,{width:"100px",height:"200px"})
+    
+    function css() {
+        var curEle=arguments[0],
+            attr=arguments[1],
+            val = arguments[2];
+        if(arguments.length===2){
+            if(typeof attr==="string"){
+                return getCss(curEle,attr)
+            }else{
+                setGroupCss(curEle,attr)
+            }
+        }else if(arguments.length===3){
+            setCss(curEle,attr,val)
+        }
+    }
+    css(oBox,"width")
+    css(oBox,"width",100)
+    css(oBox,{width:"100px",height:"200px"})
+
+
+    function css(...arg) {
+        //arg : 数组
+        if(arg.length===2){
+            if(typeof arg[1]==="string"){
+                return getCss(...arg)
+            }else{
+                setGroupCss(...arg)
+            }
+        }else if(arg.length===3){
+            setCss(...arg)
+        }
+    }
+    css(oBox,"width");
+</script>
+</body>
+</html>

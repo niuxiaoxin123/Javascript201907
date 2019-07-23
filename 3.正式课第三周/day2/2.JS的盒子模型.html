@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:200px;
+            height:150px;
+            padding:10px;
+            margin: 30px auto;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="box" style="width:200px;padding:10px;">昨日，京东对《京东开放平台“商品价格保护”服务规则》进行了修订，此次修改对价保服务的适用范围、开通路径、不支持价保场景进行了调整及完善，并新增了价格保护计算公式，京东方面称，新规则将于7月26日正式生效，以下是京东价格保护方案改动情况</div>
+<script>
+    // JS的盒子模型 : 13个属性；
+    var oBox = document.getElementById("box");
+    // 1. client系列
+    // 1) clientWidth clientHeight
+    //   clientWidth : width + 左右两个padding；
+   /* console.log(oBox.clientWidth);// 220
+    console.log(oBox.clientHeight);//  170
+    // console.log(oBox.style.width);// 只能获取行内样式
+    // 获取浏览器可视窗口的宽度或高度
+    var w = document.documentElement.clientWidth || document.body.clientWidth;
+    var h = document.documentElement.clientHeight||document.body.clientHeight;
+    console.log(h);*/
+
+
+    // 2. clientLeft   clientTop
+    // 1): 代表的是左边框的宽度
+    // 2)clientTop ： 代表的是上边框的高度；
+    //console.log(oBox.clientLeft);/// 10
+    //console.log(oBox.clientBottom);/// undefined
+    //console.log(oBox.clientTop);
+
+    // 3. offset 系列；
+    // offsetWidth offsetHeight
+   // console.log(oBox.offsetWidth);
+    //console.log(oBox.offsetHeight);
+    // 盒子的总宽度；clientWidth + 左右2个border的宽度
+
+
+    // scroll 系列
+    // 4. scrollWidth scrollHeight
+    // scrollHeight: 一个上padding+ 内容的真实高度；
+    // scrollWidth : 一个左padding+ 内容的真实宽度；
+    // console.log(oBox.scrollHeight);
+
+</script>
+</body>
+</html>

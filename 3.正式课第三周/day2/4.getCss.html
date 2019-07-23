@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        */*{
+            margin: 0;
+            padding: 0;
+        }*/
+        #box{
+            width:100px;
+            background:red;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div></div>
+</div>
+<script>
+    var oBox = document.getElementById("box");
+    // 1.元素.style.width
+    // 这种方法只能获取行内设置的CSS样式，不能获取在CSS中设置的样式；
+    //console.log(oBox.style.width);// "100px"
+    // 行内的权重高于CSS的样式；
+    // oBox.style.width="200px";
+
+    // 2. getComputedStyle :获取浏览器计算的样式；
+    // console.log("getComputedStyle" in window);// true
+    /*console.log(getComputedStyle(oBox).width);// "100px"
+    console.log(getComputedStyle(oBox)['width']);*/// "100px";
+
+    // 在IE8以下，getComputedStyle这个方法在window中不存在；
+    // 3. currentStyle
+    // 针对IE8及以下；
+    //console.log("currentStyle" in oBox);// true
+    // console.log(oBox.currentStyle.width);
+    //
+    function getCss(curEle,attr) {
+        var val;
+        if("getComputedStyle" in window){
+            val=getComputedStyle(curEle)[attr]
+        }else{
+            val=curEle.currentStyle[attr]
+        }
+        // 如果传递的属性是width\height....;那么需要去掉单位px;变成数字；
+        var reg =/^(width|height|left|top|bottom|right|margin|padding|fontSize)$/;//
+        ///^width$/
+        if(reg.test(attr)){
+            val=parseFloat(val);
+        }
+        return val;
+    }
+    console.log(getCss(oBox, "height"));//
+
+
+</script>
+</body>
+</html>

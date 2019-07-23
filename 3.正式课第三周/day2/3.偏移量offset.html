@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            position: relative;
+            width:300px;
+            height:300px;
+            margin:20px auto;
+            border: 20px solid pink;
+            background: red;
+        }
+        #inner{
+            width:200px;
+            height:200px;
+            margin: auto;
+            background: yellow;
+        }
+        #center{
+            width:100px;
+            height:100px;
+            margin: auto;
+            background: blue;
+            border: 5px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="center"></div>
+    </div>
+</div>
+<script>
+    var  outer = document.getElementById("outer");
+    var  inner = document.getElementById("inner");
+    var  center = document.getElementById("center");
+    // 父级参照物；offsetParent
+    // 一般情况下，所有的元素的父级参照物都是body;如果给元素加上position属性（relative,absolute,fixed）;会让所有子孙元素的父级参照物指向当前这个元素；
+    // 父亲节点： parentNode
+    // 偏移量： offsetLeft  offsetTop
+    /*console.log(outer.offsetParent);
+    console.log(inner.offsetParent);
+    console.log(center.offsetParent);
+    console.log(document.body.offsetParent);*/// null;
+    // offsetLeft : 左偏移量： 从当前元素左外边框，到父级参照物左内边框
+    // offsetTop : 上偏移量 ； 从当前元素的上外边框，到父级参照物的上内边框；
+    /*console.log(outer.offsetLeft);
+     console.log(inner.offsetLeft);*/
+
+    // 封装一个方法：offset
+    // 1. 获取当前元素的左偏移量；
+    // 2. 获取当前元素的父级参照物；
+    // 3. 通过while循环；加上父级参照物的border的宽度；加上父级参照物的左偏移量；再获取父级参照物的父级参照物；依次进行累加，直到当前父级参照物是body，则终止while循环；
+    function offset(curEle) {
+        var l = curEle.offsetLeft;
+        var t = curEle.offsetTop;
+        var parent = curEle.offsetParent;
+        // 当父级参照物是body的时候，终止循环；
+        while(parent!==document.body){
+            // 加上父级参照物的左偏移量和父级的左边框的宽度；
+            l+=parent.offsetLeft+parent.clientLeft;
+            t+=parent.offsetTop+parent.clientTop;
+            parent = parent.offsetParent;
+        }
+        // Es6中，如果对象的属性名和属性值名字相同，可以省略一个；
+        return {l,t}
+    }
+    console.log(offset(center).l);
+
+</script>
+</body>
+</html>

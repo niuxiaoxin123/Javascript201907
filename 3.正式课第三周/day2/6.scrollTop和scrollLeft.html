@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            margin:700px auto;
+            width:300px;
+            height:300px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+<div id="box">昨日，京东对《京东开放平台“商品价格保护”服务规则》进行了修订，此次修改对价保服务的适用范围、开通路径、不支持价保场景进行了调整及完善，并新增了价格保护计算公式，京东方面称，新规则将于7月26日正式生效，以下是京东价格保护方案改动情况昨日，京东对《京东开放平台“商品价格保护”服务规则》进行了修订，此次修改对价保服务的适用范围、开通路径、不支持价保场景进行了调整及完善，并新增了价格保护计算公式，京东方面称，新规则将于7月26日正式生效，以下是京东价格保护方案改动情况昨日，京东对《京东开放平台“商品价格保护”服务规则》进行了修订，此次修改对价保服务的适用范围、开通路径、不支持价保场景进行了调整及完善，并新增了价格保护计算公式，京东方面称，新规则将于7月26日正式生效，以下是京东价格保护方案改动情况</div>
+<script>
+    var oBox = document.getElementById("box");
+    //  client
+    // 1. clientWidth  clientHeight
+    // 2. clientLeft   clientTop
+
+    // offset
+    // 3. offsetWidth offsetHeight： 总宽度或总高度
+    // 4. offsetTop  offsetLeft   : 上、左偏移量
+    // offsetParent
+
+    // scroll
+    // scrollWidth  scrollHeight
+    //  以上11个属性都是只读属性；不能对其修改；
+    // scrollTop  scrollLeft
+    //oBox.clientWidth=200;
+    // console.log(oBox.clientWidth);
+    // 在IE6及以下，document.documentElement.scrollTop是0；document.body.scrollTop是正常取到滚动条卷起的高度；
+    /*var scrollT = document.documentElement.scrollTop||document.body.scrollTop;*/
+
+    // 如果传一个参数，那么默认是获取页面的滚动条的卷起的高度或宽度
+    // 如果传两个参数，那么是设置页面的滚动条卷起高度或者宽度；
+    /*function win(attr,val) {
+        if(val===undefined){
+            // 如果这个条件成立，说明只是获取
+            return document.documentElement[attr]||document.body[attr];
+        }
+        document.documentElement[attr]=val;
+        document.body[attr]=val;
+    }
+    win("scrollTop");    // 获取当前页面的滚动条卷起的高度
+    win("scrollTop",500);*/// 设置当前页面的滚动条卷起的高度；
+    window.onscroll = function () {
+        console.log(100);
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

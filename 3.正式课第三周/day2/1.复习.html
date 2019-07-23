@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 复习正则 ：
+    // 正则： 处理字符串的规则；
+    // 正则常见的元字符；
+    // 正则的创建方式：字面量方式、实例创建；
+    /*var  r = new RegExp("\\d","g");
+    console.log(r);*/
+    // 正则的分组 1. 改变优先级；  2. 分组引用 3.分组捕获；
+    //var reg = /^(z|f)ood$/
+    //var reg =/(\w)\1/
+
+    // 捕获
+    //  懒惰性: g取消捕获的懒惰性；
+    // 贪婪性： ? 放在量词前面取消捕获的贪婪性；
+    //var reg = /\d{2,5}?/;
+
+    // 正负向预查  ?= ?!
+    // replace : replace(oldStr,newStr)
+    // replace : replace(reg,function(){})
+    /*var  reg = /\d+/g;
+    var str = "zhufeng09peixun19";
+    var s = str.replace(reg,function (a,b,c) {
+        // 捕获几次，该函数执行几次；
+        //  arguments : 1:捕获的内容  2. 捕获的索引 3. 整个字符串
+        // return 把捕获内容替换成return的内容；
+         return "1";
+    });
+    console.log(s);*/
+
+    /*    function A(s1,s2) {
+        s2(100,200,300)
+    }
+
+    A(100,function (a,b,c) {
+        console.log(a);// 100
+        return a;
+    })*/
+
+    var reg = /\d+/g;
+    var str = "zhufeng09peixun19";
+    // 把匹配到的结果直接放到一个数组中；
+    console.log(str.match(reg));
+
+
+</script>
+</body>
+</html>
