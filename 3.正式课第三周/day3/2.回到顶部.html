@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #goBack{
+            display: none;
+            position: fixed;
+            right:10px;
+            bottom: 10px;
+            width:100px;
+            height:100px;
+            background: red;
+            border-radius: 50%;
+            line-height: 100px;
+            text-align: center;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+<img src="1.png" alt="">
+<img src="1.png" alt="">
+<img src="1.png" alt="">
+<img src="1.png" alt="">
+<img src="1.png" alt="">
+<img src="1.png" alt="">
+<div id="goBack">回到顶部</div>
+<script src="utils.js"></script>
+<script>
+    // 1. 获取元素，并且绑定点击事件
+    var goBack = document.getElementById("goBack");
+    goBack.onclick = function () {
+        // 页面的滚动条瞬间为0；
+        // utils.win("scrollTop",0);
+        // 第一种方案：每隔一段时间，让scrollTop减去10；
+        /*var timer = setInterval(function () {
+            // 每次都要获取一下最新的curT;
+            var curT = utils.win("scrollTop");
+            console.log(curT);
+            if(curT==0){
+                clearInterval(timer);
+            }
+            curT-=10;
+            //console.log(100);
+            // 如果设置的scrollTop值小于0；那么默认会设置为0;
+            utils.win("scrollTop",curT);
+        },10)*/
+        /*var curT = utils.win("scrollTop");
+        var timer = setInterval(function () {
+            // 每次都要获取一下最新的curT;
+            curT-=10;
+            if(curT<=0){
+                clearInterval(timer);
+            }
+            // 如果设置的scrollTop值小于0；那么默认会设置为0;
+            utils.win("scrollTop",curT);
+        },10)*/
+
+
+        // 固定时间  1s;
+        var  curT = utils.win("scrollTop");
+        var dis = curT/50;
+        var timer = setInterval(function () {
+            curT-=dis;
+            if(curT<=0){
+                clearInterval(timer)
+            }
+            utils.win("scrollTop",curT)
+        },20)
+    }
+
+    // 当滚动条卷起的高度等于一屏的高度时，才让回到顶部按钮显示；需要有个方法实时监听滚动条卷起的高度；
+    // 当滚动条滚动时，会不断触发该事件；跟时间有关；
+    window.onscroll = function () {
+        var curT=utils.win("scrollTop");
+        var curH = utils.win("clientHeight");
+        if(curT>=curH){
+            goBack.style.display="block";
+        }else{
+            goBack.style.display="none";
+        }
+    }
+
+
+</script>
+</body>
+</html>

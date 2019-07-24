@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width:500px;
+            height:300px;
+            margin:1000px auto;
+        }
+        img{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/default.jpg" trueImg="img/10.jpg" alt="">
+</div>
+<script src="utils.js"></script>
+<script>
+    // 确定真实图片加载的临界条件：当图片的下边框和浏览器可视窗口的下边框重合；把图片的行间属性trueImg的真实路径地址赋值给当前元素的src属性；
+    //临界条件： 当前滚动条卷去的高度+ 可视窗口的高度==盒子底边框距离body上边框的距离；
+
+    var div = document.getElementsByTagName("div")[0];
+    var img = document.getElementsByTagName("img")[0];
+    // 可视窗口的高度
+    var winH = utils.win("clientHeight");
+    // 盒子底边框距离body
+    var curT = utils.offset(div).t + div.offsetHeight;
+
+    img.flag =false;
+    window.onscroll = function () {
+        // 标识放在当前元素的自己属性上；来控制自己是否需要加载；
+        if(img.flag){
+            return;
+        }
+        // 实时获取当前滚动条卷起的高度；
+        var winT = utils.win("scrollTop");
+        if(winH+winT>curT){
+            // 说明图片已经完全显示出来；获取行间属性的；
+            var address =img.getAttribute("trueImg");
+            // 用来验证该路径地址是否存在；
+            // 在JS中创建一个img元素；校验路径是否正确；
+            //img.src=address;
+            //var newImg = document.createElement("img");
+            var newImg = new Image;
+            newImg.src=address;
+            newImg.onload = function(){
+                // 当路径地址如果真实存在，那么会执行这个函数；如果不存在，不执行函数；
+                // console.log(100);
+                img.src=address;
+                fadeIn(img);
+                img.flag=true;
+            }
+        }
+    }
+    function fadeIn(curEle) {
+        // 设置初始的透明度
+        utils.setCss(curEle,"opacity",0.3);
+        var timer = setInterval(function () {
+            // 每次进来先获取一下最新的透明度；然后+=0.1；
+            var cur = Number(utils.getCss(curEle,"opacity"));
+            cur+=0.1;
+            if(cur>=1){
+                clearInterval(timer);
+            }
+            utils.setCss(curEle,"opacity",cur);
+        },100)
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div>
+        <div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<script>
+    // 1. JS的盒子模型
+    // client   offset  scroll
+    // clientWidth : 内容宽度+ 2padding
+    // clientHeight :
+    // clientTop  : 上边框的高度
+    // clientLeft :
+
+    // offsetWidth : 盒子的总宽度
+    // offsetHeight : 盒子总高度；
+    // offsetTop : 上偏移量 ；外边框到父级参照物的内边框的距离；
+    // offsetLeft
+    // offsetParent
+
+    // scrollWidth : 一个左padding+ 内容的真实宽度
+    // scrollHeight : 一个上padding+ 内容的真实宽度
+    // scrollTop  : 纵向滚动条卷起的高度
+    // scrollLeft  : 横向滚动条卷起的宽度
+
+
+    // getCss  setCss  setGroupCss  css  offset  win;
+    // 元素.style.width
+    // getComputedStyle
+    // currentStyle
+
+
+    // offset : 计算出当前盒子距离body的偏移量；
+/*    function offset(ele) {
+        var l = ele.offsetLeft;
+        var t = ele.offsetTop;
+        var parent = ele.offsetParent;
+        while(parent!==document.body){
+            l+=parent.clientLeft + parent.offsetLeft;
+            t+=parent.clientTop + parent.offsetTop;
+            parent = parent.offsetParent;
+        }
+        return {l,t}
+    }
+    offset(oBox);*/
+    // win
+    function win(attr,val) {
+        // 如果是0；取反也是true;
+        if(typeof val==="undefined"){
+            return document.documentElement[attr] || document.body[attr];
+        }
+        document.documentElement[attr]=val;
+        document.body[attr]=val;
+    }
+    win("scrollTop",0)
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
