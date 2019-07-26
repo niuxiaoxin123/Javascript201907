@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var  ary = [12,89,88,29,39,89,88];
+    var ary = [{a:1,b:2},{a:1,b:3},{a:2,b:3},{a:1,b:2},{b:1,a:2}];
+    var newObj = {};
+    for(var i=0;i<ary.length;i++){
+        // 第一轮： obj ={a:1,b:2}    newObj={1,2:true,1,3:true,2,3:true}
+        // 第二轮 ：obj ={a:1,b:3}
+        var obj = ary[i];
+        if(newObj[obj.a+","+obj.b]){
+            ary.splice(i,1);
+            i--;
+            continue;
+        }
+        newObj[obj.a+","+obj.b]=true;
+    }
+    console.log(ary);
+
+
+</script>
+</body>
+</html>

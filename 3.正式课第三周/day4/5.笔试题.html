@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* var ary = [12,3,4,56,8,99];
+    function  change(a) {
+        a.sort(function (a,b) {
+            return (a-b)*Math.round(Math.random()*10-5);
+        })
+        console.log(a);
+    }
+    change(ary)*/
+
+
+    var  obj = {
+        a:[{b:1,c:{d:2}}],
+        e:{f:1,t:[{i:1}]},
+        x:{y:2}
+    }
+    var ary = [];
+    function getKey(obj) {
+        /*if(obj instanceof Array){
+            for(var i=0;i<obj.length;i++){
+                if(obj[i] instanceof Object){
+                    getKey(obj[i]);
+                }
+            }
+        }else{
+            for(var key in obj){
+                ary.push(key);
+                if(obj[key] instanceof Object){
+                    getKey(obj[key]);
+                }
+            }
+        }*/
+        for(var key in obj){
+            // 如果遍历的是一个对象的话，那么就把这个对象中所有的属性名放到ary中；
+            if(toString.call(obj)=="[object Object]"){
+                ary.push(key);
+            }
+            // 继续处理当前key表对应的属性值；
+            getKey(obj[key]);
+        }
+    }
+    getKey(obj)
+   console.log(ary);
+
+
+</script>
+</body>
+</html>

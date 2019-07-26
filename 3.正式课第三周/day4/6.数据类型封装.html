@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // typeof  instanceOf  constructor toString.call()
+
+
+    (function () {
+        var checkType={};
+        var obj = {
+            isNumber:"Number",
+            isString:"String",
+            isBoolean:"Boolean",
+            isNull:"Null",
+            isObject:"Object",
+            isArray:"Array",
+            isRegExp:"RegExp"
+        }
+        for(var key in obj){
+            checkType[key]=(function () {
+                // 闭包： 目的是产生好几个正则，且当前作用域是不销毁的；
+                var reg = new RegExp("\\[object "+obj[key]+"\\]");
+                return function (val) {
+                    return reg.test(toString.call(val));
+                }
+            })()
+        }
+        window.checkType = checkType;
+    })();
+    console.log(checkType.isNumber(100));// 如果是数字返回true；
+    console.log(checkType.isObject(100));
+    console.log(checkType.isArray(100));
+    console.log(checkType.isArray([]));
+    console.log(checkType.isArray({}));
+    var name="zhufeng"
+    var reg = /[name]/;
+    console.log(reg.test("aaaa"));
+
+
+</script>
+</body>
+</html>
