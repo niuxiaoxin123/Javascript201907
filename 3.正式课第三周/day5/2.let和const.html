@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*console.log(num);// 函数
+    var num  =1;
+    // 1. 变量提升
+    // 2. 全局变量会给window新增键值对
+    // 3. 可以重复声明同一个变量
+    var num =2;
+    function num() {
+
+    }*/
+    //console.log(num);
+    //let  a =1;// 提前声明
+    //var num =2;
+   /* function fn() {
+        let  num =1
+    }
+    fn();*/
+    // 1. let不进行变量提升；在代码运行之前，对let的变量进行了声明；
+    // 2. let 声明的变量在同一个作用域下不可以重名
+    // 3. let声明的变量在全局作用域下不会给window新增键值对；
+    // 4. let声明的变量只在当前块级作用域内有效；
+
+    /*let a = 100;
+    if(1==1){
+        console.log(a);// 暂时性死区
+        let  a = 1;
+    }*/
+    //console.log(a);
+
+
+    // 先对function进行声明，然后对let进行声明,然后对var声明；
+    /*var a = 10;
+    let a =1;*/
+    /*function a() {
+    }*/
+
+
+   /* for(let i=0;i<100;i++){
+        oLis.onclick = function () {
+            // 这个函数的上一级作用域是for循环形成的子作用域；
+            console.log(i);
+        }
+    }*/
+    /*function _loop(i) {
+        oLis[i].onclick = function () {
+            console.log(i);
+        };
+    };
+
+    for (var i = 0; i < 100; i++) {
+        _loop(i);
+    }*/
+    // let声明变量的地方是一个父作用域，每一轮都是一个子作用域；在这个子作用域中每次存储了变量i;这个变量i每次都是一个新的变量；
+
+
+    // const : 定义常量
+    //
+    const a =1;
+
+    // let a =1;
+    // 1. 不进行变量提升
+    // 2. 不能重复声明
+    // 3. 不能进行修改；
+
+    // var  function   let   const  class
+
+
+</script>
+</body>
+</html>

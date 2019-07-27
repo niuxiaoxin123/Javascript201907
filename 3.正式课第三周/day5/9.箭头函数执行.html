@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function fn() {
+    }
+    fn();
+    new fn;
+    fn.a =1;*/
+    // 函数有三种角色： 函数 对象 类；
+
+    /*let fn=(...a)=>{
+        console.log(this);
+    };
+    fn(1,2,8,82);*/
+    /*let obj = {
+        f:()=>{
+            console.log(this);
+        }
+    }
+    obj.f();*/
+
+  /*  let obj = {
+        fn: function () {
+            let f =()=>{
+                console.log(this);// obj
+            }
+            f();
+        }
+    }
+    obj.fn();*/
+  /*let f=()=>{
+
+  }
+    f.a=1;
+    console.log(f);*/
+    //var f = new fn;
+    // 1. 箭头函数中不存在arguments;参数过多，采用剩余运算符，接收所有的实参；
+    // 2. 箭头函数不能作为构造函数，不能被new；
+    // 3. 箭头函数中不存在this，箭头函数的this指向箭头上一级作用域中的this指向；
+    // 4. 不能使用yield命令，不能作为Generator函数；
+    /*let fn = ()=>{
+        console.log(this);// window
+    }
+    fn.call(100)*/
+</script>
+</body>
+</html>

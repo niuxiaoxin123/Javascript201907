@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //let  fn =()=>{};
+    // class : 关键字；用来定义一个类；
+   /* let obj ={
+        fn(){
+            // 不是一个箭头函数
+            console.log(this);
+        }
+    }
+    obj.fn();*/
+    /*Array.prototype.getX=function () {
+
+    }*/
+
+    /*function Fn() {
+        this.name = 100;
+    }
+    Fn.prototype.getX=function () {
+
+    }*/
+    class  Fn{
+        constructor(name){
+            this.name=name;
+            // 跟this相关的都是私有属性；
+        }
+        getX(){
+            // 这些属性都放在了原型上;这些属性是不可枚举的；
+            console.log(this);
+        }
+        getY=()=>{
+            // 如果这个函数是个箭头函数,那这个属性就是一个私有的属性；
+            console.log(this);// 实例
+        }
+    }
+
+    // 继承了类的私有属性和公有属性；
+    var f  = new Fn("zhufeng");
+    f.getY();
+    f.getX();
+    console.log(f);
+    /*class A extends Fn{
+        constructor(){
+            super();// 在子类constructor中必须加上super();
+        }
+    }
+    var a = new A;
+    console.log(a);*/
+    //继承
+    // console.log(f);
+    /*for(let key in f){
+        console.log(key);
+    }
+    console.log(f);*/
+</script>
+</body>
+</html>

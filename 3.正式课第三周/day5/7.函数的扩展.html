@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function fn(a,...ary) {
+        /*console.log(arguments);// 类数组集合[]
+        arguments.__proto__ = Array.prototype;
+        arguments.pop()*/
+        // 如果函数有实参，那么实参不是undefined，会将函数形参的默认值进行覆盖
+
+        console.log(ary);// 是一个数组；
+    }
+    //fn(undefined,2)
+    fn(1,2,3,4,56,6)
+    // 函数分为定义和执行
+    // 函数的形参和实参
+    // 函数的arguments
+    // return
+    // 匿名函数
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj1 = {name:{}};
+    var obj2 = {age:10}
+    // let o = {...obj1,...obj2};
+    var obj = {age:9}
+    var a = Object.assign(obj,obj1,obj2);
+    // 对象的合并，如果属性名相同，则后面的将前面的进行覆盖；
+    // 浅克隆；目标对象中的属性值是引用源对象中的空间地址，当改变其中一个时，另一个也会随着发生改变，这就是浅克隆
+    console.log(obj===a);
+    //console.log(a);
+    // ...
+
+
+</script>
+</body>
+</html>

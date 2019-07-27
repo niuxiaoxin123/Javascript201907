@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*let a=1;
+    let b = 2;
+    let c = 3;*/
+    /*let [a,b,c,d]=[1,2,3];
+    console.log(a);// 1
+    console.log(b);// 2
+    console.log(c);// 3
+    console.log(d);*/// undefined
+    // 解构赋值: 从数组或者对象中按照特定的规则进行赋值的操作-->解构赋值
+    // 如果解构不成功，会得到一个默认值undefined；
+    // 保证解构时，左右结构是一样的；
+    // 解构左边可以对变量赋默认值；如果后面有值，会把默认值覆盖；只有后面的值严格是undefined时，不会覆盖
+    /*let  [a,[b],c]=[1,[2],3]
+    console.log(b);*/// b
+    /*let [a,b=1]=[2,undefined]
+    console.log(a);
+    console.log(b);*/
+    // 以下会报错
+    /*let [a] = 100;
+    let [a] = false;
+    let [a] = null;
+    let [a] = undefined;
+    console.log(a);*/
+
+
+    // 对象解构
+    // 按照属性名进行匹配；如果匹配不到，结果是undefined
+
+    /*let {fo,bar}={bar:"age",foo:"name"};
+    console.log(fo);*/
+    /*let {fo:a,bar}={bar:"age",fo:"name",a:"w"};
+    console.log(a);*/// a 存储了fo所代表的值；
+    // console.log(fo);
+    /*let obj = {
+        p: [
+            'Hello',
+            { y: 'World' }
+        ]
+    };
+
+    let {p, p: [x, { y }] } = obj;*/
+    /*let {name="a"}={name:undefined}
+    console.log(name);*/
+
+   /* function fn([x,y]) {
+        console.log(x);
+        console.log(y);
+    }
+    fn([1,2])*/
+
+ /*  let x = 1;
+   let y = 2;
+   [x,y]=[y,x]
+    console.log(x);
+    console.log(y);*/
+
+
+</script>
+</body>
+</html>

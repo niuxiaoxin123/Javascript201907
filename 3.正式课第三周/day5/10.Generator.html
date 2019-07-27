@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function f() {
+       yield "100";
+    }
+    f();*/
+    // 1.function 和函数名之间有*号’
+    // 2.函数体中可以用yield表达式；yield产出；代表一个状态；
+    function* fn() {
+        console.log(10);
+
+        yield "100";// 暂停
+        console.log(200);
+        yield "hello";
+        console.log(3);
+        return "zhufeng"
+    }
+    var h = fn();// 返回一个重新包装的对象,这个对象上有一个next方法，当调用next方法时，可以让函数从函数头部或者是上一次停下来的那个位置开始执行，直到遇到yield或者遇到return，也会停下来；generator函数是分段执行的；
+    var H= h.next();
+    console.log(H); // {value:"100",done:false}
+    var H1= h.next();
+    console.log(H1);
+    var H2= h.next();
+    console.log(H2);
+</script>
+</body>
+</html>

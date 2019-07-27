@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 全局作用域  私有作用域
+    // 块级作用域
+
+    /*let  n = 10;
+    if(true){
+        let n=100;
+        console.log(n);
+    }
+    console.log(n);*/
+    /*let num  =0;
+    //fn();
+    if(1==1){
+        //let num =1;
+        fn();
+        function fn() {
+
+        }
+    }
+    console.log(num);*/
+    // 1. 块级作用域让用let定义的变量成为当前作用域私有的；
+    // 2. 在块级作用域中function定义的函数，块级作用域外面只声明，不定义；当进入到块级作用域中，先对函数进行定义；
+
+   /* let  a = 1;
+    let obj = {b:1}
+    for(let key in obj){
+
+    }*/
+    console.log(fn);// undefined
+    try{
+        let y = 1;
+        function fn() {
+            console.log(1);
+        }
+    }catch (e){
+
+    }
+     fn();
+    console.log(y);
+</script>
+</body>
+</html>
