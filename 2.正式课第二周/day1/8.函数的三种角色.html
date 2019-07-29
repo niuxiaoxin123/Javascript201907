@@ -7,7 +7,6 @@
 <body>
 <script>
     function Fn(a,b) {
-
     }
     // 函数、类、对象
     // 1.函数
@@ -32,31 +31,25 @@
     Fn(1,2,3)*/
 
 
-    var num = 0;// 20
-    function Fn(num) {
-        arguments[0] = 10;// 私有num=10
-        this.num = 20;
-        return num;// 10
-    }
-    Fn.num = 40;// 对象
-    Fn.prototype.num = 30;
-    Fn.prototype.getNum = function () {
-        console.log(this.num);
-    };
-    var f = new Fn(num);// {num:20}
-    console.log(f.num);// 20
-    f.getNum();// 20
-    Fn.prototype.getNum();// 30
-    console.log(num);// 0
-    var n = Fn(num);// 普通函数执行
-    console.log(n);// 10
-    console.log(num);// 20
-
-
-
-
-
-
+//    var num = 0;// 20
+//    function Fn(num) {
+//        arguments[0] = 10;// 私有num=10
+//        this.num = 20;
+//        return num;// 10
+//    }
+//    Fn.num = 40;// 对象
+//    Fn.prototype.num = 30;
+//    Fn.prototype.getNum = function () {
+//        console.log(this.num);
+//    };
+//    var f = new Fn(num);// {num:20}
+//    console.log(f.num);// 20
+//    f.getNum();// 20
+//    Fn.prototype.getNum();// 30
+//    console.log(num);// 0
+//    var n = Fn(num);// 普通函数执行
+//    console.log(n);// 10
+//    console.log(num);// 20
 
 
 </script>

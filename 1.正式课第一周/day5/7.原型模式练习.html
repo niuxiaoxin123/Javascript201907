@@ -10,13 +10,16 @@
     function Fn(x,y) {
         this.x = x;
         this.y=y;
-        this.getX = function () {
+       /* this.getX = function () {
             console.log(this.x);
-        }
+        }*/
     }
     // 向Fn的原型上新增getX;
     Fn.prototype.getX=function () {
         console.log(this.x);
+    }
+    Fn.getX=function () {
+        
     }
     Fn.prototype.getY = function () {
         console.log(this.y);

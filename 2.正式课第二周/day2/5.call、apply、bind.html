@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+<ul>
+    <li>
+        <span></span>
+    </li>
+    <li>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span id="pan_4"></span>
+    </li>
+</ul>
 <script>
     // Function 的原型上有call\appy\bind方法；
     // 只有Function的实例可以使用这三个方法；改变函数体中的this指向；
@@ -40,7 +51,6 @@
     // 1. 在非严格模式下，如果call方法不传参，或传null\undefined,那么函数中的this都指向window
     // 2在严格模式下，传undefined或者不传，都指向undefined；传null，就指向null；
 
-
     // apply : 传参不一样；apply第二个参数只能传数组或者类数组；
     function fn(a,b,c) {
         console.log(a);
@@ -58,13 +68,15 @@
     function fn() {
         console.log(this);
     }
-    var f = fn.bind({},12)
+    var f = fn.bind(1,12)
     f();
     fn();
 
-
-
-
+  var  obj = {
+      a:[{b:1,c:{d:2}}],
+      e:{f:1,h:[{i:1}]},
+      x:{y:2}
+  }
 
 
 </script>

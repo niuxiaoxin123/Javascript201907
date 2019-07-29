@@ -31,6 +31,5 @@ var utils = (function () {
         toJSON:function () {
 
         }
-
     }
 })()

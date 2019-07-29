@@ -33,11 +33,18 @@ html,body{
     top:5px;
     border-bottom: 4px solid #666;
 }
+#content .header a i.up.bg{
+    top:5px;
+    border-bottom: 4px solid red;
+}
 #content .header a i.down{
       top:17px;
       border-top: 4px solid #666;
   }
-
+#content .header a i.down.bg{
+    top:17px;
+    border-top: 4px solid red;
+}
 #list{
     list-style: none;
     overflow: hidden;
