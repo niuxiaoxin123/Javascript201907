@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div class="a"></div>
+<div class="a">
+    <div></div>
+    <div id="b"></div>
+</div>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    // jquery原型中方法执行返回一个jquery的实例，可以链式书写；
+   // $("div").eq(1).addClass("bg")
+  //$("div").first()
+    console.log($("div").eq(1).is(".abc"));
+    // filter : 过滤
+    // children : 当前元素的子元素集合
+    // find : 搜索后代的元素匹配表达式的元素
+    // next : 下一个弟弟元素
+    // nextAll :  所有的弟弟元素
+    // prev : 获取上一个哥哥元素
+    // prevAll : 获取所有的哥哥元素
+    // siblings : 所有的兄弟元素；
+    // parent : 父亲元素
+    console.log($("#b").parent());
+    console.log($("#b").parents());
+
+
+</script>
+</body>
+</html>

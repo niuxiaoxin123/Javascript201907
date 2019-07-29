@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div></div>
+<p></p>
+<p></p>
+<p></p>-->
+<div class="container">
+    <div class="inner first">Hello</div>
+    <div class="inner second">And</div>
+    <div class="inner third">Goodbye</div>
+</div>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    // append: 和appendChild 类似
+    // append(string)
+    //appendTo
+    // prepend :
+    // prependTo :  把元素作为子元素添加到父元素中
+     //$("p").appendTo("div")
+
+    // after(string或者是原生的DOM对象)
+    // after: 把元素目标元素的后面，作为兄弟元素
+    // before : 把元素目标元素的前面，作为兄弟元素
+  /* $("div").after("<p>张帅文，又帅又文雅</p>")
+   $("div").before("<p>张帅文，又帅又文雅</p>")*/
+  // $("p").wrap("<div></div>")
+    $('.third').replaceWith($('.first'));
+    // replaceWidth
+    // empty : 清空元素中的内容
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #tab{
+            width:400px;
+            height:280px;
+            margin: 100px auto;
+        }
+        ul{
+            list-style: none;
+            overflow: hidden;
+        }
+        ul li{
+            float:left;
+            width:80px;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid pink;
+            margin-right:3px;
+            cursor: pointer;
+        }
+        ul li.select{
+            background: blue;
+            color:white;
+        }
+
+        #tab div div{
+            display: none;
+            width:400px;
+            height:280px;
+            border:1px solid pink;
+            text-align: center;
+            line-height: 280px;
+        }
+        #tab div div.select{
+            display: block;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+<div id="tab" class="abc">
+    <ul>
+        <li class="select">音乐</li>
+        <li>电影</li>
+        <li>书本</li>
+    </ul>
+    <div>
+        <div class="select">林中鸟</div>
+        <div>速度与激情8</div>
+        <div>高程3</div>
+    </div>
+</div>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    $("li").click(function () {
+        // console.log(this);// 被点击的li;
+        // this把其转成jquery的实例
+        $(this).addClass("select").siblings().removeClass("select").parent().next().children().eq($(this).index()).addClass("select").siblings().removeClass("select");
+    });
+
+
+</script>
+</body>
+</html>

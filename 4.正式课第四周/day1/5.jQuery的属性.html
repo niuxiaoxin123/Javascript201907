@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .highlight{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<!--<img src="1.jpg" alt="" trueImg="10.jpg">-->
+<!--<input type="radio" class="a">
+<input type="checkbox">-->
+<div class="a">
+    <p>123456</p>
+</div>
+<input type="radio"  name="a">
+<input type="radio"  name="a">
+<script src="jquery-1.11.3.js"></script>
+<script>
+    // getAttribute
+    // attr/removeAttr : 获取或者设置行间属性
+    // prop/removeProp
+    // console.log($("img").attr("src"));
+    // 如果是jQuery获取的元素，那么就是一个jquery的实例；[];这个实例的第一个值，就是原生的DOM对象
+    //console.log($("img") instanceof Array);// false
+   /* $("img")[0].index = 100;
+    console.log($("img").attr("trueImg"));
+    console.log($("img").attr("index"));*/
+   // 表单元素一般使用prop;来设置属性；
+  /* $("img").attr("a",100);
+   $("input").prop("checked",true);*/
+   //$("input").removeAttr("checked")
+
+    // addClass： 新增class
+    // removeClass： 移出class;
+    // hasClass: 判断元素是否有class;有返回true，没有返回false；
+    // toggleClass :如果没有那就是添加
+    /*input.className="first";
+    input.classList.add("bg");*/
+   // $("input").addClass("a")
+    //console.log($("input").hasClass("abc"));
+   //$(".a").toggleClass("a")
+   /* var count = 0;
+    $("p").click(function(){
+        //console.log(this);// 原生的DOM对象
+        //console.log($(this));
+        // $() : 可以将原生的DOM元素转成jquery的实例；
+        /!*$(this).parent().is();
+        $(this).toggleClass("highlight", count++ % 3 == 0);*!/
+    });*/
+
+    // html： html 可以识别标签  innerHTML
+    // text:不能识别标签  innerText
+    // val:一般用于表单元素；获取input的value值；如果是单选双选获取的默认值是on;
+    // console.log($(".a").html());
+    // $(".a").html("下雨了")
+    // console.log($(".a").text("<p>下雨了</p>"));
+    console.log($("input").val());
+</script>
+</body>
+</html>

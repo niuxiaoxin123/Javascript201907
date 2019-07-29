@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="box" id="box">1234</div>
+<div class="box">5678</div>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    //  看文档的能力；
+    //  百度一下、掘金、博客、CSDN,思否；
+    //  计算机语言：
+    //  网页制作--> javascript--> jquery--> react、vue;
+    //  jquery : 类库 1.0.0   1  2  3
+    //   1: 兼容IE678的
+    //   2: 不兼容IE678
+    //   3: 针对移动端；
+    var box = document.getElementsByClassName("box")[0];
+    /* box.onclick = function () {
+        console.log(100);
+    }*/
+    // console.log(box);
+    var box1 = $(".box");//jquery 的实例；
+    console.log(box1);
+    /*box1.onclick = function () {
+        console.log(200);
+    }*/
+    box1.eq(0).click(function () {
+        console.log(100);
+        console.log(this);
+    });
+    /*$("#box").click(function () {
+        console.log(300);
+    })*/
+    $("#box").find();
+    $.ajax()
+
+
+</script>
+</body>
+</html>
