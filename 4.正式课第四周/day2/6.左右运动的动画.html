@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background: red;
+        }
+        button{
+            position: absolute;
+            top:300px;
+            width:100px;
+            height:30px;
+            text-align: center;
+            line-height: 30px;
+            background: greenyellow;
+        }
+        #left{
+            left:100px;
+        }
+        #right{
+            left:300px;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button id="left">向左走</button>
+<button id="right">向右走</button>
+<script src="jquery-1.11.3.js"></script>
+<script src="utils.js"></script>
+<script>
+    /*let W = $(window).width()-$("#box").outerWidth();
+    $("#right").click(function () {
+        // linear : 匀速
+        // easein : 加速
+        // easeout : 减速
+        // easinout : 加速再减速
+        $("#box").stop().animate({left:W},2000,"linear",function () {
+            $("#box").css("background","green")
+        })
+    })
+    $("#left").click(function () {
+        $("#box").stop().animate({left:0},2000,"linear")
+    })*/
+
+    // 原生：
+    let oBox = document.getElementById("box");
+    let left = document.getElementById("left");
+    let right = document.getElementById("right");
+    let W = utils.win("clientWidth")-oBox.offsetWidth;
+    let timer;
+    left.onclick  = function () {
+        clearInterval(timer);
+        timer= setInterval(function () {
+            // 获取当前盒子的left值；
+            let curL= utils.css(oBox,"left");
+            curL-=10;
+            if(curL<=0){
+                clearInterval(timer);
+                utils.css(oBox,"left",0);
+                return;
+            }
+            utils.css(oBox,"left",curL);
+        },17)
+    }
+    right.onclick  = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            // 获取当前盒子的left值；
+            let curL= utils.css(oBox,"left");
+            curL+=10;
+            if(curL>=W){
+                clearInterval(timer);
+                utils.css(oBox,"left",W);
+                return;
+            }
+            utils.css(oBox,"left",curL);
+        },17)
+    }
+
+</script>
+</body>
+</html>

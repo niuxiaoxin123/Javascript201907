@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            width:100px;
+            left:100px;
+            height:100px;
+            border-radius: 50%;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="utils.js"></script>
+<script>
+   // 固定时间的动画
+   // 设置时间是3000ms运动到可视窗口最右端；
+    let oBox = document.getElementById("box");
+    let  changeL = utils.win('clientWidth')-oBox.offsetWidth;
+    let  duration = 3000;
+    let dis = changeL/duration*17;
+    oBox.onclick = function () {
+        let timer = setInterval(function () {
+            let curL = utils.css(oBox,"left");
+            curL+=dis;
+            if(curL>=changeL){
+                clearInterval(timer);
+                utils.css(oBox,"left",changeL);
+                return;
+            }
+            utils.css(oBox,"left",curL);
+        },17)
+    }
+
+
+
+</script>
+</body>
+</html>

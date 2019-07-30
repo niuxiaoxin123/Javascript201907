@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            width:100px;
+            height:100px;
+            border-radius: 50%;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<!--<script src="jquery-1.11.3.js"></script>-->
+<script src="utils.js"></script>
+<script>
+    /*$("#box").click(function () {
+        // 移动的最大距离是屏幕的宽度-盒子自身的宽度
+        let  W = $(window).width()-100;
+        $(this).animate({left:W},2000);
+    })*/
+    /*let oBox = document.getElementById("box");
+    let W = utils.win("clientWidth")-oBox.offsetWidth;
+    oBox.onclick = function () {
+        let timer = setInterval(function () {
+            let curL = utils.css(oBox,"left");
+            curL+=10;
+            if(curL>=W){
+                clearInterval(timer);
+                utils.css(oBox,"left",W);
+                return;
+            }
+            utils.css(oBox,"left",curL)
+        },17)
+    }*/
+</script>
+</body>
+</html>

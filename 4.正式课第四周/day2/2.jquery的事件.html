@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">1234</div>
+<script src="jquery-1.11.3.js"></script>
+<script>
+    // ready: 当DOM加载完成时，触发的函数；和window.onload 事件是一样的
+    // 可以绑定多次；按照绑定的顺序执行
+    /*window.onload=function () {}
+    $(document).ready(function () {});*/
+
+    //jquery绑定事件的方法
+   /* $("div").mouseover(function () {
+        console.log(1);
+    })
+    $("div").click(function () {
+        console.log(2);
+    })*/
+
+   // on : 给一个元素绑定一个或多个事件函数
+    /*function change() {
+        console.log(100);
+    };
+    var obj = {};
+    // addEventListener
+    $("div").on("click",change)
+    $("div").on("mouseover",function(){
+        console.log(200);
+    })
+    // off 移除元素一个或者是多个事件；
+    $("div").off("click");*/
+    // one : 绑定一次性事件
+    /*function fn(event,a,b) {
+        console.log(b);
+    }
+    $("div").click(fn);
+    $("div").trigger("click",["foo", "bar"])*/
+   /* $("div").click(function () {
+        $(this).toggle();
+    });*/
+</script>
+</body>
+</html>

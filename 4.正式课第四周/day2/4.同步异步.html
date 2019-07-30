@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // JS: 作用域   原型链   同步异步；
+    // JS : JS 是单线程；同一时间只能执行一行代码；每次只能执行一个任务；
+    // 浏览器： 浏览器是多线程的；
+    // 在JS中分为主任务队列和等待任务队列；同步代码都是主任务队列；异步的代码都是等待任务；JS会把所有的主任务队列中任务执行完毕，再去执行等待任务；
+    /*for(let i=0;i<10000000;i++){
+    }
+    console.log(100)
+    while(i){
+    }*/
+    /*setTimeout(function () {
+        console.log(100);
+    },10);
+    var cur = new Date();
+    for(let i=0;i<1000000000;i++){
+    }
+    console.log(200);
+    console.log(new Date() - cur);*/
+    // ajax1   2s
+    // ajax2   1s
+    // ajax3   3s
+    setTimeout(function () {
+        console.log(1);
+    },10);
+    setTimeout(function () {
+        console.log(2);
+    },16);
+    console.log(5);
+    for(var i=0;i<1000000000;i++){}// 9000
+    setTimeout(function () {
+        // setTimeout这个函数自己同步的，作用是将异步的任务放到异步的队列中
+        console.log(3);
+    },10);
+    /*for(var  i=0;i<30000;i++){
+       /!* setTimeout(function () {
+            console.log(i);
+        },10)*!/
+    }*/
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

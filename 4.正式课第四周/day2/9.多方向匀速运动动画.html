@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            width:100px;
+            height:100px;
+            left:300px;
+            border-radius: 50%;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<script src="utils.js"></script>
+<script src="animate.js"></script>
+<script>
+    // 固定时间的动画
+    // 设置时间是3000ms运动到可视窗口最右端；
+    let oBox = document.getElementById("box");
+    let  duration = 3000;
+    zfAnimate(oBox,{
+        left:500,
+        top:300,
+        width:200,
+        height:200
+    },3000,2)
+    /*function linear(t,b,c,d) {
+        return c/d*t+b;
+    }
+    let begin = {
+        left:utils.css(oBox,"left"),
+        top:utils.css(oBox,"top"),
+        width:oBox.offsetWidth,
+        height:oBox.offsetHeight
+    }
+    let target ={
+        left:500,
+        top:300,
+        width:200,
+        height:200
+    }
+    let change={};
+    for(let key in begin){
+        change[key]=target[key]-begin[key];
+    }
+    oBox.onclick = function () {
+        let interval = 0;
+        let timer=setInterval(function(){
+            interval+=18;
+            for(let key in change){
+                let cur = linear(interval,begin[key],change[key],duration);
+                if(interval>=duration){
+                    clearInterval(timer);
+                    utils.css(oBox,target);
+                    return;
+                }
+                utils.css(oBox,key,cur);
+            }
+        },18)
+    }*/
+
+
+
+</script>
+</body>
+</html>
