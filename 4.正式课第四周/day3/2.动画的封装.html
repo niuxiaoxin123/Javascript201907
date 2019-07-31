@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            position: absolute;
+            left:200px;
+            width:100px;
+            height:100px;
+            background: blue;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<!--<script src="../day2/jquery-1.11.3.js"></script>-->
+<script src="../day2/utils.js"></script>
+<script src="../day2/animate.js"></script>
+<script>
+   // animate :
+   // 参数1： 目标对象 target
+   // 参数2： 动画运动的时间 duration
+   // 参数3： 效果  effect
+   // 参数4: 函数；callBack;当动画结束之后执行的回调
+   /*$("#box").click(function () {
+       $("#box").animate({left:500,top:200,opacity:0.5},3000,"linear",function () {
+           $("#box").css("background","orange")
+       })
+   })*/
+   let oBox = document.getElementById("box");
+   // 封装一个方法，实现动画
+   // curEle: 元素
+   // target : 目标对象
+   // duration : 时间
+   // callBack : 回调函数
+   /*function linear(t,b,c,d) {
+       // -0.5/3000*17+"1"
+       return c/d*t+b;
+   }
+   function move(curEle,target,duration,callBack) {
+       if(typeof duration==="undefined"){
+           duration=1000;
+       }
+        let begin = {};
+        let change = {};
+        // 计算出开始的位置以及要变化的位置；
+        for(let key in target){
+            begin[key]=parseFloat(utils.css(curEle,key));// 获取元素的初始样式
+            change[key]=target[key]-begin[key];
+        }
+        let interval = 0;
+        let timer = setInterval(function () {
+            interval+=17;
+            // 当到达目标时间，那么盒子清除定时器；
+            if(interval>=duration){
+                clearInterval(timer);
+                utils.css(curEle,target);
+                if(typeof callBack==="function"){
+                    //当动画结束之后，执行callback;
+                    callBack();
+                }
+                return;
+            }
+            for(let key in target){// 只是为了获取属性名；
+                // key : left   top  opacity
+                // 计算出此时的位置
+                let  cur = linear(interval,begin[key],change[key],duration);
+
+                utils.css(curEle,key,cur);
+            }
+        },17);// 由于浏览器最小的识别时间在13-15;
+   }
+   move(oBox,{left:500,top:300,opacity:0.5},2000)*/
+
+   zfAnimate(oBox,{left:500,top:300,opacity:0.5},2000,["Sine","easeIn"])
+
+
+
+
+</script>
+</body>
+</html>
