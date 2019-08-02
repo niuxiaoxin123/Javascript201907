@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div id="a">1234</div>
+</div>
+<script>
+    var box = document.getElementById("box");
+    /*let first = box.getElementsByTagName("div");
+    let first1 = document.getElementById("first");*/
+    // DOM0级事件绑定；每次只能给一个元素的同一个事件行为绑定一个方法，如果绑定多个，后面的会把前面的进行覆盖；
+    function fn1() {
+        //console.log("马冲冲");
+        console.log(this===window);
+    }
+    function fn2() {
+        console.log("很幽默");
+    }
+    /*box.onclick = fn1;
+    box.onclick = fn2;*/
+    // box---> HTMLDIVElement-->HTMLElement-->Element-->Node-->EventTarget-->Object
+    // DOM2级  addEventListener removeEventListener
+    //box.addEventListener();是eventTarget这个类原型上一个属性；
+    // addEventListener : 增加事件监听者；
+    // addEventListener: 1.事件类型（不加on） 2. 函数 3.布尔值；控制事件函数在什么阶段执行；// true ：代表捕获阶段执行 false 代表冒泡阶段执行； 捕获-->目标-->冒泡；
+    /*box.addEventListener("click",fn1,false);
+    box.addEventListener("click",fn2,true);*///
+    /*a.onclick = function () {
+
+    }*/
+    /*box.addEventListener("click",fn1,false);
+    box.addEventListener("click",fn1,false);*/
+    // 在IE8及以下；addEventListener 不兼容
+     box.attachEvent("onclick",fn1);
+     box.attachEvent("onclick",fn1);
+    //box.attachEvent("onclick",fn2);
+
+    // addEventListener和attachEvent的区别
+    // 1. this问题：addEventListener绑定的方法中的this指向被绑定的元素，attachEvent绑定方法中的this指向window
+    // 2. 重复绑定问题；addEventListener只能给同一个元素同一个事件绑定一个方法，不能重复绑定，attachEvent是可以重复绑定的
+    // 3. 顺序问题；addEventListener绑定的方法会按照绑定的顺序依次执行，attachEvent是倒序执行；
+</script>
+</body>
+</html>

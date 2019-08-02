@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box{
+            width:100px;
+            height:100px;
+            background: red;
+            margin:1030px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div id="children" style="background:yellow">1345</div>
+</div>
+<script>
+    var oBox = document.getElementById("box");
+    // 事件对象： 当元素的事件行为绑定的函数执行时，浏览器会默认给这个函数传递一个对象，这个对象包含了一些事件相关的信息；那么这个参数就是事件对象；
+
+    // 在IE8及以下，浏览器把事件信息没有作为参数传递给函数，把事件信息放在了window上的event这个属性名上；
+    oBox.onclick = function (e) {
+        e = e || window.event;
+        e.pageX = e.pageX || e.clientX + document.documentElement.scrollLeft;
+        e.pageY = e.pageY || e.clientY + document.documentElement.scrollTop;
+        e.target = e.target || e.srcElement;
+        // console.log(e.clientX);// 事件对象
+        // clientX  clientY : 距离可视窗口左边和上边的像素；
+        // pageX  pageY :点击位置距离body左边框和上边框的像素；
+        // offsetX offsetY : 点击的位置距离当前盒子左边框和上边框的像素；
+        // type : 事件行为
+        // target : 事件源；点击的那个元素；事件开始的源头；
+        // cancelBubble ： 禁止冒泡
+        // returnValue : 阻止事件的默认行为；
+        // console.log(e);
+    }
+    /*children.onclick =function (e) {
+        // cancelBubble : 取消冒泡；
+        //e.cancelBubble=true;
+    }*/
+</script>
+</body>
+</html>

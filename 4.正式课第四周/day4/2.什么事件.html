@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" onclick="fn()">12345</div>
+<input type="text" id="search">
+<script>
+    // 事件 : 元素天生自带一种行为；当用户或者浏览器执行某些操作时，会触发这些事件绑定的方法的执行；浏览器或者用户做的某些事情；
+
+    //let oBox = document.getElementById("box");
+    // 元素对象；onclick 是一个属性名；
+    // 给oBox这个元素的onclick事件行为，绑定了一个方法；当点击oBox时，会执行这个对应的方法；
+    //oBox.onclick = function () {}
+    //console.dir(oBox.onclick)// null
+    /*function fn() {
+        console.log(1)
+    }
+    oBox.onclick=fn;*/
+
+    // 常见的事件行为：
+    // onclick  ondblclick
+    // onmouseover onmouseout onmouseenter  onmouseleave onmousedown onmouseup  onmousemove
+    // onkeyup(键盘抬起)   onkeydown（键盘按下） onblur（失去焦点）  onfocus(获取焦点) onchange(input内容改变，触发)  oninput
+    // onload  onscroll
+    // ontouchstart  ontouchmove  ontouchend ontouchcancel
+    let search = document.getElementById("search");
+    /*search.onfocus=function () {
+        console.log("欢迎搜索")
+    }*/
+    /*search.onchange=function () {
+        console.log(this.value);
+    }*/
+    /*search.oninput=function () {
+        console.log(this.value);
+    }*/
+   /* search.onkeydown=function () {
+        console.log(this.value);
+    }
+    search.onkeyup=function () {
+        console.log(this.value);
+    }*/
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="http://www.baidu.com" id="baidu">百度一下</a>
+<script>
+    let baidu = document.getElementById("baidu");
+    baidu.onclick = function (e) {
+        //e.cancelBubble=true;// 阻止冒泡
+        //e.returnValue=false;// 阻止默认行为
+        //e.preventDefault();// 阻止默认行为；IE8及以下不兼容不存在e.preventDefault;
+        e.preventDefault?e.preventDefault():e.returnValue=false;
+        console.log(e);
+    }
+</script>
+</body>
+</html>
