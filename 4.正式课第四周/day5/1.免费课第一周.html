@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 免费课第一周： 数据类型    操作语句   函数   数组的方法
+    // 数据类型：基本数据类型和引用数据类型
+    // Number  String  Boolean  Null Undefined  Symbol
+    // Object  Function  RegExp  Date的实例 函数 Math...
+    // let a= n;
+
+    // Number :方法；把其他数据类型转成Number类型
+    // isNaN:是有效数字返回false
+    // parseFloat parseInt parseFloat("") NaN
+    // toFixed
+
+    let  str = "lishulei"
+    // String : 索引   length   运算
+    // toUpperCase
+    // toLowerCase
+    // chartAt
+    // charCodeAt:
+    // substr :
+    // substring :
+    // slice
+    // indexOf
+    // lastIndexOf
+    // concat
+    // split
+    // replace
+    // trim  trimLeft  trimRight
+    str.charCodeAt(0);
+
+    // 3.Boolean
+    // true  false
+    // Boolean :
+    // NaN  undefined  0 "" null 只有这五个转布尔是false；
+    // ! : 取反  !! :
+    //![]==[] true []!==[] true
+    // 数据类型
+    // = : 赋值
+    // == ： 相对比较
+    // === ： 绝对比较
+    // 对象==对象： 比较的空间地址
+    // 对象==字符串 对象转字符串
+    // 对象==布尔：对象转字符串，转数字；布尔转数字
+    // null ==undefined
+    // NaN ==NaN
+
+    // null和 undefined；
+    // undefined : cannot read property "num" of undefined
+    // 1.如果变量只声明，未赋值，那么值就是undefined
+    // 2. 如果获取对象的属性名对应的属性值，如果属性名不存在，属性值也是undefined
+    // 3. 如果函数没有return，那么返回值就是undefined
+    // 4. 如果函数的形参，没有对应的实参，那么函数的形参的默认值也是undefined；
+
+    // Symbol  : 代表一个唯一的值；防止和对象中的属性名冲突；
+    /*let s1 =Symbol("a");// Symbol这个函数执行就会产生一个独一无二的值；
+    let s2 = Symbol("a")
+    let s3 = Symbol(1)
+    console.log(s1);
+    console.log(s3);
+    console.log(s1 === s2);
+    console.log(typeof s1);*/// "symbol"
+
+    /*let obj = {
+        toString(){
+            return "abc"
+        }
+    }
+    console.log(Symbol("abc"));*/
+
+    // 引用数据类型
+    // 对象
+    // let obj = {a:1}
+  /*  let name ="zhufeng";// 不新增键值对
+    let obj = {
+        name,
+        fn(){
+            // this--> obj
+            console.log(this);
+        },
+        f:()=>{
+            // this--> window
+            console.log(this.name);// ""
+        }
+    };
+    obj.fn();
+    var f = obj.fn;
+    window.f();
+    obj.f();
+    // 函数*/
+
+    // 新  删  改  查
+    // .
+    // []
+    /*obj.a=100;
+     delete obj.a;
+     obj["a"]
+     box.style[attr]=100;*/
+
+    // 函数
+    // 函数的定义和执行
+    // 函数的形参和实参
+    // arguments
+    // return
+    // 匿名函数
+
+
+</script>
+</body>
+</html>

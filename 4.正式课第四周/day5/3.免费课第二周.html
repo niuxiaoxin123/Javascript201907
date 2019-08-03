@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" id="a">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box">
+    <div></div>
+    1234
+</div>
+<script>
+    // 去重的方法：12种；
+    // 数组的方法 数组的算法 字符串方法  DOM(获取DOM、节点、动态操作DOM) Math  选项卡 、 Date  倒计时
+    // 数组的方法
+    // pop push  shift unshift  indexOf lastIndexOf  splice  slice  concat join  toString  reverse  sort  forEach  map
+
+    // find : 查找; 从左到右依次进行查找，找到符合条件的那一项，直接返回，不再进行查找；
+    // find会根据回调函数的返回值，判断是否要继续向右查找；
+    let ary = [12,3,4,566,67];
+    /*let a = ary.find((item,index)=>{
+        //console.log(item);
+        //return item>60;
+        // console.log(item>60)
+    });
+    console.log(a);*/
+
+    // filter :过滤;把符合条件的数组成员放到一个新数组中，返回；
+    let a = ary.filter((item,index)=>{
+        return item>60;
+    })
+    console.log(a);
+
+    // let arr =[100,2,9];
+    // 索引  length;
+
+    // 数组的算法
+    // 数组的常用的十个算法；
+    // 去重    数组的冒泡    数组的插入排序     快速排序
+    // 递归思想
+    //
+
+    // DOM :
+    // 获取元素； document.getElementById
+    // 节点：     nodeType  nodeName   nodeValue
+    // 元素节点     1       大写的标签名    null
+    // 文本节点      3       #text        文本内容
+    // 注释节点      8      #comment      注释内容
+    // document    9       #document     null
+
+    // 节点属性：childNodes  children  parentNode firstElementChild firstChild  previousSibling  previousElementSibling  nextSibling
+    // lastChild  lastElementChild
+
+    //动态操作DOM： document.createElement    getAttribute  setAttribute  removeAttribute   appendChild  insertBefore replaceChild  cloneNode  classList;
+    // box.appendChild("1234")
+    // document-->html
+    // document.getElementById
+
+    // Math :
+    // abs  ceil  floor  round  random  max  min  pow  sqrt
+
+    //Date
+    //倒计时；
+
+
+    // 定时器  setTimeout   setInterval
+
+    /*function fn() {
+        setInterval(function () {
+
+        },1000);
+    }
+    setTimeout(function () {
+
+    },1000)*/
+    // clearInterval  clearTimeout
+
+    /*实现一个LazyMan，可以按照以下方式调用:
+     1) LazyMan(“Hank”)输出:
+     Hi! This is Hank!
+
+     2) LazyMan(“Hank”).sleep(10).eat(“dinner”)输出
+     Hi! This is Hank!
+     //等待10秒..
+     Wake up after 10
+     Eat dinner~
+
+     3) LazyMan(“Hank”).eat(“dinner”).eat(“supper”)输出
+     Hi This is Hank!
+     Eat dinner~
+     Eat supper~
+
+     4) LazyMan(“Hank”).sleepFirst(5).eat(“supper”)输出
+     //等待5秒
+     Wake up after 5
+     Hi This is Hank!
+     Eat supper
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.git   变量提升  作用域   this  面向对象；
+    // 变量提升：
+    // 1)  var   function  let
+   /* var num = 1;
+    if(false){
+        // 只要进来，先对函数进行定义；
+        var num =100;
+        function fn() {
+        }
+        let  num=0;
+    }*/
+    // 特殊情况下：
+    // 1) 不管条件是否成立，都要进行变量提升
+    // 2) 变量提升只发生等号的左边
+    // 3) return 下面的要进行变量提升，return后面的不进行变量提升
+    // 4) 变量重名，不再重复声明，但是要重新定义；
+    // 5) 匿名函数不进行变量提升；
+
+
+
+    // 全局变量  私有变量
+    // 全局作用域  和私有作用域  块级作用域；
+    //全局作用域： 提供全局代码的运行环境；是一个大的栈内存；在这个栈内存提供一个window对象；
+    // 在全局作用域下定义的变量就是全局变量;会给window新增键值对；
+    /*var a = 100;
+    function b() {
+        console.log(c);//
+    }
+    b();
+    let c =1;*/// 不会给window新增；'
+    // 先判断是否是私有变量
+    // 1. 在私有作用域有没有被var\被function
+    // 2. 是否是形参
+
+    // 上一级作用域；
+    // 看函数在哪定义的，跟函数执行的位置没有关系；
+
+    // 私有作用域： 函数执行会形成私有作用域；
+
+   /* let obj = {
+        num:1,
+        fn : function () {
+            // 上一级作用域是window
+            // this--> obj
+            console.log(num);
+        }
+    }
+    obj.fn();
+    let f = obj.fn;
+    f();*/// this--> window
+
+
+    // 堆栈内存： 回收；
+    // 栈内存：
+    // 你怎么理解的闭包；什么是闭包；
+    // 函数的内部作用域可以访问函数的外部环境中的变量的一种组合结构；
+    /*function fn() {
+        var name =1;
+        return function () {
+        }
+    }
+    let f  = fn();*/
+
+    // 立即销毁  不销毁  不立即销毁
+    //fn();
+    // 不销毁的作用域： 当前作用域中的空间地址被外界的变量占用，那么此作用域就不能销毁；
+    /*let a =100;
+    function fn() {
+        let a = 1;
+        //let obj= {};
+        obj.f = function () {
+            console.log(a);
+        };
+        oLis[i].onclick = function () {
+        }
+    }
+    fn();
+    obj.f();*/
+
+
+    // this : this--> 关键字
+    // 1. 全局下的this指向window
+    // 2. 看函数执行前有没有".",有的话，点前面是谁，this就是谁，没有指向window
+    // 3. 给元素的事件行为绑定方法，方法中的this指向被绑定的元素
+    // 4. 自执行函数中的this指向window
+    // 5. 回调函数中this一般指向window
+    // 6. 构造函数中的this指向当前的实例
+    // 7. call、apply\bind改变this指向
+    // 8. 箭头函数中没有this；代表上一级作用域中的this；
+
+
+</script>
+</body>
+</html>

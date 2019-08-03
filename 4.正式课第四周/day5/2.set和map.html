@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Set是一个数据结构；Set是一个构造函数；执行之后会生成一个Set的数据结构;类似于数组，里面的成员都是唯一的；
+    //let s = new Set();
+    // add : 添加成员;成员不重复
+    // clear : 清空所有的成员；
+    // delete ：删除某个成员
+    /*s.add(10);
+    s.add(20);*/
+    //s.clear();
+    //s.delete(20);
+    // for of ： 循环
+    /*for(let key of s){
+        console.log(key);
+    }*/
+    /*s.forEach(x=>{
+        console.log(x);
+    })
+    console.log(s);*/
+    let ary =[12,12,4,5,6,6]
+    let s = new Set(ary);
+    console.log([...s]);
+    let  s1  = new Set();
+    s1.add(10);
+    console.log(s1.has(10));
+</script>
+</body>
+</html>

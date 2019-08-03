@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 面向对象  原型链
+    // 单例模式；
+    let obj ={toArray:function(){}};
+    // 工厂模式; 函数就是一个工厂模式;把实现同一个功能的代码放到一个函数中，想使用这个功能，直接让这个函数运行；
+  /*  function fn() {
+        var num=1;
+        return {}
+    }
+    fn()
+    fn()
+    fn()
+
+
+    // 构造函数模式
+    function Fn() {
+        this.name = 100;
+        this.age = 1;
+    }
+    Fn.prototype.getX = function () {
+
+    }
+    let f =  new Fn;
+    let f1 =  new Fn;*/
+
+    // 原型模式: 解决了公有属性的问题；
+    // instanceOf
+    // 1.prototype
+    // 2. constructor
+    // 3.__proto__
+
+    // 原型链： __proto__
+    //console.log(obj.a);// 首先会找obj中私有的属性a,如果没有，会通过自己的__proto__继续向上查找，找到当前实例所属类的原型，如果原型中也没有,那么会继续通过__proto__向上查找，直到找到Object的原型为止如果也没有，只能返回undefined；
+
+    // 继承
+    // 五个继承方式：原型继承、call继承、中间类继承、寄生组合继承、class继承
+   /* function A() {
+
+    }
+    function B() {
+        A.call();
+        arguments.__proto__= Array.prototype;
+    }
+
+    B.prototype = new A;
+    let b = new  B;
+    B.prototype = Object.create(A.prototype)
+    //
+    class A extends B{
+        constructor(){
+            super();
+        }
+    }*/
+
+    // 函数的三种角色
+    // 函数角色 、对象、 类；
+    /*A.v =100;
+    new A;*/
+
+    // call apply bind
+
+    /*let fn =()=>{
+     console.log(this);
+     }
+     fn.call(100);*/
+
+    // DOM的回流、DOM重绘
+    // 数据绑定
+    // 商品排序
+    // sort 类数组转数组
+
+
+    // 正则：
+    // 元字符和修饰符；
+    // test  exec
+    /*let  reg = /\d/g;
+    reg.test("123");//
+    reg.exec("123");// ["1",index:0,input:""] lastIndex
+    // 懒惰性g 、贪婪性?
+    // replace
+    replace(/\d/g,"1234")
+    replace(/\d/g,function (a,b) {
+        // 捕获几次执行几次
+        // arguments:捕获的内容
+        // return +返回值；
+    });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
