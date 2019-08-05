@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 登录注册：
+    // ajax
+   /* let a ;
+    $.ajax({
+        url:"tetx",
+        async:true,
+        success:function(data){
+           $.ajax({
+               url:"23",
+               success:function () {
+                   $.ajax({
+
+                   })
+               }
+           })
+        }
+    })
+    function a() {
+        return function () {
+            return function () {
+
+            }
+        }
+    }*/
+   //promise，接收一个函数作为参数，函数中有两个形参，resolve和reject；
+    // 当异步的操作成功后，会默认调用resolve,并且把异步请求的数据传递给resolve；同时让resolve执行；
+   /*setTimeout(function () {
+
+   },0)*/
+   let p  = new Promise(function (resolve,reject) {
+       // 处理异步；当异步的操作成功之后，会调用resolve，失败会调用reject；
+       //setTimeout(function () {
+            if(true){
+                resolve(data);
+            }
+       //},1000)
+   });
+    console.log(p);
+    p.then(function (data) {
+       console.log("成功")
+   },function () {
+       console.log("失败")
+        console.log(p);
+   }).then(function () {
+        
+    });
+    // Promise 的状态： Pending （进行中） fulfilled（已成功）    rejected(已失败)
+    // 一旦状态发生改变，那么这个状态就会凝固，不会再次更改；
+    // 如果链式调用then方法，那么需要在回调中再次返回一个promise的实例；那么下一个then中的方法会受上一个返回的新promise实例的影响；
+    // pending==> fulfilled
+    // pending ==> rejected
+    const request = url => {
+        return new Promise((resolve, reject) => {
+            $.get(url, data => {
+                resolve(data)
+            });
+        })
+    };
+    request(url).then(data1 => {
+        return request(data1.url);
+    }).then(data2 => {
+        return request(data2.url);
+    }).then(data3 => {
+        console.log(data3);
+    }).catch(err => throw new Error(err));
+
+
+
+
+
+</script>
+</body>
+</html>

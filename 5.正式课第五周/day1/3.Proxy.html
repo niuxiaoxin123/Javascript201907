@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let  obj ={a:1};
+    // obj.a// 获取对象obj中属性名是a的对应的属性值
+    // Proxy的第一个参数是目标对象
+    // 第二个参数是一个对象，里面有get和set两个属性名；
+    let  obj1 = new Proxy({a:1,b:2},{
+        get:function (target,key,receiver) {
+            // 当获取对象的属性名对应的属性值时，会默认调用get函数
+            //console.log(target);
+            //console.log(key);
+            //console.log(receiver);
+            return target[key];
+        },
+        set:function () {
+            // 当设置对象的属性名对应的属性值，那么默认调用这个函数
+            //console.log(200);
+        }
+    });
+   console.log(obj1.a);
+   console.log(obj1.b);
+    //obj1.a = 2;
+    //obj1.b =100;
+    // ++obj1.a;
+</script>
+</body>
+</html>

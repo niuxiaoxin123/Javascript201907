@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width:300px;
+            height:300px;
+            margin:50px auto;
+            background: red;
+        }
+        #inner{
+            width: 200px;
+            height:200px;
+            margin:auto;
+            background: yellow;
+        }
+        #center{
+            width:100px;
+            height:100px;
+            margin: auto;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="center"></div>
+    </div>
+</div>
+<script>
+    let outer=document.getElementById("outer");
+    let inner=document.getElementById("inner");
+    let center=document.getElementById("center");
+    // 点击哪个盒子，只输出当前盒子的id;
+    /*center.onclick = function (e) {
+        e.stopPropagation();
+        console.log(e.target.id)
+    }
+    inner.onclick = function (e) {
+        e.stopPropagation();
+        console.log(e.target.id)
+    }
+    outer.onclick = function (e) {
+        e.stopPropagation();
+        console.log(e.target.id)
+    }*/
+    outer.onclick = function (e) {
+        if(e.target.id==="center"){
+            console.log(1);
+        }else if(e.target.id==="inner"){
+            console.log(2);
+        }else{
+            console.log(3);
+        }
+    }
+    // 事件委托原理： 事件委托利用了事件冒泡传播的机制，给盒子的最外层的元素绑定一个方法，当触发子元素的事件时，同时会触发最外层盒子的对应事件；根据事件源不同，做不同的处理；
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #outer{
+            width:300px;
+            height:300px;
+            margin:50px auto;
+            background: red;
+        }
+        #inner{
+            width: 200px;
+            height:200px;
+            margin:auto;
+            background: yellow;
+        }
+        #center{
+            width:100px;
+            height:100px;
+            margin: auto;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+        <div id="center"></div>
+    </div>
+</div>
+<script>
+    let outer=document.getElementById("outer");
+    let inner=document.getElementById("inner");
+    let center=document.getElementById("center");
+
+    // 事件的冒泡传播： 当触发了子孙元素的相应的事件行为时，如果父代元素身上同时也绑定了这个事件的方法，那么会依次触发父代元素的对应的事件；这种依次向上触发的事件的这种现象就是事件的冒泡传播；
+    /*outer.onclick = function () {
+        console.log("outer")
+    }
+    inner.onclick =function () {
+        console.log("inner")
+    }
+    center.onclick = function (e) {
+        //e.stopPropagation();// 阻止事件的冒泡传播；在IE8及以下是不兼容的；
+        //e.cancelBubble=true;// 阻止事件的冒泡传播；
+        e.stopPropagation?e.stopPropagation():e.cancelBubble=true;
+        console.log("center")
+    }*/
+   /* outer.onmouseover =function () {
+        console.log("outer")
+    }
+    center.onmouseover =function () {
+        console.log("center")
+    }*/
+    // onmouseover\onmouseenter: onmouseenter绑定的方法不存在冒泡传播；onmouseleave
+   /* outer.onmouseenter =function () {
+        console.log("outer")
+    }
+    center.onmouseenter =function () {
+        console.log("center")
+    }*/
+
+    center.onclick =function(){
+
+    }
+
+
+
+</script>
+</body>
+</html>

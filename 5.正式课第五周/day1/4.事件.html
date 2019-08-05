@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // 事件
+    // 事件行为和方法
+    box.onclick = function (e) {
+
+    }
+    box.onclick = null;
+    // addEventListener :  removeEventListener
+    box.addEventListener("click",fn,false);
+    box.addEventListener("click",fn1,false);
+    box.removeEventListener("click",fn,false)
+
+    // attachEvent detachEvent
+    // 1.顺序问题
+    // 2.this问题
+    // 3.重复绑定问题
+
+    // 事件对象：
+
+    box.onclick = function (e) {
+        // e = e || window.event;
+        // e :
+        // clientX : clientY
+        // pageX pageY: 点击的位置距离body的左上边框的距离
+        // offsetX offsetY : 点击的位置盒子的左上边框的距离
+        // target : 事件源
+        // type : 事件的类型 “click”
+        // cancelBubble : 取消冒泡
+        // returnValue ： 阻止事件的默认行为
+        // preventDefault
+        e.cancelBubble=true;
+        e.stopPropagation();
+        e.preventDefault();
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>
