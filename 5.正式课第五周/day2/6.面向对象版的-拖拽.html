@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box,#box1{
+            position: absolute;
+            width: 100px;
+            height:100px;
+            background: red;
+            border-radius: 50%;
+            top:0px;
+            left:0px;
+            cursor: move;
+        }
+        #box1{
+            top:150px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<div id="box1"></div>
+<script>
+    let box = document.getElementById("box");
+    let box1 = document.getElementById("box1");
+    // 面向对象的拖拽
+    function Drag(ele) {
+        // this-->实例；Drag的一个实例
+        // 把元素放在Drag的实例上；
+        this.ele = ele;
+        this.ele.onmousedown=this.down.bind(this);
+    }
+    Drag.prototype.down=function (e) {
+        // console.log(this);// this--> Drag的实例
+        this.x=e.clientX;
+        this.y=e.clientY;
+        this.l = parseFloat(getComputedStyle(this.ele).left);
+        this.t = parseFloat(getComputedStyle(this.ele).top);
+        document.onmousemove=this.move.bind(this);
+        document.onmouseup = this.up;
+    }
+    Drag.prototype.move=function (e) {
+        let changeX = e.clientX-this.x+this.l;
+        let changeY = e.clientY-this.y+this.t;
+        this.ele.style.left = changeX+"px";
+        this.ele.style.top= changeY+"px";
+    }
+    Drag.prototype.up = function () {
+        document.onmousemove=null;
+        document.onmouseup =null;
+    }
+    new Drag(box);
+    new Drag(box1);
+</script>
+</body>
+</html>

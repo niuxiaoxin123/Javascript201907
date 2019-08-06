@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box,#bigBox{
+            width:350px;
+            height:350px;
+            border: 1px solid black;
+            float: left;
+            overflow: hidden;
+            margin-right: 20px;
+            position: relative;
+        }
+        #bigBox img{
+            width:700px;
+            height:700px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        #mark{
+            width:175px;
+            height:175px;
+            background: rgba(0,0,0,0.3);
+            position: absolute;
+            cursor: move;
+            left:0;
+            top:0;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <img src="img/iphone.jpg" alt="">
+</div>
+<div id="bigBox">
+    <img src="img/iphone_big.jpg" alt="">
+</div>
+<script>
+    // 当鼠标划上，创建阴影盒子；加id;
+    let box = document.getElementById("box");
+    let mark;
+    let bigImg = document.getElementsByTagName("img")[1];
+    box.onmouseenter=function () {
+        mark=document.createElement("div");
+        mark.id="mark";
+        box.appendChild(mark);
+    }
+    // 鼠标的onmousemove事件
+    box.onmousemove=function (e) {
+        // 计算出当前盒子水平方向和竖直方向的最大值和最小值；
+        let  maxL = box.offsetWidth-mark.offsetWidth;
+        let minL = 0;
+        let maxT = box.offsetHeight-mark.offsetHeight;
+        let minT = 0;
+        let curL = e.pageX-box.offsetLeft-mark.offsetWidth/2;
+        let curT = e.pageY-box.offsetTop-mark.offsetHeight/2;
+        // 解决临界的判断
+        if(curL>maxL){
+            curL=maxL;
+        }
+        if(curL<minL){
+            curL=minL;
+        }
+        if(curT>maxT){
+            curT=maxT;
+        }
+        if(curT<minT){
+            curT=minT;
+        }
+        mark.style.left=curL+"px";
+        mark.style.top=curT+"px";
+        // 小图片和大图片left值存在1:2的关系；
+        bigImg.style.left=-2*curL+"px";
+        bigImg.style.top=-2*curT+"px";
+    }
+    // 当鼠标滑出时，移出mark这个元素；
+    box.onmouseleave=function () {
+        box.removeChild(mark);
+    }
+
+</script>
+</body>
+</html>

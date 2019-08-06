@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // es6 的promise： 解决回调地狱；解决异步编程的一种方案；
+   /* let  p = new Promise(function (resolve,reject) {
+        // 在此处一般放置异步的操作；
+        let xhr = new XMLHttpRequest();
+        xhr.open("get",url,true);
+
+    });*/
+    let  getJSON=(url)=>{
+       return  new Promise(function (resolve,reject) {
+            // 在此处一般放置异步的操作；
+           // resolve:JavaScript引擎把then的第一个实参传给这个resolve；
+            let xhr = new XMLHttpRequest();
+            xhr.open("get",url,true);
+            // onreadystatechange: 监听函数；当readState变化一次，就执行一次； 2  3   4；
+            xhr.onreadystatechange=function () {
+                if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+                    // resolve : 当异步的操作成功，执行这个函数；
+                    resolve(JSON.parse(xhr.responseText));
+                }else{
+                    reject(a)
+                }
+            }
+            xhr.send();
+        })
+    }
+    // then: 是Promise原型上的方法；promise的实例可以调用；then添加异步操作成功或者失败后的函数；代表一个未来要执行的方法；
+    // console.log(getJSON("data.txt"));
+    /*getJSON("data.txt").then(function (data) {
+        bindHtml(data);
+    },function (error) {
+
+    }).catch(function (err) {
+        
+    });*/
+    /*axios.get("data.txt").then(function (data) {
+
+    })*/
+
+    // 事件的传播： 捕获阶段-->目标阶段-->冒泡阶段
+    // addEventListener("click",fn,true);
+    // attachEvent("onclick",fn)
+    // 事件对象； clientX clientY
+    // a  form  sumbit;
+    // 事件委托
+    // 树形菜单
+
+
+
+
+
+</script>
+</body>
+</html>

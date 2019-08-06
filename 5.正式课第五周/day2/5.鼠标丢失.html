@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #box{
+            width:300px;
+            height:300px;
+            background: lightpink;
+            position: absolute;
+
+        }
+        #box h3{
+            height:30px;
+            line-height: 30px;
+            text-align: center;
+            background: lightseagreen;
+            color:white;
+            cursor: move;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <h3 id="title">珠峰培训</h3>
+</div>
+<script>
+    // JS设置居中；
+    // onmousedown  onmousemove  onmouseup
+    //计算出盒子居中的位置；用可视窗口的宽度的一半减去盒子自身宽度的一半；正好是盒子的left值；
+    // 鼠标丢失： 当鼠标滑动过快，盒子的位置跟不上鼠标移动的距离；会导致鼠标在盒子上出现丢失的现象；
+    // setCapture
+    let box=document.getElementById("box");
+    let title=document.getElementById("title");
+    let  l = document.documentElement.clientWidth/2-box.offsetWidth/2;
+    let t = document.documentElement.clientHeight/2-box.offsetHeight/2;
+    box.style.left = l+"px";
+    box.style.top=t+"px";
+    let maxL = document.documentElement.clientWidth-box.offsetWidth;
+    let maxT = document.documentElement.clientHeight-box.offsetHeight;
+    // 实现拖拽；
+    title.onmousedown=function (e) {
+        // 当鼠标按下时，执行这个函数;并且当鼠标按下，给盒子的onmousemove事件绑定方法；不断设置盒子的位置；
+        // 2.记录当前鼠标的位置；
+        // 把鼠标的初始的位置放到了盒子的自定义属性上；
+        this.x = e.clientX;
+        this.y = e.clientY;
+        // 获取盒子点击时的初始位置；需要把单位去掉；放到盒子的自定义属性上；
+        this.l = parseFloat(box.style.left);//""
+        this.t = parseFloat(box.style.top);
+        if(this.setCapture){
+            // 在IE和火狐下，提供这个方法，防止鼠标丢失；这个方法可以理解成是个把元素和鼠标捆绑到一起的方法；
+            this.setCapture();
+            title.onmousemove=move;
+            title.onmouseup=up;
+        }else{
+            // 事件委托：
+            // 不管鼠标滑动多快，都是在document上滑动；即便鼠标脱离了盒子，那么盒子会依然跟着鼠标移动，是因为鼠标划上，触发document的onmousemove
+            let that = this;
+            document.onmousemove= function(e){
+                move.call(that,e);
+            };
+            document.onmouseup=function (e) {
+                up.call(that,e);
+            };
+        }
+    }
+    function move(e) {
+        // 计算出鼠标移动多远；实时获取鼠标距离可视窗口的距离；
+        let changeX = e.clientX-this.x+this.l;
+        let changeY = e.clientY-this.y+this.t;
+        if(changeX>maxL){
+            changeX=maxL;
+        }
+        if(changeX<0){
+            changeX=0;
+        }
+        if(changeY>maxT){
+            changeY = maxT;
+        }
+        if(changeY<0){
+            changeY=0;
+        }
+        // 需要盒子的初始位置；点击时盒子的位置；
+        box.style.left=changeX+"px";
+        box.style.top=changeY+"px";
+    }
+    // 当鼠标抬起，清除盒子上onmousemove和onmouseup的事件；
+    function up() {
+        if(this.releaseCapture){
+            this.releaseCapture();
+            this.onmousemove=null;
+            this.onmouseup=null;
+        }else{
+            document.onmousemove=null;
+            document.onmouseup =null;
+        }
+    }
+
+
+
+
+</script>
+</body>
+</html>

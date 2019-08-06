@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // 发布订阅： 是一种编程的思想；
+    // 发布订阅： 先进行订阅，把要执行的一些方法先存储到一个事件池中；当条件成立时，进行发布的操作；发布时，遍历事件池中的所有的方法，让这些方法依次执行；
+    // attachEvent : DOM2兼容的处理，就是采用发布订阅的思想；
+    // 订阅；
+    // 自定义事件模式；
+    function fn1() {
+        console.log("泡面")
+    }
+    function fn2() {
+        console.log("泡脚")
+    }
+    function fn3() {
+        console.log("快下课了")
+    }
+    // 订阅
+    function on(curEle,type,fn) {
+        if(!curEle[type]){
+            // 当第一次进来时，给curEle的type属性赋值为空数组，再执行，那么不会走这一行
+            curEle[type]=[];
+        }
+        let ary = curEle[type];
+        ary.push(fn);
+    }
+    // 发布
+    function emit(curEle,type) {
+        let ary = curEle[type];
+        for(let i=0;i<ary.length;i++){
+            ary[i]();
+        }
+    }
+    on(box,"boiling",fn1);
+    on(box,"boiling",fn2);
+    on(box,"boi",fn3);
+    setTimeout(function () {
+        emit(box,"boiling");
+    },3000);
+
+</script>
+</body>
+</html>
