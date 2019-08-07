@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    let obj = {};
+    function fn1() {
+        console.log(this);
+        console.log("包子");
+    }
+    function fn2() {
+        console.log("鸡排");
+    }
+    function fn3() {
+        console.log("豆浆")
+    }
+    // 订阅
+    //params : 1. 订阅对象  2.订阅类型  3.订阅的方法
+    function on(obj,type,fn) {
+        if(!obj[type]){
+            // 第一次执行，给obj新增键值对，并且属性值是[];
+            obj[type]=[];
+        }
+        let ary = obj[type];
+        //遍历ary中的数组成员，判断是否绑定过；
+        for(let i=0;i<ary.length;i++){
+            if(ary[i]===fn){
+                return;
+            }
+        }
+        ary.push(fn);
+    }
+    // 发布
+    function emit(obj,type) {
+        let a = obj[type];
+        if(a){//如果是undefined，不进循环
+            for(let i=0;i<a.length;i++){
+                if(typeof a[i]==="function"){
+                    a[i].call(obj);
+                }
+            }
+        }
+    }
+    function off(obj,type,fn) {
+        let ary = obj[type];
+        for(let i=0;i<ary.length;i++){
+            if(fn===ary[i]){
+                //ary.splice(i,1);数组塌陷；
+                ary[i]=null;
+                return;
+            }
+        }
+    }
+    // 取消订阅
+    on(obj,"breakfast",fn1);
+    on(obj,"breakfast",fn3);//[fn1,null]
+    off(obj,"breakfast",fn3)
+    //on(obj,"breakfast",fn1);
+    on(obj,"lunch",fn2);
+
+    setTimeout(function () {
+        emit(obj,"breakfast")
+    },2000);
+    setTimeout(function () {
+
+    },4000)
+
+
+</script>
+</body>
+</html>

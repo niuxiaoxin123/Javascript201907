@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // call  apply  bind: 都在Function的原型上
+    // bind在IE8及以下是不兼容的；
+    /*function myBind() {
+        
+    }*/
+    Function.prototype.myBind=function (a,...b) {
+        // this--> fn1
+        let that = this;
+        return function () {
+            // 可以使用call和apply;上一个作用域的this；
+            that.apply(a,b);
+        }
+    }
+    function fn1(e,f) {
+        console.log(e);
+        console.log(f);
+        console.log(this);
+    }
+    let  f = fn1.myBind({},1,2,3);
+    f();
+</script>
+</body>
+</html>
