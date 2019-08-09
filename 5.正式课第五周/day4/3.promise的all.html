@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let p1 = new Promise(function (resolve,reject) {
+        resolve()
+    })
+    let p2 = new Promise(function (resolve,reject) {
+        resolve();
+    });
+    let p3 = new Promise(function (resolve,reject) {
+        // 状态 pending --> 成功  pending -->失败
+        // 状态机  默认是pending； 如果调用resolve;reject 那就是失败；
+       let a = 10;
+    });
+    // Promise.all : 返回一个promise的实例；
+    // Promise.all :必须保证全部都是成功；会调用resolve;有一个失败，就失败
+    let p4 = Promise.all([p1,p2,p3]);
+    p4.then(function () {
+        console.log("success")
+    },function () {
+        console.log("error")
+    });
+</script>
+</body>
+</html>

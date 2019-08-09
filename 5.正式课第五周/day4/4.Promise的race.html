@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* let p1 = new Promise(function (resolve,reject) {
+        setTimeout(function () {
+            resolve()
+        },2000)
+    })*/
+    let p2 = new Promise(function (resolve,reject) {
+        setTimeout(function () {
+            reject()
+        },2000)
+    });
+    /*let p3 = new Promise(function (resolve,reject) {
+        setTimeout(function () {
+            resolve()
+        },3000)
+    });*/
+    // Promise.race: race都是Promise私有属性的方法；promise的实例不能进行调用；
+    // race也返回一个promise的实例；会根据上面promise的实例哪个状态先改变，那么就调用了对应的这个成功或失败的方法；
+   /* let p4 = Promise.race([p1,p2,p3]);
+    p4.then(function () {
+        console.log("success")
+    },function () {
+        console.log("error")
+    });*/
+
+    // finally : 最后；
+    // 不管promise的状态是成功还是失败，最后都会执行
+/*    p2.then(function () {
+        console.log(200);
+    },function () {
+        console.log(300);
+    }).finally(function () {
+        console.log(100);
+    })*/
+
+</script>
+</body>
+</html>

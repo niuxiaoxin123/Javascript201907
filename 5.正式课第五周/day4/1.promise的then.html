@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*setTimeout(function () {
+        setTimeout(function () {
+
+        },1000)
+    },2000);*/
+
+    // 1. promise: 解决回调；将异步的代码编写成同步的方式
+    // promise中的回调是同步的；当 newPromise时，就会立即执行；
+    /*console.log(7);
+    let p = new Promise(function (resolve,reject) {
+        console.log(3);
+        //setTimeout(function () {
+            if([]){
+                console.log(8);
+                resolve()
+            }else{
+                reject();
+            }
+        //},1000)
+        console.log(5);
+    });
+    console.log(4);
+    p.then(function () {
+        // 这是一个异步的任务；
+        console.log(1);
+    },function () {
+        console.log(2);
+    })
+    console.log(6);*/
+
+   // then : 为promise的实例添加状态改变的回调函数；
+    // then ： 默认会返回一个promise的实例
+    // then默认返回的promise实例，默认会走成功；
+    // 如果在回调中返回一个promise的实例，那么会根据这个返回的promise的状态决定下一个then中的回调；
+    //第一个then中回调函数的返回值会作为参数传递给下一个then的回调函数；
+    let  p = new Promise(function (resolve,reject) {
+        reject();
+    });
+    let p1 = p.then(function () {
+        console.log(1);
+    },function () {
+        // console.log(a);
+        return new Promise(function (resolve,reject) {
+            reject(200);
+        })
+        //return 100;
+    }).then(function (a) {
+        console.log(a);
+        console.log(3);
+    },function (b) {
+        console.log(b);
+        console.log(4);
+    }).then(function () {
+
+    })
+
+</script>
+</body>
+</html>

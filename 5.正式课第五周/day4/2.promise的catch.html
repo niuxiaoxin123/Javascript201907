@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*try{
+        console.log(a);
+    }catch(e){
+        console.log(e);
+    }*/
+    // catch  : try catch
+    // Promise.prototype.catch;
+    // Promise.prototype.catch 相当于 p.then(null,reject)
+    // promise 的对象错误具有冒泡性质；一直向后传递，直到被捕获为止；
+    // catch： 捕获错误的；reject或者代码出现异常报错，都会走catch；
+
+    /*let  p = new Promise(function (resolve,reject) {
+       // reject();
+       resolve();
+
+    })
+    p.then(function () {
+       // resolve();
+        console.log(1);
+        return  new Promise(function (resolve,reject) {
+            reject(12);
+        });
+    }).then(function () {
+        console.log(2);
+    }).catch(function (e) {
+        console.log(e);
+    });*/
+
+    let  p = new Promise(function (resolve,reject) {
+        // reject();
+        reject();
+    })
+    p.then(function () {
+        console.log(1);
+    }).catch(function (e) {
+        console.log(e);
+        return new Promise(function () {
+            reject();
+        })
+    }).then(function () {
+        console.log(2);
+    })
+
+
+
+
+
+
+</script>
+</body>
+</html>

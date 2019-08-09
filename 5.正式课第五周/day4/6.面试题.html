@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    /*
+     实现一个LazyMan，可以按照以下方式调用:
+     1) LazyMan(“Hank”)输出:
+     Hi! This is Hank!
+
+     2) LazyMan(“Hank”).sleep(10).eat(“dinner”)输出
+     Hi! This is Hank!
+     //等待10秒..
+     Wake up after 10
+     Eat dinner~
+
+     3) LazyMan(“Hank”).eat(“dinner”).eat(“supper”)输出
+     Hi This is Hank!
+     Eat dinner~
+     Eat supper~
+
+     4) LazyMan(“Hank”).sleepFirst(5).eat(“supper”)输出
+     //等待5秒
+     Wake up after 5
+     Hi This is Hank!
+     Eat supper
+     */
+    // 1.同异步 定时器
+    // 2.原型链；
+
+    function LazyMan(name) {
+        function Man() {
+            setTimeout(function () {
+                console.log(`Hi! This is ${name}`);
+            },0)
+        }
+        let t=null;
+        Man.prototype.sleep=function (time) {
+            t=time;
+            setTimeout(function () {
+                console.log(`Wake up after ${time}`)
+            },time*1000);
+            return this;
+        }
+        Man.prototype.eat=function (food) {
+            setTimeout(function () {
+                console.log(` Eat ${food}~`)
+            },t*1000)
+            return this;
+        }
+        Man.prototype.sleepFirst=function (tim) {
+            let curTime = new Date();
+            while(new Date()-curTime<=tim*1000){}
+            console.log(`Wake up after ${tim}`)
+            return this;
+        }
+        return new Man();
+    }
+    // while : 阻塞主线程；
+     //LazyMan("Hank").sleep(3).eat("dinner")
+    //LazyMan("Hank").eat("dinner").eat("supper")
+    LazyMan("Hank").sleepFirst(5).eat("supper")
+    // 作用域    原型链    同步异步；
+</script>
+</body>
+</html>

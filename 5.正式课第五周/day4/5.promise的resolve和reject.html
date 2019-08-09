@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //let p = new Promise(function (resolve,reject) {
+        // pending
+        // 只要调用了resolve，那么这个状态就会从pending-->fulfilled
+        // 调用了reject， 那么这个状态就会从pending-->rejected
+    //})
+
+    // Promise.resolve : 也返回一个promise的实例；只会是成功的状态；
+    // 将一个普通的对象或字符串转成一个promise的实例；
+    let p = Promise.resolve("foo")
+    /*new Promise((resolve,reject)=>{
+        resolve("foo")
+    })*/
+    /*console.log(p);
+    p.then(function (data) {
+        console.log(data);
+        console.log(100);
+    });
+    let a =  new Promise(function (resolve,reject) {
+        console.log(100);
+        setTimeout(()=>{
+            resolve();
+            console.log(a);
+        },1000)
+    });
+   console.log(a);*/
+
+    // Promise.reject()
+
+    // Promise : 结合axios fetch 发送请求；
+    // 微任务和宏任务；事件循环机制；
+</script>
+</body>
+</html>
