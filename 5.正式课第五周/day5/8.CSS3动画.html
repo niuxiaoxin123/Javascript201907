@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width:200px;
+            height:200px;
+            background: url("0.jpg") no-repeat;
+            background-size: 100% 100%;
+            border:1px solid yellow;
+            /*动画的属性*/
+            /*transition-property: all;
+            !*动画经历时间*!
+            transition-duration: 1s;
+            !*动画的效果、速度*!
+            transition-timing-function: ease-in;
+            !*动画延迟*!
+            transition-delay: 1s;*/
+            transition: all 1s  linear 0s;
+        }
+        .box:hover{
+            transform: translate(200px) scale(2) rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Promise
+    // console.log(1);
+    //  p：pending  fulfilled  rejected; 状态一旦凝固，不再改变;
+    //  1.调用了resolve和reject
+    //  2.代码运行报错；直接变为失败；
+    let p = new  Promise(function (resolve,reject) {
+        // 这个函数是个同步的执行函数
+        setTimeout(function () {
+            reject();
+        },0);
+        //resolve();//
+        //console.log(100);
+    });
+    // then : 向成功和失败的事件池中放入方法，当promise的实例状态改变时，会触发事件池中的所有的方法；
+    p.then(function () {
+        // 这方法是异步的；
+        //console.log(4);
+    },function () {
+    }).then(function () {
+    }).catch(function(){
+    })
+    console.log(3);
+    // 当执行等待队列中的方法时，如果都到达了目标时间，先执行微任务，再执行宏任务；
+    // 微任务： promise的then的任务  async await  node中process
+    // 宏任务： 定时器、ajax的异步；
+    // all race  resolve reject  finally
+   /*Promise.resolve("foo");
+    new Promise((resolve,reject)=>{
+        resolve("foo")
+    }).then(function () {
+    })*/
+
+    // 面试的题集
+    // hybrid : 混合开发；
+    // webApp
+    // NativeApp
+    // webview:
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .box{
+            width:500px;
+            height:500px;
+            margin:10px;
+            padding:20px;
+            /*border-radius: 10px 10px 20px 20px;*/
+            /* 第一个 ：左上和右下*/
+            /* 第二个 ：右上和左下*/
+            /*background: blue;*/
+            /*box-shadow: 10px 10px 10px  5px orangered ;*/
+            /*box-sizing: content-box;*/
+            border:10px dashed red;
+            background:green url("0.jpg") no-repeat;
+            /*background-clip: border-box;*/
+            background-size: 50%  100%;
+
+
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<script>
+    // border-radius :
+    // box-shadow : 盒子的阴影
+    // 第一个参数： 右偏移  2：下偏移  3. 模糊度  4.大小 5.颜色 6.内外阴影，默认是外阴影；inset;
+    // box-sizing:怪异盒模型
+    // border-box :从外边框到对面的外边框的距离；包含border、padding、内容的width;
+    // content-box: 正常的内容宽度
+    // inherit: 继承；
+
+    // background-clip :
+    // border-box : 从边框开始显示
+    // padding-box  ： 从padding区域显示
+    // content-box ： 从内容区显示
+
+    // background-size :
+    // contain : 缩小图片适应元素；一定全部显示图片，等比例多小，适应元素的最小的宽或高；
+    // cover : 全部覆盖，图片不一定显示完整；
+    // 100% 100% ：相对元素的宽和高，横向的缩放，纵向的缩放；
+
+
+
+
+
+
+</script>
+</body>
+</html>
