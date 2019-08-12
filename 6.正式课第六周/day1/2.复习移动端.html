@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .box{
+            width:100px;
+            height:100px;
+            background: red;
+            transition: all 1s linear;
+            /*谷歌的内核*/
+            -webkit-transition:all 1s linear ;
+            /*火狐*/
+            -moz-transition: all 1s linear;
+            /*欧朋*/
+            -o-transition: all 1s linear;
+            /*IE*/
+            -ms-transition:all 1s linear;
+
+            /*-webkit-transition: all 1s linear;
+            -moz-transition: all 1s linear;
+            -ms-transition: all 1s linear;
+            -o-transition: all 1s linear;
+            transition: all 1s linear;*/
+
+        }
+        .box:hover{
+            /*X轴是横向平行页面，向右是正轴，y轴向下是正轴*/
+            transform: translateY(300px);
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    // hybrid混合开发模式；webApp  nativeApp
+    // webView: 是一个webkit内核的引擎；可以渲染页面；html和js通过webview这个控件作为桥梁就可以调用原生的接口；
+    // 现在的移动端项目：需要前端工程师和IOS和Android工程师；
+    //  H5新增标签  CSS3属性
+    //  header  section nav  footer  article aside  figure figcaption mark hgroup(标题组合)
+    //  CSS3 : border-radius  box-shadow  box-sizing  background-clip   linear-gradient
+
+    // 变形： transform
+    // translate  rotate  scale   skew
+    // translateX  translateY  translate(300px,400px)
+    // scaleX  scaleY  scale
+    // skewX  skewY  skew
+
+    // 常见的浏览器内核：
+    //谷歌的内核：webkit
+    //Firefox（火狐）的内核：Gecko
+    //ie的内核：Trident
+    //opera（欧朋）的内核：presto
+    //国内浏览器的内核：webkit
+
+</script>
+</body>
+</html>

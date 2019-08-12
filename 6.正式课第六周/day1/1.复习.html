@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="text">12345</div>
+<input type="text" id="box" autofocus placeholder="请输入用户名">
+<script>
+    // 复习 ： 事件   发布订阅    promise  移动端
+    // 事件： 常见的事件行为  鼠标  键盘
+    // 键盘码：keyCode :大写的A-Z： 65-90  数字0-9：48-57  enter:13 左上右下：37-40
+    // 每一个键都会有一个对应的keyCode值；
+    // onkeydown onkeyup onkeypress onchange oninput onblur onfocus
+    // 表单 是一个表单元素；这个元素对象就有一个value属性；value属性的属性值就是文本框的输入的内容；
+    // 表单元素：文本框采用value获取设置文本框的内容；单选，双选框是checked属性获取或者是设置值；
+    //console.log(text.value);// 不是表单元素，没有value这个属性名；
+    //console.log(box.value);
+    /*box.onkeydown = function () {
+        console.log(this.value);
+    }*/
+    //box.checked=true;
+//    box.onkeypress=function () {
+//        console.log(this.value);
+//    }
+
+    //input的属性
+    // autofocus:自动获取鼠标焦点；
+    // placehoder: 文本框默认值；
+
+
+    // 事件对象： 事件的信息；
+    // e e.clientX  e.clientY e.pageX e.pageY  e.offsetX  e.offsetY  e.target  e.type e.stopPropagation  e.preventDefault
+    // 鼠标跟随 放大镜  鼠标拖拽  照片墙 面向对象版；
+    // 发布订阅模式 单例模式   中介者模式   装饰模式
+    // on  emit  off;
+    // DOM2级；
+    // attachEvent
+    //box.attachEvent("onclick",fn1)
+    //box.attachEvent("onclick",fn2);
+
+    // on  emit off
+
+    // 事件的传播： 捕获--》目标--》冒泡
+    // addEventListener
+    // 事件委托：
+
+    //  高程3   犀牛权威指南；
+
+
+
+
+</script>
+</body>
+</html>

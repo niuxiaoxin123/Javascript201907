@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .list{
+            width:100%;
+            display: -webkit-flex;
+            display: flex;
+            list-style: none;
+            /*flex-direction: column;*/
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .list li{
+             /*width:30%;*/
+             height:100px;
+             background: red;
+             color:white;
+             /*flex-grow: 1;*/
+             /*flex-grow  flex-shrink  flex-basis*/
+             flex:1 1;
+         }
+       /* .list li:nth-child(1){
+            order:1;
+        }
+        .list li:nth-child(2){
+            order:3;
+        }
+        .list li:nth-child(3){
+            order:2;
+        }
+        .list li:nth-child(4){
+            order:4;
+        }*/
+    </style>
+</head>
+<body>
+<ul class="list">
+    <li>3</li>
+    <li>1</li>
+    <li>2</li>
+    <li>4</li>
+</ul>
+
+<script>
+        // 一旦父元素设置flex布局；子元素的float clear  vertical-align 将会失效；
+    // 6个属性可以设置在容器上：
+        // display:flex;加在父级元素上；
+    // flex-direction :
+    // flex-wrap :
+    // flex-flow: row wrap;相当于flex-direction和flex-wrap的简写；
+    // justify-content： flex-start  flex-end  center   space-around  space-between;
+    // align-items
+    // align-content
+
+    // 用于容器中的子元素；
+    //order
+    //flex-grow :
+
+</script>
+</body>
+</html>

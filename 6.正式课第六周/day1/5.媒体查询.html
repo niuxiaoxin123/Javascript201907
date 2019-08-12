@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width:800px;
+            margin:100px auto;
+        }
+        .box div{
+            float:left;
+            width:25%;
+            height:200px;
+        }
+        .box div:nth-child(1){
+            background: red;
+        }
+        .box div:nth-child(2){
+            background: yellow;
+        }
+        .box div:nth-child(3){
+             background: blue;
+        }
+        .box div:nth-child(4){
+            background: black;
+        }
+        @media screen  and (max-width:1000px) and (min-width:800px){
+            /*如果这个条件是成立的，就会把上面的覆盖*/
+            /*min-width:屏幕大于1000px时，该样式有效*/
+            /*max-width:屏幕小于1000px时，该样式有效*/
+            /*大于800，并且小于1000px是绿色*/
+            .box div:nth-child(4){
+                background: green;
+            }
+            /*.box div:nth-child(3){
+                width:12.5%;
+            }*/
+        }
+        @media screen and (max-width:800px){
+            .box div:nth-child(4){
+                background: pink;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<script>
+    // 媒体查询：
+
+
+</script>
+</body>
+</html>
