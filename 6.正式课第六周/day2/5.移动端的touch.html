@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 100px;
+        }
+        .box{
+            width:2rem;
+            height:2rem;
+            background: red;
+            margin-left: 0.3rem;
+        }
+    </style>
+    <script>
+        // 在解析DOM之前，改变HTML的fontSize值；减少DOM的重绘；
+        function computedFontSize() {
+            let  winW = document.documentElement.clientWidth;
+            document.documentElement.style.fontSize=winW/750*100+"px";
+        }
+        window.addEventListener("resize",computedFontSize);
+        computedFontSize();
+    </script>
+</head>
+<body>
+<div class="box" id="box"></div>
+<script src="fastclick.js"></script>
+<script>
+    // click  ： 300ms延迟；
+    // fastClick  zepto.js  tap事件；
+
+
+    // 在移动端不存在鼠标事件；
+    // touch 事件
+    let  box = document.getElementById("box");
+    // ontouchstart : 触摸开始触发的事件；
+    box.ontouchstart=function (e) {
+        console.log(e.touches[0]);
+        console.log(100);
+    }
+    // ontouchmove: 触摸移动触发的事件
+    box.ontouchmove=function (e) {
+        console.log(e.touches[0]);
+    }
+    // ontouchend : 触发结束触发的事件；
+    box.ontouchend  = function (e) {
+        //console.log(e);
+        //console.log(e.touches[0].clientX);
+        //在touchend事件中，事件对象没有在e.touches中，把事件信息放在了changedTouches中；
+    }
+    // 当有一些更高级别的事情发生，会取消当前touch操作；会触发ontouchcancel
+//    box.ontouchcancel=function () {
+//        console.log(500);
+//    }
+    // 会根据鼠标移动判断是否需要发生touchmove事件；如果触发，就不再触发onclick事件；
+    // 如果点击超过300ms,那也不触发onclick；
+   box.onclick = function () {
+        console.log(400);
+   }
+   // 事件对象： 在移动端中，把事件的一些信息存储到了e的touches属性中，touches的属性值的第一项就是事件的信息；
+    box.addEventListener("touchstart",function (e) {
+        
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

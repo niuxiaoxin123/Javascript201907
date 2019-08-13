@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 100px;
+        }
+        .box{
+            width:2rem;
+            height:2rem;
+            background: red;
+        }
+    </style>
+    <script>
+        // 在解析DOM之前，改变HTML的fontSize值；减少DOM的重绘；
+        function computedFontSize() {
+            console.log(100);
+            let  winW = document.documentElement.clientWidth;
+            document.documentElement.style.fontSize=winW/750*100+"px";
+        }
+        window.addEventListener("resize",computedFontSize);
+        computedFontSize();
+    </script>
+</head>
+<body>
+<div class="box" id="box"></div>
+<script src="fastclick.js"></script>
+<script>
+    // 移动端是有touch事件；
+    // 移动端中元素的onclick都会有300ms的延迟现象；在移动端中，如果300ms之内没有再次点击，那么会默认执行单击的操作；如果300ms内点击了第二次，那么这认为是双击的操作；
+    window.addEventListener("load",function () {
+        // 当页面DOM加载完毕，执行这个函数
+        FastClick.attach(document.body);
+        // 在移动端中：事件执行顺序是touchstart  touchmove  touchend click;正常情况下，会等到touchend执行完毕之后，等待200-400ms之间执行click；
+        // FastClick原理在touchend之后，立即采用DOM自定义事件触发了onclick绑定的那个方法，并且把原有的方法阻止掉；
+
+        // zepto的tap的事件；也不存在延迟；
+    })
+    let box = document.getElementById("box");
+    box.onclick = function () {
+        console.log(100);
+    }
+
+
+
+</script>
+</body>
+</html>

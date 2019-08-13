@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<audio src="img/myDream.m4a" controls id="music" ></audio>
+<button id="start">开始</button>
+<button id="stop1">暂停</button>
+<script>
+    // 音视频： 默认是不播放的；
+    // controls : 来控制是否显示；
+    // autoplay : 自动播放；
+    // play: 让音乐开始播放；
+    // pause : 让音乐暂停
+    // paused :如果当前音乐是播放状态，那就是false；如果是暂停状态那就是true；
+    // duration ：当前音乐的总时间
+    // currentTime :当前的音乐的播放时间
+    // canplay: 当音频资源加载完毕，会立即触发这个事件；
+    let music = document.getElementById("music");
+
+    start.onclick = function () {
+        music.play();
+        //console.log(music.paused);
+    }
+    stop1.onclick = function () {
+        music.pause();
+        //console.log(music.paused);
+    };
+    /*window.onload=function () {
+        // 当DOM将所有的图片或音频加载完毕之后，才会执行的回调函数；
+        console.log(music.duration);
+    }*/
+    /*setInterval(function () {
+        console.log(music.currentTime);
+    },1000)*/
+    music.addEventListener("canplay",function () {
+        // 当音频资源加载完毕，会立即触发这个事件；
+        console.log(music.duration);
+    });
+
+</script>
+</body>
+</html>

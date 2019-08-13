@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 100px;
+        }
+        .box{
+            width:2rem;
+            height:2rem;
+            background: deeppink;
+            margin:auto;
+        }
+    </style>
+    <script>
+        (function () {
+            function computedFont() {
+                let winW = document.documentElement.clientWidth;
+                document.documentElement.style.fontSize = winW/750*100+"px";
+            }
+            computedFont();
+            window.addEventListener("resize",computedFont)
+        })();
+    </script>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    let box = document.querySelector(".box");
+    // 1. 点击盒子，让盒子顺时针旋转540deg;
+    // 2. 如果在盒子上滑动水平方向或竖直方向超过30px;则就让盒子直接变色；
+    box.addEventListener("touchstart",function (e) {
+        let touchObj = e.touches[0];
+        // 记录点击时，触摸的位置；
+        this.x= touchObj.clientX;
+        this.y = touchObj.clientY;
+        this.style.transition="all 0s linear";
+        this.style.transform="rotate(0deg)";
+    });
+    box.addEventListener("touchmove",function (e) {
+        let touchObj = e.touches[0];
+        if(Math.abs(touchObj.clientX-this.x)>30||Math.abs(touchObj.clientY-this.y)>30){
+            this.success=true;
+        };
+    })
+    box.addEventListener("touchend",function (e) {
+        //let touchObj = e.changedTouches[0];
+        this.style.transition="all 1s linear";
+        if(this.success){
+            this.style.background="yellow";
+        }else{
+            this.style.transform="rotate(540deg)";
+        }
+    });
+
+
+</script>
+</body>
+</html>

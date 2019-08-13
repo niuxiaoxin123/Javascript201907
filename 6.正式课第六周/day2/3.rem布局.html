@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+            font-size: 100px;
+        }
+        .box{
+            width:1.5rem;
+            height:1.5rem;
+            background: red;
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<script>
+    // rem 布局：
+    // 适配；手机屏幕大小不同
+    // 设计稿：公司中提供的设计稿一般是750px;  盒子150px;  fontSize:100px;   1.5rem
+    // 手机屏幕                    375px   盒子75px;   fontSize:50px    1.5rem
+    //                           320px   盒子64px;   fontSize:        1.5rem
+
+    // rem :单位； 是一个相对的值；html的font-size的属性值就是一个rem值；
+    // 当前页面的html的fontSize的值；
+    // 利用了当前屏幕和750的比等于屏幕的fontSize和750的fontSize的比例相同；
+    // 不同的屏幕大小设置不同的font-size值；
+
+    function computedFontSize() {
+        console.log(100);
+        let  winW = document.documentElement.clientWidth;// 750px   100px
+        document.documentElement.style.fontSize=winW/750*100+"px";
+    }
+    // resize : 当屏幕的窗口的大小发生改变时，执行这个方法；
+    window.addEventListener("resize",computedFontSize);
+    computedFontSize();
+
+
+</script>
+</body>
+</html>
