@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--让视口变成理想视口-->
+    <script>
+        <!---->
+        let computedFont=()=>{
+            let winW = document.documentElement.clientWidth;
+            document.documentElement.style.fontSize=winW/750*100+"px";
+        }
+        computedFont();
+    </script>
+</head>
+<body>
+<div id="box">123456</div>
+<script>
+    // 视口 ： 布局视口  视觉视口 理想视口
+    // rem:相对的值；html的font-size;根据屏幕的大小设置html的font-size值；
+    // 事件
+    // click : 300ms延迟
+    // touch事件
+    // ontouchstart  ontouchmove ontouchend  ontouchcancel
+    // 事件对象
+    /*box.ontouchstart=function (e) {
+        // e.touches[0]
+        // 在touchend中是changedTouches[0]
+    }*/
+    /*box.onmousedown=function () {
+        console.log(100);
+    }
+    box.onmousemove=function () {
+        console.log(200);
+    }*/
+
+    // 音视频：
+    // controls : 控制器
+    // autoplay:自动播放
+    // play: 让音乐开始播放
+    // pause: 让音乐暂停
+    // paused : 返回一个布尔值；true表示暂停状态；false代表播放状态
+    // duration : 音乐播放需要的总时间
+    // currentTime : 播放当前的时间
+    // canplay : 当音频加载完毕会触发这个事件；
+
+
+
+
+</script>
+</body>
+</html>
