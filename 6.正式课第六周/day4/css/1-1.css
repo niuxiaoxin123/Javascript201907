@@ -1,0 +1,9 @@
+.box {
+  width: 200px;
+  height: 100px;
+  background: red;
+}
+.box .first {
+  width: 200px;
+  height: 8px;
+}

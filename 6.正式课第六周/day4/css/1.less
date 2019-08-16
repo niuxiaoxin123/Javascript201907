@@ -1,0 +1,13 @@
+// @: 在less中定义一个变量；编译成css之后，这个变量就不存在;
+@w:200px;
+.box{
+  width:@w;
+  height:100px;
+  background: red;
+  .first{
+    width:@w;
+    height:8px;
+    &:nth-child(1){
+    }
+  }
+}
