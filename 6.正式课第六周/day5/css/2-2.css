@@ -1,0 +1,88 @@
+/*@color:#31C788;
+@imgStr:"../img/";
+@deepColor:darken(@color,10%);// darken : 让当前的颜色加深10%；
+.box{
+    background:@color;
+  &:hover{
+    background:@deepColor;
+    background: url("@{imgStr}0.jpg");
+  }
+}*/
+/*
+.public(){
+   width:100px;
+   height:100px;
+   padding:5px;
+   border:1px solid #cccccc;
+}
+.a{
+  .public;
+  padding:10px;
+}
+.b{
+  .public;
+}
+*/
+/*
+.transition(@property:all,@duration:1s,@timing:linear,@delay:0s){
+  !*-webkit-transition: @property @duration @timing @delay;
+  -moz-transition: @property @duration @timing @delay;
+  -ms-transition: @property @duration @timing @delay;
+  -o-transition: @property @duration @timing @delay;
+  transition: @property @duration @timing @delay;*!
+
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+.box{
+  .transition;
+}
+.a{
+  .transition(@duration: 2s);
+}
+
+// less中的继承；
+.public{
+  width:100px;
+  height:100px;
+  background: red;
+}
+.a{
+   &:extend(.public);
+   padding:100px;
+}
+.b{
+  &:extend(.public);
+  opacity:0.6;
+}
+*/
+/*@w:100px;
+.box{
+  .bg{
+    width:@w;
+    background: red;
+  }
+}
+.a{
+  .box !important;
+}*/
+/*.layout(@a:9,@b:2) when (isnumber(@b)){
+   width:300px;
+}
+
+.hh{
+  .layout(10,20)
+}*/
+/*.generate-columns(4);
+.generate-columns(@n, @i: 1) when (@i <= @n) {
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}*/
+.box-top {
+  width: 100px;
+}

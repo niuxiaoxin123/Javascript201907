@@ -1,0 +1,116 @@
+// 在less中通过@定义变量；而且变量存在变量提升；
+/*@color:#31C788;
+@imgStr:"../img/";
+@deepColor:darken(@color,10%);// darken : 让当前的颜色加深10%；
+.box{
+    background:@color;
+  &:hover{
+    background:@deepColor;
+    background: url("@{imgStr}0.jpg");
+  }
+}*/
+
+// mixin : 混合
+// 如果这个类名后面加上（）；那么编译出来的css就没有public这个样式；
+// 有括号的叫函数，没有括号叫类；
+/*
+.public(){
+   width:100px;
+   height:100px;
+   padding:5px;
+   border:1px solid #cccccc;
+}
+.a{
+  .public;
+  padding:10px;
+}
+.b{
+  .public;
+}
+*/
+
+//函数可以传递参数；
+/*
+.transition(@property:all,@duration:1s,@timing:linear,@delay:0s){
+  !*-webkit-transition: @property @duration @timing @delay;
+  -moz-transition: @property @duration @timing @delay;
+  -ms-transition: @property @duration @timing @delay;
+  -o-transition: @property @duration @timing @delay;
+  transition: @property @duration @timing @delay;*!
+
+  -webkit-transition: @arguments;
+  -moz-transition: @arguments;
+  -ms-transition: @arguments;
+  -o-transition: @arguments;
+  transition: @arguments;
+}
+.box{
+  .transition;
+}
+.a{
+  .transition(@duration: 2s);
+}
+
+// less中的继承；
+.public{
+  width:100px;
+  height:100px;
+  background: red;
+}
+.a{
+   &:extend(.public);
+   padding:100px;
+}
+.b{
+  &:extend(.public);
+  opacity:0.6;
+}
+*/
+
+
+// 命名空间和作用域链；
+// 先找自己的作用域下的变量如果没有再向上查找；如果找不到，那么报错；
+/*@w:100px;
+.box{
+  .bg{
+    width:@w;
+    background: red;
+  }
+}
+.a{
+  .box !important;
+}*/
+
+// when :后面跟的是判断条件；lightness ： 返回该颜色的深浅程度的百分比；
+//.minx(@a) when(lightness(@a)<50%){
+//   background: red;
+//}
+//.a{
+//  .minx(#555)
+//}
+
+// when : 判断；
+// isnumber  iscolor
+/*.layout(@a:9,@b:2) when (isnumber(@b)){
+   width:300px;
+}
+
+.hh{
+  .layout(10,20)
+}*/
+
+// 递归；
+/*.generate-columns(4);
+.generate-columns(@n, @i: 1) when (@i <= @n) {
+  .column-@{i} {
+    width: (@i * 100% / @n);
+  }
+  .generate-columns(@n, (@i + 1));
+}*/
+
+//& : 连接符
+.box{
+  &-top{
+    width:100px;
+  }
+}
