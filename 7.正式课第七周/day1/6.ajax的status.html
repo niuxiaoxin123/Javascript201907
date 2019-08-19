@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  xhr = new XMLHttpRequest();
+    xhr.open("get","index1.css",true);
+    xhr.onreadystatechange=function () {
+        console.log(xhr.status);// 只要客户端接收到服务器的响应头，那么这个状态码基本确定；不再发生改变；
+        if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+
+        }
+    }
+    xhr.send();
+
+    // 常见的状态码
+    // 200 : 代表一切正常，数据请求成功；请求的响应头或者响应体将这个状态返回；
+    // 201 : 请求实现，需要建立一个新的资源
+    // 202 : 服务器已经接收到请求，但是尚未处理
+
+    // 以3 开头
+    // 301 : 永久重定向
+    // 304： 代表了走缓存；
+    // 307： 临时转移；
+
+    // 4 开头： 一般情况下都是客户端的问题
+    // 401 : 当前请求需要验证；
+    // 403 : 没有权限访问；
+    // 404 : 路径找不到
+
+    // 5XX
+    // 500 : 服务器未知的错误；
+    // 503 : 超负荷；过载；
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let  xhr = new XMLHttpRequest();
+    //xhr.open("get","index1.css?username=aaa&password=11233",false);
+    // get请求是问号传参，会参数拼接到地址栏上
+    // post 请求会把参数放到请求体中传递给服务器；
+    xhr.open("post","index.css",false);
+    xhr.onreadystatechange=function () {
+        console.log(xhr.status);// 只要客户端接收到服务器的响应头，那么这个状态码基本确定；不再发生改变；
+        if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+
+        }
+    }
+    // post 请求把参数放到了请求体中；
+    xhr.send({username:"aaa",password:"123"});
+    // 如果ajax请求是同步，那么这个请求数据不完成，那么下面的代码都不执行；
+    //console.log(100);
+    // 同异步：
+    // JS是单线程，同一时间只能执行一个任务；
+    // 浏览器是多线程，可以同时执行多个任务；
+    //
+    
+    $.ajax({
+        url :"",
+        type:"get",
+        async:true,
+        data:{username:"aabb",password:"1123"},
+        dataType:"json",
+        cache:true,
+        success :function (data) {
+
+        }
+    });
+
+
+
+
+</script>
+</body>
+</html>

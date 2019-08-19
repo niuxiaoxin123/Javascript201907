@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. ajax的四步
+    // 1. 创建一个ajax实例；
+    let  xhr = new XMLHttpRequest();// XMLHttpRequest是一个内置的类；
+    //console.log(xhr.readyState);// 0
+    // 2. 打开一个路径；确定了请求的方式；确定了资源路径；确定了同步异步
+    xhr.open("get","index.css",false);
+    //console.log(xhr.readyState);// 1
+    // true : 异步   false ： 同步
+    // 3.监听函数
+    xhr.onreadystatechange=function () {
+        // 当xhr身上的readyState属性值发生改变，就会触发这个函数；
+        // console.log(100);
+        //console.log(xhr.readyState);// 异步 2 3 4；
+        // 当readState变为4,那么数据会统一放在xhr.responseText
+        // console.log(xhr.responseText);
+        //if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){}
+        console.log(100);
+    }
+    /// 4. 发送请求
+    console.log(300);
+    xhr.send();
+    console.log(200);
+
+    // xhr.readyState : 这个属性值012345；每个值代表当前ajax请求进行到了不同的阶段；
+    // 0 : 创建了ajax的实例；
+    // 1 : 确定好了请求方式、路径、同步异步；
+    // 2 : 说明服务器已经接收到客户端发来的请求，并且在数据传输之前，把响应头传送给客户端；
+    // 3 : 说明服务端正在向客户端传送数据信息
+    // 4 : 说明客户端已经完全接收到了服务器传递过来的数据；
+
+
+
+
+
+
+</script>
+</body>
+</html>
