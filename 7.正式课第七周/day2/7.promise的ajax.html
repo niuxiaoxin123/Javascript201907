@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/login">
+    <input type="text">
+    <input type="text">
+    <input type="submit">
+</form>
+<script>
+    // axios
+    // 回调地狱
+    // 登录：第一个请求将用户名和密码发送给服务器，服务器验证该用户是否存在；当验证成功，后台返回一个对象;如果code是0；代表该用户存在；需要继续发送第二个请求；请求该用户下的所有的数据；
+    /*$.ajax({
+        url:"/login",
+        type:"post",
+        data:{username:"",password:""},
+        success:function (data) {
+            if(data.code===0){
+                $.ajax({
+                    url:"/order",
+                    data:{},
+                    success:function () {
+                        $.ajax({
+                            // 下一个请求需要依赖上一个请求回来的数据；
+                        })
+                    }
+                })
+            }
+        }
+    });*/
+
+    // promise : 是解决异步编程一种方案；将异步的事件以同步的方式表示出来；
+
+    let  getJSON=(url)=>{
+        return new Promise(function (resolve,reject) {
+            let xhr = new XMLHttpRequest();
+            xhr.open("get",url,false);
+            xhr.onreadystatechange=function () {
+                if(xhr.readyState!==4){
+                    return;
+                }
+                if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+                   resolve(xhr.responseText)
+                }else{
+                    reject();
+                }
+            };
+            xhr.send();
+        })
+    };
+    // promise的then 默认返回一个promise的实例，而且是默认是成功；如果then中的函数同时也返回promise的实例，那么会把then默认返回的promise的实例覆盖掉；下一个then中的回调，会受上一个then中函数的返回的promise实例影响；
+    getJSON("/login").then(function (data) {
+       return getJSON("/order")
+    }).then(function (a) {
+        
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

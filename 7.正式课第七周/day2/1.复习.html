@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  ajax ： async  javascript  and  xml;
+    //  用于前后端的数据交互；
+    //  数据交互  和 后台联调；
+    //  前后端分离
+    //  前后端分离：前后端同时进行开发；
+    //  产品需求；
+    //  接口文档：定义了接口的名称；接口的路径；接口的参数(键值对)；请求的类型；返回的数据类型；
+    // 前端的假数据： easyMock;通过假数据来模拟接口；
+    // 后端
+
+    // ajax :
+    // 1.四步；
+    let xhr = new XMLHttpRequest();// 0
+    xhr.open("get","",false);// 1
+    xhr.onreadystatechange = function () {
+        // 事件
+        // readyState :  2  3  4;
+        // 2 : 服务器接收到了客户端发来的请求，并且把响应头发给了客户端；
+        // 3 : 服务器正在向客户端发送数据
+        // 4 : 客户端已经完全接收了服务器所有的数据
+
+        // 如果当前ajax请求是一个同步的，那么该监听函数只能监听到最后一次；所以只执行一次；
+        // 客户端先把请求头发送给服务器，再把数据发给服务器；
+        // 服务器在发送数据之前，先发送一个响应头给客户端；
+
+        // 状态码：
+        // 200   301  304  307  401  403  404  500  503;
+    }
+    xhr.send();
+
+
+    // URL :
+    // http  https  : 协议
+    // www.baidu.com : 域名
+    //               端口号
+    //               资源路径
+    //               ?后面跟的参数
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // fetch : window中的一个属性名，属性值是一个可以发送请求的函数；
+    // console.log(fetch);
+    // fetch ： 默认调用的是get请求；
+    fetch("package.json",{
+        method:"post",
+        body:JSON.stringify({user:1})
+    }).then(function (res) {
+        // res.json()同样会返回一个promise实例；继续.then才能获取其数据；
+        return res.json();
+    }).then(function (data) {
+        console.log(data);// 需要访问的数据；
+    })
+
+
+</script>
+</body>
+</html>

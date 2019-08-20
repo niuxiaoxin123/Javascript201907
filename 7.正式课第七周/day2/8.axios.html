@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="./node_modules/axios/dist/axios.js"></script>
+<script>
+    // package.json : 配置文件；记录了该项目依赖了哪些模块；
+    // npm init -y: 初始化一个配置文件
+    // npm  install axios --save : 生产依赖
+    // npm  install axios --save-dev : 开发依赖
+
+    // 基于promise用于浏览器和node的客户端；
+    // axios返回一个promise的实例；
+   // params : 参数；其属性值是一个对象；用于请求传递参数
+    /*axios.get("index.css",{params:{user:"a"}}).then(function (a) {
+        // axios请求到的数据，会把服务器返回的数据放在a的data属性上；
+        console.log(a.data);
+    }).catch(function () {
+        // 如果请求失败，会执行catch;
+        console.log(100);
+    })*/
+  /*  axios.post("index.css",{user:"a"}).then(function (a) {
+        // axios请求到的数据，会把服务器返回的数据放在a的data属性上；
+        console.log(a);
+    }).catch(function () {
+        // 如果请求失败，会执行catch;
+        console.log(100);
+    });*/
+/*
+    axios({
+        method:"get",
+        url:""
+    }).then(function () {
+        
+    })*/
+
+     //
+     // axios配置基础路径
+     /*axios.defaults.baseURL = 'https://api.example.com';
+     axios.get("index.css").then(function () {
+         
+     })*/
+
+     // axios的拦截器
+    //axios.defaults.baseURL = 'https://api.example.com';
+    axios.interceptors.request.use(function (config) {
+        // 请求拦截
+        // 当发送请求之前，会先执行这个函数；
+        // 每当发送一个请求，都会拦截一次；
+        // console.log(100);
+        return config;
+    });
+    axios.get("index.css").then(function () {
+        console.log(200);
+    });
+    axios.post("index.css").then(function () {
+        console.log(300);
+    });
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

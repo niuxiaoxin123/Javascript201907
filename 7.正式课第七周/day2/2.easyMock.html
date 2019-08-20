@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //https://www.easy-mock.com/mock/5d5aa0f758062d52256f3859/example/upload
+    let  urlStr = "https://www.easy-mock.com/mock/5d5aa0f758062d52256f3859/example";
+    // 模拟接口的工具；
+    let xhr = new XMLHttpRequest();
+    xhr.open("get","/oilswitch/getlist.json",false);
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+            console.log(JSON.parse(xhr.responseText));
+        }
+    }
+    xhr.send();
+
+    // liveServe 不允许发送post请求；
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  ajax 的请求方式 get  post  put  delete patch
+    // 通过open方法来确定请求的方式；
+    // 在工作中： 一般只有两种请求方式；一个是get,一个是post；
+    // 什么时候用get，什么用post;
+    // 在项目中，get一般用于客户端向服务器获取数据；post一般用于客户端项服务器提交数据；
+    // 1 点击我的订单：主要是从服务器获取数据，这个时候可以使用get请求
+    // 2. 点击提交订单时，主要是将商品的信息发送给服务器，这个时候用post请求；
+    let xhr = new XMLHttpRequest();
+    xhr.open("post","index.css",false);
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+            console.log(xhr.responseText);
+        }
+    }
+    xhr.send();
+
+    // get和post的区别
+    // get
+    // 1. get请求的参数会拼接到地址问号后面
+    // 2. 传递数据大小有限制；IE浏览器的地址栏最多2Kb
+    // 3. 安全性比较低
+    // 4. get 会走缓存；不让走缓存，那么需要地址后面拼接时间戳；
+
+    // post
+    // 1. post将数据放到请求体中传递给服务器；
+    // 2. 传递参数大小没有限制；
+    // 3. 安全性高
+    // 4. post 不会走缓存
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 在客户端向服务器传输数据之前，会先发一个请求头给服务器；
+    // 请求头包含一些列的请求信息；
+    // 如何设置请求头
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("get","index.css",false);
+    xhr.onreadystatechange=function () {
+        if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+            console.log(xhr.responseText);
+        }
+    }
+    // 设置请求头信息； 请求头包含了一些请求的信息，服务端可以根据请求头的信息来设置不同的响应头；服务器是可以获取获取请求头；
+    // 设置请求头一般都在发送请求之前设置；
+    // xhr.setRequestHeader("Cookie","aabb")
+    xhr.send();
+
+    // Accept: */*(客户端能接收的资源类型) 
+   /* Accept-Language: en-us(客户端接收的语言类型)
+    Connection: Keep-Alive(维护客户端和服务端的连接关系)
+    Host: localhost:8080(连接的目标主机和端口号)
+    Referer: http://localhost/links.asp(告诉服务器我来自于哪里) 
+        User-Agent: Mozilla/4.0(客户端版本号的名字)
+    Accept-Encoding: gzip, deflate(客户端能接收的压缩数据的类型)
+    If-Modified-Since: Tue, 11 Jul 2000 18:23:51 GMT(缓存时间)
+    Cookie(客户端暂存服务端的信息)
+    Date: Tue, 11 Jul 2000 18:23:51 GMT(客户端请求服务端的时间)*/
+
+
+   $.ajax({
+       url:"",
+       type:"",
+       success:function () {
+
+       },
+       beforeSend:function (a) {
+           a.setRequestHeader("content-type","aabb")
+       }
+   })
+
+
+
+
+</script>
+</body>
+</html>
