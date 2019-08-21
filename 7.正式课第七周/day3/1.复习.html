@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 复习  ajax
+    // 1. setRequestHeader("Cookie","")
+    // 2. jquery中的ajax
+    //   1) url  type  async  dataType  beforeSend  success  cache  timeout 
+    // 封装ajax;
+    // promise 
+   /*let p =  new Promise(function (resolve,reject) {
+         let xhr = new XMLHttpRequest();
+         xhr.open("get","index.css",true);
+         xhr.onreadystatechange = function () {
+             if(xhr.readyState!==4){
+                 return;
+             }
+             //第一次进来readState是2；
+             if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+                resolve(xhr.responseText)
+             }else{
+                 reject();
+             }
+         }
+         xhr.send();
+    });
+    console.log(p);//*/
+    ///console.log(/^2\d{2}$/.test("23"));
+
+
+    // 4.axios
+    axios.get("index.css",{}).then(function (data) {
+        console.log(data.data);
+        return axios.get("/login");
+    }).then(function (data) {
+
+    });
+    axios.post();
+    // 5.fetch
+
+    fetch("").then(function (res) {
+        return res.json()
+    }).then(function (data) {
+        console.log(data);
+    });
+</script>
+</body>
+</html>

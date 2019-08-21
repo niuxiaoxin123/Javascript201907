@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //
+    // Promise 是一个类
+    let p = new  Promise(function (resolve,reject) {
+        //resolve();//
+        //resolve();//
+        // 在promise中报错或者抛出异常，会走reject；
+
+        resolve()
+    });
+    console.log(p);
+    p.then(function () {
+        console.log(1);
+    },function () {
+        console.log(3);
+    }).then(function () {
+        
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

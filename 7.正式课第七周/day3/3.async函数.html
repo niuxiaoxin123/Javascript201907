@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // async 函数
+    /*function fn1() {
+        console.log(200)
+    }
+    async function fn() {
+        await fn1();
+        console.log(100);
+        return 1;
+    }
+    //
+    console.log(fn());// async 返回一个promise的实例；默认是成功态
+    fn().then(function (a) {
+        console.log(a);
+    });*/// promise实例；
+    function fn1() {
+        // fn1 函数中如果返回一个promise的实例，await 下面的代码就是该promise的实例then中绑定函数中的代码；
+        return new Promise(function (resolve,reject) {
+            setTimeout(function () {
+                console.log(300);
+                resolve()
+            },200)
+        })
+    }
+    async  function fn() {
+        await fn1();
+        // 如果fn1返回一个promise的实例，那么这个await下面的代码当上面调用resolve才会执行；
+        console.log(200);
+        throw new Error("");
+    }
+    /*fn().then(function () {
+
+    }).then(function () {
+
+    })*/
+    fn().then(r=>{},v=>{})
+
+
+
+
+
+</script>
+</body>
+</html>

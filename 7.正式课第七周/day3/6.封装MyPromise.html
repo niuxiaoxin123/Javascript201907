@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*function A() {
+        this.a = 1;
+        this.b =2;
+    }
+    class A{
+        constructor(){
+            this.a = 1;
+            this.b =2;
+        }
+    }
+    new A;*/
+
+    // Promise : pending  fulfilled  rejected; 一旦状态发生改变，就会凝固；
+
+    class MyPromise{
+        constructor(excutor){
+            // this--> 当前promise的实例；
+            this.state = "pending";// 创建实例，默认状态是pending；
+            this.fulfilledEvent=[];// 当前实例成功的事件池；
+            this.rejectedEvent=[];// 当前实例失败的事件池；
+            let resolve=(result)=>{// 只有调用resolve时，该实例的状态要改变为成功态；
+                if(this.state!=="pending")return;// 如果不是pending;不需要往下执行
+                this.state="fulfilled";
+                // 循环成功态的事件池；依次执行；
+                clearTimeout(this.timer);
+                this.timer = setTimeout(()=>{
+                    this.fulfilledEvent.forEach((item)=>{
+                        if(typeof item==="function"){
+                            item(result);
+                        }
+                    })
+                },0)
+            }
+            let reject = (result)=>{//// 只有调用resolve时，该实例的状态要改变为失败态；
+                if(this.state!=="pending")return;
+                this.state = "rejected";
+                // 执行之前，首先清除之前的定时器；为了防止定时器的累加；
+                clearTimeout(this.timer);
+                this.timer = setTimeout(()=>{
+                    this.fulfilledEvent.forEach((item)=>{
+                        if(typeof item==="function"){
+                            item(result);
+                        }
+                    })
+                },0)
+            }
+            try{
+                // 一旦执行报错，那么会执行reject；
+                excutor(resolve,reject)
+            }catch (e){
+                reject(e);
+            }
+        }
+        then(resolveFn,rejectFn){// then 放到了MyPromise 的原型上
+            // 实现then的链式写法，需要then返回一个promise的实例；
+            return new MyPromise((resolve,reject)=>{
+                this.fulfilledEvent.push(()=>{
+                    console.log(resolveFn);
+                    let x = resolveFn();
+                    // x.then : 向x的事件池中放入resolve和reject方法；
+                    // console.log(resolve);
+                    x instanceof MyPromise?x.then(resolve,reject):resolve();
+                });
+                //this.rejectedEvent.push(rejectFn);
+            })
+        }
+    }
+    let p = new MyPromise(function (resolve,reject) {
+       resolve(100);
+    });
+    // console.log(p);
+    // then : 订阅resolve状态执行的方法；then应该向事件池中订阅方法；
+    let p1;
+    p.then(function (a) {// 已经捆绑到了p这个实例的事件池中；
+        p1 = new MyPromise(function (resolve,reject) {
+            // resolve执行会让该实例的成功的事件池执行；
+            resolve();// this--> p1
+        });
+        return p1;
+    }).then(function () {
+        console.log(p1.fulfilledEvent);
+        console.log(1);
+        // 函数捆绑到上一个then返回的新的实例上；
+    })
+   /* p.then(function () {
+        console.log(2);
+    })*/
+
+
+
+</script>
+</body>
+</html>

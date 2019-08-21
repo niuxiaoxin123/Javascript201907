@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*async function async1() {
+        console.log('async1 start');// 2
+        await async2();
+        console.log('async1 end'); //6 第一个微任务
+    }
+    async function async2() {
+        console.log('async2');// 3
+    }
+    console.log('script start');// 1
+    setTimeout(() => {
+        console.log('setTimeout');// 8
+    }, 0);
+    async1();
+    new Promise(resolve => {
+        console.log('promise1');// 4
+        resolve();
+    }).then(() => {
+        console.log('promise2');// 7 第二个微任务
+    });
+    console.log('script end');*/// 5
+
+
+  /*  console.log('1');
+    setTimeout(function () {
+        console.log('2');
+        new Promise(function (resolve) {
+            console.log('4');
+            resolve();
+        }).then(function () {
+            console.log('5');
+        });
+    });
+    new Promise(function (resolve) {
+        console.log('7');
+        resolve();
+    }).then(function () {
+        console.log('8');
+    });
+    setTimeout(function () {
+        console.log('9');
+        new Promise(function (resolve) {
+            console.log('11');
+            resolve();
+        }).then(function () {
+            console.log('12');
+        });
+    });
+*/
+
+  //
+  // 事件循环： 同异步；
+    // 单线程： JS在任何时候，都有一个主线程来处理所有的任务；
+    // JS 是一个非阻塞的单线程；JS是如何非阻塞；遇到一个异步的任务，主线程不会等待异步的结果，而是把等待的任务挂起，继续执行主线程，按照一定的规则执行等待的任务；
+
+    // 执行栈： 存储了要执行的函数的队列；
+    // 当执行栈中的同步任务执行完成，主线程会从事件队列中取出排名第一的事件，并把这个事件的对应的回调函数放入执行栈中，让这个回调同步执行；当这个回调执行完，主线程空闲会继续向事件队列中排名第一的事件，这样依次循环执行--> 这种循环执行就是事件循环；
+
+    //微任务和宏任务
+
+    // 当主栈执行完成，会首先去微任务队列中执行所有的微任务，执行完微任务队列之后，再去宏任务队列中去取事件的回调，依次执行；
+
+    /*$.ajax({})
+    // 接收数据 ： 浏览器和服务器数据交互；
+    // 异步 ：
+    // 同步 :
+    xhr.open("get","",false)
+    xhr.send();
+    xhr.onreadystatechange= function () {
+
+     }
+    for(let i=0;i<10000000;i++){
+
+    }
+*/
+
+</script>
+</body>
+</html>

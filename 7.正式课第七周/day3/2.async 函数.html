@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //function fn(){};
+    //let fn=()=>{};
+    // function* fn() {}; // yield 控制函数分段执行；
+    // async 函数 ; 是es6新语法；
+    // async函数中如果没有await,那么和普通函数一样的；
+    // 一旦加了await；那么await下面的代码就是异步的；
+    function fn() {
+        console.log(100);
+    }
+    // 定时器是先放到等待队列中，但是在异步队列中并没有先执行；因为定时器是一个宏任务；
+    setTimeout(function () {
+       console.log(500);
+    },0);
+    async function fn2() {
+        console.log(200);
+        await fn();// await 后面的代码是同步，下面的代码变成了异步；
+        console.log(300);
+    }
+    new Promise(function (resolve,reject) {
+        // promise的回调函数是同步的；
+        console.log(600);
+        //setTimeout(function () {
+           resolve()
+        //,0)
+        console.log(900);
+    }).then(function () {
+        console.log(800);
+    })
+    fn2();
+    console.log(400);
+
+    // 600  900  200  100  400  800  300  500
+
+    // 主任务队列和等待任务队列；先把主任务队列执行完成，再执行等待任务队列
+
+    // 异步任务： setTimeout  setInterval  事件  promise的then  ajax  async await;
+    // 微任务  宏任务： 这两个都是异步队列中的任务；
+    // 当主任务队列中的任务执行完成，然后去等待队列先找到微任务，把微任务放到主任务队列执行，如果有多个微任务，按照执行的顺序依次执行；执行完成再去执行等待队列中的宏任务；
+    // 微任务： promise的then  async  await  process.nextTick
+    // 宏任务 ： setTimeout  setInterval  ajax
+
+   /* function fn() {
+        let val = 11;
+        setTimeout(function () {
+            val=12;
+        },1000);
+        console.log(val);
+
+    }*/
+   /* function fn1() {
+        
+    }
+   async function fn() {
+       await fn1();
+
+   }
+    console.log(fn().then(function () {
+        
+    }));*/
+
+/*   function getStockSymbol(name) {
+       //return 1;
+       let val = 1;
+       setTimeout(function () {
+           val=100;
+       })
+       return val;
+   }
+    async function getStockPriceByName(name) {
+        const symbol = await getStockSymbol(name);
+         return symbol;
+    }
+    getStockPriceByName('goog').then(function (result) {
+        // then的回调接收到了getStockPriceByName的返回值；
+        console.log(result);
+    });*/
+
+
+    function timeout(ms) {
+        return new Promise((resolve) => {
+            setTimeout(resolve, ms);
+        });
+    }
+    async function asyncPrint(value, ms) {
+        await timeout(ms);
+        console.log(value);
+    }
+    asyncPrint('hello world', 2000);
+
+
+</script>
+</body>
+</html>
