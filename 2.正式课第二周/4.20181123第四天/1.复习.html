@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 变量提升 作用域   this；
+    // 1. 变量提升： 是JS运行的一个阶段；
+
+   /* var  a = 10;
+    function b() {
+        var c  =100;
+    }*/
+  /* function b() {// 在变量提升阶段开辟堆内存；
+
+   }
+   var  obj = {
+       n:1,
+       fn:(function () {
+           // 会把当前自执行函数的返回值赋值给fn这个属性名；fn作为属性名，return的小函数作为属性值存储到堆内存中；
+           return function () {
+
+           }
+       })()
+   };*/
+
+   //作用域 ==> 栈内存；
+    // 1. 提供代码运行环境
+    // 2. 存储基本数据类型值；
+
+    // 1. 全局作用域
+    // 当关闭页面或者浏览器时，全局作用域才会销毁；
+    // 2. 私有作用域
+    //  1) : 立即销毁
+    //  2) ：不销毁
+    //      1. 返回一个引用数据类型值
+    //      2. 返回的值需要有变量接收
+    //  3) : 不立即销毁
+    /*function fn() {
+        var  a = 1;
+        return function () {
+            console.log(a);
+        }
+    }
+    fn()();*/
+
+    // 3. 块级作用域
+    // 1
+    /*console.log(f);
+    if([]){
+        // 块级作用域对当前用let定义的变量有保护的作用；
+        // 函数在变量提升时，只声明，未定义；当进入到作用域，会马上开辟空间；
+        f()
+        let a =10;
+        function f() {
+
+        }
+    }
+    console.log(a);*/
+
+    // 闭包选项卡
+    // 1. 自定义属性  2. 闭包存储值   3. let；
+
+    // this
+    // 1. 在自执行函数中，this指向window
+    // 2. 给元素的事件绑定方法，方法中的this指向被绑定的元素
+    // 3. 函数执行前有没有点，点前面是谁，this指向谁；没有，指向window
+    // 4. 在全局作用域下，this指向window；
+    // 5. 在定时器中的this指向window；
+    // 6. 类中this指向实例
+    // 7. call、apply、bind可以改变this的指向；
+    setTimeout(function () {
+        console.log(this);
+    },1000);
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<script>
+    var divs = document.getElementsByTagName("div");
+    // divs : 类数组集合；
+    // 写一个公共的类数组转数组的方法；返回一个真正的数组；
+    function toArray(likeAry) {
+        var ary = [];
+        // 这个方法在IE8及以下是不兼容的；
+        // 怎么判断当前是IE8及以下的版本呢
+        /*if("previousElementSibling" in likeAry[0]){
+            // 如果previousElementSibling这个属性在第一个元素中存在，那么说明是IE9及以上；不存在IE8及以下；
+            ary = Array.prototype.slice.call(likeAry)
+        }else{
+            for(var i=0;i<likeAry.length;i++){
+                var  cur = likeAry[i];
+                ary.push(cur);
+            }
+        }*/
+        try{
+            ary = Array.prototype.slice.call(likeAry)
+        }catch (e){
+            for(var i=0;i<likeAry.length;i++){
+                var  cur = likeAry[i];
+                ary.push(cur);
+            }
+        }
+
+
+        // try catch : 用于JS的异常捕获；可以捕获到异常的代码，不报错，不影响的代码继续运行；
+
+
+
+        return ary;
+    }
+    console.log(toArray(divs));
+    console.log(divs);
+    /*try{
+        console.log(a);
+    }catch(e){
+        // 如果在try语句中，有语句报错，则会执行catch中的代码；
+        // 如果try语句正常，那么catch中的代码不执行；
+        console.log(e);// 输出错误信息；
+        console.log(200);
+    }*/
+
+
+</script>
+</body>
+</html>

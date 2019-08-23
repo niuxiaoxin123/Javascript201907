@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 单例模式  工厂模式    构造函数   原型模式
+    // 实例可以调用当前实例所属类原型上的方法；那么原型上的方法和属性都属于公有属性；
+    function  Fn(){
+        this.x = 100;
+        this.y =200;
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x)
+    }
+    var f = new Fn;//{x:100}
+    f.getX();
+
+    // in ： 用来判断属性名是否属于某个对象的；
+    //  "x"  in  Fn
+    /*console.log("x" in f);
+    console.log("getX" in f);*/
+    //var  obj = {a:a}
+
+    // 可枚举属性和不可枚举属性
+    // for in : 循环对象
+    for(var key in f){
+        // hasOwnProperty
+        //console.log(key);
+        // hasOwnProperty: 用来检测是否是私有属性的；
+        /*if(f.hasOwnProperty(key)){
+            console.log(key)
+        }*/
+        console.log(key)
+    }
+    
+    //hasPublicProperty：验证attr是否是obj的公有属性；
+    // 1.这个attr是否是obj的属性；
+    // 2.这个属性是否私有的；
+    /*function hasPublicProperty(obj,attr) {
+        /!*if(attr in obj){
+            // 证明attr是obj 的一个属性
+            if(!obj.hasOwnProperty(attr)){
+                //
+                return true;
+            }
+        }
+        return false;*!/
+        return attr in  obj && !obj.hasOwnProperty(attr);
+    }
+    hasPublicProperty(f,"getX");*/
+
+    // 可枚举属性： 当前实例的私有属性和自定义类上新增的公有属性都是可枚举属性
+    // 不可枚举属性： 当前内置类上内置的属性都是不可以枚举属性；
+   /* Array.prototype.getY = function () {
+        console.log(100);
+    }
+    var  ary = [1,2.3,9];
+    for(var key in ary){
+        console.log(key)
+    }*/
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

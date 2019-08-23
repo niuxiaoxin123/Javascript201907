@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="color:red">2222</div>
+<script>
+    // 正式课第一周： git  变量提升   作用域    this   面向对象；
+    // 变量提升： 目的是让我们更清晰明白代码的运行加载机制以及顺序；
+    // 全局作用域：当打开浏览器时，浏览器首先会形成一个供代码运行的环境；这个环境就是全局作用域；
+    // 每一个页面只能由一个唯一的全局作用域；这是一个栈内存；只有关闭页面或者关闭浏览器时，这个栈内存才会销毁；
+    // 全局变量： 在全局的作用域下定义的变量是全局变量；
+    /*var  a = 100;
+    function fn() {
+        var b = 18;
+        console.log(a);// 100
+    }
+    fn();
+    console.log(b)*/
+    /*var  ary = [1,2,3];
+    pop()
+    alert()
+    console.log()*/
+    //console.log(n)
+    //console.log(user)
+    /*console.log(length);
+    console.log(blur);
+    Boolean()
+    Number()*/
+    // window : 在全局的作用域下，浏览器给当前JS环境提供一个最大的全局对象叫window；
+    //console.log(typeof window);// "object"
+    // 全局变量：全局变量都会给window新增一个键值对；在全局作用域下通过var定义的变量或通过function定义的变量都是全局变量；
+
+    // 变量提升： 在当前作用域下，在代码运行之前，会把带var和function的进行提前声明；
+    console.log(a);
+    console.log(c);
+    console.log(d);
+    var  a = 199;
+    c = 200;
+    console.log(a, c);
+    b();
+    function b() {//b : 空间地址；
+        var d = 188;
+        function c() {
+
+        }
+    }
+    console.log(window.a);
+    window.b()
+
+
+
+</script>
+</body>
+</html>

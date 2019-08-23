@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //debugger;// 断点；让当前运行停止到这一行；
+    //console.log(num);// undefined
+    // 变量提升也叫预解析；
+    // 变量提升： 指的是代码运行的一个阶段；或是一个过程；
+    // 变量提升： 在当前作用域下，在代码执行之前，把带var和带function的变量进行提前的声明；带var只声明，不定义，带function不仅声明，而且还要定义；
+    // 声明：在当前作用域，浏览器先把所有的代码进行过滤，把var和function这些变量进行提前通知；告诉浏览器这个变量已经存在；
+
+     /*for(var i=0;i<10;i++){
+         var a =10;
+         debugger
+     }*/
+    // 全局变量： 在代码运行之前，也就是变量提升阶段，会给window新增一个键值对；
+    // 如果变量只声明，不定义，那么默认存储的值是undefined；
+   /* console.log(num);// undefined
+    console.log(m);// m is not defined
+    var  num = 100;
+    m = 99;
+    console.log(num);// 100
+    console.log(m);*/// 99
+    /*console.log(i);
+    for(var i=0;i<8;i++){
+
+    }*/
+    // 变量提升是发生在当前作用域下的；在函数中定义的变量，不会提升到全局作用域下；只会在当前私有作用域下的最上端声明这个变量；
+    /*console.log(i);
+    function fn() {
+        var i =0;
+    }
+    fn()*/
+    // 函数在变量提升时，不仅提前声明，还要提前定义；
+    // 函数的定义，开辟空间地址，存储代码，赋值这个过程发生在变量提升阶段；
+    console.log(f);
+    function f() {
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

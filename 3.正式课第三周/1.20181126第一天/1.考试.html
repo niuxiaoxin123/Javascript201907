@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <!--<div id="bro"></div>
+    &lt;!&ndash;&ndash;&gt;
+    hhh
+    <div id="box"></div>-->
+    <input type="button">
+    <input type="button">
+    <input type="button">
+
+</div>
+<script>
+    // document.getElementById("box")
+    // 填空题
+    // 1. ary.sort(function(a,b){return b-a})
+    /*var  arr = [22,48,77,399,78,37];
+    arr.sort(function (a,b) {
+        console.log(a, b);
+        // a : 第一项  b : 第二项；  22  48
+        return a-b;
+    })
+    console.log(arr);*/
+    // 如果函数B作为实参传给函数A，在函数A中可以任意调用函数B；那么函数B就叫做函数A的回调函数；
+   /* function A(h) {
+    }
+    A(function () {
+    })
+    arr.forEach(function (item,index) {
+    })*/
+
+   // pop  ary.length--   ary.splice(ary.length-1,1)
+    // slice(n-1,m)
+    // document.documentElement.clientWidth || document.body.clientWidth;
+    // appendChild  insertBefore
+    //
+    //获取上一个哥哥元素节点
+    // 1.用while循环向上查找上一个哥哥的元素节点
+    // 2.判断当前哥哥节点的nodeType 是1，此节点就是哥哥元素节点
+    /*var box = document.getElementById("box");
+    function getBrother(curEle) {
+        var pre = curEle.previousSibling;
+        while(pre){// 判断条件；
+            if(pre.nodeType===1){
+                return pre;
+            }
+            pre = pre.previousSibling;
+        }
+        return pre;
+    }
+    getBrother(bro);
+    console.log(box.previousSibling);*/
+
+    // Math.round(Math.random()*(m-n)+n);
+    // replace\
+    /*var div = document.createElement("div")
+    document.body.appendChild(div);
+    var newDiv = div.cloneNode();
+    document.body.insertBefore(newDiv,div);*/
+    // Number  parseInt  parseFloat;
+    // concat  slice   splice(0) map
+    /*var ary = [1,2,4,6];
+    var newAry = ary.splice(0);
+    console.log(newAry);*/
+    //debugger
+//    if(!("num" in  window)){
+//        var num = 1;
+//    }
+//    console.log(num);// undefined
+   var inputList = document.getElementsByTagName("input");
+   var ary = ["red","green","yellow"];
+   /* for(var i=0;i<inputList.length;i++){
+        var cur = inputList[i];
+        cur.index = i;// 在每一个input按钮上存放index属性；
+        cur.onclick = function () {
+            document.body.style.backgroundColor = ary[this.index];
+        }
+    }*/
+
+   
+   var  o = {
+       fn:function () {
+           
+       }
+   }
+    for(var i=0;i<inputList.length;i++){
+        var cur = inputList[i];
+        cur.onclick = (function (a) {
+            return function () {
+                document.body.style.backgroundColor = ary[a];
+            }
+        })(i)
+    }
+    for(let i=0;i<inputList.length;i++){
+        var cur = inputList[i];
+        cur.onclick = function () {
+            document.body.style.backgroundColor = ary[i];
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

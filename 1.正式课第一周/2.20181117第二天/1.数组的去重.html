@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 1.对象；
+    // 1)对象的属性名是不可以重复的；如果重复，后面的会把前面的覆盖；
+    // 2) for in 循环对象；先把数字的输出；
+    // 3) 如果对象的属性名存在就是修改，不存在就是新增；
+    /*var yy = {a:9};
+    yy.a =18;
+    yy["a"] =18;*/
+    // var obj = {a:1,b:2,a:3,1:2};
+    //var  arr = [12,3,7,3,7,3,45,66,88,45];
+   /* var  obj = {};
+    for(var i=0;i<arr.length;i++){
+        // 第一轮  cur  12  obj  {12:12}
+        // 第二轮  cur  3  obj  {12:12,3:3}
+        // 第二轮  cur  7  obj  {12:12,3:3,7:7}
+        // 第二轮  cur  3  obj  {12:12,3:3,7:7}
+        // 第二轮  cur  7  obj  {12:12,3:3,7:7}
+        // 第二轮  cur  3  obj  {12:12,3:3,7:7}
+        var  cur = arr[i];// 12   3   45...
+        obj[cur] = cur;
+    }
+    var newArr = [];
+    for(var key in obj){
+        newArr.push(obj[key]);
+    }
+    console.log(newArr);*/
+
+    // 2.原有数组发生改变；
+    /*var a = arr[1];
+     arr[1]=10;
+     console.log(arr);*/
+    /*var arr = [12,3,7,3,7,45,66,88,45];
+     var obj  = {};
+    for(var i=0;i<arr.length;i++){
+        var cur = arr[i];
+        // 在放入对象之前，判断当前项在对象中是否存在；如果存在，说明这一项是重复的；
+        if(obj[cur]===cur){
+            // arr.splice(i,1);
+            // 当执行完splice之后；删除的这一项的后面的所有项都会向前移动一项；导致数组成员的索引都会重新计算；这就是数组塌陷；
+            arr[i]=arr[arr.length-1];// 把数组的最后一项覆盖当前项；
+            arr.length--;
+            i--;
+            continue;// 中止本轮循环；
+        }
+        obj[cur] = cur;
+    }
+    console.log(arr);*/
+
+    // 3.indexOf: 检测数组成员第一次出现的索引位置；如果当前数组成员不存在，返回-1；
+    var arr = [12,3,7,3,7,45,66,88,45];
+    var newArr =[];
+    var len = arr.length;
+    for(var i=0;i<len;i++){
+        var cur = arr[i];//浏览器当解析到arr[i]时，会拿着arr这个地址去堆内存中找索引为i的这一项的值；把当前值存储给了cur;cur在栈内存中；直接从栈内存中取cur;性能比较好；
+        // 如果新的数组不存在，那么返回-1；把当前项放入新的数组中；
+        if(newArr.indexOf(cur)===-1){
+            newArr.push(cur);
+        }
+    }
+    console.log(newArr);
+
+
+</script>
+</body>
+</html>

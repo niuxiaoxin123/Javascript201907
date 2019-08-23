@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 300px;
+            height: 50px;
+            border: 1px solid blue;
+            border-radius: 10px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 50px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<div id="box">00:00:00</div>
+<script>
+    var box = document.getElementById("box");
+    //box.innerHTML = "02:00:00"
+    // 准备一个目标时间；
+    // 目标时间距离1970-1-1毫秒差
+     function addZero(val) {
+         // 如果小于10；则在前面补0；如果大于10，则不需要；
+         var  a = val<10?"0"+val:val;
+         return a;
+     }
+    function code() {
+        var targetTime = new Date("2018/11/17 18:19:00").getTime();
+        var curTime = Date.now();
+        // difTime ： 是当前时间距离目标时间毫秒差；
+        var difTime = targetTime-curTime;
+        if(difTime<=0){
+            clearInterval(timer);
+            return;
+        }
+        // 计算小时
+        var hour = Math.floor(difTime/(60*60*1000));
+        // 计算分钟
+        var min = Math.floor((difTime-hour*60*60*1000)/(60*1000));
+        // 计算秒
+        var second = Math.floor((difTime -hour*1000*60*60-min*60*1000)/1000);
+
+        box.innerHTML = addZero(hour) + ":" + addZero(min) + ":" + addZero(second);
+    }
+    code();
+    var  timer = setInterval(code,1000)
+
+</script>
+</body>
+</html>

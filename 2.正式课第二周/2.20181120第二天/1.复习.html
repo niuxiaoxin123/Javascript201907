@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // git  : 代码协作工具；
+    // 可以进行代码的回滚；
+    // git 是linux 开发一款代码管理工具；
+    // git工作流程： 工作区--->暂存区---> 历史区-->远程仓库；
+    // git  init : 初始化git仓库；
+    // git  add  . : 将当前文件夹下的所有文件推送到暂存区；
+    // git  rm --cached + 文件名；将暂存区代码删除；
+    // git  commit  -m"注释"： 把暂存区代码提交到历史区
+    // git push  origin master : 将历史区推送到远程仓库；
+    // clear : 清屏
+    // git config --global user.email ""
+    // git config --global user.name ""
+    // git config --list : 查看配置列表
+    // git remote add origin  + 地址： 将本地仓库和远程仓库进行关联
+    // git  remote -v : 查看当前本地仓库和远程仓库的关联情况
+    // 一个本地仓库可以同时绑定多个远程仓库；
+    // git pull : 拉取代码；
+
+    // 全局作用域 ： 当浏览器打开页面时，首先会形成一个供代码运行的全局环境；这是一块栈内存；
+    // 全局变量： 在全局下定义的变量是全局变量；
+    var  a  =100;
+    // 函数的定义
+    // 1. 先开辟一个堆内存
+    // 2. 然后把代码当做字符串存储到这个堆内存下
+    // 3. 把这个十六进制的地址赋值个函数名；
+    function fn() {
+        console.log(1);
+    }
+    fn();
+
+
+
+
+
+</script>
+</body>
+</html>

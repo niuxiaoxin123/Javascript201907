@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+   /* var  obj = {a:1};
+    obj.b = 10;*/// 新增键值对，也叫对象的扩展；
+
+
+    /*function Fn() {
+        this.x = 100;
+
+    }*/
+    //console.log(Fn.prototype);// {constructor:Fn,__proto__:{}}
+    // 1. 向函数的prototype属性新增键值对，这种方式称为原型的扩展；
+    /*Fn.prototype.getX = function () {
+        console.log(this.x);
+    }
+    var f  = new Fn;
+    f.getX();*/
+
+    // 2. 用一个新的空间地址把函数天生自带的空间进行覆盖；不是新增键值对；
+   //  这种方法会导致函数的原型上丢失constructor;为了保持和函数原有的机制相同，最好在这个空间中新增constructor：Fn;
+    /*function Fn() {
+       this.x = 100;
+    }
+    var f  = new Fn;
+    Fn.prototype = {
+        //constructor:Fn,
+        getX:function () {
+            console.log(this.x);
+        },
+        getY :function () {
+        }
+    };
+   console.log(f.constructor);//Fn
+   f.getX();*/
+   //console.log(f.__proto__);
+   //console.log(f.constructor);// Object
+
+   /*var  ary = [12,3,4,88,3,4];
+   var obj = {};
+   for(var i=0;i<ary.length;i++){
+       var cur = ary[i];
+       if(obj[cur]===cur){
+           ary[i] = ary[ary.length-1];// 把数组的最后一项赋值给当前项；
+           ary.length--;
+           i--;
+           continue;// 结束本轮循环；
+       }
+       obj[cur] = cur;
+   }
+   console.log(obj);*/
+
+
+   // 内置类
+    Array.prototype.unique = function () {
+        var obj = {};
+        for(var i=0;i<this.length;i++){
+            var cur = this[i];
+            if(obj[cur]===cur){
+                this[i] = this[this.length-1];// 把数组的最后一项赋值给当前项；
+                this.length--;
+                i--;
+                continue;// 结束本轮循环；
+            }
+            obj[cur] = cur;
+        }
+        return this;
+    };
+   /* var  ary = [12,3,4,12,3,4,88];
+   console.log(ary.unique());
+
+   var  ary1 = [1,2,3,3,2,1]
+   console.log(ary1.unique());
+
+   var ar = [66,66,88,88];
+   ar.unique();*/
+   // 如果在内置类上扩展方法，如果扩展的属性名和原型上本来就存在的属性相同，那么会将原来的方法覆盖；
+ /*  var  ary = [12,3,4,12,3,4,88];
+   ary.push(200);
+   Array.prototype.push = function () {
+       console.log(1);
+   }
+   ary.push(100);
+   console.log(ary);*/
+
+ // 内置类原型的空间地址不允许进行修改；
+/*     Array.prototype = {
+         a:function () {
+             console.log(100);
+         }
+     };
+     Array.prototype.getA=function () {
+     }
+     var ary = [];
+     ary.push(1);
+     console.log(ary.a());
+     console.log(ary);*/
+  // pop  push  shift  ....
+    /*Array.prototype.myPop = function () {
+        var cur = this[this.length-1];
+        this.length--;
+        return cur;
+    }*/
+    var  ary = [1,2,3,7,89,66,190];
+//   console.log(ary.myPop());
+//   console.log(ary);
+
+   // push :
+    Array.prototype.myPush= function () {
+        for(var i=0;i<arguments.length;i++){
+            this[this.length] = arguments[i];
+        }
+        return  this.length;
+    }
+    console.log(ary.myPush(100,10,8,901));
+    console.log(ary);
+
+    //
+
+
+</script>
+</body>
+</html>

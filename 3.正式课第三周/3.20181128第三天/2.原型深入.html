@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function  Fn(){
+        this.x = 100;
+        this.y =200;
+    }
+    Fn.prototype.x = 300;
+    Fn.prototype.getX = function () {
+        // this ---> f.__proto__  300
+        console.log(this.x)
+    }
+    var f = new Fn;
+    f.getX();
+    f.__proto__.getX();// this--> f.__proto__===Fn.prototype
+    Fn.prototype.getX();
+    // getX();// getX  is not defined
+    // f.__proto__和Fn.prototype指向同一块堆内存；
+    /*var  obj = {a:12};
+    console.log(a);*/
+        // 原型中的this；
+
+    /*function Fn() {
+        this.x = 100;
+        this.y = 200;
+        this.getX = function () {
+            console.log(this.x);
+        }
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.x);
+    };
+    Fn.prototype.getY = function () {
+        console.log(this.y);
+    };
+    var f1 = new Fn;
+    var f2 = new Fn;
+    console.log(f1.getX === f2.getX);// false
+    console.log(f1.getY === f2.getY);// true
+    console.log(f1.__proto__.getY === Fn.prototype.getY);// true
+    console.log(f1.__proto__.getX === f2.getX);// false
+    console.log(f1.getX === Fn.prototype.getX);// false
+    console.log(f1.constructor);// Fn
+    console.log(Fn.prototype.__proto__.constructor);// Object
+    f1.getX();// 100
+    f1.__proto__.getX();// undefined
+    f2.getY();// 200
+    Fn.prototype.getY()/*/// undefined;
+
+    function  Fn(){
+        this.x = 100;
+        this.y =200;
+    }
+    Fn.prototype.x = 300;
+    Fn.prototype.getX = function () {
+        // this ---> f.__proto__  300
+        console.log(this.x)
+    }
+    var f = new Fn;
+    f.getX();
+    f.__proto__.getX();// this--> f.__proto__===Fn.prototype
+    Fn.prototype.getX();
+    // 原型的扩展
+    // 1. Fn.prototype.getX =function(){};
+   // 不改变Fn的原型的空间地址；
+    // 2. Fn.prototype = {}
+    // 覆盖之前的空间地址；内置类不可以采用这种方式进行覆盖；
+    //ary.push()
+    /*Array.prototype.push = function () {
+
+    }*/
+    // ary.push();
+
+    /*var  arr = [1,2,4,8,54,9,2,93];
+    arr.slice(2,5).pop();
+    // 由于slice返回一个数组，那么可以继续调用pop；
+    arr.splice(2,4).push(100).reverse();*/
+    // push 方法的返回值是一个数组的长度，不能再次调用reverse；所以报错；
+
+
+    // 原型Function和Object
+    // 所有的函数（普通函数、类【内置、自定义】）都是Funtion的一个实例；
+    // 所有的实例对象都是Object的一个实例
+
+    // Function 首先是是一个函数，所以Function是自己的一个实例；Function一样可以找到Object的原型
+    // Object 是一个类，就是Function的一个实例；__proto__指向Function的原型,会继续通过Function原型中的__proto__ 找到Object自己的原型；
+
+    /*var f = new Function;
+    console.log(f);*/
+
+    //console.log(Array instanceof Function); // true;
+ /*   console.log(Object.toString === Object.prototype.toString);
+    function fn() {
+    }
+    console.log(fn.toString());
+    console.log(fn.__proto__.__proto__.toString());// "[object Object]"*/
+
+
+
+</script>
+</body>
+</html>

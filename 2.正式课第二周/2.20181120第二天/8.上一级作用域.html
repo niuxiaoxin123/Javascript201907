@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //当输出或使用变量的值时，首先会在当前的作用域下进行查找；如果当前作用域不存在这个变量；需要向上一级作用域进行查找；
+    // 上一级作用域： 函数的上一级作用跟函数在哪执行没关系，函数在哪个作用域下定义的；它的上一级作用域就是谁；
+    /*var total= 10;
+    function sum() {
+        var total = 100;
+        return function () {
+            // 这个函数的上一级作用域是sum执行形成的作用域；
+            console.log(total);// 100
+            //var  total =1000;
+        }
+    }
+    var f = sum();
+    f();*/
+
+
+    /*var a = 10;
+    function fn() {
+        console.log(a)// undefined
+        var  a=0;
+    }
+    fn(1);*/
+    var num = 0;
+    var obj = {
+        num:1,
+        fn:(function () {
+           //var num = 10;
+            // 自执行函数的上一级作用域是全局作用域；
+           return function () {
+               console.log(num)// num is not  defined;
+           }
+        })()
+    };
+    obj.fn();
+
+    //作用域域链： 在当前作用域下获取变量值；如果当前作用域下不存在，那么会向上一级作用域进行查找，如果上一级作用域也没有，会继续向上查找；直到找到window全局作用域为止；如果window也没有，就会报错；这样一级一级向上查找就会形成一个作用域链；
+    // 1. 常见的undefined的情况
+    //   1. 如果变量只声明，没有赋值，那么默认存储值是undefined；
+    //   2. 如果获取对象的属性名对应的属性值；如果属性名不存在，那么获取的结果是undefined；
+    //  3. 如果函数有形参，但没实参，那么形参默认存储的值是undefined；
+    // 4. 如果函数没有 return；或有return没有return出内容；那么函数默认的返回值是undefined；
+    var a;
+    console.log(a);// undefined
+
+    var o = {a:1};
+    console.log(o.b);
+
+    function f(a,b) {
+        console.log(b);
+    }
+    f(1)
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log(100);
+    // 1.变量提升  作用域
+    // 目的： 学习代码的运行加载机制；
+    // 在当前作用域下，把带var和带function的变量进行提前的声明；带var的只声明，不定义，function的不仅声明而且还要定义；
+    // 1.在条件语句中，不管条件是否成立，都要进行变量提升；
+    // 1) : 新版本的浏览器中，在条件语句中，只声明不定义；
+    // 1) : 旧版本的浏览器中，在条件语句中，声明加定义；
+    // 2. 变量提升只发生在等号的左边
+    // 3. return后面的代码不进行变量提升，但是下面的代码需要进行变量提升
+    // 4. 如果变量名重复，不再重复声明，但要重新定义；
+    // 5. let和const不进行变量提升
+    //    1. 定义的变量不可以重名；
+    //    2. 在for循环中会形成父作用域和子作用域；
+    // 6. 自执行函数不进行变量提升；
+   /* console.log(fn);
+    if([]){
+        console.log(fn);// 函数
+        function fn(){
+
+        }
+        console.log(b);
+        let  b = 18;
+    };
+    //console.log(a)
+    let  a = 100;
+    //let  a = 88;
+    if(1){
+        function a() {
+
+        }
+    }
+    console.log(a);*/
+
+   // 原生   框架   项目；
+
+    // 作用域：
+    // 全局作用域  私有作用域  块级作用域
+    //
+    function fn() {
+
+    }
+    fn();
+    //
+    (function () {
+        console.log(19);
+    })();
+    // 函数的定义：
+
+    // 函数执行的过程；
+
+    // 1.形成私有作用域
+    // 2.形参赋值
+    // 3. 变量提升
+    // 4. 代码从上到下运行
+    // 5. 作用域销毁；
+
+
+    fn();
+    // 块级作用域
+    if(100==100){
+        let  a  =0;
+        fn();
+        function fn() {
+
+        }
+    }
+
+    // 上一级作用域
+    // 函数的上一级作用域跟函数在哪执行没有关系，函数在哪定义，上一级作用域就是谁；
+    var total  =100;
+    function sum() {
+        var  total = 10;
+        return  function () {
+            console.log(total);
+        }
+    }
+    var f = sum();
+    f();
+
+</script>
+</body>
+</html>

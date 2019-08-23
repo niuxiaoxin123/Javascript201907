@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 高级单例模式；
+    var utils1 = (function () {
+        var total = 10;
+        function sum() {
+            
+        }
+        function s() {
+
+        }
+        return {
+            // return一个对象；对象把当前作用域的方法return出去；
+            sum:sum,
+            s:s
+        };
+    })()
+    utils1.sum();
+    utils1.s();
+
+    
+    
+</script>
+</body>
+</html>

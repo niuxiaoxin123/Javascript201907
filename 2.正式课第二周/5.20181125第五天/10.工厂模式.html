@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+     // function ： 方法、功能；
+     var  kangjiandong = {name:"康建东",age:80,hobby:"敲代码"};
+     var  haoyuanye = {
+         name:"郝元烨",
+         age:3,
+         hobby:"看敲代码"
+     };
+     function describe(name,age,hobby) {
+         var  obj= {};
+         obj.name = name;
+         obj.age = age;
+         obj.hobby = hobby;
+         return obj;
+     }
+     var person1 = describe("康建东",80,"敲代码");
+     var person2 =describe("郝元烨",3,"看敲代码");
+
+     // 把实现同一功能的代码放到同一个函数下，当想实现这个功能时，直接执行这个函数即可；减少了代码的冗余；“高内聚，低耦合”--> 函数的工厂模式（函数的封装）;
+
+    //
+    function fn() {
+        console.log(arguments);
+        // 把这个类数组转换成真正的数组；
+        // arguments.pop();
+        // 怎么把arguments转成数组，删掉9；
+        arguments =arr;
+    }
+    fn(1,2,3,4.5,5,2,9);
+</script>
+</body>
+</html>

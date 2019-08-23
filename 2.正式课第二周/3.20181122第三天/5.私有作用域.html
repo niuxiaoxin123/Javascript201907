@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //1. 私有作用域的销毁
+
+    /*function fn() {
+        var  t = 1;
+        t+=1;
+        console.log(t);
+    }
+    fn();
+    fn();*/
+    // 1. 函数执行每执行一次，都会形成一个新的私有作用域；上一次形成的作用域一般会随之销毁；
+    // 一般情况下，函数执行完之后，作用域一般都会随着销毁；
+
+    //2. 不销毁的作用域
+    // 1. 函数体内部需要返回一个引用的数据类型值；
+    // 2. 函数的返回值需要有变量来进行接收；（函数体内部的引用数据类型值被外界占用；）
+    /*var  a =10;
+    function fn() {
+        var a = 1;
+        return {}
+    };
+    var  f = fn();
+    f();*//*
+    var  a ;
+    (function () {
+        var t = 1;
+        a=function () {
+            console.log(t);
+        }
+    })()
+    a();*/
+
+
+    // 3. 不立即销毁的作用域
+    // 函数return出一个函数，函数立即执行，不会赋值给其他变量；那么该作用域属于不立即销毁的作用域；
+    // 当前作用域是销毁或不销毁跟函数怎么执行也有关系；
+    function fn() {
+        var f = 1;
+        return function () {
+            console.log(f);
+        }
+    }
+    //fn()();
+    var  s = fn();
+    s();
+
+
+
+
+
+
+</script>
+</body>
+</html>

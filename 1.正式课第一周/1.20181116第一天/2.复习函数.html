@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+<script>
+    // 函数 ： 函数定义  形参、实参  arguments  return；
+    // 关键字： 在JS中有特殊意义的词；都是关键字；
+    // 函数的定义；
+    // "use strict";
+    var r = 100;
+    // function + 函数名() {}
+    // 函数的定义
+    // 1. 开辟一个新的空间地址；堆内存
+    // 2. 把函数体中的代码当做字符串存储到这个堆内存中；
+    // 3. 把空间地址赋值给函数名；
+    function t(a, b) {// 函数的形参；
+        // 函数体；
+        console.log(100);
+    }
+    //1. 函数的执行
+    // 1. 形成一个私有的作用域（栈内存）
+    // 2. 形参赋值
+    // 3. 变量提升
+    // 4. 代码从上到下执行
+    // 5. 作用域是否销毁；
+    t(1, 2);
+
+    // 2.形参： 函数定义的括号中参数是形参；是函数的入口；
+    // 实参： 函数执行时传入的参数是实参；
+    // 函数： 把实现同一个功能的代码放在同一个函数中，当想实现相同的功能时；执行此函数；
+    /*function sum(a,b,c) {
+     console.log(a+b+c);
+     }
+     sum(1,2,3);
+     sum(4,5,6);*/
+
+    //3. arguments : 实参集合
+    /*function fn(a,b,c) {
+     //arguments: 只在函数体中有意义；代表函数实参集合；
+     // 在非严格模式下，形参和arguments有映射关系；在严格模式下，就没有映射；
+     console.log(a);
+     a=9;
+     console.log(arguments);// 类数组；
+     //arguments.pop();
+     }
+     fn(1,2,3,4,5,6,7,8);*/
+
+
+    // 4. return
+    // 1. return 中止函数执行；return下面的代码都不再执行了；
+    // 2. return ： 返回函数的返回值；把函数体中的值返回到函数的外面；
+    /* function f() {
+     /!*if(3>5){
+     return;
+     }
+     console.log(1);*!/
+     for(var i=0;i<10;i++){
+     if(i>5){
+     return 1;
+     }
+     console.log(100);
+     }
+     console.log(101);
+     }
+     f()*/
+
+    /*function sum() {
+        var total = 0;
+        for (var i = 0; i < arguments.length; i++) {
+            total += arguments[i];
+        }
+        return total;
+    }*/
+    // 函数执行都会有一个执行结果；
+    //var r = sum(1, 2, 3);
+    //var box = document.getElementById("box");
+    // innerHTML : 可以识别标签；
+    //box.innerText = r;
+    // Number : 把其他数据类型的值强制转换成number类型；
+    // number : 数字  NaN；
+    function sum() {
+        // arguments
+        var total = 0;
+        for(var i=0;i<arguments.length;i++){
+            // 获取当前项
+            var cur = Number(arguments[i]);
+            if(!isNaN(cur)){
+                total+=cur;
+            }
+        }
+        return total;
+    }
+    sum(1,"12","8",90,NaN,[],18)
+</script>
+</body>
+</html>

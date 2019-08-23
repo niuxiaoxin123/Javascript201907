@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function CreateName(name,age) {
+        //var  obj = {};
+        // 构造函数函数执行时，先会默认创建一个对象；并且让该函数下的this指向这个空间地址；
+        // 类中的this指向实例；
+        console.log(name);
+        var  a = 11;
+        this.name = name;
+        this.age = age;
+        //return "";
+        //把创建好的对象返回到函数外面；
+        //return obj;
+    }
+    var person1 = new CreateName("小刚",18);
+    //var person2 = new CreateName;
+    //CreateName()
+    console.log(person1);
+    // person1 就是构造函数createName的实例；
+    //如果函数名前加new，那么该函数就是一个构造函数；
+    //在JS中，为了区分构造函数和普通函数的区别，那么构造函数一般都需要大写；
+    // new : 放在函数的前面是有特殊意义的；
+    //var  a = new  [];// [] 不是一个构造函数；
+    //console.log(a);
+
+    // 构造函数和普通函数的区别
+    // 普通函数： 形成私有作用域--> 形参赋值 ---> 变量提升---> 代码从上到下执行--> 作用域销毁；
+    //1. 构造函数： 形成私有作用域--> 形参赋值 ---> 变量提升--->创建一个对象，并且让当前作用域的this指向该空间地址--> 代码从上到下执行-->把当前的作用域中的this默认返回---> 作用域是否销毁；
+    //2. 加了new之后的构造函数，可以没有()；一样会执行
+    //3. 构造函数中定义的私有变量跟生成的实例没有关系；
+    //4. 如果return一个基本数据类型值，那么同样返回默认的实例；如果return一个引用数据类型值，那么会把默认返回的实例覆盖；
+    //5.构造函数就是一个自定义类；
+    //6. instanceof : 检测当前实例是否属于某个类；如果属于返回true；如果不属于返回false；
+    //7. hasOwnProperty : 用来校验该属性是不是私有的；
+    /*console.log(person1 instanceof Array);// false
+    console.log(person1 instanceof CreateName);*/// true
+    /*console.log(typeof Array);// "function"
+    function fn() {}
+    console.log(typeof CreateName);*/// "function"
+    /*var  arr = [];
+    console.log(arr instanceof Array);// true
+    console.log(arr instanceof Number);*/// false
+    /*console.log(person1.hasOwnProperty("na"));
+    // Array
+    var  ary = [12,3,4];
+    var  arr = [27,0];
+    console.log(ary.pop === arr.pop);
+    console.log(ary.hasOwnProperty("pop"));*/
+
+    // instanceof:
+    //  1) :不能用来校验用字面量方式创建的基本数据类型的变量；
+    var num =new Number(10);
+    console.log(num instanceof Number);
+
+</script>
+</body>
+</html>

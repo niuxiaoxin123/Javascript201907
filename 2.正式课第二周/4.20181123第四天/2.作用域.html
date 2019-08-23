@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 当前变量是私有的吗
+    // 1. 在私有作用域定义的变量var
+    // 2. 形参也是私有变量
+    // 3. function的定义函数名
+     var a=9;//0  1  0  1  2
+     function fn(){
+         a=0;
+         return function(b){
+            return b+a++;
+         }
+     }
+     var f=fn();
+     console.log(f(5)); // 5
+     console.log(fn()(5)); // 5
+     console.log(f(5));// 6
+     console.log(a);// 2
+
+
+    /*function a() {
+        function b() {
+
+        }
+    }
+    b();*/
+
+</script>
+</body>
+</html>

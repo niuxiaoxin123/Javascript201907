@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tab">
+    <div class="a" id="b"></div>
+</div>
+<div class="a"></div>
+<script>
+   /* var tab = document.getElementById("tab");
+    var a = tab.getElementsByTagName("div")[0];
+    var  b = tab.getElementById("b");
+    console.log(b);*/
+    // 1. 每一个函数数据类型（函数、类）都天生自带一个prototype属性，prototype的属性值是一个对象
+    // 2. 在prototype这个属性值中，天生自带一个constructor属性，constructor的属性值指向当前原型对应的这个类；
+    // 3. 每一个对象数据类型(对象、数组、实例)都天生自带一个__proto__属性，这个属性的属性值指向当前实例所属类的原型；
+
+    // 所有的函数数据类型(普通函数、类【自定义、内置的类】)都是Function的一个实例；Function是所有函数的基类；
+    // 所有的对象都是Object的一个实例；Object是所有对象的一个基类；
+   /* function Fn() {
+    }
+    Fn.prototype.getX = function () {
+    }
+    console.log(Fn instanceof Function);
+    console.log(Object instanceof Function);// true
+    console.log(Function instanceof Function);// true
+    console.log(Array instanceof Function);
+    console.log(Array instanceof Object);
+    Array.call();
+    var  ary = [];
+    ary.call();*/// ary先通过__proto__ 找到Array的原型，然后通过Array原型中的__proto__ 直接找到了Object的原型；
+    // Fn.call()
+    // Function 首先是一个函数，既然是函数，那么它就是自己Function类的一个实例
+  /*  console.log(Function.hasOwnProperty === Object.prototype.hasOwnProperty);
+    console.log(Object.hasOwnProperty === Object.prototype.hasOwnProperty);*/
+
+    // 所有的函数才能使用Function原型上的方法
+    // 所有的对象都可以使用Object原型上的方法；
+
+
+
+
+</script>
+</body>
+</html>

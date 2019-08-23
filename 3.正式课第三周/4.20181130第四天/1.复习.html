@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 原型深入   函数的三种角色  call、apply、bind    类数组转数组   求数组的最大值   求一组数的平均数
+
+    // 原型深入
+    // 原型链  Function和Object的基类的关系；
+    var  obj = {a:1};
+    console.log(obj.b);// 会通过__proto__继续向上查找；
+
+    // 函数的三种角色： 函数  类  对象；
+    // call 、apply、bind: 改变作用域下的this指向；
+    // 在Function的原型上；所以只能Function的实例可以调用；
+    // call、apply、bind
+
+    function fn(m,n,o) {
+         //this-->100
+        console.log(this);
+
+    }
+    fn.call(100,1,2);// 第一个实参是this；
+    fn.apply(100,[1,2,3]);
+    fn.bind(10,89,73);
+    // 调用这三个方法，仅仅是改变当前执行时形成的栈内存中的this；但是fn重新执行，会形成新的栈内存，新的栈内存中的this跟call、apply、bind无关；
+    fn();
+
+    // 1. 排序  2. 两两比较 3. 假设法  4. apply   5. ...
+    // 2. 类数组转数组
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 面向对象  构造函数   原型深入（原型的扩展）  call、
+    //apply、bind    商品排序（ajax,JSON,类数组转数组，数据绑定）
+
+    // 1.构造函数
+    function Fn(a) {
+        // var  obj = {}; this--->obj
+        this.class=a;
+        // return this
+        return 100;
+    }
+    Fn();// 普通函数
+    var f = new Fn("201812");// 构造函数
+    console.log(f);
+    var  a = 100;
+    //  作为构造函数
+    // 1. 形成私有作用域--> 形参赋值-->变量提升-->创建一个对象，并且让当前的this指向这个对象-->代码从上到下运行-->return this -->作用域是否销毁
+    // 2. new +函数名 ：可以省略();一样会让函数执行；创建实例
+    // 3. 构造函数中的this指向实例；
+    // 4. return 一个基本基本数据类型值，不会被返回；如果是一个引用的数据类型值，会把默认return的实例给覆盖；
+    // 5. instanceof  : 判断当前实例是否属于某个类
+    // 6. hasOwnProperty ： 判断是否是私有属性（可枚举属性和不可枚举属性）
+
+    //原型模式
+    // 属性的公有问题
+
+    function Fn() {
+            this.a = 100;
+            /*this.getX = function () {
+                console.log(this.a)
+            }*/
+    }
+    Fn.prototype.getX = function () {
+        console.log(this.a);
+    }
+    var f1 = new Fn;
+    var f2 = new Fn;
+    console.log(f1.getX === f2.getX);// true
+    console.log(f1.a === f2.a);//true
+    f1.getX();// this -->f1
+    Fn.prototype.getX();// this-->Fn.prototype
+    f1.__proto__.getX();// this-->f1.__proto__
+    console.log(Fn.prototype === f1.__proto__);// true
+
+    // 1.所有的函数数据类型都天生自带一个prototype属性，prototype这个属性的属性值是一个对象数据类型；
+    // 2. prototype的属性值中天生自带一个constructor属性，属性值指向当前原型所属的类；
+    // 3. 所有的对象数据类型都天生自带一个__proto__属性，属性值指向当前实例所属类的原型；
+    //{prototype:{constructor:Fn}}
+    // 原型中的this
+
+    /*Array.prototype.unique = function () {
+
+    }
+    var  ary = [];
+    ary.unique();*/
+    //Number.prototype toFixed  toString
+    /*ary.pop();
+    var  a=1.23;
+    a.toFixed();*/
+    /*Number.prototype.plus = function (m) {
+        return this+m;
+    }
+    var n = 1;
+    console.log(n.plus(5));*/
+
+    // 原型的扩展
+    // 1. 类.prototype.属性名=100;
+    // 2. 类.prototype = {}; 原型型中没有constructor属性；
+    /*function Sum() {
+
+    }
+    var num1 = new Sum;
+    Sum.prototype = {m:1}
+    console.log(num1.m);*/// undefined
+
+
+    //原型深入
+    // Function 和Object的关系；整个原型链的机制
+    // Function 的原型有call 、apply、bind
+    // Object 的原型中有 hasOwnProperty  toString ...
+    // Function 是所有函数数据类型（函数、类）的基类
+    // Object 是所有的对象数据类型的基类；
+    console.log(Object instanceof Function);// true
+    console.log(Function instanceof Object);// true
+    /*Object.call()
+    Function.hasOwnProperty()
+
+    ary.hasOwnProperty()*/
+    var  ary = [];
+    console.log(ary instanceof Array);// true
+    console.log(ary instanceof Object);// true
+    console.log(ary instanceof Function);// false
+    // 通过字面量方式创建的基本数据类型不是一个标准的实例；
+    var num = new Number(1);
+    console.log(typeof num);
+    console.log(num instanceof Object);// false
+    console.log(num instanceof Number);
+
+
+    // call   apply  bind
+    // 用来改变this指向；
+    // 1.
+    function f(m) {
+        // this-->1  m-->2
+    }
+    f.call(1,2);
+    // 2. apply
+    f.apply(1,[9,93])
+    // 3.bind : 预处理this;在IE8及以下是不兼容的；
+    /*f.bind(10,88)();
+    function bind(m) {
+        console.log(this);// f
+        var  that = this;
+        return function () {
+            that.call(m)
+        }
+    }
+    f();*/
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

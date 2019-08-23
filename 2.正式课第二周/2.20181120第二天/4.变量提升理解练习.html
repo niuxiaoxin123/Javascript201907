@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1. 形成全局的作用域
+    // 2. 变量提升；
+    // 变量提升只发生在作用域；函数开辟的堆内存中存储的都是字符串；
+    console.log(b);// undefined
+    var  a = 100;
+    var  b = {c:1};
+    for(var i=0;i<10;i++){
+
+    }
+    // 遇到定义的函数，直接跳过；
+    // 在私有的作用域通过var或function定义的变量都是私有变量；作用域外面不可以访问；
+    function fn() {
+        f();
+        var  h = 19;
+        function f(){}
+    }
+    f();
+    fn()
+
+
+</script>
+</body>
+</html>

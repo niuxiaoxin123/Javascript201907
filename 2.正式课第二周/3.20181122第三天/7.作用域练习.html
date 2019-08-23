@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*var  i =0;
+    function fn(i) {
+        // i=5  i=6
+        // i=8   i=9;
+        // i=undefined
+        // fn 形成的作用域不销毁；
+        return function (n) { // n=10
+            console.log(n + i++);// 10+ 5++ -->15
+            /!*console.log(n + i++);// 20+ 6++ -->26
+            // n =12
+            console.log(n + i++);// 12 +8++ -->20
+            console.log(n + i++);*!/// 18 +undefined++ -->NaN
+            // 任何数字和undefined运算，结果都是NaN；
+        }
+    };
+    var f  = fn(5);
+    f(10);// 15
+    f(20);//26
+    fn(8)(12);//20
+    fn()(18);// NaN
+
+
+
+
+
+    var  i =0;
+    function fn(i) {
+        return function (n) {
+            console.log(n + i++);
+        }
+    };
+    var f  = fn(5);
+    f(10);// 15
+    f(20);//26
+    fn(8)(12);//20
+    fn()(18);// NaN
+
+    var  obj= {
+        i : 10,
+        fn:(function () {
+            var i = 0; // i=1   i=2
+            // 自执行函数的返回值被obj的fn占用；当前作用域不销毁；
+            //console.log(obj);// undefined
+            return function (n) {
+                // n =10;
+                console.log(n + i++)  // 10 + 0++ -->10;
+                console.log(n + i++)  // 20 + 1++ -->21;
+                console.log(n + i++)  // 30 + 2++ -->32;
+                console.log(n + i++)  // 40 + 3++ -->43;
+            }
+        })()
+    };
+    var  f = obj.fn;// fn属性名存储的是自执行函数的返回值；
+    f(10);// 10
+    f(20);// 21
+    obj.fn(30);// 32
+    obj.fn(40);// 43
+
+    var tt = 1;
+    function rr() {
+        tt =100;
+    }
+    rr();
+    console.log(tt);/*/// 100
+
+
+    var  i=2;// i=4  5
+    function fn() {
+        i*=2;
+        return function (n) {// n
+            console.log(n*i++)// 3  *4
+        }
+    }
+    fn(5)(3);// 12
+    fn(6)(4);// 40
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

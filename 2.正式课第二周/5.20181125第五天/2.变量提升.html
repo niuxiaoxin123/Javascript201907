@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    // 作用域 --->面向对象 ---> js的封装 ---> 同异步--> 事件---> 移动端---> ajax ---> node
+
+    // 变量提升：指的是代码在浏览器解析的一个阶段；
+    // 变量提升：在当前作用域下，代码执行之前，浏览器会把带var和function的进行提前的声明；通知当前作用域存在这个变量；带var的只声明，不定义，function不仅声明而且定义；
+
+    // 1.如果变量只声明，未定义，那么浏览器会给赋默认值undefined；
+    /*console.log(a);// undefined
+    console.log(b);// 报错；
+    var  a =1;
+    b = 2;
+    console.log(a);// 1
+    console.log(b);*///2
+    console.log(a);
+    var  a = 1;
+    console.log(c);//
+    function c() {// c : 存储堆内存的这个地址；
+        function a() {
+
+        }
+    }
+    console.log(c);// 浏览器发现这个是引用数据类型的地址，会根据这个地址找到对应的堆内存，把这个堆内存中的内容输出；
+
+    // 函数的定义开辟堆内存发生在变量提升阶段；
+    (function f() {
+
+    })();
+
+    var gg = function () {
+        
+    }
+</script>
+</body>
+</html>

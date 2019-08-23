@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sum() {
+        // arguments : 类数组；
+        /*arguments.sort(function (a,b) {
+            return a-b;
+        })*/
+        //1. 把类数组循环，把每一项放到新的数组中；
+        /*var ary = [];
+        for(var i=0;i<arguments.length;i++){
+            var cur  =arguments[i];
+            ary.push(cur);
+        }
+        ary.sort(function () {})*/
+
+        //2. slice
+        // 找到Array原型上的slice方法，通过这个方法找到call方法，call执行改变了slice中的this，指向arguments；slice指向返回一个新的数组；
+        var a = Array.prototype.slice.call(arguments);
+        console.log(a);
+    }
+    sum(1,2,3,2,1,4,5,8)
+   
+   /* Array.prototype.slice = function () {
+        // 克隆；
+        var  newAry = [];
+        for(var i=0;i<this.length;i++){
+            newAry.push(this[i]);
+        }
+        return newAry;
+    }
+    var  ary = [1,2,3,2,1,4,5,8];
+    console.log(ary.slice());*/
+
+
+</script>
+</body>
+</html>
