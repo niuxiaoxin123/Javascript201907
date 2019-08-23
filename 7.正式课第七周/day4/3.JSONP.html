@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 跨域 ： JSONP 是跨域的一种解决方案；
+    // 什么跨域：
+    // 同源和非同源； 如果是非同源那么就是跨域；
+    // 同源：
+    //  1. 协议相同
+    //  2. 域名相同
+    //  3. 端口号相同
+
+    // 0-65535端口
+    // 项目1部署到3000端口下；项目2部署到3001端口下；从端口1项目访问端口2项目，那么没办法直接访问，这就是跨域现象；
+
+    // ajax属于同源策略
+    // 浏览器属于非同源策略；
+
+    // 当前项目跑在本机上；http://localhost:63342
+    /*let xhr = new XMLHttpRequest();
+    xhr.open("get","http://matchweb.sports.qq.com/kbs/calendar?columnId=100000",false);
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
+            console.log(xhr.responseText);
+        }
+    }
+    xhr.send();*/
+
+    //console.log(100);
+    // script : script标签的src属性非同源；
+    function fn(data) {
+        console.log(data);
+    }
+    // JSONP 的原理： 利用了script的src非同源的策略机制，在地址的后面拼接了callback和对应的函数名；当后端将数据传送到客户端时，当前callback的回调会默认执行，并且数据会传给回调函数的参数；
+    // JSONP : 后端需要对JSONP进行特殊处理；
+
+    // JSONP 跨域，只能走get请求；script只能走get请求资源
+
+    // cors : 普通的请求，只需要后端设置一下响应头，在响应头添加“Access-control-Allow-Origin”，路径；
+
+   /* $.ajax({
+        url:"",
+        dataType:"jsonp",
+        //   动态创建script；
+        success:function (data) {
+
+        }
+    });*/
+
+</script>
+<script src="http://matchweb.sports.qq.com/kbs/calendar?columnId=100000&callback=fn"></script>
+</body>
+</html>

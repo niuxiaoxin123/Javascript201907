@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //   async  await : 一般是成对出现；
+    function fn1() {
+        return 100;
+        return new promise(function (resolve,reject) {
+            setTimeout(function () {
+
+
+            },3000)
+            //resolve();
+
+        })// 返回promise实例；
+
+    }
+    async function async1() {
+        await fn1();// 同步的代码；
+        console.log(100);// await下面的代码是异步的；
+        // 微任务；
+    }
+
+    // JS 事件循环机制: 学习任务是如何工作的；
+    // 同异步： JS 是单线程  同一时间只能执行一个任务；
+    // 执行栈 ：
+    // 微任务和宏任务
+
+
+
+
+
+</script>
+</body>
+</html>
