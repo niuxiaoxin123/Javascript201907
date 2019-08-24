@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //ajax  promise    git
+    //async  javascript  and  xml;
+    // ajax : 前端和后端进行数据交互的工具；
+    // 浏览器可以发送请求
+    let xhr = new XMLHttpRequest();
+    xhr.open();
+    xhr.onreadystatechange = function () {
+        // 监听；回调；当进行不同的阶段时，会调用该函数；
+        // xhr.responseText;
+    }
+    xhr.send();
+
+    // readyState ; 0  1  2  3  4 ;
+    // status : 状态码；反应了一个请求的最终状态；
+    // get post;
+    // get一般用于获取数据
+    // post请求一般向服务器发送数据
+    // get 和post的区别？
+
+
+    // 同异步：
+    // JS 单线程
+    // 浏览器多线程
+    // 先执行同步再执行异步；异步都会放到事件队列中；微任务和宏任务
+    //
+
+    // 事件循环 ： 同异步；队列
+
+
+    // axios  fetch : 基于promise的；
+    // 基于promise封装一个axios库；
+    //
+    axios.get("",{}).then(function () {
+
+    });
+
+    axios({});
+    (function () {
+       function axios() {
+       }
+       axios.get=function (url,obj) {
+           return new Promise(function (resolve,reject) {
+
+           })
+       }
+       return axios;
+    })();
+
+    // async  await
+
+
+
+
+
+</script>
+</body>
+</html>

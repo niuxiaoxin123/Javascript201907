@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 事件    promise    案例【拖拽、放大镜、照片墙】  发布订阅模式
+    // DOM0级事件   DOM2级事件
+    // box.onclick  = function(){}
+    box.addEventListener("click",fn1,false);// 1. 事件行为 2. fn1方法  3.捕获
+    // attachEvent : IE8以下；
+    box.attachEvent("onclick",fn1);
+    // 事件对象  ： 浏览器会默认将当前的事件信息传递给当前的方法；
+    box.onclick = function (e) {
+        // e : 事件对象
+        // e.clientX clientY  pageX pageY  offsetX  offsetY   target  type  returnValue  cancelBubble stopPropagation  preventDefault;
+    }
+
+
+    // 事件传播： 捕获阶段 目标阶段 冒泡阶段
+    // 事件委托 ： 鼠标丢失；setCapture  事件委托；
+    // 面向对象：是一种编程思想；把同一类的功能方法或属性放到同一个类上，那么由类产生的实例对象，都具有相似的特征；都可以使用这个类公共的方法；高内聚，低耦合；这种编程思想就是面向对象编程；【类的继承、封装、多态】
+    // 类、对象；
+
+    // new  Drag;
+
+    // promise ：
+    new Promise(function (resolve,reject) {
+
+    });
+    // then  all race   resolve  reject  catch
+
+    // 发布订阅模式、观察者模式
+    // on  emit  off: 发布订阅  移出订阅
+    function on(obj,type,fn1) {}
+    function emit(obj,type) {}
+    function off(obj,type,fn1) {}
+
+    // 封装弹出层  插件
+
+
+</script>
+</body>
+</html>

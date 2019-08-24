@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // pop  push  shift  unshift  splice  slice   sort  reverse  concat   join   forEach  map   indexOf lastIndexOf  toString
+
+    // pop  push  shift  unshift splice  sort reverse
+    //
+
+    //1. forEach ： 没有返回值
+    //let  arr = [12,3,45,6,78]
+    /*let  a = arr.forEach((item,index)=>{
+        return 100;// 回调函数的返回值
+    });
+    console.log(a);*/// undefined
+
+
+    //2. map : 映射 返回一个映射后的新数组
+    /*let b = arr.map((item,index)=>{
+        // 数组有多少项，那么循环多少次；
+
+    });
+    console.log(b);*/
+
+
+    // 3. filter  过滤;原数组不发生改变；返回一个过滤后的新数组
+    /*let ary = arr.filter((item,index)=>{
+        // 根据当前函数的返回值是true来获取这一项；如果是false，返回值中就没有这一项；
+        return item>30;
+    });
+    console.log(arr);
+    console.log(ary);*/
+
+    // 4. find: 查找; 从左往右查找，直到找到符合条件的那一项；就不再继续查找，如果找不到，那么返回undefined；
+   // 返回true,说明就找到了；
+    /*let  a =  arr.find((item,index)=>{
+        console.log(100);
+        return item>20;
+    })
+    console.log(a);*/
+
+    // 5. every : 每一个都是true则返回true，如果有一个是false，那么直接返回false；只要找到false，直接结束，不再继续向下查找；返回值是布尔值
+    /*let e = arr.every((item,index)=>{
+        //console.log(19);
+        //return item>13;
+    })
+    console.log(e);*/
+
+
+    // 6. some : 返回一个布尔值；只要有一个符合条件就返回true；找到true，就不再向右进行查找；
+    /*let a  = arr.some((item,index)=>{
+        console.log(100);
+        return item>10;
+    })
+    console.log(a);*/
+
+
+    // 7. includes: 返回一个布尔值；如果有就返回true；，没有就返回false；
+    // indexOf : 如果不存在返回-1；如果存在返回第一次出现的索引位置；
+    //console.log(arr.includes(45));
+    //let  arr = [12,3,45,6,78];
+    // 8.reduce : 收敛；
+   /* let  a = arr.reduce((prev,next)=>{
+        // prev : 第一次代表数组的第一项，以后都代表上一次回调函数的返回值；
+        console.log(prev,next);
+        // return prev +next;
+        //return 100;
+    },100);
+    console.log(a);*/
+
+   let  arr = [{count:3,price:10},{count:2,price:20},{count:6,price:12}];
+   /*let s = arr.reduce((prev,next)=>{
+        if(typeof prev==="number"){
+            return prev+ next.count*next.price;
+        }else{
+            return prev.count*prev.price + next.count*next.price;
+        }
+    })*/
+    let s = arr.reduce((prev,next)=>{
+        return prev + next.count*next.price;
+    },0);
+    console.log(s);
+
+
+</script>
+</body>
+</html>
