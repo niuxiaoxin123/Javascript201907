@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    <!--v-model: 指令 -->
+    <input type="text" v-model="msg">
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 指令： 以v-开头，放在行间属性中，有特殊的意义一些词；
+    // v-model : 把data中取到的值放到input中；
+    // 视图可以改变数据；vue 是双向的；
+    let vm = new Vue({
+        el:"#app",
+        data:function(){
+            // data 的属性值可以是函数；如果函数一定返回一个对象
+            // 普通函数中的this指向vue的实例；
+            // console.log(this);
+            return {
+                msg:"今天26号"
+            }
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

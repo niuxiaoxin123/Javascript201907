@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //  第七周  ： ajax   http  readyState   status  同步异步  事件循环【执行栈、事件队列】  Mypromise  跨域  数组的方法
+    /// ajax :
+    // setTimeout
+    // forEach  map  filter  find  some  every  includes  reduce
+    // filter : 根据回调函数的返回值，返回true就留下，返回false，就不要；原数组不改变
+    // find : 查找符合条件的第一项
+    // some : 只要一个是true，就返回true；找true
+    // every :  只要有一个是false，那么返回false；找false；
+    // includes : 返回布尔；存在就返回true，不存在返回false；
+    // reduce : 收敛；求和；
+
+    let  arr = [12,3,456,7];
+    let  a = arr.some((item)=>{
+        // 只要找到了满足条件的那一项，直接停止；
+        return item>10;
+    })
+    console.log(a);
+
+    arr.reduce((prev,next)=>{
+        // 第一次prev第一项
+        // 以后都代表上一次回调函数的执行结果
+    });
+
+
+</script>
+</body>
+</html>

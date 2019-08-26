@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="app">
+    <div>
+        {{msg}}
+    </div>
+    <div>
+        {{arr[1]}}
+    </div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 初始化一个vue的实例
+    // 小胡子语法: {{}};获取Vue中data的属性名对应的属性值；
+    let vm = new Vue({
+        // 对象中有很多固定的属性名
+        el:".app",// vue实例化最外层的元素,这里面才会识别vue的语法；
+        // 也可以采用class的方式获取元素；如果是多个重名的class，只有第一个生效；
+        data:{
+            msg:"帅文很帅",
+            arr:[12,3,4,66,7,9]
+        }
+    });
+
+
+
+
+
+</script>
+</body>
+</html>

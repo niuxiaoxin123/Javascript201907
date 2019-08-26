@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <!--需要创建什么元素，就把v-for放在谁的身上-->
+        <!--a in  arr : a代表数组的每一项,index 代表索引-->
+        <!--v-for:可以遍历数组、字符串、数字、对象-->
+        <!--<li v-for="(a,index) in arr">{{a}} {{index}}</li>-->
+        <!--<li v-for="a in str">{{a}}</li>-->
+        <!--<li v-for="a in 10">{{a}}</li>-->
+        <li v-for="(a,b) in obj">{{a}}{{b}}</li>
+        <li v-for="a in ary">{{a.fruit}}</li>
+    </ul>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    <!--v-for-->
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            arr:[1,2,3,4,5],
+            str:"abcde",
+            obj:{name:"苹果",age:"10"},
+            ary:[{fruit:"西瓜"},{fruit:"banana"}]
+        }
+    })
+</script>
+</body>
+</html>

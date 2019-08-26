@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    {{arr}}
+    {{obj.name}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // vm 实例；
+    // 数据影响了视图；当vue中data  的数据发生改变，那么视图也会随着发生改变；
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            // data中的数据最后都会放到vm的实例上；更改数据可以通过vm.属性名=属性值进行更改；
+            msg:"hello",
+            person:"马老师",
+            arr:[100,200,300,400],
+            obj:{name:203}
+        }
+    });
+    //console.log(vm);
+    // data.msg="oo";
+    // vm.msg=""
+    // vm.arr[0]=1;// 数据已经发生了更改；但是视图没有更新；
+    //1. 如果data中是数组，那么通过索引修改数组中的值时，不能引发视图的更新；
+    //2. 数组内置的方法，可以引发视图的更新；原数组发生改变；
+    //vm.arr.splice(0,1,1)
+    vm.arr=vm.arr.filter(item=>{return item>200})
+    //vm.obj.name=202;
+
+    // 数据会影响视图，如果想更改视图，只需要操作数据；
+    // 框架： 采用了 MVVM 原理
+    // DOM-diff : DOM对比；
+    // 虚拟的DOM： 是一个在JS 中的对象；
+    // {type:"div",children:[{type:"span"},{},{}]}
+
+
+
+
+</script>
+</body>
+</html>

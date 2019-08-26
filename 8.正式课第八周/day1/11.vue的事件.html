@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" @keyup.enter="fn">
+    <button @keyup.enter="fn">开关</button>
+    {{msg}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"该吃饭了"
+        },
+        methods:{// 方法；
+            fn(){
+                // 1.绑定事件直接行间属性@click="fn"
+                // 2.方法都方法methods中；
+                // 3.方法中的this指向当前vue的实例
+                this.msg="该下课了"
+            }
+        }
+    })
+    // 1. v-for
+    // 2. 显示隐藏
+    // 3. 搜索框实现
+</script>
+</body>
+</html>

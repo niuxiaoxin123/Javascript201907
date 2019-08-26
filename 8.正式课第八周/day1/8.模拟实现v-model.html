@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="box">
+<script>
+    let  box = document.getElementById("box");
+    let obj = {};// 表示一个存储数据的对象
+    Object.defineProperty(obj,"val",{
+        get(){// 这不是一个箭头函数；
+            return box.value;
+        },
+        set(val){
+            box.value = val;
+        }
+    });
+    obj.val="你很好";
+    // 利用了DOM事件监听
+    box.addEventListener("input",function () {
+        obj.val = this.value;// 把input框的值赋值给obj的val属性；
+    })
+
+    
+    
+    
+</script>
+</body>
+</html>

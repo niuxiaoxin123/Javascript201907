@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>珠峰培训</title>
+</head>
+<body>
+<div id="app" >
+    {{msg}}
+</div>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg:"hello"
+        }
+    });
+    //VUE的双向数据绑定的原理： 当初始化Vue的实例时,会遍历data中的所有的属性，给每一个属性新增get和set方法，当获取这个属性对应的属性值，会默认执行get方法，设置属性的属性值时，会执行set方法；vue的指令编译器，对v的指令进行解析，并初始化视图，并订阅观察者来更新视图；并将watcher添加到Dep订阅器中，当数据发生改变，observer的set方法会被调用，会遍历Dep订阅器中所有的订阅者，然后再更新视图；
+    //
+    let  obj = {name:"珠峰"};
+    // Object.defineProperty: 对obj的name属性进行监听，当获取obj的name属性对应的属性值时，会默认执行get方法；当设置obj的name属性，会默认执行set；
+    Object.defineProperty(obj,"name",{
+        get(){
+            console.log(100);
+            return 1;
+        },
+        set(val){
+            // 设置的值是多少，当前的参数值就是多少；
+            console.log(val);
+        }
+    })
+    //console.log(obj.name);
+    obj.name=100;
+    console.log(obj);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <div v-text="a"></div>
+    <div v-html="a"></div>
+    <div v-if="b">100</div>
+    <div v-else>200</div>
+    <div v-show="0">300</div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 指令: v-model : 用于表单元素双向数据绑定的数据
+    // v-text : 给元素赋值文本内容的指令；innerText;如果元素有内容，会被覆盖掉
+    // v-html : 可以识别标签
+    // v-if 、 v-else  、v-else-if;直接控制DOM节点的存在或删除；属性是true就显示，false就隐藏
+    // v-show : 通过样式的display来控制元素的显示和隐藏；如果不是一个布尔值，那么要转布尔再判断；
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"hello",
+            a:"<p>我爱你祖国</p>",
+            b:false
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="msg">
+    <div a="b">
+        {{msg}}
+    </div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // MVVM : M : Model模型 数据   v : view  视图  vm : view-model
+    // vue : 数据能够改变视图，视图也可以改变数据；vue双向数据绑定；
+    // v-model : 一般用于表单元素
+    // 小胡子语法： 支持运算;支持拼接;支持三元运算符；
+    // null、undefined、""都不会显示在页面上；
+    let  vm = new  Vue({
+        el:"#app",
+        data:{
+            msg:"hello",
+            greet:"world",
+            a:"null"
+        }
+    })
+
+    // vue警告不影响代码的运行；
+    //console.log(100)
+    //         数据绑定
+    // M  <===>    VM   <==>    V
+    //           DOM 监听
+    // M 和V不能直接通信，需要靠VM来进行数据传递；vM中一个观察者，可以监听到数据发生的变化，然后通知对应的视图更新；当视图发生改变，VM也能监听到视图的变化，然后通知数据进行改变；
+
+    // VM :
+
+</script>
+</body>
+</html>
