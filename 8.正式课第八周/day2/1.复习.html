@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <!--小胡子语法获取data中的值-->
+    <!--支持运算支持三元运算符，null undefined\""不会显示-->
+    {{a}}
+    <div v-text="a" @click="fn"></div>
+    <input type="text" v-model="a">
+</div>
+<script>
+    // vue
+    let vm = new Vue({
+        el:"",// 元素
+        data:{
+            // data中的数据具有响应式；MVVM：双向数据绑定
+            // data中的数据会被vue这个实例代理，proxy;
+            // 数据==>视图；
+            a:"",
+            obj:{name:""},
+            arr:[]
+        },// 对象或函数；函数一定要return{}
+        methods:{
+            // 方法、事件
+            fn(){
+                this.arr.slice(1,2);
+            }
+        }
+    });
+    vm.a=100;
+    vm.arr=[12,3.5,6]
+    // 1. vm.arr[2]=1;
+    // 2. vm.arr.length--;
+    // 3. 数组内置的方法可以 pop push  shift  unshift  splice sort  reverse;
+
+
+
+</script>
+</body>
+</html>

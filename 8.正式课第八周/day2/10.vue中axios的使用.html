@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div v-for="a in products">{{a.productName}}</div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            products:[]
+        },
+        methods:{
+            getData(){
+                axios.get("./carts.json").then(data=>{
+                    // axios请求会把真正的数组放在参数的data属性上；
+                    this.products=data.data;
+                })
+            }
+        },
+        filters:{},
+        created(){// 这是一个钩子函数；是生命周期中的一个钩子函数；
+            // 当new Vue时，到了特定的阶段调用的函数，就是钩子函数；
+            // 一般都在这个钩子函数发送请求，获取数据；因为当这个钩子函数执行时，真实的DOM还没有被挂载；
+            // this==> vue的实例
+            this.getData();
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .x{
+            font-size: 40px;
+        }
+        .y{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <!--v-bind:可以直接省略-->
+    <!--<img :src="arr[0]" alt="">
+    <input type="text" v-model="arr[0]">
+    <div :a="arr[0]"></div>-->
+    <!--<div :class="{x:flag}">12345</div>
+    <div :class="[x,y]">886699</div>-->
+    <!--<div v-for="(a,index) in arr" :class="{y:index%2}">{{a}}</div>-->
+    <div :style="{fontSize:num+'px'}" >19202</div>
+    <div :style="[z]">19202</div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // v-model   v-text  v-html   v-if  v-else v-else-if  v-for  v-show  v-on  v-bind;
+    // 1. v-bind : 将普通的属性转成动态的属性，去获取data中的数据;
+    // 2. v-bind:class
+    // 3. v-bind:style
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            arr:["img/1.jpg","img/2.jpg","img/1.jpg","img/2.jpg"],
+            x:"x",
+            y:"y",
+            flag:false,
+            num:40,
+            z:{color:"red"}
+        }
+    });
+</script>
+</body>
+</html>

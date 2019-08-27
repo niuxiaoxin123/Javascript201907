@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--如果没有参数，可以不加小括号；使用几次，执行几次-->
+    {{a | toFixed(2)}}
+    {{b | addZero}}
+    {{b | addZero}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            a:10.23456,
+            b:3
+        },
+        methods:{},
+        filters:{
+            // 过滤器
+            toFixed(num,val){// 第一个参数的实参是管道符前面的数值；val接收方法的实参；
+                console.log(num);
+                console.log(val);
+                return num.toFixed(val);
+            },
+            addZero(val){
+                console.log(100);
+                // 在进行编译时，就会调用这些函数执行；
+                // 方法的返回值最终会放在页面上；这个方法如果
+                return val<10?"0"+val:val;
+            }
+        }
+    })
+</script>
+</body>
+</html>

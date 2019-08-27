@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div @click.capture="fn1" style="width:100px;height:100px;background: red">
+        1
+        <div @click.stop.self="fn2">
+            2
+            <div @click="fn3">
+                3
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // stopPropagation()
+    // vue中的事件修饰符：
+    // .stop : 阻止事件冒泡向上传播；
+    // .prevent: 阻止事件的默认行为
+    // .once : 只执行一次；
+    // .self: 只有点击自己时才会执行；
+    // .capture: 控制事件在捕获阶段执行
+    // .passive: 修饰onscroll事件，不会等到事件的方法执行完，就会立即执行下一次；提高了代码的性能；
+
+
+    // 键盘事件修饰符
+    //.enter
+    // .tab
+    // .delete
+    // .esc  .space  .up   .down  .left .right
+    // .13  .37
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        methods:{
+            fn1(){
+                console.log("outer");
+            },
+            fn2(){
+                console.log("inner");
+            },
+            fn3(){
+                console.log("center");
+            }
+        }
+    })
+</script>
+</body>
+</html>

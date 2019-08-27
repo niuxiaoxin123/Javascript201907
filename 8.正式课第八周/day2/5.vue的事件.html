@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <button @click="fn($event,1)">显示</button>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // DOM0  DOM2
+    // v-on:click;绑定事件；一般v-on:简写成@
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        methods:{
+            // 1.事件一般放在methods中；
+            // 2.data 中的属性名不能和methods中的方法名重名
+
+            // 事件对象
+            // 1. 如果绑定时没有小括号，定义时有参数，那么第一个参数是事件对象；
+            // 2.如果绑定时有小括号，那么第一个参数就是undefined；
+            // 3.如果绑定时有小括号，并且需要事件对象，需要在绑定的小括号中用$event占位；
+            fn(e,a){
+                console.log(e);
+                console.log(a);
+                console.log(100);
+            }
+        }
+    });
+</script>
+</body>
+</html>

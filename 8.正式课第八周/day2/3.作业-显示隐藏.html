@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <button @click="fn">按钮</button>
+    <div v-show="flag" style="width:100px;height:100px;background: red"></div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            // flag 最终放到实例
+            flag:true
+        },
+        methods:{
+            fn(){
+                // this-->vue的实例
+                //this.flag=false;
+                /*if(this.flag){
+                    this.flag=false;
+                }else{
+                    this.flag=true;
+                }*/
+                this.flag=!this.flag;
+            }
+        }
+    })
+</script>
+</body>
+</html>
