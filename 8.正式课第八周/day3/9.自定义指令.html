@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div style="position:absolute;width:50px;height:50px;background: red"  v-drag></div>
+    <div v-drag></div>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    //
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        directives:{
+            drag(ele){// ele参数代表是加上v-drag的元素
+               ele.onmousedown=function (e) {
+                   // 点击时，记录了鼠标点的位置和盒子左边框的距离差；
+                   this.l= e.clientX-this.offsetLeft;
+                   this.t = e.clientY -this.offsetTop;
+                   document.onmousemove=function (e) {
+                       // 此时鼠标最新的位置-
+                       ele.style.left = e.clientX-ele.l+"px";
+                       ele.style.top = e.clientY-ele.t+"px";
+                   }
+                   document.onmouseup = function () {
+                       document.onmousemove=null;
+                       document.onmouseup = null;
+                   }
+               }
+            }
+        }
+    });
+</script>
+</body>
+</html>

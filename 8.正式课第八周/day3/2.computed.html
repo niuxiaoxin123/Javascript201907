@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--当input框点击时，当前的model的val还没有发生改变；需要使用change事件-->
+    <input type="checkbox" @change="checkAll" v-model="val">全选<br>
+    <ul>
+        <li v-for="a in arr">
+            <input type="checkbox" v-model="a.isSelected" @change="checkOne">{{a.name}}
+        </li>
+    </ul>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            arr:[{isSelected:true,name:"手机"},{isSelected:false,name:"电脑"}],
+            val:""
+        },
+        methods:{
+            checkAll(){
+                this.arr.forEach(item=>{
+                    // 将全选的值赋值给数组中每一个item的isSelected；
+                    item.isSelected=this.val;
+                })
+            },
+            checkOne(){
+                this.val=this.arr.every(item=>item.isSelected);
+            }
+        },
+        computed:{// 计算属性
+            // data和methods,computed中属性都不能重名
+            val:{
+
+            }
+        }
+    });
+</script>
+</body>
+</html>

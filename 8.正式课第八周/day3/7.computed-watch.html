@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    姓：<input type="text" v-model="firstName"><br>
+    名：<input type="text" v-model="lastName"><br>
+    全名：<input type="text"  v-model="fullName">
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            firstName:"",
+            lastName:"",
+            fullName:""
+        },
+        /*computed:{
+            fullName(){
+                return this.firstName+this.lastName;
+            }
+        }*/
+        watch:{
+            firstName(val){
+                setTimeout(()=>{
+                    this.fullName= val+this.lastName;
+                },2000);
+            },
+            lastName(val){
+                this.fullName= this.firstName+val;
+            }
+        }
+    });
+    // computed :
+    // 1. computed 会默认走缓存；减少性能的开销
+    // 2. computed 不支持异步
+    // 3. 当一个属性依赖多个属性进行变化，那么用computed;多对一；
+    // watch
+    // 1. 不走缓存；
+    // 2. 支持异步；
+    // 3. 当一个属性改变，会引发多个操作时，用watch;一对多；
+    // 能用computed不用watch;
+</script>
+</body>
+</html>

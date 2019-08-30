@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{msg}}
+    {{obj.a.name}}
+    <button @click="fn">修改</button>
+    <input type="radio" v-model="msg" value="男生">
+    <input type="radio" v-model="msg" value="女生">
+    <li v-for="a in arr" @click="fn($event,1)"></li>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // vue :
+    // 对象中的属性名: el
+    // data : 函数【返回一个对象】、对象
+    // created
+    // methods
+    // filters
+
+    // v-: 以v-开头；在行间具有特殊的意义；
+    // v-model
+    // v-for
+    // v-on : 绑定事件==>@
+    // v-if : 控制DOM删除
+    // v-else  v-else-if
+    // v-show
+    // v-bind : class  style
+    // v-text
+    // v-html
+    let  vm = new  Vue({
+        el:"#app",
+        data:{
+            msg:"",
+            obj:{
+                a:{name:100}
+            },
+            arr:[]
+        },
+        created(){// 是一个钩子函数；在vue实例生成的特定的阶段执行的函数；
+            // this ==> 实例
+            this.getData();
+        },
+        methods:{
+            // 方法
+            fn(e){
+                // this==> 实例
+                this.obj.a.name=200;
+            },
+            getData(){
+                this.$options.filters.toFixed();
+            }
+        },
+        filters:{
+            // 对管道符前面的数值进行过滤
+            toFixed(num,val){// num 是管道符前面的内容
+
+            }
+        }
+    });
+    console.log(vm);
+
+    // 1.看文档；
+    // 2.百度： 博客 、掘金、CSDN、简述、思否；
+
+
+</script>
+</body>
+</html>

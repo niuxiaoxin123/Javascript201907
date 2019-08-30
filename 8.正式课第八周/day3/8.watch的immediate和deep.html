@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="person.firstName">
+    <input type="text" v-model="person.lastName">
+    <input type="text" v-model="person.fullName">
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            person:{
+                firstName:"",
+                lastName:"",
+                fullName:""
+            }
+        },
+        watch:{
+            // 如果watch 的person整个对象，并且加了deep为true，那么相当于给person每一个属性都新增了监听器；当任何一个属性发生改变，都会引发handler执行；如果只需要监听一个属性"对象名.属性名"
+            'person.firstName':{
+                handler(newVal,oldVal){
+                    //console.log(newVal.firstName);
+                    console.log(newVal);
+                    this.person.fullName=newVal+this.lastName;
+                },
+                // immediate:可以让该函数在初始化时立即执行；
+                //immediate:true,
+                // 让其进行深度监听；对对象每一个属性进行监听；handler监听了整个对象；
+                 deep:true
+            }
+        }
+    })
+</script>
+</body>
+</html>

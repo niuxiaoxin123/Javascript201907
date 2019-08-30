@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--当input框点击时，当前的model的val还没有发生改变；需要使用change事件-->
+    <input type="checkbox" v-model="val">全选<br>
+    {{val}}
+    {{a}}
+    <ul>
+        <li v-for="a in arr">
+            <input type="checkbox" v-model="a.isSelected" >{{a.name}}
+        </li>
+    </ul>
+    <button @click="fn">改变</button>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            arr:[{isSelected:true,name:"手机"},{isSelected:false,name:"电脑"}],
+            a:100
+        },
+        methods:{
+            fn(){
+                this.arr[0].name="ipad";
+            }
+        },
+        computed:{// 计算属性
+            // data和methods,computed中属性都不能重名
+            // computed：会默认走缓存；节省性能；
+            // 当一个属性依赖多个属性时，一般可以采用computed;当依赖的属性发生改变，会立即执行get方法，重新计算当前的属性，并且会重新渲染视图；
+            /*val:{
+                get(){
+                    // 当使用val时，这个函数执行了；不管引用多少次，该函数获取时执行一次；
+                    // every是true或者是false；
+                    // 当依赖的属性发生改变时，就会执行该get方法；
+                    // console.log(1);
+                    return this.arr.every(item=>item.isSelected)
+                },
+                set(val){
+                    // 会默认将最新的设置的值传给第一个形参；
+                    // 当改变val这个值时，就会触发set方法；
+                    this.arr.forEach(item=>item.isSelected=val);
+                }
+            }*/
+            val(){
+                // 如果当前的属性是函数的形式，那么会默认走get；不会执行set的；
+                // console.log(100);
+                return this.arr.every(item=>item.isSelected);
+            }
+        }
+    });
+</script>
+</body>
+</html>

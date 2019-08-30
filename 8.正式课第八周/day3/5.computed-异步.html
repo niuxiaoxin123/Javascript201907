@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="a">
+    {{a}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script>
+
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"",
+            b:"",
+            arr:[]
+        },
+        methods:{
+            fn:()=>{
+                // window
+            }
+        },
+        computed:{
+            a:()=>{
+                console.log(this);// window
+                // a 是立即执行的；当在这个函数中遇到异步的代码，定时器，异步的请求回来修改返回的值，那么已经监听不到这个值发生了变化，因为同步执行完毕；
+                // console.log(100);
+                // computed不要发送异步的请求；
+                /*axios.get("carts.json").then(data=>{
+                    this.arr=data.data;
+                })*/
+                setTimeout(()=>{
+                    console.log(this);// vue的实例
+                    b=100;
+                },1000);
+                //return b;
+            }
+        }
+    })
+
+    /*let  obj = {
+        computed:{
+            fn:()=>{
+                console.log(this);//window
+            }
+        }
+    }*/
+    //obj.computed.fn();
+</script>
+</body>
+</html>
