@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div ref="a">12345</div>
+    <div ref="b">6789</div>
+    <button @click="fn"></button>
+    {{msg.a}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:{
+                a:1
+            }
+        },
+        methods:{
+            fn(){
+                // Vue.set()
+                //this.set(vm.msg,"a",12345)
+                // 如果给data中的对象新增键值对，实例不能监听到新增的键值对；需要使用$set；
+                // vm.$set(data的属性名,要新增的属性名，属性值)
+
+                this.msg.a=100;
+            }
+        }
+    })
+    // $el: 挂载的DOM元素
+    // $options: 当前的实例的参数；
+    // $refs: 获取DOM元素；
+    // $set : 向data的对象新增一些属性；
+    // $delete
+    // $destroy ： 销毁vue的实例
+    // $mount : 挂载
+    // $on : 订阅
+    // $emit : 发布
+    // $off : 移出；
+    // $forceUpdate: 强制更新；不能在beforeUpdate和updated使用；会递归；
+    // $nextTick:
+    console.log(vm);
+    console.log(vm.$el);
+    console.log(vm.$options.data());
+</script>
+</body>
+</html>

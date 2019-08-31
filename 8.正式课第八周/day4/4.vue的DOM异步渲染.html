@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <li v-for="a in arr" ref="oLis">{{a}}</li>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            arr:[1,2,3]
+        },
+        mounted(){
+            this.arr=[4,5,6,7,8,9];
+            // 当数组发生了改变之后，DOM需要重新渲染刷新，但是DOM渲染是异步的，下面的代码不会等到DOM渲染完毕再往下运行；
+            // VUE中DOM的渲染是异步的；
+            // $nextTick也需要传递一个回调函数；会当真实的DOM异步加载完毕，会立即执行$nextTick绑定的回调函数；
+            this.$nextTick(()=>{
+                console.log(this.$refs.oLis.length);
+            });
+        }
+    })
+</script>
+</body>
+</html>

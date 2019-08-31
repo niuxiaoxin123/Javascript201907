@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="a in arr">{{a}}</li>
+    </ul>
+    <button @click="fn">点击</button>
+    {{msg}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // created
+    // v-model  v-for  v-if  v-else v-else-if  v-on  v-bind  v-html  v-text  v-show  v-cloak
+
+    // 实例的属性
+    // el  data  methods  computed  watch  filters directives  created
+
+    // 在实例生成以及后期的数据中，有8个钩子函数；
+    // beforeCreate  created
+    // beforeMount   mounted
+    // beforeUpdate  updated
+    // beforeDestroy  destroyed
+
+    // // beforeCreate  created
+    // beforeMount   mounted : 初始化实例时，会默认按照先后顺序执行；当更新数据时，不再执行；
+
+    // Vue是一个构造函数；当执行这个构造函数时，数据监听、编译模板，实例挂载真实的DOM,数据更新DOM更新；在这个过程中，会默认调用一些函数执行，这些函数就是vue生命周期的钩子函数；
+    let vm = new Vue({
+
+        data:{
+            //
+            msg:"hello",
+            arr:["a","b","c"]
+        },
+        beforeCreate(){
+            // 在这个钩子函数之前初始化一些事件和vue的生命周期；
+            // 1.不能获取vue中data的数据；
+            // console.log(this.msg);
+            // 2. document.getElementsByTagName;不能操作DOM；
+            //console.log(document.getElementsByTagName("li"));
+        },
+        created(){
+            // 可以获取data中的数据；但是不能操作DOM；
+            console.log(this.msg);
+            console.log("created");
+            // console.log(document.getElementsByTagName("li"));
+            // 一般用于获取数据；
+            // debugger
+
+        },
+        beforeMount(){
+            // 挂载之前
+            // 在这个钩子函数之前，判断是否有el,是否有template;
+            console.log("beforeMount")
+
+        },
+        mounted(){
+            //挂载之后；把vue实例生成虚拟的DOM挂载真实的DOM上；
+            // 可以获取最终的DOM元素；
+            //this.arr=["d","e","f"]
+            // {type:"div",a:"1",children:[{type:"span"}]}
+            console.log("mounted");
+        },
+        beforeUpdate(){
+            // 数据更新之前
+            console.log("beforeUpdate")
+        },
+        // 虚拟DOM通过DOM-diff算法进行对比，并且重新渲染和打补丁；
+        updated(){
+            // 数据更新完成
+            console.log("updated")
+        },
+        beforeDestroy(){
+            // 销毁之前
+            console.log("beforeDestroy");
+            clearTimeout()
+        },
+        destroyed(){
+            // 销毁之后: 销毁观察者、子组件、事件的监听者；
+            console.log("destroyed");
+        },
+        methods:{
+            fn(){
+                // 修改data中的数据
+                this.msg="world";
+            }
+        },
+        render:(a)=>{
+            console.log(a());
+        }
+    })
+    vm.$mount("#app");
+    //vm.$destroy();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <style type="text/css">
+        .del{
+            text-decoration: line-through;
+            color:#ccc;
+        }
+        [v-cloak]{
+            /*等待DOM挂载到真实的DOM上之后，该样式会自动取消；*/
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                   TodoList
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading" style="background:pink">
+                        <h2 class="text-danger" v-cloak>亲~^_^,您有{{count}}件事已完成</h2>
+                        <input type="text" class="form-control" @keyup.enter="addTodo" v-model="val">
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-group">
+                            <li class="list-group-item" v-for="(item,index) in todo" @dblclick="remember(item)" v-cloak>
+                                <span v-show="cur!==item">
+                                    <!--key: 唯一；确保每个input都是独立的-->
+                                    <input type="checkbox" v-model="item.isSelected" :key="item.title">
+                                    <!--如果对象属性值是true，则样式生效-->
+                                    <span :class="{del:item.isSelected}">{{item.title}}</span>
+                                </span>
+                                <input type="text" v-show="item==cur" v-model="item.title" v-focus @keyup.enter="update" @blur="update">
+                                <button class="btn btn-xs pull-right btn-danger" @click="removeTodo(item)">&bigotimes;</button>
+                            </li>
+                    </ul>
+                    </div>
+                    <div class="panel-footer">
+                        <ul class="nav nav-pills">
+                            <li role="presentation" :class="{active:hash==='#all'}"><a href="#all">全部任务</a></li>
+                            <li role="presentation" :class="{active:hash==='#finish'}"><a href="#finish">已完成</a></li>
+                            <li role="presentation" :class="{active:hash==='#unfinish'}"><a href="#unfinish">未完成</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="1.todo.js"></script>
+</body>
+</html>
