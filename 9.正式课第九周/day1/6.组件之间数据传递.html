@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--普通的行间属性的属性值就是一个字符串-->
+    <!--动态属性取父组件中的数据-->
+    <child :m="msg" :t="hh"></child>
+    <!--<input type="text" v-model="msg">-->
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 组件之间数据的传递：
+    // VUE中的数据传递是单向的；
+    // 1. 父传子  2. 子传父（发布订阅实现） 3. 兄弟之间传递
+
+    // 1.创建组件
+    // 2. 注册组件
+    // 3. 使用组件
+    // child是vm的一个子组件；
+
+    // template: 只能获取当前实例data或methods中的属性；
+    // 如何让子组件获取到父组件中的数据？
+
+    // 1. 把父组件的数据以动态属性的方式当在子组件的行间属性上；
+    // 2. 在子组件中用props这个属性接收，（对象、数组）
+    // 3. 在子组件中使用动态的属性名保持一致；
+    let child = {
+        data(){
+            return {
+                num:100,
+            }
+        },
+        props:["m","t"],// props中放的是动态属性的属性名
+        template:"<div>{{m}}{{t}}</div>"// 和props对应；
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"珠峰",
+            hh:"培训"
+        },
+        components:{
+            child
+        }
+    });
+</script>
+</body>
+</html>

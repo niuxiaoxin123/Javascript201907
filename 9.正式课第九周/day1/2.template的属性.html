@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+
+</div>
+<template id="first">
+    <div>
+        {{msg}}
+        <div></div>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 1. 如果对象中有template属性，把template属性值编译完成替换#app元素；
+    // 2. template只能有一个根元素；
+    // 3. 可以获取data或methods中的属性
+    /*let vm = new Vue({
+     el:"#app",
+     data:{
+     msg:"hello",
+     flag:true
+     },
+     methods:{
+
+     },
+     template:"<div v-if='flag'>{{msg}}</div><div v-else></div>"
+     });*/
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "hello",
+            flag: true
+        },
+        methods: {},
+        template: "#first"
+    });
+</script>
+</body>
+</html>

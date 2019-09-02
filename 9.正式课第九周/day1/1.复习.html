@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div v-for="a in arr">
+        {{a}}
+    </div>
+    <div @click="fn">
+        {{msg}}
+    </div>
+    <input type="text" v-focus>
+</div>
+
+<script>
+
+    // 框架：写法不一样
+    // vue :
+    new Vue({
+
+        data:{// 如果是函数，一定要返回一个对象
+            msg:100
+        },
+        methods:{
+            fn(){
+
+            }
+        },
+        computed:{
+            // 计算属性；当一个属性需要依赖多个属性改变而改变，
+            checkAll:{
+                get(){
+                },
+                set(val){
+                }
+            }
+        },
+        watch:{
+            a(newVal,oldVal){
+            },
+            b:{
+                handler(newVal,oldVal){
+                },
+                immediate:true,
+                deep:true
+            }
+        },
+        filters:{
+            // 过滤器
+        },
+        directives:{
+            // 自定义指令
+            focus(el){
+                el.focus();
+            }
+        },
+        beforeCreate(){
+        }
+        // 生命周期：
+        // beforeCreate   created
+        // beforeMount    mounted
+        // beforeUpdate   updated
+        // beforeDestroy  destroyed
+    });
+    // v-for  v-model  v-if  v-else  v-else-if  v-show  v-on  v-bind  v-html v-text v-cloak;
+    // vm : $el  $options  $refs  $emit  $on  $off  $nextTick $delete  $forceUpdate
+
+
+
+
+
+</script>
+</body>
+</html>

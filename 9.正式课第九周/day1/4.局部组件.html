@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div>
+        <son></son>
+    </div>
+</div>
+<div id="app1">
+    <!--<div @click="fn"></div>-->
+    <son></son>
+</div>
+<template id="a">
+    <div @click="fn">{{name}}</div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 局部组件的使用
+    // 1. 创建一个组件
+    // 2. 注册组件
+    // 3. 使用组件
+
+    let son = {
+        data(){
+            console.log(this);// 方法中的this指向当前组件的实例；
+            return {
+                name:"珠峰培训"
+            }
+        },
+        methods:{
+            fn(){
+                console.log(this);//
+            }
+        },
+        template:"#a"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        components:{// 注册局部组件
+            son
+        }
+    });
+    let vm1 = new Vue({
+        el:"#app1",
+        data:{
+        },
+        components:{// 注册局部组件
+            son
+        }
+    });
+
+</script>
+</body>
+</html>

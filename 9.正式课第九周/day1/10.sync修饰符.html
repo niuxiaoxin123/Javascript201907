@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{money}}
+    <!--自定义事件-->
+    <!--订阅自定义事件的方法-->
+    <!--<son :m="money" @update:m="money=$event"></son>-->
+    <son :m.sync="money"></son>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 在vue中，不能直接修改父组件中的数据；
+    let son ={
+        data(){
+            return {}
+        },
+        props:["m"],// props接收的数据最终也会放到当前的组件实例上；
+        methods:{
+            f(){
+                this.$emit("update:m",3000);
+            }
+        },
+        template:"<div>{{m}}<button @click='f'>多要点</button></div>"
+    };
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            money:200
+        },
+        components:{
+            son
+        }
+    })
+
+    let obj = {
+
+    }
+</script>
+</body>
+</html>

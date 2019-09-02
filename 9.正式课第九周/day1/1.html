@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<input type="text" id="a" autofocus>-->
+<div id="app">
+
+    <input type="text" v-myfocus autofocus id="a">
+    <!-- <input type="text" v-focus a="2"> -->
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // el、data、methods、filters、created、computed、watch
+//    a.focus();
+    Vue.directive('myfocus', {
+        inserted: function(el, binding) {
+            //console.log(el)
+            el.focus()
+        }
+    })
+
+    let vm = new Vue({
+        el:"#app",
+        directives:{
+
+        },
+        mounted(){
+            a.focus();
+        }
+    });
+</script>
+</body>
+</html>

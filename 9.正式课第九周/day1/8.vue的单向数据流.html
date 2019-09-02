@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{num}}
+    <button @click="add">添加</button>
+    <son :t="num"></son>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 父传子： 当父组件中数据发生改变，子组件数据会变吗？
+    // 如果子组件使用了父组件中的数据，当父组件通过某些方法发生更改时，更改了自己的数据时，那么子组件也会随着发生改变，父组件中的数据又流向了子组件，子组件发生了更改；这就是组件之间数据传递的单向数据流；
+    let son ={
+        data(){
+            return {
+                val:100
+            }
+        },
+        props:["t"],
+        template:"<div @click='f'>{{t}}     {{val}}</div>",
+        methods:{
+            f(){
+                this.val=200;
+            }
+        },
+        beforeUpdate(){
+            console.log("子组件更新前")
+        },
+        updated(){
+            console.log("子组件更新后")
+        }
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            num:20
+        },
+        components:{
+            son
+        },
+        methods:{
+            add(){
+                this.num++;
+            }
+        },
+        beforeUpdate(){
+            console.log("父组件更新前")
+        },
+        updated(){
+            console.log("父组件更新后")
+        }
+    })
+    // 当父组件数据更新时，beforeUpdate(父）-->beforeUpdate(子)-->updated(子）--->updated(父）
+
+    // 如果子组件只改变自己的数据，那么不会让父组件中的更新钩子函数执行；
+    // 父组件不能使用子组件中的数据；
+</script>
+</body>
+</html>
