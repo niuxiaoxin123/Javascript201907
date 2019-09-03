@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <bro1></bro1>
+    <bro2></bro2>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 兄弟之间组件数据传递
+    //
+    let eventBus = new Vue;// 相当于第三方；
+    let  bro1 = {
+        data(){
+            return {
+                color:"红色"
+            }
+        },
+        created(){
+            // 把自己实例上的方法订阅了eventBus这个实例的changeGreen这个自定义的事件上
+            eventBus.$on("changeGreen",this.changeGreen)
+        },
+        methods:{
+            changeGreen(){
+                this.color="绿色"
+            },
+            fn2(){
+                eventBus.$emit("changeRed")
+            }
+        },
+        template:"<div>{{color}}<button @click='fn2'>变红</button></div>"
+    };
+    let  bro2 = {
+        data(){
+            return {
+                color:"绿色"
+            }
+        },
+        created(){
+            eventBus.$on("changeRed",this.changeRed)
+        },
+        methods:{
+            changeRed(){
+                this.color="红色"
+            },
+            fn1(){
+                // 点击button时，触发eventBus的changeGreen 这个订阅的事件；那么就会执行哥哥组件的changeGreen 方法；
+                eventBus.$emit("changeGreen")
+            }
+        },
+        template:"<div>{{color}}<button @click='fn1'>变绿</button></div>"
+    };
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            bro1,
+            bro2
+        }
+    })
+</script>
+</body>
+</html>

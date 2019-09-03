@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <left></left>
+    <son :y="h"></son>
+</div>
+<template id="a">
+    <!--不会显示在页面上-->
+    <div @click="f">{{msg}}</div>
+</template>
+<template id="b">
+    <span>{{y}}</span>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // 组件化开化：将一个页面拆分成好多组件；组件可以实现复用；减少了代码的冗余；
+    // template: 1.只能有一个根元素2. 可以获取当前组件的数据或methods中的方法  3.会把外面的元素替换掉
+
+    // 全局组件
+    Vue.component("left",{
+        data(){
+            return {
+                msg:"hello"
+            }
+        },
+        methods:{
+            f(){
+
+            }
+        },
+        template:"#a"
+    });
+    let  son={
+        data(){
+            return {}
+        },
+        props:["y"],
+        template:"#b",
+        // 生命周期
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            h:"你好"
+        },
+        components:{
+            son
+        }
+    });
+    // 组件的嵌套
+    // 组件的数据传递
+    // 父传子 : props
+    //
+    // 子传父 : $emit ;把父组件中改变数据的方法放到了子组件的自定义事件上，然后通过$emit发布子组件上订阅的自定义事件；
+</script>
+</body>
+</html>

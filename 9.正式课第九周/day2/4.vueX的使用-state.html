@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <first></first>
+    <second></second>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vuex/dist/vuex.js"></script>
+<script>
+    let state = {
+        count:0,
+        shop:[{name:"奔驰"},{name:"法拉利"}]
+    }
+    // 1.创建store
+    let store = new Vuex.Store({
+        state,
+        mutations:{
+            // 提交的动作；一般用于修改store中的数据；
+            // 需要通过commit进行提交
+            // mutation 这个函数默认的第一个参数就是当前store的状态；
+            add_count(state){// state 代表的是vueX中的state;
+                state.count++;
+            }
+        }
+    });
+    let first = {
+        data(){
+            return {}
+        },
+        methods:{
+            add(){
+                //this.$store.state.count++;
+                //commit 执行传一个字符串，字符串是mutation 的方法名
+                this.$store.commit("add_count");
+            }
+        },
+        // VueX.mapState:将vuex中的state的数据，映射到当前实例的计算属性上；
+        // map
+        computed:Vuex.mapState(["shop"]),
+        // 通过$store进行取值；
+        template:"<div >{{this.$store.state.count}}<button @click='add'>添加</button><li v-for='a in this.shop'>{{a.name}}</li></div>"
+    }
+    let second = {
+        data(){
+            return {}
+        },
+        template:"<div>{{this.$store.state.count}}</div>"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        components:{
+            first,
+            second
+        },
+        store// 当前vue实例就会新增一个$store属性，属性值是一个对象；同时也会给当前的组件新增$store属性
+    });
+</script>
+</body>
+</html>

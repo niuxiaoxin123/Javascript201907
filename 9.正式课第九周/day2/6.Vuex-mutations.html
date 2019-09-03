@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <first></first>
+    <second></second>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vuex/dist/vuex.js"></script>
+<script>
+    let state = {
+        count:0,
+        shop:[{name:"奔驰"},{name:"法拉利"}]
+    };
+    let getters={
+        str(state){
+
+            return state.count%2===0?"偶数":"奇数";
+        },
+        aa(){
+            return 100;
+        }
+    };
+    // 1.创建store
+    let store = new Vuex.Store({
+        state,
+        getters,
+        mutations:{
+            // vuex更改store中状态唯一的方法就是commit;
+            // payload : 载荷
+            // mutation 中都是同步的事务，不支持异步；
+            // 请求：
+            add_count(state,payload){// state 代表的是vueX中的state;
+                setTimeout(()=>{
+                    state.count+=payload.num;
+                },2000)
+            },
+            min_count(state,payload){
+
+            }
+        }
+    });
+    let first = {
+        data(){
+            return {
+                c:200
+            }
+        },
+        methods:{
+            /*add(){
+                // 提交一个mutation
+                this.$store.commit("add_count",{num:10});
+            }*/
+            //...Vuex.mapMutations(["add_count"])// 将 `this.add_count()` 映射为 `this.$store.commit('add_count')`
+            //
+            ...Vuex.mapMutations({
+                add:"add_count"// 将 `this.add()` 映射为 `this.$store.commit('add_count')`
+            })
+        },
+        computed:{
+            ...Vuex.mapState(["shop"]),
+            ...Vuex.mapGetters(["str","aa"])
+        },
+        template:"<div >{{$store.state.count}}{{aa}}<button @click='add({num:c})'>添加</button></div>"
+    }
+    let second = {
+        data(){
+            return {}
+        },
+        template:"<div>{{this.$store.state.count}}{{this.$store.getters.str}}</div>"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data(){
+            return {f:1}
+        },
+        components:{
+            first,
+            second
+        },
+        store
+    });
+</script>
+</body>
+</html>

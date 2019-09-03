@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+
+    <first></first>
+    <second></second>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vuex/dist/vuex.js"></script>
+<script>
+
+    // mutation：不支持异步；
+
+    // actions:
+    // 1. 用来提交mutation
+    // 2.支持异步；
+    let state = {
+        count:0,
+        shop:[{name:"奔驰"},{name:"法拉利"}]
+    };
+    let getters={
+        str(state){
+            return state.count%2===0?"偶数":"奇数";
+        },
+        aa(){
+            return 100;
+        }
+    };
+    // 1.创建store
+    let store = new Vuex.Store({
+        state,
+        getters,
+        mutations:{
+            add_count(state,payload){// state 代表的是vueX中的state;
+                //setTimeout(()=>{
+                    state.count+=payload.num;
+                //},2000)
+            }
+        },
+        actions:{
+            add_Num({commit},a){
+                // commit: 就是store上的commit方法
+                // actions中的方法只能用store上的dispatch来派发
+                setTimeout(()=>{
+                    // 提交mutation
+                    commit("add_count",a);
+                },2000)
+            }
+        }
+
+    });
+    let first = {
+        data(){
+            return {
+                c:200
+            }
+        },
+        methods:{
+            ...Vuex.mapMutations({
+                add:"add_count"
+            }),
+            ...Vuex.mapActions({
+                add1:"add_Num"
+            }),
+            /*a(){
+                this.$store.dispatch("add_Num");
+            }*/
+        },
+        computed:{
+            ...Vuex.mapState(["shop"]),
+            ...Vuex.mapGetters(["str","aa"])
+        },
+        template:"<div >{{$store.state.count}}{{aa}}<button @click='add1({num:c})'>添加</button></div>"
+    }
+    let second = {
+        data(){
+            return {}
+        },
+        template:"<div>{{this.$store.state.count}}{{this.$store.getters.str}}</div>"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data(){
+            return {f:1}
+        },
+        components:{
+            first,
+            second
+        },
+        store
+    });
+</script>
+</body>
+</html>

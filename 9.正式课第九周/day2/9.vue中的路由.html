@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--用于点击，router-link，可以改变路由-->
+    <!--to: 跳转的路由  tag:router-link被渲染成什么标签-->
+    <router-link to="/home"  tag="button">首页</router-link>
+    <router-link to="/login" tag="button">登录页</router-link>
+    <!--用于显示组件-->
+    <router-view></router-view>
+
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    // 根据路由不同，显示不同的组件；
+    // 1. 创建组件
+    // 2. 配置路由映射表
+    let h = {
+        data(){
+            return {
+                con:"首页"
+            }
+        },
+        template:"<div>{{con}}</div>"
+    };
+    let l = {
+        data(){
+            return {
+                logo:"登录"
+            }
+        },
+        template:"<div>{{logo}}</div>"
+    };
+    // 配置路由映射表
+    let routes=[{path:"/home",component:h},{path:"/login",component:l}];
+    // 3.注册映射表
+    let  router = new VueRouter({
+        routes:routes
+    });
+    // 4.路由挂载到根实例
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        router
+    });
+    // 立即购买  ==> 订单支付
+    // 购买页   订单支付页
+
+</script>
+</body>
+</html>

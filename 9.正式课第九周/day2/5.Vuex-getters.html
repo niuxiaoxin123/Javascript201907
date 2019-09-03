@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <first></first>
+    <second></second>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vuex/dist/vuex.js"></script>
+<script>
+    let state = {
+        count:0,
+        shop:[{name:"奔驰"},{name:"法拉利"}]
+    };
+    let getters={// 获取数据，同时对数据进行过滤或处理
+        str(state){// state 是vuex中的state；
+            // 这个函数返回什么，就代表什么；
+            return state.count%2===0?"偶数":"奇数";
+        },
+        aa(){
+            return 100;
+        }
+    };
+    // 1.创建store
+    let store = new Vuex.Store({
+        state,
+        getters,
+        mutations:{
+            // 提交的动作
+            add_count(state){// state 代表的是vueX中的state;
+                state.count++;
+            }
+        }
+    });
+    let first = {
+        data(){
+            return {}
+        },
+        methods:{
+            add(){
+               //this.$store.state.count++;
+                this.$store.commit("add_count");
+            }
+        },
+        // VueX.mapState:将vuex中的state的数据，映射到当前实例的计算属性上；
+        // map
+    // {a:1}
+        computed: {
+            // vuex提供mapState,mapGeters,mapMutations,可以将store中state,getters,mutations都映射到当前实例的computed和methods中；
+            // 这几个函数都返回一个包装后的对象；
+            // ...:展开运算符；把mapState函数返回的对象进行展开；数组成员会作为返回值的属性名
+             //...{shop:[{name:"奔驰"},{name:"法拉利"}]}
+            ...Vuex.mapState(["shop"]),
+            // {str:"偶数",aa:100}
+            ...Vuex.mapGetters(["str","aa"])
+        },
+
+        // 通过$store进行取值；
+        template:"<div >{{this.$store.state.count}}{{this.str}}{{this.aa}}<button @click='add'>添加</button></div>"
+    }
+    let second = {
+        data(){
+            return {}
+        },
+        template:"<div>{{this.$store.state.count}}{{this.$store.getters.str}}</div>"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            first,
+            second
+        },
+        store// 当前vue实例就会新增一个$store属性，属性值是一个对象；同时也会给当前的组件新增$store属性
+    });
+</script>
+</body>
+</html>

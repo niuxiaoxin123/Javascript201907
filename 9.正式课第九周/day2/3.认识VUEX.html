@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{count}}
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    // vue
+    // 数据传递父子（props  emit  on ） 兄弟（event Bus）;
+    // 如果项目组件比较少，不需要使用vuex;如果项目数据复杂，组件比较多，建议使用vuex;
+    // state===>view===>action；
+    // vuex :是一个专门为vue.js设计的状态管理模式，采用了集中存储和管理所有的组件的状态；把所有组件共享的数据抽离成一个store；方便更改或管理；
+
+    // 1. vueX 数据是响应式的；当store中的数据发生改变，所有的依赖的组件都会得到高效的更新；
+    // 2.不能直接修改store中的状态，改变store中的数据唯一的办法是commit对应的mutation；
+
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            count:0
+        },
+        methods:{
+           addCount(){
+               this.count++;
+           }
+        }
+    })
+</script>
+</body>
+</html>
