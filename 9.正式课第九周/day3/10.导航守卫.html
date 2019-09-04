@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home/1" tag="button">第一本</router-link>
+    <router-link to="/home/2" tag="button">第二本</router-link>
+    <router-link to="/home/abcd" tag="button">第三本</router-link>
+    <router-link to="/list">列表</router-link>
+    <router-view></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    // vue的生命周期：8个；
+
+    // 全局的守卫:  beforeEach  afterEach    beforeResolve
+    // 路由的守卫： beforeEnter
+    // 组件的守卫： beforeRouteEnter beforeRouteUpdate  beforeRouteLeave
+
+    let home={
+        template:`<div>这是第{{$route.params.id}}本书</div>`,
+        beforeRouteEnter(to,from,next){
+            // 这个钩子函数执行前还没有创建实例；
+            // console.log(this);// window
+            next(vm=>{
+                // 当执行next时，该回调函数没有立即执行，等到当前组件实例创建好之后，再次触发的这个回调；
+                console.log(vm);// 输出当前的实例
+            });
+        },
+        beforeRouteUpdate(to,from,next){
+            // 当组件被复用时，才会被调用；参数不一样，复用同一个组件时，会执行这个函数；这个可以使用this；this指向当前的实例；
+            console.log(999);
+            // this :
+            next();
+        },
+        beforeRouteLeave(to, from, next){
+            console.log(666);
+            // 当离开这个组件时，钩子函数才会被调用；
+            next();
+        }
+    };
+    let list = {
+        template:"<div>这是列表页</div>"
+    }
+    const routes  =[
+        {path:"/home/:id",component:home},
+        {path:"/list",component:list,beforeEnter:(to,from,next)=>{
+            console.log("list的守卫")
+            next();
+        }}
+    ]
+    const router = new VueRouter({
+        routes
+    });
+    // 全局守卫
+    // router.beforeEach : 全局的路由钩子函数：当路由发生改变时，就会触发该函数；
+    router.beforeEach((to,from,next)=>{
+        /*console.log(to);
+        console.log(from);*/
+        console.log(100);
+        next();
+    });
+  /*  router.beforeEach((to,from,next)=>{
+        /!*console.log(to);
+         console.log(from);*!/
+        console.log(200);
+        next();
+    });*/
+  // 全局的守卫先执行，然后再执行组件内部的守卫，再执行beforeResolve的守卫；
+    router.beforeResolve((to,from,next)=>{
+        console.log(1000);
+        next();
+    });
+    // 全局后置钩子
+    router.afterEach((to,from)=>{
+        console.log(88);
+    });
+
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        router
+    })
+</script>
+</body>
+</html>

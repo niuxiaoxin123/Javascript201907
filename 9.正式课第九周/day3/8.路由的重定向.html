@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home" tag="button">首页</router-link>
+    <router-link to="/list" tag="button">列表页</router-link>
+    <!--当组件进行切换时，会将组件销毁-->
+    <router-view></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home = {
+        template:`<div><button>去列表页</button></div>`
+    };
+    let list = {
+        template:`<div><button>返回</button></div>`
+    }
+    let person={
+        template:`<div><button>404页面</button></div>`
+    };
+    // redirect: 重定向组件；
+    // 1. routes: [{ path: '/a', redirect: '/b' }]
+    // 2. routes: [{ path: '/a', redirect: {name:'路由名字'} }]
+    // 2. routes: [{ path: '/a', redirect:to=>{return ""} }]
+    let routes = [{path:"/home",component:home},{path:"/list",component:list},{path:"/person",component:person},{path:"*",redirect:"/person"}];
+    let router = new VueRouter({
+        routes
+    });
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        router
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--把to改成动态的属性:to={name:组件的name名称}-->
+    <router-link to="/home/1" tag="button">第一本</router-link>
+    <router-link to="/home/2" tag="button">第二本</router-link>
+    <router-link to="/home/abcd" tag="button">第三本</router-link>
+    <router-view></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home={
+        template:`<div>这是第{{$route.params.id}}本书</div>`,
+        /*watch:{
+            '$route'(to,from){
+                //to ：要到达的当前的$route
+                // from : 上一个$route;
+                console.log(to);
+                console.log(from);
+            }
+        }*/
+        beforeRouteUpdate(to,from,next){
+            // to : 即将进入的目标路由对象
+            // from : 离开的路由对象
+            // next : 函数
+            // 1. next();会立即进入目标路由
+            // 2. next(false) : 中断当前的导航；
+            //console.log(to);
+            //console.log(from);
+            // role:3 普通用户
+            // role:1  超级管理员
+            // role:2  讲师 --> 上传视频
+            if(to.params.id==1){
+                next('/home/2');
+                return;
+            }
+            console.log(100);
+            next();
+            //校验这个用户是否有权限访问这个组件
+        }
+    };
+    const routes  =[
+     // 路径冒号后面的是一个变量，这就是动态的路由；而且该路由会把对应的id放到$route的params属性上；属性值是路径实际的值；
+        // 由于渲染的都是同一个home组件，所以组件不再销毁，当然也不再创建，复用了之前的组件，性能高； 但是生命周期钩子函数也不再执行；
+        {path:"/home/:id",component:home}
+    ]
+    const router = new VueRouter({
+        routes
+    });
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        router
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li>
+            <router-link to="/home">首页</router-link>
+        </li>
+        <li>
+            <router-link to="/list">列表页</router-link>
+        </li>
+    </ul>
+    <!--如果该视图没有name,会显示default对应的组件-->
+    <router-view></router-view>
+    <!--name:a会显示components中属性名是a对应的组件-->
+    <router-view name="c"></router-view>
+    <router-view name="b"></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let foo = {
+        template:`<div>foo</div>`
+    }
+    let bar = {
+        template:`<div>bar</div>`
+    }
+    let zoo = {
+        template:`<div>zoo</div>`
+    };
+    const routes=[
+        {path:"/home",components:{
+            default:foo,
+            c:bar,
+            b:zoo
+        }}
+        ];
+    const router = new VueRouter({
+        routes
+    })
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        router
+    });
+</script>
+</body>
+</html>

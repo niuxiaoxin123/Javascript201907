@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home/12" tag="button">首页</router-link>
+    <router-link to="/list" tag="button">列表页</router-link>
+    <router-view></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+
+   // 路由的传参方式：
+   // 1. router-link 配合动态路由
+   // 2. $router.push(`/list/5566`);
+   // 3. name组件params传参
+   // 4. path路径query传参；
+    let home = {
+        template:`<div><button @click="fn2">去列表页</button>{{this.$route.params.id}}</div>`,
+        methods:{
+            /*fn(id){
+                this.$router.push(`/list/${id}`)
+            }*/
+            /*fn1(){
+                this.$router.push({name:"list",params:{id:999}})
+            }*/
+            fn2(){
+                // 如果用path，那么传参需要用query;query传参会显示在路由的后面?id=100;
+                // params 传递的参数是不显示的；不会放到路径上
+                this.$router.push({path:'/list',query:{id:100}})
+            }
+        }
+    };
+    let list = {
+        template:`<div><button>返回</button>{{this.$route.query.id}}</div>`
+    }
+    let person={
+        template:`<div><button>404页面</button></div>`
+    };
+    let routes = [{path:"/home/:id",component:home},{path:"/list/:id",component:list,name:"list"},{path:"/person",component:person}];
+    let router = new VueRouter({
+        mode:"history",
+        routes
+    });
+    let vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        router
+    })
+</script>
+</body>
+</html>

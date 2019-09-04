@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--把to改成动态的属性:to={name:组件的name名称}-->
+    <router-link :to="{name:'first'}" tag="button">首页</router-link>
+    <router-view></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home={
+        template:`<div>这是首页</div>`
+    };
+    const routes  =[
+        {path:"/home",component:home,name:"first"}
+    ]
+    const router = new VueRouter({
+        routes
+    })
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        router
+    })
+</script>
+</body>
+</html>

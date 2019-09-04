@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <son :m="msg"></son>
+    <!--vuerouter提供了两个内置的组件：router-link和router-view-->
+    <router-link to=""></router-link>
+    <router-view></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+
+<script>
+    // 数据传递： 组件之间；
+    // 父传子： props
+    let son={
+        props:["m"],
+        template:`<div>{{m}}</div>`
+    }
+    // 子传父： 自定义事件$emit;在父组件中定义一个修改自己属性的方法，把这个方法以自定事件的方式绑定给子组件，子组件触发动作，从而触发了自定义的事件（$emit）
+
+
+    //  eventBus :
+    let eventBus=new Vue;
+    // 把组件上的方法都通过$on订阅到eventBus上，当执行时，通过$emit派发；
+
+
+    // vuex : 集中式管理存储状态；
+    // state : 数据
+    // getters ：过滤数据
+    // mutations ： 修改数据的方法
+    // actions ： 支持异步，提交的是mutation
+    // modules : 把大型的数据分隔成好多模块；
+
+    let state={
+
+    };
+    let getters={
+        s(){
+            return 100;
+        }
+    };
+    let mutations={
+        add_count(state,payload){
+        }
+    };
+    let actions={
+        incres({commit}){
+            // 支持异步
+            commit("add_count")
+        }
+    };
+    let store = new Vuex.Store({
+        state,
+        getters,
+        mutations,
+        actions
+    });
+
+
+
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            msg:"100"
+        },
+        methods:{
+           dd(){
+               //this.$store.dispatch("incres");
+               // mapActions
+           },
+            ...Vuex.mapActions([""])
+        },
+        store
+    });
+
+    let {a}={a:900};
+    console.log(a);
+
+    function fn({a,b}){// 对象的解构赋值
+        console.log(a);
+    }
+    fn({a:100,b:8})
+
+
+    // 路由
+    //1. 组件
+    //2. 路由映射表
+    let routes = [{path:"/home",component:home}];
+
+    let router = new VueRouter({
+        routes
+    });
+
+    new Vue({
+        router
+    });
+
+
+
+
+</script>
+</body>
+</html>

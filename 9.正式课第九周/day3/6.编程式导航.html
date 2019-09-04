@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--把to改成动态的属性:to={name:组件的name名称}-->
+    <router-link :to="{name:'first'}" tag="button">首页</router-link>
+    <button @click="fn">跳转</button>
+    <router-view></router-view>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home={
+        template:`<div>这是首页</div>`,
+        methods:{
+            fn(){
+                // 在vue的实例中是可以使用$router
+                this.$router.push("")
+            }
+        }
+    };
+    let list={
+        template:`<div>这是列表页</div>`,
+        methods:{
+
+        },
+        mounted(){
+            console.log(this.$route);
+        }
+    };
+    const routes  =[
+        {path:"/home",component:home,name:"first"},
+        {path:"/list",component:list,name:"list"}
+    ];
+    const router = new VueRouter({
+        routes
+    });
+    // vue-router : hash控制；
+    // history : 是window下的一个方法；
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        methods:{
+            fn(){
+                // params : 传参，在路径地址中看不到参数；query是可以看到的；
+                // 如果用path，那么params会被忽略；最好使用query传参；
+              router.push({path:"/list",query:{id:100}});
+            }
+        },
+        router
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <router-link to="/home" tag="button">首页</router-link>
+    <router-link to="/list" tag="button">列表页</router-link>
+    <!--当组件进行切换时，会将组件销毁-->
+    <router-view></router-view>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let home = {
+        methods:{
+            goList(){
+                // this指向当前的组件；由于这个组件是通过路由渲染出来的,那么当前实例的$route属性上存储了一些修改路由的方法
+                // 1. push(路径) ：直接跳转到当前路径对应的路由上
+                // 2. back : 回退到上一次路由上；
+                // 3. go : 返回上一级；
+                //console.log(this);
+                //this.$router.push("/list")
+                //this.$router.go(1);
+            },
+
+        },
+        destroyed(){
+                console.log("销毁")
+        },
+        template:`<div><button @click="goList">去列表页</button></div>`
+    };
+    let list = {
+        methods:{
+           goBack(){
+               //this.$router.back();
+               this.$router.go(-1);
+           }
+        },
+        template:`<div><button @click="goBack">返回</button></div>`
+    }
+    let routes = [{path:"/",component:home},{path:"/home",component:home},{path:"/list",component:list}];
+    let router = new VueRouter({
+        routes
+    });
+    let vm = new Vue({
+        el:"#app",
+        created(){
+            console.log(this);
+        },
+        data:{
+
+        },
+        router
+    })
+</script>
+</body>
+</html>
