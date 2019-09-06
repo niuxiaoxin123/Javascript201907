@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!-- <router-link to="/page/1">第一页</router-link>
+    <router-link to="/page/2">第二页</router-link>
+    <router-link to="/page/3">第三页</router-link> -->
+    <router-link :to="{name:'page',params:{id:1}}">第一页</router-link>
+    <router-link :to="{name:'page',params:{id:2}}">第二页</router-link>
+    <router-link :to="{name:'page',params:{id:3}}">第三页</router-link>
+    <router-link :to="{name:'list',params:{id:4}}">list</router-link>
+    <router-view></router-view>
+</div>
+<template id="page">
+    <div>第{{$route.params.id}}页</div>
+</template>
+<template id="list">
+    <div>list的第{{$route.params.id}}页</div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let page = {
+        template:"#page",
+        watch:{
+            '$route'(to,form){
+                console.log("to",to);
+                console.log("form",form);
+                console.log("$route",this.$route===to);
+            }
+        },
+        created(){
+            console.log(100);
+        },
+        beforeRouteUpdate(to,from,next){
+            console.log("beforeRouteUpdate:",to);
+            next();
+        }
+    };
+    let list = {
+        template:"#list",
+    };
+    const routes = [
+        // {path:"/",redirect:{name:'page',params:{id:1}}},
+        {path:"/page",component:page,name:'page'},
+        {path:"/list",component:list,name:'list'},
+        {path:"/",redirect:{name:'page',params:{id:1}}},
+        // {path:"/page/:id",component:page,name:'page'}
+    ];
+    const router = new VueRouter({routes});
+    let vm  = new Vue({
+        el:"#app",
+        router
+    });
+</script>
+
+</body>
+</html>

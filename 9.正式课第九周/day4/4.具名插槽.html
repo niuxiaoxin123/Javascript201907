@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>这是父组件</h1>
+    <child>
+        <!--在父组件的子组件的标签加行间属性slot-->
+        <div slot="first">菜单一</div>
+        <div>菜单二</div>
+        <div slot="third">菜单三</div>
+        <div slot="first">菜单四</div>
+    </child>
+</div>
+<template id="child">
+    <div>
+        <h2>这是子组件</h2>
+        <!--在子组件中的slot组件上加行间属性name;属性值和父组件中的slot属性值进行匹配，按照顺序显示对应的模板数据-->
+        <!--如果slot没有name属性，那么会默认把父组件中没有slot属性的都显示出来；-->
+        <slot></slot>
+        <slot name="first"></slot>
+        <slot name="third"></slot>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let child = {
+        template:"#child"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            child
+        }
+    })
+</script>
+</body>
+</html>

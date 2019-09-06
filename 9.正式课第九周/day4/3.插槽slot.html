@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h1>这是父组件</h1>
+    <child>
+        <div>菜单一</div>
+        <div>菜单二</div>
+        <div>菜单三</div>
+    </child>
+</div>
+<template id="child">
+    <div>
+        <h2>这是子组件</h2>
+        <!--内置的组件-->
+        <!--将父组件的子组件模板数据进行显示-->
+        <slot></slot>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let child = {
+        template:"#child"
+    }
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            child
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <child>
+        <!--slot-scope:的属性是自定义-->
+        <div slot-scope="abc">
+            {{abc.user}}
+        </div>
+    </child>
+
+</div>
+<template id="child">
+    <div>
+        <h3>这是子组件</h3>
+        <!--slot的传递数据必须是属性名和属性值必须相同的-->
+        <slot :user="user"></slot>
+    </div>
+</template>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    //父组件中的数据都在父作用域下进行编译，子组件在子作用域中编译；
+    // 作用域插槽；解决了父组件可以调用子组件的数据；
+    let child = {
+        template:"#child",
+        data(){
+            return {user:["你好","我好","大家好"]}
+        }
+    };
+    let vm = new Vue({
+        el:"#app",
+        data:{
+
+        },
+        components:{
+            child
+        }
+    });
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 </head>
 <body>
 <div id="app">
-
+    {{this.$store.state.count}}
     <first></first>
     <second></second>
 </div>
@@ -86,7 +86,7 @@
             ...Vuex.mapState(["shop"]),
             ...Vuex.mapGetters(["str","aa"])
         },
-        template:"<div >{{$store.state.count}}{{aa}}<button @click='ff'>添加</button>{{$store.state.a.a}}</div>"
+        template:"<div >{{$store.state.count}}{{aa}}<button @click='ff'>添加</button>{{$store.getters.t}}</div>"
     }
     let second = {
         data(){

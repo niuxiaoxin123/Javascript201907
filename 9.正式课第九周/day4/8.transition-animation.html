@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://unpkg.com/animate.css@3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div id="app">
+    <button @click="show=!show">toggle</button>
+    <!--内置组件：谁要有动画，就加在谁的外面-->
+    <transition name="slide-fade" enter-active-class="animated tada" leave-active-class=" animated bounceOutRight">
+        <div v-if="show">hello</div>
+    </transition>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            show:true
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--这是一个内置的组件-->
+    <!--根据is属性来判断哪个组件被渲染-->
+    <button @click="fn">点一点</button>
+    <!--is属性动态控制显示哪个组件-->
+    <keep-alive>
+        <!--keep-alive:用于缓存组件；如果该组件还会再启用，那么用keep-alive进行优化，提高性能，缓存组件也不再销毁；-->
+        <component v-bind:is="one"></component>
+    </keep-alive>
+
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-router/dist/vue-router.js"></script>
+<script>
+    let first={
+        template:"<div>我是老大</div>",
+        destroyed(){
+            // 组件已经销毁
+            console.log("活着没")
+        }
+    };
+    let second={
+        template:"<div>我是老二</div>"
+    };
+    let third={
+        template:"<div>我是老三</div>"
+    };
+    let vm = new Vue({
+        el:"#app",
+        data:{
+            one:"first"
+        },
+        methods:{
+            fn(){
+                let ary = ["first","second","third"];
+                let index = ary.indexOf(this.one);
+                if(index<2){
+                    this.one = ary[index+1];
+                }else{
+                    this.one = ary[0];
+                }
+            }
+        },
+        components:{
+            first,second,third
+        }
+    })
+</script>
+</body>
+</html>

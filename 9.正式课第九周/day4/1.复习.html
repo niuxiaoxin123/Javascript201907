@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <first :m="msg"></first>
+    <!--内置组件-->
+    <router-link></router-link>
+</div>
+<script>
+    // 组件  ： 全局；
+    // template
+    //Vue.component("",{});
+    // let first = {}  ;
+    // 1.创建组件  2.注册组件   3.使用组件
+    let first ={
+        props:["m"]
+    };
+    let eventBus = new Vue;
+    new Vue({
+        data:{
+            msg:"hello"
+        },
+        components:{
+            first
+        }
+    })
+
+    // 单页面应用开发：
+    // 组件的数据传递：父传子  子传父  兄弟之间数据传递
+    //  子传父： 发布订阅； $emit
+    //  eventBus :$on  $emit
+    //  vuex : 单一的状态树；存储和管理公共数据；
+    //  state  getters  mutations  actions module
+    //  state : 数据   $store.state ==> ...Vuex.mapState([""])
+    //  getters : 过滤数据   $store.getters ==> ...Vuex.mapGetters([""])
+    //  mutations
+    //  actions
+    //  module
+
+
+    //  路由 ： href : 改hash值；url的#后面的东西
+    // hash模式   history模式  browser 浏览器模式
+    const router= new VueRouter({
+        //mode:"history"，
+        routes:[]
+    });
+
+    // router-link  to=""；
+    // router-view : 视图
+
+    // 1. 创建组件
+    // 2. 配置路由映射表
+    // 3. 注册路由
+    // 4. router放到实例中
+
+    // 路由的嵌套
+    // 路由的传参： 3种   :id   params   query
+    // 命名路由：name  path
+    // 命名视图
+    // 守卫： 主要用于登录和权限验证；
+    // 全局守卫： beforeEach  afterEach  beforeResolve
+    // 路由独享守卫 ： beforeEnter
+    // 组件内部守卫： beforeRouteEnter  beforeRouteUpdate  beforeRouteLeave
+
+
+
+
+</script>
+</body>
+</html>
