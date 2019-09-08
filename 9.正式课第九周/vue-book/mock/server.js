@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
     });
   }
 
-  // 获取所有的图书数据
+  // 获取所有的图书数据  list
   if(pathname==='/books'){
     let  addressUrl = './book.json'
     if(query.page==='collect'){
@@ -32,9 +32,9 @@ http.createServer(function (req, res) {
     }
     fs.readFile(addressUrl,'utf8',function (err,data) {
       res.setHeader('content-type','application/json;charset=utf-8');
-      data=JSON.parse(data).reverse()
+      data=JSON.parse(data).reverse();
       return  res.end(JSON.stringify(data));
-    })
+    });
   }
 
   // if(pathname==='/delete'){

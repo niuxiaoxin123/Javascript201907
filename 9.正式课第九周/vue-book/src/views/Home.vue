@@ -7,12 +7,25 @@
 
 <script>
     // 默认导出一个对象
-    import MyHeader from "../components/MyHeader.vue"
+    import MyHeader from "../components/MyHeader.vue";
+    import {getSlider} from "../api/index.js";
     export default {
         data(){
-            return {}
+            return {
+
+            }
         },
-        methods: {},
+        created(){
+            this.slider();
+        },
+        methods: {
+            slider(){
+                getSlider().then(function (data) {
+                    console.log(data);
+                })
+            }
+
+        },
         components: {
             MyHeader
         },

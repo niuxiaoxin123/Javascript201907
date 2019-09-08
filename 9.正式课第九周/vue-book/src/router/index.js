@@ -14,7 +14,6 @@ export default new Router({
         {path:"/collect",component:Collect},
         {path:"/add",component:Add},
         {path:"/",component:Home}
-
     ]
 });
 
