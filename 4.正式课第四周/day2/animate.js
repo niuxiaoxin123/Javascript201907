@@ -204,7 +204,6 @@
         }
 
     };
-
     /**
      *
      * @param curEle 当前执行动画的元素
@@ -248,15 +247,13 @@
             // target  对象 目标位置
             if(target.hasOwnProperty(key)) {
                 // begin {'left': 'left初始值'}
-                begin[key] = utils.css(curEle, key);// 获取属性初始值，在obj新增key属性，初始值赋值给begin的key的属性值
+                begin[key] = parseFloat(utils.css(curEle, key));// 获取属性初始值，在obj新增key属性，初始值赋值给begin的key的属性值
                 // change {'left': 'left变化值'}
 
                 change[key] = target[key] - begin[key]// key属性要变化的值，并且放在change对象中
                 console.log(change[key]);
             }
         }
-        // console.log(begin);
-        // console.log(change);
 
         var time = null; // 记录当前时间
         curEle.zfTimer = setInterval(function () {
@@ -282,6 +279,6 @@
 }
 }, 10);
 }
-//   把函数放进全局下的zfAnimate
-window.zfAnimate = move;
+    //把函数放进全局下的zfAnimate
+    window.zfAnimate = move;
 })();

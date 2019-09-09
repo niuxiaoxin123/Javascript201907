@@ -19,7 +19,7 @@ var utils = (function () {
         }else{
             val=curEle.currentStyle[attr]
         }
-        var reg =/^(width|height|left|top|bottom|right|margin|padding|fontSize)$/;//
+        var reg =/^(width|height|left|top|bottom|right|margin|padding|fontSize|opacity)$/;//
         if(reg.test(attr)){
             val=parseFloat(val);
         }

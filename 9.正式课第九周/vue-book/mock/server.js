@@ -121,7 +121,7 @@ http.createServer(function (req, res) {
     req.on('data',function (chunk) {
       //chunk  buffer  16进制的   汉字  3  ef 2f  3e
       str += chunk;
-    })
+    });
     req.on('end',function () {
       let newBook = JSON.parse(str);
       fs.readFile('./collect.json','utf8',function (err,data) {

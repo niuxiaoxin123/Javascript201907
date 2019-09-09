@@ -18,8 +18,9 @@
 
         }
     }
+    xhr.setRequestHeader("content-type","text/html");
     // post 请求把参数放到了请求体中；
-    xhr.send({username:"aaa",password:"123"});
+    xhr.send();
     // 如果ajax请求是同步，那么这个请求数据不完成，那么下面的代码都不执行；
     //console.log(100);
     // 同异步：
@@ -27,20 +28,17 @@
     // 浏览器是多线程，可以同时执行多个任务；
     //
     
-    $.ajax({
+  /*  $.ajax({
         url :"",
         type:"get",
         async:true,
         data:{username:"aabb",password:"1123"},
-        dataType:"json",
+    dataType:"json",
         cache:true,
         success :function (data) {
 
-        }
-    });
-
-
-
+    }
+    });*/
 
 </script>
 </body>

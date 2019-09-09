@@ -27,7 +27,7 @@
                     <div class="panel-body">
                         <ul class="list-group">
                             <li class="list-group-item" v-for="item in task">
-                                <input type="checkbox" v-model="item.isSelected">
+                                <input type="checkbox" v-model="item.isSelected"  :key="item.id">
                                 <span>{{item.title}}</span>
                                 <button class="btn btn-xs pull-right btn-danger" @click="removeTodo(item)">&bigotimes;</button>
                             </li>

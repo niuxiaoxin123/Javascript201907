@@ -6,5 +6,5 @@ const gre = require("./greet.js");
 let fn = ()=>{
 };
 fn();
-import "../css/main.css";
+import "../css/main.less";
 document.getElementById("root").appendChild(gre());

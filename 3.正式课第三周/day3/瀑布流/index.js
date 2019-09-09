@@ -3,10 +3,13 @@ var aryUl = utils.toArray(uls);
 // 1.请求数据
 var data;
 var xhr = new XMLHttpRequest();
-xhr.open("get","data.txt",false);
+xhr.open("get","data.txt",true);
 xhr.onreadystatechange = function () {
+    // 0 1  2  3  4
     if(xhr.readyState===4&&/^2\d{2}/.test(xhr.status)){
         data=JSON.parse(xhr.responseText)
+        bindHtml();
+        delay();
     }
 }
 xhr.send();
@@ -39,7 +42,6 @@ function bindHtml() {
         aryUl[0].appendChild(curLi);
     }
 }
-bindHtml();
 var index =0;
 // 延迟加载
 var imgs = document.getElementsByClassName("bg");
@@ -89,7 +91,7 @@ function fadeIn(curImg) {
         utils.css(curImg,"opacity",cur);
     },100)
 }
-delay();
+
 // 绑定的是函数的空间地址；
 window.onscroll =function () {
     delay();

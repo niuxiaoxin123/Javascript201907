@@ -63,7 +63,6 @@
             // 实现then的链式写法，需要then返回一个promise的实例；
             return new MyPromise((resolve,reject)=>{
                 this.fulfilledEvent.push(()=>{
-                    console.log(resolveFn);
                     let x = resolveFn();
                     // x.then : 向x的事件池中放入resolve和reject方法；
                     // console.log(resolve);
@@ -86,7 +85,7 @@
         });
         return p1;
     }).then(function () {
-        console.log(p1.fulfilledEvent);
+        //console.log(p1.fulfilledEvent);
         console.log(1);
         // 函数捆绑到上一个then返回的新的实例上；
     })
