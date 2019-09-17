@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <b></b>
+<script>
+    // vue的生命周期
+    // 数据传递 ： props  $emit  $on  eventBus  vuex
+    // 组件
+    // 路由传参： 三种
+    // 路由的钩子函数
+
+    // v-model   v-if  v-else v-else-if   v-for  v-show v-bind  v-on  v-html v-text  v-cloak  v-once
+
+    // new Vue({}) data methods  components 8个钩子函数  template
+    // computed  watch  el  render
+
+
+    // vue的生命周期 ： $nextTick
+
+    //vue的组件
+
+    // 1.全局组件   2.局部组件
+   let h = 1;
+   // 数据放到全局各个组件也可以实现共享；
+    // 1.如果是全局，那么当修改之后，视图不会自动更新
+    // 2. 变量容易冲突
+    Vue.component("a",{});
+    let b = {
+        data(){
+            return {}
+        },
+        methods:{
+            fn(){
+                h=100;
+                console.log(h);
+            }
+        }
+    };
+    new Vue({
+        components:{
+            b
+        }
+    });
+    // 组件的数据传递；vuex :state  getters mutations actions  module
+    // 路由： hash  history ; router-link  router-view
+    // 路由参数 ： 1. :id   2.params  3. query
+    // 导航守卫： 常用于登录注册和权限校验；
+
+
+    // webpack  : 1.解析es6\es7编译成浏览器识别的语言；2. loader   3.
+    // entry   output  plugin   module   plugins  4. 可以实现代码的压缩
+
+    // 项目 ：模块化开发
+</script>
+</body>
+</html>
