@@ -26,7 +26,7 @@ http.createServer(function (req, res) {
 
   // 获取所有的图书数据  list
   if(pathname==='/books'){
-    let  addressUrl = './book.json'
+    let  addressUrl = './book.json';
     if(query.page==='collect'){
       addressUrl = './collect.json'
     }

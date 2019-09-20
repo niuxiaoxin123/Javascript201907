@@ -15,5 +15,8 @@ new Vue({
     el:"#app",
     router,
     store,
-    render: h => h(App)
+    /*render: function (createElement){
+        return createElement(App)
+    }*/
+    render:h=>h(App)
 });

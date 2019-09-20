@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // node  ： node.js 是运行服务器上的一门语言；
+    // 一个完整的项目应该有前端和后端的代码；
+    // 后端的代码会启动一个服务，监听客户端发来的请求，然后进行不同的处理；
+    // 浏览器的地址栏 、 link的href  ,img和script的src,还有ajax($.ajax ,axios)
+
+    // 后端可以把静态文件，数据库中的数据统一返回给客户端；经常会实现增删改查；
+
+
+    // 模块： 自定义  第三方模块 核心模块
+    // require  module.exports
+    // npm i  yarn add ...
+    // fs  http  url
+    http.createServer(function (req,res) {
+        // 当请求一次，就会执行一次；
+        // req: 请求信息  req.url url.parse(req.url,true)
+        // res : res.end()
+    }).listen(8080,function () {
+
+    });
+
+    // express
+    let app = express();
+    app.use(express.static());//处理相应目录下的静态资源文件；
+    // 不用设置响应头的content-type
+    app.get("/list/:id",function (req,res) {
+        // req.pathname
+
+        res.send();
+    });
+    app.post();
+    app.all();
+    app.param("id",function () {
+        
+    });
+    app.listen(8080,function () {
+
+    })
+
+
+
+</script>
+</body>
+</html>
