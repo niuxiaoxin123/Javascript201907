@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="box">
+    <a href="add.html">新增客户</a>
+    <h4>
+        <span class="w50">编号</span>
+        <span class="w150">姓名</span>
+        <span class="w50">年龄</span>
+        <span class="w200">电话</span>
+        <span class="w200">地址</span>
+        <span class="w150">操作</span>
+    </h4>
+    <ul class="list" id="list">
+        <li>
+            <span class="w50">123</span>
+            <span class="w150">566</span>
+            <span class="w50">34</span>
+            <span class="w200">电话</span>
+            <span class="w200">地址</span>
+            <span class="w150">操作</span>
+        </li>
+
+    </ul>
+
+</div>
+<script src="ajax.js"></script>
+<script>
+   // 前后端分离
+    // 前端开发时 [{}]
+    // {a:[{},{}]}
+    // 接口文档：开发之前确定接口文档；接口文档包含接口的数量，请求的方式，请求需要的参数，返回的数据结构，返回的数据键值对的含义；
+
+    // 国企
+    // 传统型公司： 一般不加班
+    // 互联网公司 ： 加班
+
+    // 技术岗： IT  会计  硬件
+    // 文职类： 秘书，前台，客服 ，HR
+    // 销售岗：
+
+    // 产品--> 设计-->需求分析-->估期--> 前端--->后端-->前后端联调（测试接口是否可以跑通）---> 内部测试--->测试环境（通知测试人员测试）--->bug提交系统（禅道系统）---> 上线
+
+    let list = document.getElementById("list");
+    ajax({
+        url:"/getList",
+        type:"get",
+        success:function (data) {
+            // data: 服务器响应回来的数据；
+            bindHtml(JSON.parse(data.data));
+        }
+    });
+    function bindHtml(data) {
+        let str=``;
+        for(let i=0;i<data.length;i++){
+            let cur = data[i];
+            str+=`<li>
+                        <span class="w50">${cur.id}</span>
+                        <span class="w150">${cur.name}</span>
+                        <span class="w50">${cur.age}</span>
+                        <span class="w200">${cur.phone}</span>
+                        <span class="w200">${cur.address}</span>
+                        <span class="w150">
+                            <a href="add.html?id=${cur.id}">修改</a>
+                            <a href="javascript:;" customId="${cur.id}">删除</a>
+                        </span>
+                  </li>`
+        }
+        list.innerHTML = str;
+    }
+
+    // 删除每一条客户；先写前端，发请求，然后写服务；
+   // 由于给每一个删除按钮绑定点击事件，给最外层的ul绑定，利用事件委托的原理，进行处理
+   // 给每一个删除加上自定义属性customId;
+    list.onclick = function (e) {
+        let id = e.target.getAttribute("customId");// 获取当前用户的id;
+        if(e.target.nodeName==="A"){
+            ajax({
+                url:`/removeInfo?id=${id}`,
+                type:"get",
+                success:function (data) {
+                    if(data.code===0){
+                        e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
+                    }
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

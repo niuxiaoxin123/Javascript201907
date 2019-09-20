@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div class="box2">
+    <ul>
+        <li>
+            <span>姓名</span>
+            <input type="text" id="username">
+        </li>
+        <li>
+            <span>年龄</span>
+            <input type="text" id="password">
+        </li>
+        <li>
+            <span>电话</span>
+            <input type="text" id="telephone">
+        </li>
+        <li>
+            <span>地址</span>
+            <input type="text" id="address">
+        </li>
+        <li>
+            <input type="submit" id="submit">
+        </li>
+    </ul>
+</div>
+<script src="ajax.js"></script>
+<script>
+    let username = document.getElementById("username")
+    let password = document.getElementById("password")
+    let telephone = document.getElementById("telephone")
+    let address = document.getElementById("address");
+    let submit = document.getElementById("submit");
+    let id = window.location.search.split("=")[1];
+    if(id){
+        //如果存在这样的键值对，才发送请求
+       ajax({
+           url:`/getInfo?id=${id}`,
+           type:"get",
+           success:function (data) {
+               username.value= data.data.name;
+               password.value= data.data.age;
+               telephone.value=data.data.phone;
+               address.value= data.data.address;
+           }
+       });
+    }
+    submit.onclick = function () {
+        if(id){
+            // 如果是有id，那么就是在修改数据
+            ajax({
+                url:"/updateInfo",
+                type:"post",
+                data:{
+                    id:id,// 告诉需要修改哪条数据
+                    name:username.value,
+                    age:password.value,
+                    phone:telephone.value,
+                    address:address.value
+                },
+                success:function (data) {
+                    if(data.code===0){
+                        window.location.href="index.html";
+                    }
+                }
+            });
+            return;
+        }
+        ajax({
+            url:"/addInfo",
+            type:"post",
+            data:{
+                name:username.value,
+                age:password.value,
+                phone:telephone.value,
+                address:address.value
+            },
+            success:function (data) {
+                if(data.code===0){
+                    // 可以让页面直接跳转到对应的页面上；
+                    window.location.href="index.html";
+                }
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
