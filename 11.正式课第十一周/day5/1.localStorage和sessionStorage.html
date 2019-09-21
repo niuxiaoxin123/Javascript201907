@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 本地存储 ： localStorage
+    // 会话存储 ： sessionStorage
+    // cookie : cookie属于http协议一部分；也不是客户端也不是后端
+    // session ： 是后端会话一种机制；
+
+
+    // localStorage : 本地存储；
+    // 场景： 在页面A中有一个值需要传递给页面B，页面每形成一个都会有一个单独的全局作用域window；全局变量在页面之间也不能互相访问；如果需要进行数据共享，只能通过再次请求服务器来实现共享；
+
+    // 页面与页面之间该如何进行通信；
+    // localStorage: 永久性存储；存储到了电脑的硬盘和内存中；
+    // 1. 当关闭页面或者是浏览器时，存储的内容不会消失；
+    // 2. 如果属性名重名，那么后面的会将前面的覆盖；
+    // 3. 存储大小一般小于5M；
+    // 4.value 会自动调用toString执行，返回再存储到本地；
+    /*localStorage.setItem("table",18);
+    localStorage.setItem("cup",[10,78,9]);*/
+
+    // 2. 获取localStorage中的值
+    /*let val = localStorage.getItem("table");
+    console.log(val);*/
+
+
+    // 3. 删除某一个key值 removeItem
+
+    //localStorage.removeItem(key);
+
+    // 4. localStorage.clear : 清空所有的key和value;
+    /*localStorage.setItem("ta",20);
+    localStorage.setItem("t",20);
+    localStorage.setItem("a",20);
+    localStorage.setItem("ble",20);*/
+
+
+    // sessionStorage: 只在当前页面中可以获取；不能在页面之间进行通信；会话存储；当关闭浏览器或页面时，存储自动消失；
+    // sessionStorage.setItem(key,value)
+    sessionStorage.setItem("name","zfpx");
+    // sessionStorage.removeItem(key)
+
+    // sessionStorage.getItem(key)
+
+
+    sessionStorage.clear();
+
+    // webStorage:
+
+
+</script>
+</body>
+</html>

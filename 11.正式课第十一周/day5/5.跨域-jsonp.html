@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 跨域 ： 同源和非同源；
+    // 同源： 域名，端口，协议
+    // 域名<===>对应一个服务器的IP地址；===> 端口；===> 项目的文件夹；
+    // 非同源 ： 只要域名，端口，协议有一个不同，那么就会跨域；
+    // ajax不能跨域请求；
+    // 在实际的工作场景中，经常会出现非同源的跨域请求；
+    // JSONP：
+    // script的src 是非同源的；可以从一个项目访问另一个项目的数据；
+    // 当成功返回数据之后，会默认调用跨域地址后面callback对应的函数；但是JSONp只能发送get请求；
+    // script 和img的src 和link的href都是非同源；可以实现跨域的请求
+    /*function fn(data) {
+        // data：就是跨域请求回来的数据；
+        // 当数据请求成功之后，会把从服务器拉取的数据传递给回调函数的第一个参数；
+    }
+
+    $.ajax({
+        url:"/getList",
+        dataType:"jsonp"
+    })*/
+
+    function jsonp({url,params,cb}) {
+        return new Promise(function (resolve,reject) {
+            // 动态生成的script；
+            window[cb]=function (data) {
+                resolve(data);
+                document.body.removeChild(script);
+            };
+            let script  = document.createElement("script");
+            let str = `${url}?`;
+            for(let key in params ){
+                str+=key+"="+obj[key]+"&";
+            }
+            str+="cb="+cb;
+            script.src=str;
+            document.body.appendChild(script);
+        });
+    };
+    jsonp({url:"",params:{user:12223},cb:"fn"}).then(function (data) {
+        // data 就是跨域请求传递过来的数据；
+    })
+
+    $.ajax({
+        url:"",
+        dataType:"jsonp"
+    })
+
+
+
+
+
+</script>
+<script src="http://www.baidu.com?callback=fn"></script>
+</body>
+</html>

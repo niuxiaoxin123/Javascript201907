@@ -27,11 +27,10 @@ let server = http.createServer(function (req,res) {
         //console.log(query["id"]);
          arr=arr.filter(item=>item.id!=query["id"]);
         //console.log(arr);
-        fs.writeFileSync(path,JSON.stringify(arr),"utf8");
+         fs.writeFileSync(path,JSON.stringify(arr),"utf8");
          obj.msg="删除成功";
          res.end(JSON.stringify(obj));
     }
-
     // 新增客户
     if(pathname==="/addInfo"){
         let str = ``;

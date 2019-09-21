@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // cookie : 存储到了客户端； 安全性比较低；cookie容易被篡改；被攻击；
+    // session ： 是服务器一种存储的信息的机制；服务器为了防止cookie不安全性，发明session的方式；session不会发送给客户端；
+
+    // 当登录时，前端先把用户名和密码发送给服务器，服务器会生成session文件，这个session文件存储了当前用户的信息以及登录的状态，同时还会生成一个session-id,而且session-id会进行加密操作，服务器把session-id写入cookie，一并发送给客户端；当客户端再次发送请求时，会携带着cookie,cookie含有session-id;服务器把根据解析出来session-id去session文件去查看当前的状态，用户的信息等，如果能匹配完整，那么就继续下面的请求操作；
+
+
+
+    // token 机制；
+
+    // 当用户输入用户名和密码发送给服务器，服务器如果验证成功，就会生成一个token；返回客户端；
+    // 客户端将token放到cookie，以后每次发送请求，都会携带上当前这个token；服务器接收到token会验证token是否和后端存储的token是否一致；如果一致，验证成功，继续下面的请求处理；
+
+    // 前端接收到token之后，存储到本地，以后每次发请求，都以参数的形式发送给服务器；或者是吧token放到请求头中，发送给服务器；
+</script>
+</body>
+</html>

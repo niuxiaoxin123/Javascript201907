@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 为什么要有cookie?;
+    // http是没有状态的；当用户登录之后，服务器没有办法判断当前是登录过还是未登录状态；所以http发明了cookie；所以说cookie是http的一部分；所以cookie既不是前端，也不是后端，http是传输在前端后端的一种传输协议；但是后端可以设置修改cookie；前端可以获取到cookie；
+
+    // 前端每次发请求，都可以把cookie携带到请求头中；
+
+    // 以登录为例： 当点击登录时，请求把用户名和密码发送给服务器，服务器会进行用户名和密码的校验，如果校验成功，在后端会调用set-cookie生成一个cookie，并且后端把cookie种到了前端；以后前端发送的所有的请求都会携带当前这个cookie;这个cookie就包含了状态，判断是否登录，判断是否过期；还有一些用户的信息等等；
+
+    // document.cookie 去设置cookie；
+    document.cookie="aaa=123";
+    // console.log(document.cookie);
+    let data = new Date(new Date().getTime() + 5000);
+    // console.log(data);
+    document.cookie="deng=789; expires="+ data.toUTCString();
+    // expires: 设置过期时间
+
+    var setCookie = function (name, value, day) {
+           if(day !== 0){     //当设置的时间等于0时，不设置expires属性，cookie在浏览器关闭后删除
+                var expires = day * 24 * 60 * 60 * 1000;
+                var date = new Date(+new Date()+expires);
+                  document.cookie = name + "=" + escape(value) + ";expires=" + date.toUTCString();
+                }else{
+                 document.cookie = name + "=" + escape(value);
+               }
+          };
+    setCookie("dianshan","7888",0)
+
+    // 获取cookie
+    var getCookie = function (name) {
+        var arr;
+        var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    };
+    let str  = "deng=789; expires="+ data.toUTCString();
+    console.log(str.match(new RegExp("(^| )deng=([^;]*)(;|$)")));
+
+    // match : 是字符串的方法，传一个正则；返回一个正则捕获当前字符串的结果；
+    document.cookie="bbb=999;";
+    document.cookie="ccc=888";
+    console.log(document.cookie);
+
+    // 如果设置的时间比当前时间还小，那就不会显示；
+    setCookie("bbb","",-1);
+</script>
+</body>
+</html>

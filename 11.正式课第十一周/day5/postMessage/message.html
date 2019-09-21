@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" style="width:100px;height:100px;background: red"></div>
+<script>
+
+    window.addEventListener("message",function (e) {
+        // 把另一个页面的信息传递给当前的事件对象中data属性；
+        console.log(e.data)
+    });
+</script>
+</body>
+</html>

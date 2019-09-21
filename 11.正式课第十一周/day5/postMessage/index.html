@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<iframe src="http://localhost:3000/message.html" id="frm"></iframe>
+<input type="button" value="ok" onclick="run()">
+<script>
+    var num =100;
+    function run() {
+        let frm = document.getElementById("frm");
+        frm.contentWindow.postMessage({name:1},"http://localhost:3000");
+    }
+</script>
+</body>
+</html>

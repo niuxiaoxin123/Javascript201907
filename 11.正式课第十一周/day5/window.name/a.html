@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // name :
+
+    function crosDomainGetData(url,callback){
+        var state = 0;
+        var iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.onload = function(){
+            if(state === 1){
+                //代理页面成功过后，读取window.name
+                var data = iframe.contentWindow.name;
+                callback&&callback(data);
+                //销毁iframe
+                iframe.contentWindow.document.write('');
+                iframe.contentWindow.close();
+                document.body.removeChild(iframe);
+            } else {
+                //第一次加载数据页面成功后，切换代理页面
+                state = 1;
+                iframe.contentWindow.location = 'http://localhost:63342/Javascript201907/11.正式课第十一周/day5/window.name/proxy.html';
+            }
+        }
+        document.body.appendChild(iframe);
+    }
+    crosDomainGetData('http://localhost:3000/b.html',function(data){
+       console.log(data)
+    })
+
+</script>
+</body>
+</html>
