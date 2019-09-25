@@ -44,3 +44,23 @@
     position: absolute;
     right:-360px;
 }
+
+/*焦点样式*/
+.focus{
+    position: absolute;
+    bottom: 10px;
+    width:100%;
+    left:50%;
+    margin-left: -30px;
+}
+.focus li{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background: #666666;
+    float: left;
+}
+.focus li.active{
+    background: #31C27C;
+}

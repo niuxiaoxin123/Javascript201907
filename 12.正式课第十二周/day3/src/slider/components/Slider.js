@@ -30,7 +30,6 @@ export default class Slider extends React.Component{
             this.slider.style.transitionDuration="0.5s";
             this.setState({index:2});
             return;
-
         }
         this.setState({index:this.state.index+step});
     }
@@ -49,7 +48,7 @@ export default class Slider extends React.Component{
         return <div className="container" onMouseOver={()=>{clearInterval(this.timer)}} onMouseOut={()=>{this.go()}}>
             <SliderItem imgs={this.props.img} index={this.state.index} slider={this.getSlider}/>
             <SliderArrow turn={this.turn}/>
-            <SliderDots/>
+            <SliderDots imgs={this.props.img} index={this.state.index} turn={this.turn}/>
         </div>
     }
 }
