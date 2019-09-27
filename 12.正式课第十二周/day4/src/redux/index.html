@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div id="title"></div>
+    <div id="content"></div>
+</div>
+<script>
+    // state是一个全局的变量
+    let state = {
+        title:{color:"red",text:"下午别睡觉"},
+        content:{color:"yellow",text:"上午也不睡觉"}
+    };
+    // 渲染title的方法；获取全局变量state中的数据，渲染title中；
+    function renderTitle() {
+        let title = document.getElementById("title");
+        title.innerHTML=state.title.text;
+        title.style.color=state.title.color;
+    }
+    function renderContent() {
+        let content = document.getElementById("content");
+        content.innerHTML=state.content.text;
+        content.style.color=state.content.color;
+    }
+    function renderApp() {
+        renderTitle();
+        renderContent();
+    }
+    renderApp();
+    // 在redux中规定，必须调用dispatch更改state中的数据；在真实项目中，这个action的type一般是通过const定义的常量，并且是大写的；
+    const CHANGE_TITLE_TEXT="CHANGE_TITLE_TEXT";
+    const CHANGE_CONTENT_COLOR="CHANGE_CONTENT_COLOR";
+    function dispatch(action) {
+        switch(action.type){
+            case CHANGE_TITLE_TEXT:
+                // 当解构出现重名时，那么后面的会把前面的覆盖；
+                state={...state,title:{...state.title,text:action.text}};
+                break;
+            case CHANGE_CONTENT_COLOR:
+                state={...state,content:{...state.content,color:action.color}}
+        }
+    }
+    setTimeout(function () {
+        //state.title.text="国庆节放假了";
+        dispatch({type:CHANGE_TITLE_TEXT,text:"国庆节放假了"});
+        dispatch({type:CHANGE_CONTENT_COLOR,color:"black"});
+        renderApp();
+    },3000)
+
+    // createStore  : getState   dispatch   subscribe   reducer
+
+</script>
+</body>
+</html>

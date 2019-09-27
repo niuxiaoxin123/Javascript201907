@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <div id="title"></div>
+    <div id="content"></div>
+</div>
+<script>
+    const CHANGE_TITLE_TEXT="CHANGE_TITLE_TEXT";
+    const CHANGE_CONTENT_COLOR="CHANGE_CONTENT_COLOR";
+
+    function createStore(reducer) {
+        // createStore的state定义，不赋值；
+        let state;
+        // 在createStore作用域中返回创建一个函数，这个函数需要返回新的对象，新的对象和state一样；
+        // 深克隆 :将当前作用域的state复制一份一模一样的对象；进行深度克隆，并且外界不能对直接对当前作用域state对象进行修改；
+        let getState=()=>JSON.parse(JSON.stringify(state));
+        function dispatch(action) {
+            // reducer 第一次执行是undefined；
+            state=reducer(state,action)
+        }
+        dispatch({});//初始化state;
+        return {
+            getState:getState,
+            dispatch:dispatch
+        }
+    }
+    let initState={
+        title:{color:"red",text:"下午别睡觉"},
+        content:{color:"yellow",text:"上午也不睡觉"}
+    };
+    // reducer是自己更改数据的逻辑；
+    // 如果state是undefined，那么initState会替代state;
+    function reducer(state=initState,action) {
+        switch(action.type){
+            case CHANGE_TITLE_TEXT:
+                // 当解构出现重名时，那么后面的会把前面的覆盖；
+                return {...state,title:{...state.title,text:action.text}};
+
+            case CHANGE_CONTENT_COLOR:
+                return {...state,content:{...state.content,color:action.color}};
+            default:
+                return state;
+        }
+    }
+    let store = createStore(reducer);// store和私有作用域的state指向了同一个空间地址；外界一样可以修改state状态；
+    // 渲染title的方法；获取全局变量state中的数据，渲染title中；
+    function renderTitle() {
+        let title = document.getElementById("title");
+        title.innerHTML=store.getState().title.text;
+        title.style.color=store.getState().title.color;
+    }
+    function renderContent() {
+        let content = document.getElementById("content");
+        content.innerHTML=store.getState().content.text;
+        content.style.color=store.getState().content.color;
+    }
+    function renderApp() {
+        renderTitle();
+        renderContent();
+    }
+    renderApp();
+    // 在redux中规定，必须调用dispatch更改state中的数据；在真实项目中，这个action的type一般是通过const定义的常量，并且是大写的；
+
+
+    setTimeout(function () {
+        //state.title.text="国庆节放假了";
+        store.dispatch({type:CHANGE_TITLE_TEXT,text:"国庆节放假了"});
+        store.dispatch({type:CHANGE_CONTENT_COLOR,color:"black"});
+        renderApp();
+    },3000)
+    // createStore  : getState   dispatch   subscribe   reducer
+/*    let obj = {
+        name:"张三",
+        hobby:{a:"爬山",b:"放假"}
+    }
+    let a = {};
+    /!*for(let key in obj){
+        a[key]=obj[key];
+    }*!/
+    a= JSON.parse(JSON.stringify(obj));
+    a.hobby.b="游泳";
+    console.log(obj);*/
+
+</script>
+</body>
+</html>
