@@ -90,7 +90,7 @@
         store.dispatch({type:CHANGE_TITLE_TEXT,text:"国庆节放假了"});
         store.dispatch({type:CHANGE_CONTENT_COLOR,color:"black"});
 
-    },3000)
+    },3000);
     // createStore  : getState   dispatch   subscribe   reducer
 /*    let obj = {
         name:"张三",
@@ -103,8 +103,6 @@
     a= JSON.parse(JSON.stringify(obj));
     a.hobby.b="游泳";
     console.log(obj);*/
-
-
 function foo(state=100,num) {
     console.log(state);
 }
