@@ -1,0 +1,25 @@
+@import '../../../../common/css/mixins.scss';
+.downLinePage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: #fff;
+    .downLineCard {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: px2rem(-316);
+        transform: translateX(-50%);
+        img {
+            width: px2rem(600);
+            height: px2rem(423);
+        }
+        p {
+            font-size: px2rem(50);
+            padding-top: px2rem(124);
+        }
+    }
+}

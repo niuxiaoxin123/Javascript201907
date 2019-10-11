@@ -1,0 +1,247 @@
+@import '../../common/css/mixins.scss';
+
+.wrapper {
+    .info {
+        $blue: #6492E3;
+
+        .header {
+            height: px2rem(398);
+            padding-left: px2rem(324);
+            background: no-repeat px2rem(32) 60%;
+            background-size: px2rem(193) auto;
+            background-color: #fff;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+
+            h5 {
+                margin-top: px2rem(125);
+                font-size: px2rem(64);
+                line-height: px2rem(70);
+                color: #333;
+            }
+
+            p {
+                font-size: px2rem(48);
+                line-height: px2rem(42);
+                margin-top: px2rem(41);
+                color: #999;
+            }
+            .couponEntry {
+                position: absolute;
+                top: px2rem(125);
+                right: px2rem(45);
+                img{
+                    width: px2rem(318);
+                }
+                .filter {
+                    -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+                    filter: grayscale(100%);
+                }
+            }
+            
+        }
+
+        .header1 {
+            background-image: url(./imgs/apply.png);
+        }
+
+        .header2 {
+            background-image: url(./imgs/submitSuccess.png);
+        }
+
+        .header3 {
+            background-image: url(./imgs/submitFail.png);
+        }
+
+        .header4 {
+            background-image: url(./imgs/verifySuccess.png);
+        }
+
+        .header5 {
+            background-image: url(./imgs/verifyFail.png);
+        }
+
+        .header6 {
+            background-image: url(./imgs/success.png);
+        }
+
+        .progress {
+            margin-top: px2rem(20);
+            background-color: #fff;
+            height: px2rem(430);
+
+            h5 {
+                padding-top: px2rem(44);
+                padding-left: px2rem(46);
+                font-size: px2rem(48);
+                line-height: px2rem(70);
+                color: #151515;
+            }
+
+            ul {
+                position: relative;
+                margin: px2rem(45) px2rem(112);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .line {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(0, -50%);
+                    width: 100%;
+                    height: px2rem(10);
+                    background-color: #ECEBEB;
+
+                    i {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        background-color: $blue;
+                    }
+
+                    .inline2,
+                    .inline5 {
+                        width: 33.3%;
+                    }
+
+                    .inline4 {
+                        width: 66.6%;
+                    }
+
+                    .inline6 {
+                        width: 100%;
+                    }
+                }
+
+                li {
+                    position: relative;
+                    z-index: 999;
+
+                    * {
+                        position: absolute;
+                    }
+
+                    .dotOuter {
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                    .dotInner {
+                        display: none;
+                    }
+
+                    .name {
+                        top: px2rem(55);
+                        left: 50%;
+                        transform: translate(-50%);
+                        width: px2rem(190);
+                        height: px2rem(81);
+                        line-height: px2rem(90);
+                        text-align: center;
+                        box-sizing: border-box;
+                    }
+
+                    .time {
+                        top: px2rem(166);
+                        left: 50%;
+                        transform: translate(-50%);
+                        width: px2rem(190);
+                        text-align: center;
+                    }
+                }
+
+                .pass {
+                    .dotOuter {
+                        width: px2rem(50);
+                        height: px2rem(50);
+                        border-radius: px2rem(50);
+                        background-color: $blue;
+                    }
+
+                    .dotInner {
+                        display: block;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: px2rem(20);
+                        height: px2rem(20);
+                        border-radius: px2rem(20);
+                        background-color: #D8E7FF;
+                    }
+
+                    .name {
+                        background: url(./imgs/blueBorder.png) no-repeat center;
+                        background-size: contain;
+                        color: $blue;
+                    }
+
+                }
+
+                .fail {
+                    .dotOuter {
+                        width: px2rem(30);
+                        height: px2rem(30);
+                        border-radius: px2rem(30);
+                        background-color: #ff5555;
+                    }
+
+                    .name {
+                        color: #ff5555;
+                        background: url(./imgs/redBorder.png) no-repeat center;
+                        background-size: contain;
+                    }
+                }
+
+                .holder {
+                    .dotOuter {
+                        width: px2rem(30);
+                        height: px2rem(30);
+                        border-radius: px2rem(30);
+                        background-color: #dcdcdc;
+                    }
+
+                    .name {
+                        color: #999;
+                    }
+                }
+            }
+        }
+
+        .applytime,
+        .applyNo {
+            font-size: px2rem(48);
+            color: #333;
+            line-height: px2rem(42);
+            padding-top: px2rem(57);
+            padding-left: px2rem(46);
+            padding-bottom: px2rem(52);
+            border-top: 1px solid #f1f1f1;
+            background-color: #fff;
+
+            span {
+                margin-right: px2rem(33);
+            }
+        }
+
+        .tel {
+            display: block;
+            width: 100%;
+            padding-top: px2rem(60);
+            padding-bottom: px2rem(60);
+            text-align: center;
+            font-size: px2rem(54);
+            color: $blue;
+            line-height: px2rem(70);
+            border-top: 1px solid #f1f1f1;
+            background-color: #fff;
+        }
+    }
+    .recommend {
+        margin-top: px2rem(20);
+    }
+}

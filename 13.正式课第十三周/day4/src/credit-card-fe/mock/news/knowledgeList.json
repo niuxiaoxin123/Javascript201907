@@ -1,0 +1,80 @@
+{
+    "knowledgeList": {
+        "ret": "success",
+        "msg": "处理成功",
+        "content": {
+            "list": [
+                {
+                    "title": "111标题标题11标题标题11标题标题11标题标题11标题标题11标题标题11标题标题11标题标题标题",
+                    "thumbnail": [
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg",
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg",
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg"
+                    ],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                },
+                {
+                    "title": "111标题标题标题,111标题标题标题,111标题标题标题,111标题标题标题,111标题标题标题,111标题标题标题,",
+                    "thumbnail": [
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg"
+                    ],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                },
+                {
+                    "title": "111标题标题标题",
+                    "thumbnail": [],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                },
+                {
+                    "title": "111标题标11标题标题11标题标题11标题标题11标题标题11标题标题11标题标题题标题",
+                    "thumbnail": [],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                },
+                {
+                    "title": "111标题标题标题",
+                    "thumbnail": [
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg",
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg",
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg"
+                    ],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                },
+                {
+                    "title": "111标题标题标11标题标题11标题标题11标题标题11标题标题11标题标题题",
+                    "thumbnail": [
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg"
+                    ],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                },
+                {
+                    "title": "111标题标题11标题标题11标题标题标题",
+                    "thumbnail": [
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg"
+                    ],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                },
+                {
+                    "title": "111标题标题11标题标题标题",
+                    "thumbnail": [
+                        "https://banker.cdn.bcebos.com/bbey7_1568194138.jpg"
+                    ],
+                    "modifyTime": "2018-06-11",
+                    "params": "a=1&b=1&c=1"
+                }
+            ],
+            "paginator": {
+                "pageNo": 1,
+                "totalCount": 30,
+                "pageSize": 5,
+                "totalPages": 5
+            }
+        }
+    }
+}

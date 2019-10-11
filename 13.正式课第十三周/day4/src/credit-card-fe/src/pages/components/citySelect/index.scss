@@ -1,0 +1,141 @@
+@import '../../../common/css/mixins.scss';
+
+.cityW {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 10000;
+  .cityContent {
+    background: #fff;
+    line-height: px2rem(153);
+    @include font-dpr(15px);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+
+  }
+  .cityTitle {
+    background: #F5F5F5;
+    padding-left: px2rem(50);
+    height: px2rem(115.9);
+    line-height: px2rem(115.9);
+    color: #999999;
+    @include font-dpr(14px);
+  }
+  .location {
+    padding: px2rem(50) 0 px2rem(50) px2rem(52);
+    span {
+      display: block;
+      width: px2rem(344.6);
+      height: px2rem(132.3);
+      line-height: px2rem(132.3);
+      text-align: center;
+      border: 1px solid #EEEEEE;
+      border-radius: px2rem(6.6);
+
+    }
+    p {
+        @include font-dpr(15px);
+    }
+    i {
+        @include font-dpr(16px);
+        color: #999;
+        margin-right: px2rem(13);
+    }
+  }
+
+  li {
+    text-align: center;
+    height: px2rem(153);
+    float: left;
+    line-height: px2rem(153);
+    span {
+      display: inline-block;
+      border: 1px solid #979797;
+      border-radius: 50%;
+      letter-spacing: 0.77px;
+      width: px2rem(150);
+      height: px2rem(150);
+      line-height: px2rem(150);
+      box-sizing: border-box;
+    }
+  }
+  .hotCityList {
+    background: #fff;
+    //热门城市列表的左边距改这
+    padding: px2rem(58) 0 px2rem(16.3) px2rem(52);
+    li {
+      width: px2rem(344.6);
+      height: px2rem(132.3);
+      line-height: px2rem(132.3);
+      border: 1px solid #EEEEEE;
+      border-radius: px2rem(6.6);
+      margin-right: px2rem(33);
+      margin-bottom: px2rem(33.7);
+      letter-spacing: 0.77px;
+      &:nth-child(3n) {
+        // border-right: 0 none;
+        margin-right: 0;
+      }
+
+    }
+    .addLi {
+      border-color: #fff;
+    }
+  }
+  .allCity {
+    padding: px2rem(58) 0 px2rem(91) px2rem(52);
+    li {
+      margin-right: px2rem(97);
+
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+
+    }
+    .select {
+      border: none;
+      color: #fff;
+      background: #508DF9;
+    }
+  }
+  .groupCity {
+    margin-bottom: px2rem(52);
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+  .openList {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    li {
+      height: px2rem(152);
+      float: none;
+      width: 100%;
+      text-align: left;
+      border-bottom: 1px solid #EEEEEE;
+      &:first-child {
+        margin-top: px2rem(22);
+      }
+    }
+  }
+  // .close {
+  //     position: absolute;
+  //     top: 0;
+  //     right: .1rem;
+  //     color: #666;
+  //     padding: 0 px2rem(30);
+  //     @include font-dpr(15px);
+  // }
+}

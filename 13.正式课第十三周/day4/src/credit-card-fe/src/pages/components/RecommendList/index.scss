@@ -1,0 +1,55 @@
+@import '../../../common/css/mixins.scss';
+.flex {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+.recommendList{
+    padding: px2rem(75) px2rem(48) 0;
+    box-sizing: border-box;
+    background: #fff;
+    @include font-dpr(14px);
+    line-height: px2rem(70);
+    color:#333;
+    h2 {
+        height: px2rem(66);
+        margin-bottom: px2rem(37);
+        color: #333;
+        @include font-dpr(19px);
+        font-family: PingFangSC-Medium;
+    }
+   
+    .cardsList {
+        justify-content: space-between;
+        text-align: center;
+
+        &>a {
+            width: 33%;
+            // padding: px2rem(59.6) 0 px2rem(24);
+            box-sizing: border-box;
+            .cardDesc {
+                padding-bottom: px2rem(65);
+            }
+            h3 {
+                @include font-dpr(14px);
+                @include clamp(1);
+                margin-top: px2rem(-30);
+                color: #333;
+            }
+            p {
+                @include font-dpr(12px);
+                color: #666;
+            }
+            img {
+                width: 100%;
+                // height: px2rem(192);
+                // padding-top: px2rem(22);
+            }
+            &:nth-child(2){
+                // margin: 0 px2rem(23);
+            }
+        }
+    }
+}

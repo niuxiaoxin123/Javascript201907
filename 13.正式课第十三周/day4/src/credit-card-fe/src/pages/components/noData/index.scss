@@ -1,0 +1,24 @@
+@import '../../../common/css/mixins.scss';
+
+.noData {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    padding-top: 50%;
+    justify-content: center;
+    @include font-dpr(16px);
+    color: #666;
+    text-align: center;
+    box-sizing: border-box;
+
+    &>div {
+        width: 100%;
+
+        &>img {
+            width: px2rem(339);
+            margin-bottom: px2rem(57);
+        }
+    }
+}

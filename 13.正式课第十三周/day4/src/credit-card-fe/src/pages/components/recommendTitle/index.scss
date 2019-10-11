@@ -1,0 +1,12 @@
+@import '../../../common/css/mixins.scss';
+.title {
+    font-family: PingFangSC-Semibold;
+    color: #333333;
+    letter-spacing: px2rem(3.3);
+    background: #FFF;
+    border-bottom: 1px solid #f1f1f1;
+    height: px2rem(120);
+    line-height: px2rem(120);
+    @include font-dpr(18px);
+    padding-left: px2rem(33);
+}

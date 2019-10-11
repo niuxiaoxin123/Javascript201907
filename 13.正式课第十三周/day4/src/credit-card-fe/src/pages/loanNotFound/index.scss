@@ -1,0 +1,41 @@
+@import "../../common/css/mixins.scss";
+$highlight-color: #6492E3;
+
+.notfoundpage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    .notfoundcard {
+        flex: 1;
+        h3 {
+            width: px2rem(800);
+            height: px2rem(450);
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            span {
+                display: inline-block;
+                width: 100%;
+                height: px2rem(300);
+                img {
+                    height: 100%;
+                }
+            }
+            p {
+                height: px2rem(100);
+                line-height: px2rem(100);
+                font-size: px2rem(45);
+                color: #666;
+            }
+        }
+    }
+}

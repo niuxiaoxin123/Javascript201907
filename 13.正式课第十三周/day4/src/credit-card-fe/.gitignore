@@ -1,0 +1,8 @@
+output
+.svn
+/node_modules
+.vscode/
+.idea/
+*/.DS_Store
+.DS*
+

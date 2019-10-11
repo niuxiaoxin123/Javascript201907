@@ -1,0 +1,63 @@
+@import '../../common/css/mixins.scss';
+
+.centerPageWrapper {
+    background: #FFF;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    // display: flex;
+    // align-items: center;
+    p {
+        font-family: PingFangSC-Regular;
+        color: #151515;
+        line-height: px2rem(70);
+    }
+
+    img {
+        width: px2rem(500);
+        margin-bottom: px2rem(54);
+    }
+
+    .slogan {
+        color: #333;
+        @include font-dpr(13px);
+        padding: 0 px2rem(250);
+        text-align: left;
+        margin-top: px2rem(50);
+    }
+}
+
+.content {
+    width: 100%;
+    padding: 0;
+    // padding-bottom: px2rem(400);
+    margin-top: 60%;
+}
+
+.desc,
+.slogan {
+    @include font-dpr(16px);
+}
+
+.link {
+    @include font-dpr(14px);
+    position: fixed;
+    bottom: px2rem(100);
+    width: 100%;
+
+    a {
+        color: #6F90DD;
+    }
+}
+
+.mailWrapper {
+    width: 650px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.mailContent {
+    margin-top: 50%;
+}

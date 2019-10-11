@@ -1,0 +1,24 @@
+{
+    "couponDetail": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "startDate": "2018-01-01",
+            "endDate": "2019-01-31",
+            "couponImage": "https://banker.cdn.bcebos.com/3wr0p_1568193371.png",
+            "couponImage2": "https://banker.cdn.bcebos.com/1talp_1568193415.png",
+            "orderNo": "20180818115053000925",
+            "stockCode": "xy003",
+            "deliverStatus": "1",
+            "couponContent": "aiqiyi",
+            "couponId": "123",
+            "valid": "1",
+            "grantContent": [
+                {
+                    "label": "激活码",
+                    "text": "xy003"
+                }
+            ]
+        }
+    }
+}

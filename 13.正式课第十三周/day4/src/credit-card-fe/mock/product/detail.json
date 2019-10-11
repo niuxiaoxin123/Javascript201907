@@ -1,0 +1,60 @@
+{
+    "productDetail": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "productName": "e白领通",
+            "bankNameCh": "宁波银行",
+            "bankLogo": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+            "loanCategory": "信用贷",
+            "desc": "年轻人的专属信用卡",
+            "keyword": [
+                "无抵押抵押",
+                "额度高度高",
+                "下款快款快"
+            ],
+            "minAmount": "1000",
+            "maxAmount": "20000",
+            "period": "6-18期",
+            "interest": {
+                "max": "28%",
+                "min": "12%",
+                "unit": "year"
+            },
+            "fee": {
+                "unit": "year",
+                "value": "0%"
+            },
+            "onetimeCharge": "0%",
+            "loanRealTime": "实时放款需要转",
+            "mortgage": "无抵押",
+            "applyProcess": [
+                {
+                    "title": "在线提交",
+                    "icon": "https://banker.cdn.bcebos.com/cardlogo/fad3o_1556614221.png"
+                },
+                {
+                    "title": "外呼搜信",
+                    "icon": "https://banker.cdn.bcebos.com/cardlogo/fad3o_1556614221.png"
+                },
+                {
+                    "title": "在线提交",
+                    "icon": "https://banker.cdn.bcebos.com/cardlogo/fad3o_1556614221.png"
+                },
+                {
+                    "title": "通知审批",
+                    "icon": "https://banker.cdn.bcebos.com/cardlogo/fad3o_1556614221.png"
+                }
+            ],
+            "applyCondition": [
+                "具有完全民事行为能力的中华人民共和国大陆公民（暂不含甘孜、阿坝地区）",
+                "年龄 20（含）至 60（含）周岁",
+                "具有稳定收入的受薪或自雇人士。",
+                "年龄 20（含）至 60（含）周岁",
+                "具有稳定收入的受薪或自雇人士。"
+            ],
+            "provideMaterial": "身份证、银行卡",
+            "applyUrl": "/product/center/product/apply?productId=1001&schemaType=XD"
+        }
+    }
+}

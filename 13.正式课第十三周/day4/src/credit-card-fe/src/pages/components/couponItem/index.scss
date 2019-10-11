@@ -1,0 +1,37 @@
+
+@import '../../../common/css/mixins.scss';
+
+
+.couponItem {
+    position: relative;
+    img{
+        width: 100%;
+        // min-height: px2rem(447);
+    }
+    .invalidImg {
+        -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+        filter: grayscale(100%);
+    }
+    p{
+        position: absolute;
+        margin-left: px2rem(35);
+        position: absolute;
+        bottom: px2rem(60);
+        color: #333;
+        @include font-dpr(12px);
+    }
+    .new {
+        width: px2rem(84);
+        min-height: px2rem(132);
+        position: absolute;
+        top: 0;
+        right: px2rem(48);
+    }
+    .pass {
+        position: absolute;
+        width: px2rem(226);
+        top: px2rem(26);
+        right: px2rem(20);
+    }
+    
+}

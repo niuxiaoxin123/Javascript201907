@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>领券手机号码绑定</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <script src="https://wappass.baidu.com/static/touch/js/api/wrapper.js"></script>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            background-color: #fff;
+            border-bottom: 1px solid #e9e9e9;
+            box-sizing: border-box;
+            font-size: 18px;
+            font-family: PingFangSC-Semibold;
+            color: #333;
+            letter-spacing: 0;
+        }
+
+        .back {
+            position: absolute;
+            margin: 13px 0 13px 18px;
+            left: 0;
+            width: 11px;
+            height: 18px;
+            text-align: left;
+        }
+
+        .contentWrapper {
+            padding: 10px;
+            margin-top: 40px;
+        }
+
+        .content {
+            height: 167px;
+            text-align: center;
+            background-image: url("/creditstatic/credit-card-fe/img/couponBgImg.png");
+            background-size: 100% 147px;
+            background-repeat: no-repeat;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .content span {
+            top: 52%;
+            position: relative;
+        }
+
+        #smsLogin .pass-form-item-pasword {
+            border: 1px solid #999999;
+            -webkit-appearance:none;/*清除ios默认圆角*/
+            border-radius:0;
+            width: 100%;
+        }
+
+        #smsLogin #PASSP__1__passwordWrapper .pass-form-inputWrapper {
+            border: none;
+            padding-top: 2px;
+        }
+
+        #smsLogin .pass-form-inputWrapper {
+            border: 1px solid #999999;
+            width: 100%;
+            -webkit-appearance:none;/*清除ios默认圆角*/
+            border-radius:0;
+        }
+
+        #smsLogin .pass-button {
+            background-color: #3f89ec;
+            margin-top: 47px;
+            line-height: 55px;
+            font-size: 21px;
+            font-family: PingFangSC-Medium;
+            color: #FFFFFF;
+        }
+
+
+        #smsLogin .pass-form-agreement {
+            text-align: center;
+            margin-top: 18px;
+            font-family: PingFangSC-Regular;
+        }
+        #smsLogin .pass-form-agreement a {
+            color: #6492E3;
+        }
+
+        #smsLogin .pass-text-input {
+            font-size: 16px;
+        }
+
+        #smsLogin .pass-button-send {
+            font-size: 14px;
+            width: 108px;
+            line-height: 22px;
+            display: inline-block;
+            height: 22px;
+            margin: 9px 10px 9px 0;
+            padding: 0 0;
+            background-color: #3f89ec;
+            color: #FFFFFF;
+        }
+
+        .footer {
+            width: 100%;
+            background: #fff;
+            font-size: 12px;
+            text-align: center;
+            padding: 0 8px;
+            color: #666666;
+            margin-top: 55px;
+            padding: 15px 0;
+        }
+
+        .tip {
+            padding: 0 10px;
+            font-family: PingFangSC-Medium;
+            color: #333333;
+
+        }
+
+        .tip span {
+            border-left: 5px solid #3f89ec;
+            font-size: 16px;
+        }
+
+        #couponTitle {
+            font-family: PingFangSC-Semibold;
+            /*color: #FCDC06;*/
+            color: #FFE081;
+            letter-spacing: 0;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <img class="back" onclick="handleBack()" src="/creditstatic/credit-card-fe/img/loginBack.svg"/>
+    <span>领券手机号码绑定</span>
+</div>
+<div class="contentWrapper">
+    <div class="content">
+        <span id="couponTitle"> </span>
+    </div>
+</div>
+<div class="tip">
+    <span>&nbsp;&nbsp;请输入手机号码以便后续礼券领取</span>
+</div>
+<div id="smsLogin"></div>
+<div class="footer">
+    提示：办卡成功可凭绑定手机号登录【百度信用卡中心】领取礼券
+</div>
+<script type="text/javascript">
+    var smsLogin;
+    var locationUrl = location.search.replace('?', '');
+    var searchObj = getSearchString(locationUrl);
+    var successJumpUrl = decodeURIComponent(searchObj.fromu);
+    var tid = searchObj.tid || '';
+
+    var requestFrom = getSearchString(successJumpUrl).requestFrom || '';
+
+    passport.use('smsLogin', {
+        defaultCss: true,
+        library: true,
+    }, function (magic) {
+        smsLogin = new magic.passport.smsLogin({
+            product: 'bkr',
+            u: successJumpUrl,
+            // overseas: 1,
+            subpro: 'bkr',
+            adapter: 3, // 隐藏titlebar
+            autosuggest: true,//是否自动提示
+            staticPage: location.protocol + '//' + location.hostname + ':' + location.port + '/creditlogin/v3Jump.html',
+            smsLoginText: '提交'
+        });
+        smsLogin.render('smsLogin');
+        smsLogin.on('loginSuccess', function (rsp) {
+            rsp.returnValue = false;
+            tongji('bp_loginSuccess');
+            setTimeout(function () {
+                location.replace(successJumpUrl);
+            }, 50);
+        });
+        smsLogin.on('loginError', function (rsp) {
+            tongji('bp_loginError');
+        })
+
+    });
+
+    var couponText = decodeURIComponent(searchObj.activitytext) || '';
+
+    var titleEl = document.getElementById('couponTitle');
+    titleEl.innerText = couponText;
+
+    function getSearchString(url) {
+        if (!url) {
+            url = location.search.replace('?', '');
+        }
+        var obj = {};
+        if (url) {
+            var arr = url.split('&');
+            for (var i = 0; i < arr.length; i++) {
+                var tmpArr = arr[i].split('=');
+                obj[decodeURIComponent(tmpArr[0])] = decodeURIComponent(tmpArr[1]);
+            }
+        }
+
+        return obj;
+    }
+
+    function handleBack() {
+        window.history.go(-1);
+    }
+
+    function getTime() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth();
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        var time = ''
+            + year
+            + (month < 9 ? '0' + (month + 1) : month + 1)
+            + (day < 10 ? '0' + day : day)
+            + (hour < 10 ? '0' + hour : hour)
+            + (minute < 10 ? '0' + minute : minute)
+            + (second < 10 ? '0' + second : second);
+        return time;
+    };
+
+
+    function tongji(type) {
+        var bid = getCookie('BAIDUID') || '';
+        var data = {
+            'es': 'bp_home',
+            'ek': type,
+            'et': getTime(),
+            'ev': {
+                'url': location.href,
+                'chn': requestFrom,
+                'tid': tid,
+                'bid': bid
+            }
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/creditserver/event/upload',
+            data: JSON.stringify(data),
+            contentType: 'application/json'
+        })
+    }
+
+    function getCookie(name) {
+        var strcookie = document.cookie;//获取cookie字符串
+        var arrcookie = strcookie.split("; ");//分割
+        for (var i = 0; i < arrcookie.length; i++) {
+            var arr = arrcookie[i].split("=");
+            if (arr[0] == name) {
+                return arr[1];
+            }
+        }
+        return "";
+    }
+
+</script>
+<script src="https://hm.baidu.com/hm.js?54639110b36d3ad14625acf4589e9217" type="text/javascript"></script>
+</body>
+</html>

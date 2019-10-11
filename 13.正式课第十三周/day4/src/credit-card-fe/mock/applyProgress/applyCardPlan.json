@@ -1,0 +1,131 @@
+{
+    "applyCardPlan": {
+            "ret": 0,
+            "msg": "",
+            "content": {
+                "cfgCode": "123456",
+                "bankList": [{
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3051"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3052"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3053"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3054"
+                    }, {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3055"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3052"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3053"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3054"
+                    }, {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3055"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3052"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3053"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3054"
+                    }, {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3055"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3052"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3053"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3054"
+                    }, {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3055"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3052"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3053"
+                    },
+                    {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3054"
+                    }, {
+                        "logoUrl": "https://banker.cdn.bcebos.com/bank_3051_2c1ng_1568086388.png",
+                        "bankName": "招商银行",
+                        "processUrl": "https://www.jd.com/",
+                        "bankCode": "3055"
+                    }
+                ]
+            }
+    }
+}

@@ -1,0 +1,161 @@
+@import '../../../common/css/mixins.scss';
+
+.loanContainer {
+    width: 100%;
+    overflow: hidden;
+    background-color: #FFF;
+
+    .divider {
+        background: #F1F1F1;
+        height: px2rem(30);
+        width: 200%;
+        margin-left: -50%;
+    }
+}
+
+li.cardItem {
+    padding: px2rem(42) px2rem(30);
+    position: relative;
+    @include font-dpr(14px);
+    font-family: PingFangSC-Regular;
+    line-height: 1;
+    list-style: none;
+    background: #FFF;
+    border-bottom: px2rem(3) solid #F1F1F1;
+
+    section {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .cardImg {
+        width: px2rem(122);
+        position: relative;
+        padding-right: px2rem(30);
+
+        .cardLogo {
+            width: px2rem(122);
+            height: px2rem(122);
+            vertical-align: middle;
+        }
+    }
+
+    .cardTxt {
+        width: px2rem(1059);
+        overflow: hidden;
+
+        .keywords {
+            @include font-dpr(13px);
+            display: inline-block;
+            width: 50%;
+            line-height: px2rem(67);
+
+            .keywordsItem {
+                float: left;
+                padding: px2rem(6) px2rem(32);
+                color: #FFF;
+                background: $theme-color;
+                border-radius: px2rem(12) px2rem(12) px2rem(12) 0;
+
+                &:not(:last-child) {
+                    margin-right: px2rem(34);
+                }
+            }
+
+
+            // .keywordsItem {
+            //     width: px2rem(150);
+            //     overflow: hidden;
+            //     padding: 0 px2rem(9);
+            //     background: #0B8CED;
+            //     text-align: center;
+            //     color: #FFF;
+
+            //     &:not(:last-child) {
+            //         margin-right: px2rem(20);
+            //     }
+            //     vertical-align: middle;
+            //     border-radius: px2rem(12) px2rem(12) px2rem(12) 0;
+            // }
+        }
+
+        p {
+            color: #999;
+            @include font-dpr(13px);
+            @include clamp(1);
+            line-height: 1.2;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .cardHeader {
+            display: flex;
+            width: 200%;
+            align-items: center;
+            height: px2rem(90);
+        }
+
+        h5 {
+            font-family: PingFang-SC-Medium;
+            @include font-dpr(16px);
+            @include clamp(1);
+            color: #333;
+            padding-bottom: px2rem(6);
+            margin-right: px2rem(33);
+            line-height: px2rem(72);
+        }
+    }
+
+    .cardContentLeft {
+        display: inline-block;
+        font-family: PingFang-SC-Medium;
+        @include font-dpr(14px);
+        letter-spacing: px2rem(-2.7);
+
+        .itemDesc {
+            color: #999;
+            padding-bottom: px2rem(15);
+            padding-top: px2rem(6);
+            line-height: px2rem(60);
+        }
+
+        .itemLimit {
+            color: #333;
+            line-height: px2rem(60);
+        }
+
+        span {
+            color: #0B8CED;
+            margin-left: px2rem(33);
+        }
+    }
+
+    .cardContentRight {
+        float: right;
+        display: inline-block;
+        font-family: PingFang-SC-Medium;
+        margin-top: px2rem(64);
+        text-align: right;
+
+        p {
+            text-overflow: unset;
+        }
+
+        p:nth-child(1) {
+            text-align: right;
+        }
+
+        p:nth-child(2) {
+            text-align: center;
+        }
+
+        .loanRate {
+            @include font-dpr(19px);
+            color: #FC7069;
+            line-height: px2rem(81);
+            margin-right: px2rem(12);
+        }
+    }
+}

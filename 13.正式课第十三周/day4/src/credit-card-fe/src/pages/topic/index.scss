@@ -1,0 +1,11 @@
+@import '../../common/css/mixins.scss';
+.topicContent {
+    position: relative;
+}
+.topicContent>img {
+    width: 100%;
+    display: block;
+    &:not(:first-child){
+        margin-top: -1px;
+    }
+}

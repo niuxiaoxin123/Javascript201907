@@ -1,0 +1,51 @@
+@import '../../common/css/mixins.scss';
+$body-bg: #f5f5f5;
+$highlight-color: #6492E3;
+$body-color: #333;
+
+$border-color: #f1f1f1;
+$white: #ffffff;
+$light-gray: #999999;
+.konwlgWrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+
+    h2 {
+        color: #333;
+    }
+}
+
+.hole {
+    height: px2rem(0);
+}
+
+.walletHole {
+    height: px2rem(145);
+}
+
+.knowledgeList {
+    padding: 0 px2rem(51);
+    color: #000;
+    
+}
+.noKnowlge {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    font-size: px2rem(54);
+    bottom: px2rem(100);
+    color: #666;
+}
+.articleListPaper {
+    position: absolute;
+    top: 0;
+    bottom: px2rem(157);
+    left: 0;
+    right: 0;
+}

@@ -1,0 +1,91 @@
+@import '../../../common/css/mixins.scss';
+$highlight-color: #6492E3;
+$border-color: #ddd;
+li {
+    list-style: none;
+}
+li.cardItem {
+    padding: px2rem(60) px2rem(49);
+    border-bottom: px2rem(3) solid $border-color;
+    position: relative;
+    @include font-dpr(14px);
+    font-family: PingFangSC-Regular;
+    line-height: 1;
+
+    // a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    // }
+
+    .cardImg {
+        position: relative;
+        .cardLogo {
+            width: px2rem(450);
+            min-height: px2rem(300);
+            transform: scale(1.24);
+            vertical-align: middle;
+        }
+    }
+    .cardTxt {
+        width: px2rem(635);
+        h5 {
+            margin-bottom: px2rem(34);
+            @include font-dpr(16px);
+            @include clamp(1);
+            color: #000;
+            padding-bottom: px2rem(6);
+        }
+
+        p {
+            padding-bottom: px2rem(35);
+            color: #999;
+            @include clamp(1);
+            line-height: 1.2;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .highLight {
+            color: $highlight-color;
+            font-weight: 700;
+        }
+    }
+
+    .activityWrapper {
+        position: absolute;
+        top: px2rem(20);
+        right: px2rem(0);
+        width: px2rem(167);
+        span {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            @include font-dpr(11px);
+            line-height: px2rem(62);
+            text-align: center;
+            color: #fff;
+        }
+        img{
+            width: px2rem(167);
+        }
+    }
+    .keywordsW {
+        @include font-dpr(12px);
+        .keywordsItem {
+            padding: 0 px2rem(12);
+            background: #FFF7ED;
+            border: 1px solid #FFA32B;
+            color: #FFA32B;
+            &:not(:last-child){
+                margin-right: px2rem(20);
+            }
+            line-height: 1.7;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: px2rem(4);
+        }
+    }
+}

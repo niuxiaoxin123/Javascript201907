@@ -1,0 +1,328 @@
+{
+    "creditIndex": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "sid": "ljk:004",
+            "bannerCode": "123456",
+            "toolbar": [
+                {
+                    "imageUrl": "https://banker.cdn.bcebos.com/cardlogo/dy0eb_1549086455_quickApply.jpg",
+                    "jumpUrl": "https://xinyongka.baidu.com?w=https://xinyongka.baidu.com"
+                },
+                {
+                    "imageUrl": "https://banker.cdn.bcebos.com/cardlogo/3zc2j_1549086469_applyProcess.jpg",
+                    "jumpUrl": "/bkrcredit/applyCardSchedule?w=https://xinyongka.baidu.com"
+                }
+            ],
+            "bannerList": [{
+                "image": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/uls7g_1549938856_中信首页-无白边.jpg",
+                "jumpUrl": "https:\/\/xinyongka.baidu.com\/bkrcredit\/cardDetail?cardCode=3007001",
+                "requestFrom": "all"
+            }],
+            "avatar": "https:\/\/ss0.baidu.com\/7Ls0a8Sm2Q5IlBGlnYG\/sys\/portrait\/item\/00000000.jpg",
+            "activityList": [
+                {
+                    "activityId": "320175",
+                    "activityTitle": "顶部资源1",
+                    "url": "https:\/\/xinyongka.baidu.com\/bkrcredit\/cardDetail?cardModelCode=5103",
+                    "imgUrl": "https://banker.cdn.bcebos.com/cardlogo/uls7g_1549938856_%E4%B8%AD%E4%BF%A1%E9%A6%96%E9%A1%B5-%E6%97%A0%E7%99%BD%E8%BE%B9.jpg",
+                    "isJumpable": "1"
+                }
+            ],
+            "bankList": [{
+                "url": "\/bkrcredit\/cardList?fbank=3015",
+                "bankCode": "3015",
+                "bankNameCh": "兴业银行",
+                "orderNum": "1",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3015_lyrtn_1568086387.png",
+                "serviceTel": "95561",
+                "tags": "",
+                "score": -1
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3050",
+                "bankCode": "3050",
+                "bankNameCh": "交通银行",
+                "orderNum": "5",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3050_ww3ms_1568086388.png",
+                "serviceTel": "95559",
+                "tags": "",
+                "score": -5
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3051",
+                "bankCode": "3051",
+                "bankNameCh": "招商银行",
+                "orderNum": "10",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3051_2c1ng_1568086388.png",
+                "serviceTel": "95555",
+                "tags": "",
+                "score": -10
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3017",
+                "bankCode": "3017",
+                "bankNameCh": "浦发银行",
+                "orderNum": "12",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3017_sky63_1568086391.png",
+                "serviceTel": "4008208788",
+                "tags": "",
+                "score": -12
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3007",
+                "bankCode": "3007",
+                "bankNameCh": "中信银行",
+                "orderNum": "16",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3007_ihbp0_1568086387.png",
+                "serviceTel": "4008895558",
+                "tags": "",
+                "score": -16
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3059",
+                "bankCode": "3059",
+                "bankNameCh": "光大银行",
+                "orderNum": "17",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3059_hasdy_1568086392.png",
+                "serviceTel": "4007888888",
+                "tags": "",
+                "score": -17
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3060",
+                "bankCode": "3060",
+                "bankNameCh": "华夏银行",
+                "orderNum": "25",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3060_bq5td_1568086392.png",
+                "serviceTel": "4006695577",
+                "tags": "",
+                "score": -25
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3073",
+                "bankCode": "3073",
+                "bankNameCh": "盛京银行",
+                "orderNum": "26",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/wp112_1564044968.png",
+                "serviceTel": "95337",
+                "tags": "",
+                "score": -26
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3018",
+                "bankCode": "3018",
+                "bankNameCh": "广发银行",
+                "orderNum": "27",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3018_tbd69_1568086388.png",
+                "serviceTel": "95508",
+                "tags": "",
+                "score": -27
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3019",
+                "bankCode": "3019",
+                "bankNameCh": "平安银行",
+                "orderNum": "29",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/pnh3u_1552964845_口袋银行logo_meitu_2.png",
+                "serviceTel": "95511",
+                "tags": "",
+                "score": -29
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3054",
+                "bankCode": "3054",
+                "bankNameCh": "建设银行",
+                "orderNum": "30",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3054_5ovo1_1568086390.png",
+                "serviceTel": "4008200588",
+                "tags": "",
+                "score": -30
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3064",
+                "bankCode": "3064",
+                "bankNameCh": "上海银行",
+                "orderNum": "35",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3064_hknez_1568086395.jpg",
+                "serviceTel": "95594",
+                "tags": "",
+                "score": -35
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3058",
+                "bankCode": "3058",
+                "bankNameCh": "民生银行",
+                "orderNum": "36",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3058_sut95_1568086392.png",
+                "serviceTel": "4006695568",
+                "tags": "",
+                "score": -36
+            }, {
+                "url": "\/bkrcredit\/cardList?fbank=3053",
+                "bankCode": "3053",
+                "bankNameCh": "工商银行",
+                "orderNum": "38",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/bank_3053_z1wyd_1568086389.png",
+                "serviceTel": "95588",
+                "tags": "",
+                "score": -38
+            }],
+            "currentRecommendList": [{
+                "cardCode": "0903",
+                "cardName": "平安车主金卡",
+                "cardLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/0903.png@w_252",
+                "cardAldLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_0903_logoAldUrl.png@w_417",
+                "title": "加油享88折优惠",
+                "bgColor": "dfc0c0|c9a8a8",
+                "url": "\/creditserver\/apply\/redirect?cardCode=0903",
+                "keywords": ["审批快", "享意外险"]
+            }, {
+                "cardCode": "5001",
+                "cardName": "交行标准金卡",
+                "cardLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_5001_logoUrl.jpg@w_252",
+                "cardAldLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_5001_logoAldUrl.jpg@w_417",
+                "title": "周五享5%优惠",
+                "bgColor": "daa970|ebd5a2",
+                "url": "\/creditserver\/apply\/redirect?cardCode=5001",
+                "keywords": ["居家必备", "加油优惠", "积分多"]
+            }, {
+                "cardCode": "5103",
+                "cardName": "招行Young卡",
+                "cardLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/5103.jpg@w_252",
+                "cardAldLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_5103_logoAldUrl.jpg@w_417",
+                "title": "100%取现额度",
+                "bgColor": "2F2F2F|686869",
+                "url": "\/creditserver\/apply\/redirect?cardCode=5103",
+                "keywords": ["100%提现", "易下卡", "热门卡"]
+            }],
+            "hotTopicList": [{
+                "url": "\/bkrcredit\/topic?topicId=881",
+                "title": "小白专区",
+                "subTitle": "门槛低-易批卡",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_8donj_1568086324.png@w_132"
+            }, {
+                "url": "\/bkrcredit\/topic?topicId=882",
+                "title": "车主专享",
+                "subTitle": "加油享-折扣",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_yqvkb_1568086323.png@w_132"
+            }, {
+                "url": "\/bkrcredit\/topic?topicId=883",
+                "title": "大额提现",
+                "subTitle": "100%-提现",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_06mko_1568086325.png@w_132"
+            }, {
+                "url": "\/bkrcredit\/cardList?frights=319971",
+                "title": "标准卡",
+                "subTitle": "全方位-优惠",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_f1oes_1568086325.png@w_132"
+            }, {
+                "url": "\/bkrcredit\/cardList?frights=319974",
+                "title": "游戏视频卡",
+                "subTitle": "尽享-会员优惠",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_r3v57_1568086327.png@w_132"
+            }, {
+                "url": "\/bkrcredit\/cardList?frights=319968",
+                "title": "商超卡",
+                "subTitle": "消费-返现",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_oiuu4_1568086323.png@w_132"
+            }, {
+                "url": "\/bkrcredit\/cardList?frights=319969",
+                "title": "航空卡",
+                "subTitle": "行程-延误险",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_vmu9f_1568086323.png@w_132"
+            }, {
+                "url": "\/bkrcredit\/cardList?frights=319973",
+                "title": "境外消费卡",
+                "subTitle": "尊享VIP-特权",
+                "icon": "https:\/\/banker.cdn.bcebos.com\/ad_ie8tt_1568086325.png@w_132"
+            }],
+            "notice": [
+                {
+                    "announceContent": "浦发简约白金卡，消费送红包，最高领4888元刷卡金，100%有奖。",
+                    "jumpUrl": null
+                }
+            ],
+            "cardList": [{
+                "cardName": "招行Young卡",
+                "rightsList": [{
+                    "rightsDesc": "新户达标送899元拉杆箱",
+                    "highlight": "1"
+                }, {
+                    "rightsDesc": "100%取现额度",
+                    "highlight": "0"
+                }],
+                "logoUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_5103_logoUrl.jpg@w_300",
+                "logoAldUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_5103_logoAldUrl.jpg",
+                "url": "\/creditserver\/apply\/redirect?cardCode=5103",
+                "activityTag": "",
+                "keywords": ["100%提现", "易下卡", "热门卡"],
+                "bankCode": "3051",
+                "cardCode": "5103"
+            }, {
+                "cardName": "兴业淘宝网联名金卡",
+                "rightsList": [{
+                    "rightsDesc": "淘宝网购可享积分奖励",
+                    "highlight": "1"
+                }],
+                "logoUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_1102_logoUrl.png@w_300",
+                "logoAldUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_1102_logoAldUrl.png",
+                "url": "\/creditserver\/apply\/redirect?cardCode=1102",
+                "activityTag": "",
+                "keywords": ["网购神器"],
+                "bankCode": "3015",
+                "cardCode": "1102"
+            }, {
+                "cardName": "招行标准金卡",
+                "rightsList": [{
+                    "rightsDesc": "新户达标送1000招行积分",
+                    "highlight": "1"
+                }, {
+                    "rightsDesc": "积分永久有效",
+                    "highlight": "0"
+                }],
+                "logoUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_5102_logoUrl.png@w_300",
+                "logoAldUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_5102_logoAldUrl.png",
+                "url": "\/creditserver\/apply\/redirect?cardCode=5102",
+                "activityTag": "",
+                "keywords": ["易下卡", "额度高"],
+                "bankCode": "3051",
+                "cardCode": "5102"
+            }, {
+                "cardName": "中信Q享金卡",
+                "rightsList": [{
+                    "rightsDesc": "周三周六消费5折",
+                    "highlight": "1"
+                }],
+                "logoUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_3007005_logoUrl.jpg@w_300",
+                "logoAldUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_3007005_logoAldUrl.jpg",
+                "url": "\/creditserver\/apply\/redirect?cardCode=3007005",
+                "activityTag": "",
+                "keywords": ["额度高", "兑星巴克", "提现优惠"],
+                "bankCode": "3007",
+                "cardCode": "3007005"
+            }, {
+                "cardName": "平安costco金卡",
+                "rightsList": [{
+                    "rightsDesc": "达标可获赠100元多利金",
+                    "highlight": "1"
+                }],
+                "logoUrl": "https:\/\/banker.cdn.bcebos.com\/124v8_1567668765.jpg@w_300",
+                "logoAldUrl": "https:\/\/banker.cdn.bcebos.com\/r8zwt_1567651710.jpg",
+                "url": "\/creditserver\/apply\/redirect?cardCode=3019006",
+                "activityTag": "",
+                "keywords": ["消费返现"],
+                "bankCode": "3019",
+                "cardCode": "3019006"
+            }, {
+                "cardName": "浦发美丽女人花语卡",
+                "rightsList": [{
+                    "rightsDesc": "新户达标可获88元刷卡金",
+                    "highlight": "1"
+                }],
+                "logoUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_3017012_logoUrl.png@w_300",
+                "logoAldUrl": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/bbs_3017012_logoAldUrl.png",
+                "url": "\/creditserver\/apply\/redirect?cardCode=3017012",
+                "activityTag": "",
+                "keywords": ["送刷卡金", "鲜花好礼"],
+                "bankCode": "3017",
+                "cardCode": "3017012"
+            }],
+            "bottomBanner": [
+                {
+                    "image": "https://banker.cdn.bcebos.com/cardlogo/ydma0_1559195744.jpg",
+                    "jumpUrl": "/bkrcredit/productList?productType=BX"
+                }
+            ]
+        }
+    }
+}

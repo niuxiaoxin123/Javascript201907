@@ -1,0 +1,256 @@
+@import '../../common/css/mixins.scss';
+
+@mixin transformRotate($deg) {
+    transform:rotate($deg);
+    -ms-transform:rotate($deg); 	/* IE 9 */
+    -moz-transform:rotate($deg); 	/* Firefox */
+    -webkit-transform:rotate($deg); /* Safari 和 Chrome */
+    -o-transform:rotate($deg);
+}
+
+.clear::after {
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.pcPagesContainer {
+    height: 100%;
+    width: 100%;
+    line-height: 1;
+}
+
+.pcPagesheader {
+    position: relative;
+}
+
+.pcPagesheader {
+    header {
+        position: absolute;
+        border: 1px solid transparent;
+        left: 100px;
+        top: 15px;
+        a {
+            display: inline-block;
+            background: url('./images/pcIcon.png') no-repeat 0 -41px;
+            background-size: 111%;
+            width: 101px;
+            height: 33px;
+            vertical-align: text-bottom;
+        }
+        span {
+            display: inline-block;
+            color: #fff;
+            font-size: 16px;
+            padding: 1px 0 1px 10px;
+            margin-left: 10px;
+            border-left: 2px solid #fff;
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.pcPagesContent {
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    padding: 40px 0;
+    .pagesContent {
+        width: 60%;
+        margin: 0 auto;
+        i {
+            display: inline-block;
+            width: 34px;
+            height: 34px;
+        }
+        span {
+            font-size: 20px;
+            color: #666;
+        }
+        .leftBox {
+            vertical-align: middle;
+            display: inline-block;
+            width: 30%;
+            height: 100%;
+            img {
+                width: 100%;
+            }
+        }
+        .mid {
+            vertical-align: middle;
+            display: inline-block;
+            padding: 2.5%;
+            width: 40%;
+            height: 100%;
+            li {
+                margin: 45px 0;
+                font-size: 20px;
+                color: #666;
+                padding-left: 35px;
+                line-height: 28px;
+                position: relative;
+                i {
+                    width: 26px;
+                    height: 26px;
+                    display: block;
+                    background: url('./images/pcIcon.png') no-repeat 0 0;
+                    background-size: 443%;
+                    position: absolute;
+                    left: 0;
+                }
+                .icon2 {
+                    background-position-x: -29px;
+                }
+                .icon3 {
+                    background-position-x: -56px;
+                }
+            }
+            
+        }
+        .rightBox {
+            vertical-align: middle;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+            display: inline-block;
+            img {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        .buttonBox {
+            width: 172px;
+            height: 47px;
+            margin: 0 auto;
+            background: #6492e3;
+            line-height: 47px;
+            color: #fff;
+        }
+    }
+}
+
+.pcPagesApplyContent {
+    width: 100%;
+    background: #F3F6FB;
+    .pagesApplyContent {
+        margin: 0 auto;
+        padding: 20px 0;
+        width: 60%;
+        text-align: center;
+        ul {
+            img {
+                width: 100%;
+            }
+            li {
+                float: left;
+                margin-right: 6.6%;
+                font-size: 18px;
+                color: #2d2d2d;
+                width: 20%;
+                &.last {
+                    margin: 0;
+                }
+                p {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+        h1 {
+            font-size: 31px;
+            color: #2d2d2d;
+            margin-top: 20px;
+        }
+        .numLine {
+            margin: 40px 0 20px 0;
+            u {
+                text-decoration: none;
+                font-size: 23px;
+                display: inline-block;
+                width: 26px;
+                height: 26px;
+                text-align: center;
+                line-height: 26px;
+                color: #494848;
+                border: 2px solid #494848;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+        }
+        img {
+            vertical-align: middle;
+        }
+        b {
+            display: inline-block;
+            width: 18.54%;
+            background: #a1a1a1;
+            height: 1px;
+            margin-left: 1.232%;
+            margin-right: 1.232%;
+            position: relative;
+            &::after {
+                content:'';
+                width: 8px;
+                position: absolute;
+                border-top: 1px solid #777;
+                right: 0;
+                top: -3px;
+                @include transformRotate(45deg);
+            }
+        }
+        .topTip {
+            display: block;
+            width: 200px;
+            height: 10px;
+            margin: 0 auto;
+            background: url(./images/pcIcon.png) no-repeat 0 -64px;
+        }
+    }
+}
+
+.pcPagesApplyContentImg {
+    padding: 0 15px;
+}
+
+.pcPagesFooter {
+    width: 100%;
+    background: #fff;
+}
+
+.pcPagesFooterContent {
+    width: 60%;
+    height: 50px;
+    margin: 0 auto;
+    padding: 15px 0 0 0;
+    font-size: 14px;
+    div {
+        float: left;
+    }
+    img {
+        vertical-align: bottom;
+        display: inline-block;
+        width: 75px;
+    }
+    .bot {
+        padding-left: 10px;
+        margin-left: 10px;
+        border-left: 1px solid #2d2d2d;
+        vertical-align: bottom;
+    }
+    p {
+        float: right;
+        color: #2d2d2d;
+        line-height: 38px;
+    }
+    .logo {
+        width: 75px;
+        height: 25px;
+        display: inline-block;
+        vertical-align: bottom;
+        background: url(./images/pcIcon.png) no-repeat 0 -75px;
+        background-size: 150%;
+    }  
+}

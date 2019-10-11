@@ -1,0 +1,57 @@
+{
+    "recommendLoan": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "loanList": [
+                {
+                    "productId": "11223",
+                    "productName": "白领通1",
+                    "organization": "宁波银行",
+                    "organizationLogo": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                    "keywords": [
+                        "无抵押抵押",
+                        "额度高度高",
+                        "下款快款快"
+                    ],
+                    "desc": "最高20万额度、随借随还",
+                    "minAmount": "1000",
+                    "maxAmount": "200000",
+                    "minInterest": "15%",
+                    "interestUnit": "year",
+                    "url": "/creditserver/loan/apply/redirect?productId=1122"
+                },
+                {
+                    "productId": "1123",
+                    "productName": "白领通2",
+                    "organization": "宁波银行",
+                    "organizationLogo": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                    "keywords": [],
+                    "desc": "最高20万额度、随借随还",
+                    "minAmount": "1000",
+                    "maxAmount": "200000",
+                    "minInterest": "8%",
+                    "interestUnit": "month",
+                    "url": "/creditserver/loan/apply/redirect?productId=1122"
+                },
+                {
+                    "productId": "1124",
+                    "productName": "白领通3",
+                    "organization": "宁波银行",
+                    "organizationLogo": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                    "keywords": [
+                        "无抵押",
+                        "额度高",
+                        "下款快"
+                    ],
+                    "desc": "最高20万额度、随借随还",
+                    "minAmount": "1000",
+                    "maxAmount": "200000",
+                    "minInterest": "1%",
+                    "interestUnit": "day",
+                    "url": "/creditserver/loan/apply/redirect?productId=1122"
+                }
+            ]
+        }
+    }
+}

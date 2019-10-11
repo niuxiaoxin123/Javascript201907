@@ -1,0 +1,71 @@
+{
+    "recommendCard": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "sid": "det001",
+            "cardList": [
+                {
+                    "cardCode": "1010",
+                    "cardName": "广发DIY卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "消费享3倍积分礼遇",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "积分500:1折抵欠款",
+                            "highlight": "0"
+                        }
+                    ],
+                    "keywords": [
+                        "粉丝必备",
+                        "2"
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "url": "/creditserver/apply/redirect?cardCode=1010"
+                },
+                {
+                    "cardCode": "5801",
+                    "cardName": "民生in卡主题金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "民生爱奇艺八月专享会员",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "全国万家商户特惠",
+                            "highlight": "0"
+                        }
+                    ],
+                    "keywords": [
+                        "商户商户",
+                        "3"
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "url": "/creditserver/apply/redirect?cardCode=5801"
+                },
+                {
+                    "cardCode": "5102",
+                    "cardName": "招行标准金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "新户送1000招行积分",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "积分永久有效",
+                            "highlight": "0"
+                        }
+                    ],
+                    "keywords": [
+                        "123",
+                        "789"
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "url": "/creditserver/apply/redirect?cardCode=5102"
+                }
+            ]
+        }
+    }
+}

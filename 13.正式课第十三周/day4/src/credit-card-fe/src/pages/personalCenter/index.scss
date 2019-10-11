@@ -1,0 +1,117 @@
+@import '../../common/css/mixins.scss';
+.personalCenter {
+    .avatar,.panel {
+        background: #fff;
+        margin-bottom: px2rem(33);
+    }
+    .centerIcon, .telIcon{
+        color: #D0D1D4;
+        @include font-dpr(16px);
+        margin-right: px2rem(50);
+    }
+    .avatar {
+        height: px2rem(364);
+        padding: px2rem(99) 0 px2rem(50) 0;
+        text-align: center;
+        img {
+            width: px2rem(232);
+            height: px2rem(232);
+            margin: 0 auto px2rem(50);
+            border-radius: 50%;
+            box-shadow: px2rem(-5) px2rem(33) px2rem(50) rgba(0,0,0,.1);
+        }
+        p {
+            font-size: px2rem(50);
+            color: #222;
+        }
+    }
+    .panel {
+        border-top: 1px solid #e3e3e3;
+        border-bottom: 1px solid #e3e3e3;
+        position: relative;
+
+        .lineWrap {
+            position: relative;
+            padding-left: px2rem(134);
+            box-sizing: border-box;
+
+            &:last-child {
+                .line {
+                    border-bottom: 0;
+                }
+            }
+        }
+
+        .line {
+            display: flex;
+            height: px2rem(161);
+            line-height: px2rem(161);
+            justify-content: space-between;
+            overflow: hidden;
+            padding-right: px2rem(38);
+            border-bottom: 1px solid #e0e0e0;
+
+            .centerIcon {
+                position: absolute;
+                left: px2rem(33);
+                top: px2rem(47);
+                width: px2rem(53);
+                height: px2rem(53);
+            }
+            .telIcon{
+                position: absolute;
+                left: px2rem(33);
+                top: px2rem(0);
+                width: px2rem(53);
+                height: px2rem(53);
+            }
+
+
+            span {
+                @include font-dpr(16px);
+                line-height: 1;
+                color: #333;
+                position: relative;
+                .newCoupon {
+                    width: px2rem(28);
+                    height: px2rem(28);
+                    background: #FF3B3B;
+                    position: absolute;
+                    top: px2rem(-10);
+                    right: px2rem(-18);
+                    border-radius: 50%;
+
+                }
+            }
+            .font {
+                align-items: center;
+                i {
+                    @include font-dpr(20px);
+                    color: #bdbdbd;
+                }
+            }
+        }
+    }
+   
+}
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: px2rem(260);
+    width: 100%;
+    text-align: center;
+    font-family: PingFangSC-Regular;
+        a {
+            color: #668BE7;
+            @include font-dpr(14px);
+            line-height: px2rem(63);
+        }
+        i {
+            width: px2rem(69);
+            height: px2rem(69);
+            position: relative;
+            top: px2rem(7);
+            left: px2rem(-24);
+            @include font-dpr(20px); 
+        }
+}

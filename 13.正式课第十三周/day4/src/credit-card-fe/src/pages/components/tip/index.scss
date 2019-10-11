@@ -1,0 +1,48 @@
+@import '../../../common/css/mixins.scss';
+
+.loading,
+.error,
+.success {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: px2rem(88);
+    padding: 0 px2rem(36);
+    border-radius: px2rem(12);
+    z-index: 999999999;
+}
+
+.loading {
+    text-align: center;
+    line-height: px2rem(218);
+
+    .tipsAnimation {
+        display: inline-block;
+        width: px2rem(86);
+        height: 100%;
+        animation: rotate 1s infinite linear;
+    }
+}
+
+.error {
+    top: 20%;
+    background: #ff0000;
+    color: #fff;
+}
+.success {
+    text-align: center;
+    height: px2rem(88);
+    background: rgba(0,0,0,0.8);
+    font-size: px2rem(32);
+    color: #fff;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

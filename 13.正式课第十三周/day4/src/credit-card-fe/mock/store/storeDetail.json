@@ -1,0 +1,112 @@
+{
+    "storeDetail": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "storeName": "星巴克（联想店）",
+            "storePic": "https://banker.cdn.bcebos.com/coupon/6c5a1f231915007c75bb9d896010eeb1.jpg",
+            "storeAddress": "上地西路上地十街98号",
+            "storePhone": "7999777,8899888",
+            "district": "朝阳区",
+            "brandCatName": "美食",
+            "cfgCode": "910505",
+            "bankList": [
+                {
+                    "name": "中国",
+                    "offers": [
+                        {
+                            "offerCode": "001",
+                            "title": "扫码消费满20元立减8元",
+                            "endDate": "2018-11-30 结束",
+                            "term": {
+                                "title": "优惠详情",
+                                "explain": [
+                                    "【领取方式】进入中国银联 [云闪付APP] 享优惠-全部优惠-查看附近优惠，搜索商户享受优惠",
+                                    "【优惠内容】每用户活动期间限享1次优惠，名额有限先到先得。",
+                                    "【注意事项】本次活动仅限浦发银行62开头的银联借记卡"
+                                ]
+                            }
+                        },
+                        {
+                            "offerCode": "001",
+                            "title": "扫码消费满20元立减8元",
+                            "endDate": "2018-11-30 结束",
+                            "term": {
+                                "title": "优惠详情",
+                                "explain": [
+                                    "【领取方式】进入中国银联 [云闪付APP] 享优惠-全部优惠-查看附近优惠，搜索商户享受优惠",
+                                    "【优惠内容】每用户活动期间限享1次优惠，名额有限先到先得。",
+                                    "【注意事项】本次活动仅限浦发银行62开头的银联借记卡"
+                                ]
+                            }
+                        },
+                        {
+                            "offerCode": "001",
+                            "title": "扫码消费满20元立减8元",
+                            "endDate": "2018-11-30 结束",
+                            "term": {
+                                "title": "优惠详情",
+                                "explain": [
+                                    "【领取方式】进入中国银联 [云闪付APP] 享优惠-全部优惠-查看附近优惠，搜索商户享受优惠",
+                                    "【优惠内容】每用户活动期间限享1次优惠，名额有限先到先得。",
+                                    "【注意事项】本次活动仅限浦发银行62开头的银联借记卡"
+                                ]
+                            }
+                        }
+                    ],
+                    "jumpInfo": {
+                        "url": "//xinyongka.baidu.com/bkrcredit/cardList?fbank=1101",
+                        "title": "申请中国银行信用卡"
+                    },
+                    "bankCode": "3017"
+                },
+                {
+                    "name": "中信",
+                    "offers": [
+                        {
+                            "offerCode": "003",
+                            "title": "15000积分兑换星巴克333",
+                            "endDate": "2018-01-01",
+                            "term": {
+                                "title": "优惠详情：",
+                                "explain": [
+                                    "111",
+                                    "222"
+                                ]
+                            }
+                        },
+                        {
+                            "offerCode": "003",
+                            "title": "15000积分兑换星巴克333",
+                            "endDate": "2018-01-01",
+                            "term": {
+                                "title": "优惠详情：",
+                                "explain": [
+                                    "111",
+                                    "222"
+                                ]
+                            }
+                        },
+                        {
+                            "offerCode": "003",
+                            "title": "15000积分兑换星巴克333",
+                            "endDate": "2018-01-01",
+                            "term": {
+                                "title": "优惠详情：",
+                                "explain": [
+                                    "111",
+                                    "222"
+                                ]
+                            }
+                        }
+                    ],
+                    "jumpInfo": {
+                        "url": "//xinyongka.baidu.com/bkrcredit/cardList?fbank=1101",
+                        "title": "申请中信银行信用卡"
+                    },
+                    "bankCode": "3018"
+                }
+            ]
+        }
+    }
+}

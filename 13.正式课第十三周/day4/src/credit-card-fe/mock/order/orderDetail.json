@@ -1,0 +1,74 @@
+{
+    "orderDetail": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "currentRecommendList": [
+                {
+                    "cardCode": "1701",
+                    "cardName": "浦发简约白金卡",
+                    "cardLogo": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "title": "消费100%送红包",
+                    "bgColor": "49627E|95B0CA",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1701"
+                },
+                {
+                    "cardCode": "5103",
+                    "cardName": "招行Young卡",
+                    "cardLogo": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "title": "100%取现额度",
+                    "bgColor": "2F2F2F|686869",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=5103"
+                },
+                {
+                    "cardCode": "1103",
+                    "cardName": "兴业星座信用卡",
+                    "cardLogo": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "title": "全国万家商户特惠",
+                    "bgColor": "DAA970|EBD5A2",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1103"
+                }
+            ],
+            "deliverInfo": {
+                "couponContent": "aiqiyi",
+                "couponId": "123",
+                "couponImage": "https://banker.cdn.bcebos.com/3wr0p_1568193371.png",
+                "couponImage2": "https://banker.cdn.bcebos.com/1talp_1568193415.png",
+                "deliverStatus": "1",
+                "endDate": "2019-01-31",
+                "grantContent": [
+                    {
+                        "label": "激活码",
+                        "text": "xy003"
+                    }
+                ],
+                "orderNo": "20180818115053000925",
+                "startDate": "2018-01-01",
+                "stockCode": "xy003",
+                "valid": "1"
+            },
+            "orderInfo": {
+                "orderNo": "20180820132734000099",
+                "createTime": "2018-08-20",
+                "process": [
+                    {
+                        "name": "意向确认",
+                        "time": "2018-08-20"
+                    },
+                    {
+                        "name": "提交成功",
+                        "time": "2018-08-20"
+                    },
+                    {
+                        "name": "审核失败",
+                        "time": "06-19"
+                    }
+                ],
+                "title": "审核失败",
+                "desc": "您可以去百度信用卡中心申请其它信用卡",
+                "status": "5",
+                "serviceTel": "4008208788"
+            }
+        }
+    }
+}

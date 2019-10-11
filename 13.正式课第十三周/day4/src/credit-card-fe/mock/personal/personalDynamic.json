@@ -1,0 +1,12 @@
+{
+    "personalDynamic": {
+        "ret": "SUCCESS",
+        "msg": "OK",
+        "content": {
+            "couponDynamic": {
+                "total": "1",
+                "desc": "1张优惠券"
+            }
+        }
+    }
+}

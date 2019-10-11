@@ -1,0 +1,64 @@
+
+@import '../../../common/css/mixins.scss';
+
+$border-color: #f1f1f1;
+$light-gray: #999999;
+$black: #000000;
+.knowlgItem {
+    border-bottom: 1px solid $border-color;
+    h2 {
+        @include font-dpr(16px);
+        line-height: px2rem(68);
+        @include clamp(1);
+        // margin-bottom: px2rem(25);
+    }
+    p {
+        @include font-dpr(14px);
+        color: $light-gray;
+        font-family: PingFangSC-Regular;
+        line-height: 1;
+        margin-top: px2rem(25);
+    }
+    img {
+        width:  px2rem(367);
+        height: px2rem(245);
+        border: 1px solid $border-color;
+        display: block;
+    }
+}
+.justiBtw {
+    justify-content: space-between;
+    align-items: center;
+}
+.noImgPart {
+    height: px2rem(200);
+    padding-top: px2rem(36);
+    box-sizing: border-box;
+}
+.oneImgPart{
+    .oneImgPartDesc {
+        h2 {
+            width: px2rem(752);
+            @include clamp(2);
+            // margin: 0 0 px2rem(25);
+            white-space: normal;
+            height: px2rem(136);
+        }
+        p {
+            line-height: px2rem(42);
+        }
+    }
+    img {
+        margin: px2rem(44) 0;
+        display: block;
+    }
+}
+
+.thirdPart {
+    height: px2rem(496);
+    h2 {
+        margin-bottom: px2rem(25);
+        padding: px2rem(59) 0 0;
+        box-sizing: border-box;
+    }
+}

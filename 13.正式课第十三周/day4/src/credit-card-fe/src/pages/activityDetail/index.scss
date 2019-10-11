@@ -1,0 +1,63 @@
+@import '../../common/css/mixins.scss';
+
+.walletHole {
+    height: px2rem(145);
+}
+
+.activityDetail {
+    background-color: #fff;
+    color: #333333;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    .detailContent {
+        background: #fff;
+    }
+    .detailWrapper {
+        padding: 0 px2rem(52);
+        &>h2 {
+            @include font-dpr(24px);
+            line-height: px2rem(348);
+        }
+    }
+    
+    .detailList,
+    .context {
+        @include font-dpr(16px);
+        h1,h2,h3,h4,h5,h6 {
+            border-left: px2rem(14) solid #6492E3;
+            font-family: PingFangSC-Medium;
+            padding-left: px2rem(15);
+            line-height: 1;
+        }
+        p {
+            font-family: PingFangSC-Regular;
+            margin-top: px2rem(42);
+            line-height: 1.5;
+        }
+        ol,li {
+            list-style: decimal;
+        }
+        ol{
+            margin-top: px2rem(42);
+            padding-left: px2rem(70);
+            padding-bottom: px2rem(122);
+            li {
+                line-height: 1.5;
+            }
+        }
+    }
+    .context {
+        h1,h2,h3,h4,h5,h6 {
+            margin-top: px2rem(122);
+        }
+        p {
+            margin-top: px2rem(42);
+            &:last-child {
+                padding-bottom: px2rem(122);
+            }
+        }
+    }
+}

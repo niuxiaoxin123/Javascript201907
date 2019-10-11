@@ -1,0 +1,98 @@
+{
+    "telList": {
+        "ret": 0,
+        "msg": "",
+        "content": [
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3051",
+                "bankCode": "3051",
+                "bankNameCh": "招商银行",
+                "orderNum": "1",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "95555",
+                "tags": "送卡券"
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3017",
+                "bankCode": "3017",
+                "bankNameCh": "浦发银行",
+                "orderNum": "2",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "4008208788",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3058",
+                "bankCode": "3058",
+                "bankNameCh": "民生银行",
+                "orderNum": "3",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "4006695568",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3018",
+                "bankCode": "3018",
+                "bankNameCh": "广发银行",
+                "orderNum": "4",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "95508",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3015",
+                "bankCode": "3015",
+                "bankNameCh": "兴业银行",
+                "orderNum": "5",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "95561",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3054",
+                "bankCode": "3054",
+                "bankNameCh": "建设银行",
+                "orderNum": "6",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "4008200588",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3052",
+                "bankCode": "3052",
+                "bankNameCh": "哈尔滨银行",
+                "orderNum": "10",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "4006095537",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3003",
+                "bankCode": "3003",
+                "bankNameCh": "农业银行",
+                "orderNum": "15",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "4006695599",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3019",
+                "bankCode": "3019",
+                "bankNameCh": "平安银行",
+                "orderNum": "20",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "95511",
+                "tags": ""
+            },
+            {
+                "url": "\/bkrcredit\/cardList?fbank=3050",
+                "bankCode": "3050",
+                "bankNameCh": "交通银行",
+                "orderNum": "25",
+                "icon": "https://banker.cdn.bcebos.com/bank_3003_qr289_1568086387.png",
+                "serviceTel": "95559",
+                "tags": ""
+            }
+        ]
+    }
+}

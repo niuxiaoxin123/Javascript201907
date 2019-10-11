@@ -1,0 +1,28 @@
+{
+    "orderList": {
+        "ret": 0,
+        "msg": "",
+        "content": [
+            {
+                "cardCode": "0515",
+                "bankCode": "3007",
+                "createTime": "2018-07-04",
+                "cardName": "中信银行百度金融联名信用卡",
+                "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                "orderNo": "153067349381130",
+                "statue": "审核失败",
+                "url": "\/bkrcredit\/orderDetail?orderNo=153067349381130"
+            },
+            {
+                "cardCode": "0515",
+                "bankCode": "3007",
+                "createTime": "2018-07-04",
+                "cardName": "中信银行百度金融联名信用卡",
+                "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                "orderNo": "20180704172601000034",
+                "statue": "审核失败",
+                "url": "\/bkrcredit\/orderDetail?orderNo=20180704172601000034"
+            }
+        ]
+    }
+}

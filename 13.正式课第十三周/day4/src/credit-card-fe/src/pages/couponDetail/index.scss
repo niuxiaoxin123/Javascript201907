@@ -1,0 +1,125 @@
+@import '../../common/css/mixins.scss';
+
+.walletHole {
+    height: px2rem(145);
+}
+.activityDetail,
+.detailWrapper {
+    background-color: #fff;
+}
+
+.activityDetail {
+    color: #333333;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    .detailWrapper {
+        padding: 0 px2rem(45);
+    }
+
+    .couponLogo {
+        position: relative;
+        margin-top: px2rem(88);
+        margin-bottom: px2rem(115);
+        p {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            bottom: px2rem(130);
+            color: #7C571A;
+            @include font-dpr(27px);
+            line-height: px2rem(72);
+        }
+        img {
+            width: 100%;
+            
+        }
+        .invalidImg {
+            -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+            filter: grayscale(100%);
+        }
+        .pass {
+            position: absolute;
+            width: px2rem(170);
+            top: px2rem(80);
+            right: 0;
+        }
+    }
+
+    .detailList {
+        &>li {
+            @include font-dpr(16px);
+            position: relative;
+            color: #333333;
+
+            .title {
+                border-left: px2rem(14) solid #6492E3;
+                font-family: PingFangSC-Medium;
+                padding-left: px2rem(15);
+                line-height: 1;
+                margin-top: px2rem(119);
+                margin-bottom: px2rem(50);
+            }
+            .validTitle {
+                border-left: px2rem(14) solid #6492E3;
+            }
+            .invalidTitle {
+                border-left: px2rem(14) solid #D8D8D8;
+            }
+
+            .grantContent {
+                width: 100%;
+                tr {
+                    width: 100%;
+                }
+                td{
+                    vertical-align: top;
+                    position: relative;
+                }
+                .label {
+                    width: px2rem(200);
+                    // text-align: right;
+                    text-align: justify;
+                }
+                .text {
+                    word-break:break-all;
+                    word-wrap:break-word;
+                    white-space: normal;
+                    padding-right: px2rem(220);
+                }
+                .copy {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    line-height: px2rem(70);
+                    width: px2rem(200);
+                    text-align: center;
+                    border: 2px solid #979797;
+                    border-radius: 4px;
+                    @include font-dpr(12px);
+                }
+                .disabled {
+                    color: #999;
+                }
+            }
+
+            .useRules {
+                font-family: PingFangSC-Regular;
+                h1,h2,h3,h4,h5,h6 {
+                    @include font-dpr(16px);
+                    margin-bottom: px2rem(50);
+                }
+                p {
+                    @include font-dpr(14px);
+                    color: #999999;
+                    letter-spacing: 0;
+                    text-align: justify;
+                    padding-bottom: px2rem(50);
+                    // padding-top: px2rem(18);
+                    line-height: 1.3;
+                }
+            }
+        }
+    }
+}

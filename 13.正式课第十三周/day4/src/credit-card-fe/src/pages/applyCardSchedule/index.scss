@@ -1,0 +1,60 @@
+@import '../../common/css/mixins.scss';
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  font-size: px2rem(42);
+  background: #fff;
+  .bankList {
+    .bankListTitle {
+      // @include font-dpr(14px);
+      font-family: AppleSymbols;
+      color: #000000;
+      margin: px2rem(75) 0 px2rem(50) 6%;
+    }
+    // li {
+    //   list-style: none;
+    //   width: 25%;
+    //   text-align: center;
+    //   float: left;
+    //   padding-bottom: px2rem(97);
+    //   position: relative;
+    //   // margin-top: px2rem(56);
+    //   p {
+    //     margin-top: px2rem(18);
+    //     color: #333;
+    //     font-family: PingFangSC-Regular;
+    //   }
+    //   img {
+    //     display: block;
+    //     margin: 0 auto;
+    //     width: px2rem(177);
+    //     height: px2rem(177);
+    //   }
+    // }
+    li {
+      width: 25%;
+      text-align: center;
+      float: left;
+      padding-bottom: px2rem(50);
+      position: relative;
+      // margin-top: px2rem(50);
+      list-style: none;
+      a {
+        display: block;
+      }
+      p {
+        margin-top: px2rem(18);
+        color: #333;
+      }
+      img {
+        margin: 0 auto;
+        width: px2rem(150);
+        height: px2rem(150);
+      }
+    }
+  }
+}

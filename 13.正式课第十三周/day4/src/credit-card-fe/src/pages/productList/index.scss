@@ -1,0 +1,218 @@
+@import '../../common/css/mixins.scss';
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-size: px2rem(42);
+    background: #FFF;
+
+    .bannerList {
+        background: pink;
+
+        img {
+            width: 100%;
+            display: block;
+        }
+    }
+
+    .tabsList {
+        width: 100%;
+        height: px2rem(142);
+        border-bottom: px2rem(3) solid #F1F1F1;
+        background: #FFF;
+        box-sizing: border-box;
+        overflow-x: auto;
+        overflow-y: hidden;
+        display: flex;
+
+        li {
+            flex-shrink: 0;
+            width: 25%;
+            height: px2rem(138);
+            line-height: px2rem(138);
+            float: left;
+            text-align: center;
+            font-size: px2rem(48);
+            box-sizing: border-box;
+            color: #333;
+            font-family: PingFangSC-Regular;
+            position: relative;
+
+            span {
+                width: 100%;
+                line-height: px2rem(69);
+                display: inline-block;
+            }
+
+            &:not(:first-child)::after {
+                content: '';
+                display: block;
+                height: px2rem(54);
+                width: 0;
+                border-right: px2rem(3) solid #DCDCDC;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+        }
+
+        li:last-child {
+            span {
+                border: none;
+            }
+        }
+
+        .active {
+            font-weight: 700;
+            color: #508DF9;
+            border-bottom: px2rem(8) solid #508DF9;
+        }
+    }
+}
+
+.products {
+    background: #F5F5F5;
+}
+
+.moduleTitle {
+    line-height: px2rem(170);
+    @include font-dpr(18px);
+    font-weight: 700;
+    color: #333;
+    padding-left: px2rem(42);
+}
+
+.sectionWrapper {
+    background: #FFF;
+
+    &:not(:first-child) {
+        // border-bottom: 1px solid red;
+        margin-top: px2rem(20);
+    }
+}
+
+.productItem {
+    display: block;
+    padding: px2rem(50) px2rem(42) px2rem(30);
+    border-top: px2rem(3) solid #F1F1F1;
+}
+
+.productDesc {
+    position: relative;
+
+    .productLogo,
+    .detailWrapper,
+    .applyBtn {
+        float: left;
+    }
+
+    .productLogo {
+        width: 22.7%;
+        min-height: 1px;
+
+        img {
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            // transform: scale(1.25);
+            position: relative;
+            z-index: 0;
+            // border-radius: px2rem(27);
+        }
+    }
+
+    .detailWrapper {
+        position: relative;
+        z-index: 1;
+        width: 77.2%;
+        padding-left: px2rem(49);
+        box-sizing: border-box;
+
+        h5 {
+            line-height: 1.2;
+            margin-bottom: px2rem(22);
+            width: 70%;
+            color: #333;
+            font-weight: 700;
+            margin-top: px2rem(-6);
+            @include clamp(1);
+            @include font-dpr(16px);
+            min-height: px2rem(57);
+
+            .keyword {
+                @include font-dpr(12px);
+                line-height: 1.5;
+                font-style: normal;
+                padding: 0 px2rem(15);
+                color: #FFF;
+                background: #EF3838;
+                border-radius: px2rem(5);
+                display: inline-block;
+                vertical-align: text-top;
+                margin: px2rem(3) 0 0 px2rem(20);
+            }
+        }
+
+        li {
+            // margin-top: px2rem(21);
+
+            line-height: px2rem(63);
+            padding-left: px2rem(23);
+            position: relative;
+            color: #999;
+
+            @include font-dpr(13px);
+
+            p {
+                @include clamp(1);
+            }
+
+            i {
+                @include font-dpr(12px);
+                position: absolute;
+                top: px2rem(10);
+                left: px2rem(-14);
+                color: #DCDCDC;
+                transform: translateY(-24%);
+            }
+        }
+    }
+
+    .acceptLogo {
+        width: 21.5%;
+        background: $theme-color;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        height: px2rem(50);
+    }
+
+    @media (min-device-width: $screenWidth1024) {/*当宽度大于$screenWidth时触发*/
+        .acceptLogo {
+            height: 25.5%;
+        }
+    }
+
+}
+
+.costPart {
+    color: #666;
+    margin-top: px2rem(38);
+
+    i {
+        font-style: normal;
+        color: #EF3838;;
+    }
+}
+
+.centerBottom {
+    height: px2rem(157);
+    // background: #F5F5F5;
+    position: relative;
+    z-index: 1;
+}

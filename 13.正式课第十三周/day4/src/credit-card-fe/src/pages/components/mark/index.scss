@@ -1,0 +1,16 @@
+@import '../../../common/css/mixins.scss';
+
+.mark {
+    @include font-dpr(13px);
+    line-height: px2rem(57);
+    padding-right: px2rem(42);
+    position: relative;
+    color: #999;
+    i {
+        position: absolute;
+        top: 0;
+        right: 0;
+        @include font-dpr(18px);
+        color: #666;
+    }
+}

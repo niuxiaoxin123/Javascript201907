@@ -1,0 +1,156 @@
+{
+    "storeList": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "filter": [
+                {
+                    "key": "district",
+                    "list": [
+                        {
+                            "code": "all",
+                            "name": "附近"
+                        },
+                        {
+                            "code": "district1",
+                            "name": "海淀区"
+                        },
+                        {
+                            "code": "district2",
+                            "name": "朝阳区"
+                        },
+                        {
+                            "code": "district3",
+                            "name": "顺义区"
+                        }
+                    ],
+                    "name": "附近",
+                    "selectedCode": "all"
+                },
+                {
+                    "key": "storeType",
+                    "list": [
+                        {
+                            "code": "all",
+                            "name": "全部商户"
+                        },
+                        {
+                            "code": "1",
+                            "name": "餐饮"
+                        },
+                        {
+                            "code": "store2",
+                            "name": "酒店"
+                        }
+                    ],
+                    "name": "商户类型",
+                    "selectedCode": "all"
+                },
+                {
+                    "key": "bank",
+                    "list": [
+                        {
+                            "code": "all",
+                            "name": "优惠银行"
+                        },
+                        {
+                            "code": "3051",
+                            "name": "招商银行"
+                        },
+                        {
+                            "code": "3017",
+                            "name": "浦发银行"
+                        },
+                        {
+                            "code": "3058",
+                            "name": "民生银行"
+                        },
+                        {
+                            "code": "3018",
+                            "name": "广发银行"
+                        },
+                        {
+                            "code": "3015",
+                            "name": "兴业银行"
+                        },
+                        {
+                            "code": "3054",
+                            "name": "建设银行"
+                        }
+                    ],
+                    "name": "优惠银行",
+                    "selectedCode": "all"
+                }
+            ],
+            "storeList": [
+                {
+                    "storePic": "https://banker.cdn.bcebos.com/coupon/6c5a1f231915007c75bb9d896010eeb1.jpg",
+                    "storeName": "海盗虾饭(辉煌国际店)",
+                    "distance": "363米",
+                    "offer": [
+                        {
+                            "bank": "招商",
+                            "title": "海盗虾饭46元购50元代金券"
+                        }
+                    ],
+                    "jumpUrl": "/bkrcredit/discountDetail?storeCode=5103"
+                },
+                {
+                    "storePic": "https://banker.cdn.bcebos.com/coupon/6c5a1f231915007c75bb9d896010eeb1.jpg",
+                    "storeName": "星巴克(联想店)",
+                    "distance": "380米",
+                    "offer": [
+                        {
+                            "bank": "中国",
+                            "title": "15000积分兑换星巴克"
+                        },
+                        {
+                            "bank": "中国",
+                            "title": "9分享兑好礼"
+                        },
+                        {
+                            "bank": "VISA",
+                            "title": "全明星滑冰俱乐部享8折"
+                        }
+                    ],
+                    "jumpUrl": "/bkrcredit/discountDetail?storeCode=5107"
+                },
+                {
+                    "storePic": "https://banker.cdn.bcebos.com/coupon/6c5a1f231915007c75bb9d896010eeb1.jpg",
+                    "storeName": "Costa Coffee(汉王大厦店)",
+                    "distance": "462米",
+                    "offer": [
+                        {
+                            "bank": "光大",
+                            "title": "36000积分换COSTA中杯咖啡"
+                        }
+                    ],
+                    "jumpUrl": "/bkrcredit/discountDetail?storeCode=5103"
+                },
+                {
+                    "storePic": "https://banker.cdn.bcebos.com/coupon/6c5a1f231915007c75bb9d896010eeb1.jpg",
+                    "storeName": "Costa Coffee(汉王大厦店)",
+                    "distance": "462米",
+                    "offer": [
+                        {
+                            "bank": "光大",
+                            "title": "36000积分换COSTA中杯咖啡"
+                        }
+                    ],
+                    "jumpUrl": "/bkrcredit/discountDetail?storeCode=1010"
+                }
+            ],
+            "paginator": {
+                "pageNo": 1,
+                "pageSize": 10,
+                "totalCount": 50,
+                "totalPage": 5
+            },
+            "location":{
+                "city": "北京市",
+                "lng": 100,
+                "lat": 101
+            }
+        }
+    }
+}

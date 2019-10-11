@@ -1,0 +1,59 @@
+{
+    "topicDetail": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "topicTitle": "小白专区",
+            "topicImgUrl": "https://banker.cdn.bcebos.com/v1cne_1568195209.jpg",
+            "recommendList": [
+                {
+                    "cardName": "招行Young卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "新户送899元拉杆箱"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=5103",
+                    "activityTag": "",
+                    "keywords": [
+                        "100%提现",
+                        "易下卡",
+                        "热门卡"
+                    ]
+                },
+                {
+                    "cardName": "广发DIY卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "消费享3倍积分礼遇"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1010",
+                    "activityTag": "",
+                    "keywords": [
+                        "权益任选",
+                        "易下卡"
+                    ]
+                },
+                {
+                    "cardName": "中信Q享金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "周三周六消费5折"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=3007005",
+                    "activityTag": "",
+                    "keywords": [
+                        "额度高",
+                        "兑星巴克",
+                        "提现优惠"
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,149 @@
+@import '../../../common/css/mixins.scss';
+
+.basicsMain {
+  width: 100%;
+  position: relative;
+  .container {
+    width: 100%;
+    padding-bottom: px2rem(1);
+    .pagination {
+      position: absolute;
+      bottom: 2% !important;
+      span {
+        background: #6492E3;
+        width: px2rem(15);
+        height: px2rem(15);
+        border-radius: 50%;
+      }
+    }
+    .applyCardPagination {
+      position: absolute;
+      bottom: 2% !important;
+      span {
+        background: #fff;
+        width: px2rem(15);
+        height: px2rem(15);
+        border-radius: 50%;
+      }
+    }
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      img {
+        display: block;
+        width: 100%;
+        // height: px2rem(400);
+        max-height: px2rem(400);
+      }
+    }
+  }
+}
+
+// 为了兼容pc端，使用媒体查询 ,需要使用device 的真实宽度做判断
+@media (min-device-width: $screenWidth1024) { /*当宽度大于$screenWidth时触发*/
+  .wrapper {
+    img {
+      min-height: px2rem(800);
+    }
+  }
+}
+
+@media (min-device-width: $screenWidth1200) { /*当宽度大于$screenWidth时触发*/
+  .wrapper {
+    img {
+      min-height: px2rem(1000);
+    }
+  }
+}
+
+.recommendMain {
+  width: 100%;
+  background: #fff;
+  h2 {
+    @include font-dpr(19px);
+    font-family: PingFangSC-Medium;
+    padding: px2rem(48);
+    padding-bottom: 0;
+  }
+  .container {
+    width: 100%;
+    .pagination {
+      position: absolute;
+      bottom: 2% !important;
+      span {
+        background: #6492E3;
+        width: px2rem(15);
+        height: px2rem(15);
+        border-radius: 50%;
+      }
+    }
+    .wrapper {
+      width: 100%;
+      // height: 100%;
+      // margin: 0 px2rem(50);
+      .slide {
+        box-sizing: border-box;
+        padding: px2rem(60) px2rem(35);
+        // position: relative;
+        @include font-dpr(14px);
+        font-family: PingFangSC-Regular;
+        line-height: 1;
+        background: #E8EFFF;
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .cardImg {
+            position: relative;
+            .cardLogo {
+              display: block;
+              width: px2rem(450);
+              min-height: px2rem(300);
+              // transform: scale(1.2);
+              // vertical-align: middle;
+            }
+          }
+          .cardTxt {
+            width: px2rem(580);
+            h5 {
+              margin-bottom: px2rem(34);
+              @include font-dpr(16px);
+              @include clamp(1);
+              color: #000;
+              padding-bottom: px2rem(6);
+            }
+            p {
+              padding-bottom: px2rem(35);
+              color: #999;
+              @include clamp(1);
+              line-height: 1.2;
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+            .keywordsW {
+              @include font-dpr(12px);
+              .keywordsItem {
+                padding: 0 px2rem(12);
+                // background: #FFF7ED;
+                border: 1px solid #3981FF;
+                color: #3981FF;
+                &:not(:last-child) {
+                  margin-right: px2rem(20);
+                }
+                line-height: 1.7;
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: px2rem(4);
+              }
+            }
+            .highLight {
+              color: #3981FF;
+              // font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+}

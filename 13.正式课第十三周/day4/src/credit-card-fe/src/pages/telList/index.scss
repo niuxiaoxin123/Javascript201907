@@ -1,0 +1,60 @@
+@import '../../common/css/mixins.scss';
+
+.list {
+    height: 100%;
+    // background-color: #fff;
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding-left: px2rem(51);
+        padding-right: px2rem(51);
+        height: px2rem(207);
+        border-bottom: 1px solid #f1f1f1;
+        background: #fff;
+        p {
+            align-items: center;
+        }
+
+        img {
+            width: px2rem(100);
+            height: px2rem(100);
+        }
+
+        span {
+            font-size: px2rem(48);
+            margin: 0 px2rem(30);
+            color: #000;
+        }
+
+        .tag {
+            padding: 0 px2rem(20);
+            height: px2rem(54);
+            line-height: px2rem(54);
+            font-size: px2rem(36);
+            border: 1px solid #555;
+            color: #555;
+            font-family: PingFangSC-Medium;
+            font-style: normal;
+            box-sizing: border-box;
+        }
+
+        .placeHolder {
+            display: block;
+            width: px2rem(500);
+        }
+
+        a {
+            .telIcon {
+                color: #555;
+                font-size: px2rem(64);
+            }
+        }
+
+        &:last-child {
+            border: 0;
+        }
+    }
+}

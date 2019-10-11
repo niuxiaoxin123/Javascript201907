@@ -1,0 +1,95 @@
+@import '../../../../common/css/mixins.scss';
+
+.correctModal {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba($color: #000000, $alpha: .5);
+  z-index: 1002;
+  .layer {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding: 0 px2rem(50) px2rem(81) px2rem(50);
+    box-sizing: border-box;
+    border-radius: px2rem(22) px2rem(22) 0 0;
+    color: #000;
+  }
+  h5 {
+    text-align: center;
+    font-size: px2rem(48);
+    line-height: px2rem(171);
+    position: relative;
+  }
+  .close {
+    font-size: px2rem(98);
+    color: #DCDCDC;
+    font-weight: 200;
+    position: absolute;
+    right: px2rem(9);
+    top: px2rem(-9);
+  }
+  li {
+    font-size: px2rem(45);
+    border: px2rem(3) solid #EEEEEE;
+    border-radius: px2rem(6.6);
+    float: left;
+    width: 29%;
+    margin-right: 5%;
+    margin-bottom: px2rem(35);
+    text-align: center;
+    line-height: px2rem(132);
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+  }
+  i {
+    font-style: normal;
+  }
+  .active {
+    background: rgba(47, 109, 219, 0.07);
+    border: px2rem(3) solid #2F6DDB;
+    color: #2F6DDB;
+  }
+  .diyMsg {
+    background: #FFFFFF;
+    border: px2rem(3) solid #F1F1F1;
+    border-radius: px2rem(6);
+    margin-bottom: px2rem(51);
+    textarea {
+      box-sizing: border-box;
+      display: block;
+      width: 100%;
+      font-size: px2rem(42);
+      padding: 0;
+      border: 0 none;
+      padding: px2rem(30) px2rem(50);
+      line-height: 1.2;
+      // color: #999999;
+      resize: none;
+      &::-webkit-input-placeholder,
+      &:-moz-placeholder,
+      &::-moz-placeholder,
+      &:-ms-input-placeholder {
+          line-height: 1;
+          color: #999;
+      }
+    }
+    .textLengthTip {
+      padding-left: px2rem(50);
+    }
+  }
+  .correctSubmit {
+    background: #3C76FF;
+    border-radius: px2rem(69);
+    font-size: px2rem(48);
+    text-align: center;
+    color: #FFFFFF;
+    height: px2rem(120);
+    line-height: px2rem(120);
+  }
+
+}

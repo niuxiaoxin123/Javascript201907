@@ -1,0 +1,188 @@
+{
+    "recocardList": {
+        "ret": 0,
+        "msg": "",
+        "content": [
+            {
+                "cardName": "高亮的部分高亮的部分高亮的部分高亮的部分",
+                "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                "keywords": [
+                    "100%提现",
+                    "易下卡",
+                    "热门卡"
+                ],
+                "rightsInfo": [
+                    [
+                        {
+                            "text": "中国高亮的部分中国高亮的部分中国高亮的部分你阿訇你 hi 放假吧唧吧唧你今年超级市场就开始调查",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "人高亮的部分",
+                            "isHighlight": "true"
+                        },
+                        {
+                            "text": "高亮的部分",
+                            "isHighlight": "true"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "23",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "4",
+                            "isHighlight": "true"
+                        }
+                    ]
+                ],
+                "cardCode": "3331"
+            },
+            {
+                "cardName": "young 卡",
+                "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                "keywords": [
+                    "100%提现",
+                    "易下卡",
+                    "热门卡"
+                ],
+                "rightsInfo": [
+                    [
+                        {
+                            "text": "中国",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "人",
+                            "isHighlight": "true"
+                        },
+                        {
+                            "text": "高亮的部分",
+                            "isHighlight": "true"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "23",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "4",
+                            "isHighlight": "true"
+                        }
+                    ]
+                ],
+                "cardCode": "3332"
+            },
+            {
+                "cardName": "young 卡",
+                "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                "keywords": [
+                    "100%提现",
+                    "易下卡",
+                    "热门卡"
+                ],
+                "rightsInfo": [
+                    [
+                        {
+                            "text": "中国",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "人",
+                            "isHighlight": "true"
+                        },
+                        {
+                            "text": "高亮的部分",
+                            "isHighlight": "true"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "23",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "4",
+                            "isHighlight": "true"
+                        }
+                    ]
+                ],
+                "cardCode": "3333"
+            },
+            {
+                "cardName": "young 卡",
+                "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                "keywords": [
+                    "100%提现",
+                    "易下卡",
+                    "热门卡"
+                ],
+                "rightsInfo": [
+                    [
+                        {
+                            "text": "中国",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "人",
+                            "isHighlight": "true"
+                        },
+                        {
+                            "text": "高亮的部分",
+                            "isHighlight": "true"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "23",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "4",
+                            "isHighlight": "true"
+                        }
+                    ]
+                ],
+                "cardCode": "3331"
+            },
+            {
+                "cardName": "young 卡",
+                "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_3055003_logoUrl.jpg",
+                "keywords": [
+                    "100%提现",
+                    "易下卡",
+                    "热门卡"
+                ],
+                "rightsInfo": [
+                    [
+                        {
+                            "text": "中国",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "人",
+                            "isHighlight": "true"
+                        },
+                        {
+                            "text": "高亮的部分",
+                            "isHighlight": "true"
+                        }
+                    ],
+                    [
+                        {
+                            "text": "23",
+                            "isHighlight": "false"
+                        },
+                        {
+                            "text": "4",
+                            "isHighlight": "true"
+                        }
+                    ]
+                ],
+                "cardCode": "3332"
+            }
+        ]
+    }
+}

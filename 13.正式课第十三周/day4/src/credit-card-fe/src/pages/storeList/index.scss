@@ -1,0 +1,105 @@
+@import '../../common/css/mixins.scss';
+$body-bg: #f5f5f5;
+$highlight-color: #6492E3;
+$body-color: #333;
+$border-color: #ddd;
+
+.locationMap {
+    width: 100%;
+    height: 300px !important;
+    z-index: 100;
+}
+.discountListWrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.location {
+    line-height: px2rem(145);
+    span{
+        display: inline-block;
+        width: px2rem(185);
+        @include clamp(1);
+        text-align: right;
+        line-height: px2rem(145);
+        vertical-align: middle;
+    }
+    p {
+        display: inline-block;
+        margin-left: px2rem(18);
+        display: inline-block;
+        i {
+            @include font-dpr(12px);   
+        }
+    }
+}
+
+// .selectTab {
+//     position: fixed;
+//     width: 100%;
+//     top: px2rem(145);
+// }
+// .Modal {
+//     top: px2rem(290);
+// }
+// .walletTab {
+//     top: 0;
+// }
+// .walletModal {
+//     top: px2rem(145);
+// }
+
+.hole {
+    padding-top: px2rem(293);
+    height: 0;
+    background-color: $body-bg;
+}
+
+.walletHole {
+    padding-top: px2rem(145);
+    height: 0;
+    background-color: $body-bg;
+}
+
+.storeList {
+    background-color: #fff;
+}
+.storeListPager {
+    position: absolute;
+    top: 0;
+    bottom: px2rem(157);
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    max-height: 100%;
+}
+
+.noCard {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+
+    .imgWrap {
+        width: px2rem(771);
+        height: px2rem(650);
+        background: url(./imgs/noCard.png) no-repeat center;
+        background-size: contain;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        p {
+            position: absolute;
+            bottom: px2rem(-100);
+            width: 100%;
+            text-align: center;
+            font-size: px2rem(54);
+            color: #666;
+        }
+    }
+}

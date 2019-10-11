@@ -1,0 +1,73 @@
+{
+    "couponList": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "list": [
+                {
+                    "startDate": "2018-01-01",
+                    "endDate": "2019-01-31",
+                    "couponImage": "https://banker.cdn.bcebos.com/3wr0p_1568193371.png",
+                    "couponImage2": "https://banker.cdn.bcebos.com/1talp_1568193415.png",
+                    "params": "stockCode=xy002",
+                    "orderNo": "20180818133345000927",
+                    "stockCode": "xy002",
+                    "deliverStatus": "0",
+                    "couponContent": "aiqiyi",
+                    "couponKeys": "[{\"key\":\"key1\",\"label\":\"激活码\",\"unique\":1}]",
+                    "couponId": "123",
+                    "valid": "1"
+                },
+                {
+                    "startDate": "2018-01-01",
+                    "endDate": "2019-01-31",
+                    "couponImage": "https://banker.cdn.bcebos.com/3wr0p_1568193371.png",
+                    "couponImage2": "https://banker.cdn.bcebos.com/1talp_1568193415.png",
+                    "params": "stockCode=xy003",
+                    "orderNo": "20180818115053000925",
+                    "stockCode": "xy003",
+                    "deliverStatus": "1",
+                    "couponContent": "aiqiyi",
+                    "couponKeys": "[{\"key\":\"key1\",\"label\":\"激活码\",\"unique\":1}]",
+                    "couponId": "123",
+                    "valid": "1"
+                }
+            ],
+            "paginator": {
+                "pageNo": 1,
+                "pageSize": 43,
+                "totalCount": 2,
+                "totalPage": 1
+            },
+            "currentRecommendList": [
+                {
+                    "cardModelCode": "1701",
+                    "cardModelName": "浦发简约白金卡",
+                    "cardLogo": "https://co.baifubao.com/content/resource/life-h5/static/creditCard/recommend/recommend0903.png",
+                    "title": "消费100%送红包",
+                    "bgColor": "DAA66D|E6CDA0",
+                    "url": "\/creditserver\/apply\/redirect?cardModelCode=1701",
+                    "params": "cardModelCode=1701"
+                },
+                {
+                    "cardModelCode": "5801",
+                    "cardModelName": "民生in卡主题金卡",
+                    "cardLogo": "https://banker.cdn.bcebos.com/cardlogo/bbs_5801_logoUrl.png",
+                    "title": "全国万家商户特惠",
+                    "bgColor": "E8749A|FFECEF",
+                    "url": "\/creditserver\/apply\/redirect?cardModelCode=5801",
+                    "params": "cardModelCode=5801"
+                },
+                {
+                    "cardModelCode": "5103",
+                    "cardModelName": "招行Young卡",
+                    "cardLogo": "https://banker.cdn.bcebos.com/cardlogo/bbs_5103_logoUrl.jpg",
+                    "title": "100%取现额度",
+                    "bgColor": "DAA66D|E6CDA0",
+                    "url": "\/creditserver\/apply\/redirect?cardModelCode=5103",
+                    "params": "cardModelCode=5103"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "correctionList": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "title":"错误原因",
+            "correctionList":[
+                {
+                    "correctionCode":"111",
+                    "correctionMsg":"无此优惠"
+                },
+                {
+                    "correctionCode":"333",
+                    "correctionMsg":"优惠有误"
+                },
+                {
+                    "correctionCode":"555",
+                    "correctionMsg":"名额已抢光"
+                },
+                {
+                    "correctionCode":"666",
+                    "correctionMsg":"领取方式错误"
+                },
+                {
+                    "correctionCode":"777",
+                    "correctionMsg":"地址错误"
+                }
+            ]
+        }
+    }
+}

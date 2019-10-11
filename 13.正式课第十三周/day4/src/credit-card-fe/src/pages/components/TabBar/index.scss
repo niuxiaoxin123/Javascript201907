@@ -1,0 +1,72 @@
+@import '../../../common/css/mixins.scss';
+.centerNav {
+    font-family: PingFangSC-Regular;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border-top: px2rem(3) solid #ddd;
+    width: 100%;
+    background: #fff;
+    // z-index: 1000;
+    @include font-dpr(14px);
+    li {
+        // width: 33.3%;
+        float: left;
+        text-align: center;
+        position: relative;
+        a {
+            padding: px2rem(22) 0 0;
+            box-sizing: border-box;
+            display: block;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            width: px2rem(63);
+            height: px2rem(63);
+            padding: px2rem(3.5) 0;
+        }
+        span {
+            color: #999;
+            @include font-dpr(12px);
+            line-height: px2rem(66);
+        }
+        i {
+            line-height: 1;
+            display: block;
+        }
+        &.active {
+            span {
+                color: #6492e3;
+            }
+        }
+        .newCoupon {
+            position: absolute;
+            width: px2rem(285);
+            height: px2rem(95);
+            top: px2rem(-95);
+            right: px2rem(204);
+            img {
+                position: absolute;
+                height: 100%;;
+                width: 100%;
+                top: 0;
+                right: 0;
+            }
+            span{
+                position: absolute;
+                width: 100%;
+                color: #fff;
+                top: 0;
+                left: 0;
+                text-align: center;
+                font-family: PingFangSC-Regular;
+                line-height: px2rem(95);
+                @include font-dpr(14px);
+            }
+        }
+    }
+    .barIcon {
+        font-size: px2rem(69);
+    }
+}

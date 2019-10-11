@@ -1,0 +1,1 @@
+BUILD_SUBMITTER -x -m baidu/bankplus/credit-card-fe -c "cd baidu/bankplus/credit-card-fe && sh scripts/build.sh" -u ./

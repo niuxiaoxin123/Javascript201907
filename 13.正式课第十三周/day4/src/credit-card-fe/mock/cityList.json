@@ -1,0 +1,147 @@
+{
+    "cityList": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "currentLocation": "北京",
+            "hotCity": [
+                {
+                    "cityCode": "1",
+                    "cityName": "北京"
+                },
+                {
+                    "cityCode": "2",
+                    "cityName": "上海"
+                },
+                {
+                    "cityCode": "3",
+                    "cityName": "广州"
+                },
+                {
+                    "cityCode": "4",
+                    "cityName": "深圳"
+                },
+                {
+                    "cityCode": "4",
+                    "cityName": "深圳"
+                },
+                {
+                    "cityCode": "4",
+                    "cityName": "深圳"
+                },
+                {
+                    "cityCode": "4",
+                    "cityName": "最多五个字"
+                },
+                {
+                    "cityCode": "4",
+                    "cityName": "黑龙江"
+                },
+                {
+                    "cityCode": "4",
+                    "cityName": "深圳"
+                },
+                {
+                    "cityCode": "4",
+                    "cityName": "深圳"
+                }
+            ],
+            "cityList": [
+                {
+                    "initials": "A",
+                    "list": [
+                        {
+                            "cityCode": "01",
+                            "cityName": "鞍山"
+                        },
+                        {
+                            "cityCode": "02",
+                            "cityName": "阿拉善"
+                        },
+                        {
+                            "cityCode": "03",
+                            "cityName": "安阳"
+                        }
+                    ]
+                },
+                {
+                    "initials": "B",
+                    "list": [
+                        {
+                            "cityCode": "04",
+                            "cityName": "北京"
+                        },
+                        {
+                            "cityCode": "05",
+                            "cityName": "北海"
+                        },
+                        {
+                            "cityCode": "06",
+                            "cityName": "北极"
+                        }
+                    ]
+                },
+                {
+                    "initials": "C",
+                    "list": [
+                        {
+                            "cityCode": "07",
+                            "cityName": "重庆"
+                        },
+                        {
+                            "cityCode": "08",
+                            "cityName": "成都"
+                        },
+                        {
+                            "cityCode": "09",
+                            "cityName": "长沙"
+                        }
+                    ]
+                },
+                {
+                    "initials": "D",
+                    "list": [
+                        {
+                            "cityCode": "10",
+                            "cityName": "大连"
+                        },
+                        {
+                            "cityCode": "11",
+                            "cityName": "大理"
+                        },
+                        {
+                            "cityCode": "12",
+                            "cityName": "东莞"
+                        }
+                    ]
+                },
+                {
+                    "initials": "E",
+                    "list": [
+                        {
+                            "cityCode": "13",
+                            "cityName": "鄂尔多斯"
+                        },
+                        {
+                            "cityCode": "14",
+                            "cityName": "鄂州"
+                        }
+                    ]
+                },
+                {
+                    "initials": "F",
+                    "list": [
+                        {
+                            "cityCode": "15",
+                            "cityName": "阜阳"
+                        },
+                        {
+                            "cityCode": "16",
+                            "cityName": "福州"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

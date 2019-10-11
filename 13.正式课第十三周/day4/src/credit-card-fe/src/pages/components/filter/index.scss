@@ -1,0 +1,108 @@
+@import '../../../common/css/mixins.scss';
+$body-bg: #f5f5f5;
+$highlight-color: #6492E3;
+$border-color: #F1F1F1;
+
+
+
+.selectTab {
+    display: flex;
+    text-align: center;
+    height: px2rem(142);
+    line-height: px2rem(142);
+    background-color: #fff;
+    position: relative;
+    z-index: 999;
+    @include font-dpr(16px);
+    border-bottom: 1px solid $border-color;
+
+    li {
+        flex: 1;
+
+        div {
+            display: inline-block;
+            height: px2rem(54);
+            width: 100%;
+            line-height: px2rem(54);
+            border-left: 1px solid #DCDCDC;
+            color: #151515;
+        }
+
+        &:nth-child(1) {
+            div {
+                border-left: 0;
+            }
+        }
+    }
+
+    .icon {
+        color: #AAAAAA;
+    }
+    .tabSelect {
+        font-family: PingFangSC-Medium;
+        color: #6492E3;
+    }
+}
+
+.Modal {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    z-index: 99;
+    color: #333;
+    @include font-dpr(16px);
+
+    ul {
+        max-height: px2rem(960);
+        overflow: scroll;
+        background-color: #fff;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar { // 兼容性未测
+            display: none;
+        }
+
+        li {
+            height: px2rem(147);
+            line-height: px2rem(147);
+            padding: 0 px2rem(82);
+            border-bottom: 1px solid $border-color;
+            &:last-child {
+                border-bottom: 0 none;
+            }
+        }
+    }
+
+    .selected {
+        color: $highlight-color;
+        float: right;
+    }
+}
+.selectTab {
+    position: fixed;
+    width: 100%;
+    top: px2rem(145);
+}
+.Modal {
+    top: px2rem(289);
+}
+.walletTab {
+    top: 0;
+}
+.walletModal {
+    top: px2rem(145);
+}
+
+.hole {
+    padding-top: px2rem(293);
+    height: px2rem(33);
+    background-color: $body-bg;
+}
+
+.walletHole {
+    padding-top: px2rem(145);
+    height: px2rem(33);
+    background-color: $body-bg;
+}

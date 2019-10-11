@@ -1,0 +1,98 @@
+@import '../../../common/css/mixins.scss';
+.topicRecommend{
+        margin-top: px2rem(20);
+        padding: 0 px2rem(50) 0;
+        box-sizing: border-box;
+        background: #fff;
+    h2 {
+        padding: px2rem(58) 0 px2rem(48) 0;
+        border-bottom: 1px solid #f1f1f1;
+        font-size: px2rem(54);
+        line-height: 1;
+        color: #000;
+    }
+    .listWrapper {
+        a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: px2rem(50) 0;
+            border-bottom: 1px solid #f1f1f1;
+            position: relative;
+
+            img {
+                width: 33.3%;
+                padding: 0 px2rem(12);
+                box-sizing: border-box;
+                transform: scale(1.25);
+                position: relative;
+                z-index: 0;
+            }
+
+            .detailWrapper {
+                position: relative;
+                z-index: 1;
+                width: 66.6%;
+                padding-left: px2rem(14);
+                box-sizing: border-box;
+
+                h5 {
+                    font-size: px2rem(48);
+                    line-height: px2rem(78);
+                    @include clamp(1);
+                }
+
+                .detail,
+                .info {
+                    font-size: px2rem(42);
+                    line-height: px2rem(72);
+                }
+
+                .detail {
+                    @include clamp(1);
+                    color: #6492E3;
+                    font-weight: 700;
+                    padding-bottom: px2rem(10);
+                }
+
+                .info {
+                    span {
+                        margin-right: px2rem(20);
+                    }
+                }
+            }
+
+            .apply {
+                text-align: center;
+                width: 16.6%;
+                line-height: px2rem(84);
+                padding: 0 px2rem(24);
+                border: px2rem(3) solid #707379;
+                color: #000;
+                border-radius: px2rem(60);
+                box-sizing: border-box;
+                font-size: px2rem(36);
+                background: #FFF7ED;
+                position: absolute;
+                right: 0;
+                top: 32%;
+            }
+        }
+        .keywordsW {
+            @include font-dpr(12px);
+            .keywordsItem {
+                padding: 0 px2rem(12);
+                background: #FFF7ED;
+                border: 1px solid #FFA32B;
+                color: #FFA32B;
+                &:not(:last-child){
+                    margin-right: px2rem(20);
+                }
+                line-height: 1.7;
+                display: inline-block;
+                vertical-align: middle;
+                border-radius: px2rem(4);
+            }
+        }
+    }
+}

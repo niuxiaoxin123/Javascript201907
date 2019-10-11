@@ -1,0 +1,64 @@
+@import '../../common/css/mixins.scss';
+
+.contract{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background: #fff;
+    -webkit-overflow-scrolling: touch;
+    .contractHeader {
+        position: relative;
+        top: 0;
+    }
+    .contractDetail {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        top: 0;
+    }
+    .contractHole {
+        height: px2rem(145);
+        background: #fff;
+    }
+    h2 {
+        margin-top: px2rem(96);
+        margin-bottom: px2rem(58);
+        line-height: px2rem(100);
+        font-size: px2rem(62);
+        text-align: center;
+        letter-spacing: px2rem(3);
+        font-weight: 700;
+    }
+    ul{
+        padding: 0 px2rem(58);
+        box-sizing: border-box;
+        li{
+            font-size: px2rem(46);
+            color: #777;
+            overflow: hidden;
+            span{
+                float: left;
+                margin-top: px2rem(19);
+            }
+            p {
+                margin-left: px2rem(92);
+                margin-top: px2rem(12);
+                line-height: 1;
+                line-height: px2rem(78);
+                font-size: px2rem(46);
+            }
+        }
+    }
+    .contractFooter {
+        margin-top: px2rem(165);
+        padding-bottom: px2rem(115);
+        justify-content: center;
+        align-items: flex-end;
+        img {
+            width: px2rem(210);
+            height: px2rem(72);
+        }
+    }
+}

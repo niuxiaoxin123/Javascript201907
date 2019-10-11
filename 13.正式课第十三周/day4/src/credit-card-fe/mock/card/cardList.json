@@ -1,0 +1,315 @@
+{
+    "cardList": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "filter": [
+                {
+                    "key": "fbank",
+                    "list": [
+                        {
+                            "code": "all",
+                            "name": "银行"
+                        },
+                        {
+                            "code": "3051",
+                            "name": "招商银行"
+                        },
+                        {
+                            "code": "3017",
+                            "name": "浦发银行"
+                        },
+                        {
+                            "code": "3058",
+                            "name": "民生银行"
+                        },
+                        {
+                            "code": "3018",
+                            "name": "广发银行"
+                        },
+                        {
+                            "code": "3015",
+                            "name": "兴业银行"
+                        },
+                        {
+                            "code": "3054",
+                            "name": "建设银行"
+                        },
+                        {
+                            "code": "3052",
+                            "name": "哈尔滨银行"
+                        },
+                        {
+                            "code": "3003",
+                            "name": "农业银行"
+                        },
+                        {
+                            "code": "3019",
+                            "name": "平安银行"
+                        },
+                        {
+                            "code": "3050",
+                            "name": "交通银行"
+                        }
+                    ],
+                    "name": "银行",
+                    "selectedCode": "all"
+                },
+                {
+                    "key": "frights",
+                    "list": [
+                        {
+                            "code": "all",
+                            "name": "卡权益"
+                        },
+                        {
+                            "code": "319974",
+                            "name": "游戏视频卡"
+                        },
+                        {
+                            "code": "319966",
+                            "name": "车主卡"
+                        },
+                        {
+                            "code": "319968",
+                            "name": "商超卡"
+                        },
+                        {
+                            "code": "319969",
+                            "name": "航空卡"
+                        },
+                        {
+                            "code": "319970",
+                            "name": "商旅卡"
+                        },
+                        {
+                            "code": "319971",
+                            "name": "标准卡"
+                        },
+                        {
+                            "code": "319972",
+                            "name": "大额提现"
+                        },
+                        {
+                            "code": "319973",
+                            "name": "境外消费卡"
+                        }
+                    ],
+                    "name": "卡权益",
+                    "selectedCode": "all"
+                },
+                {
+                    "key": "fgrade",
+                    "list": [
+                        {
+                            "code": "all",
+                            "name": "卡等级"
+                        },
+                        {
+                            "code": "1",
+                            "name": "普卡"
+                        },
+                        {
+                            "code": "2",
+                            "name": "金卡"
+                        },
+                        {
+                            "code": "3",
+                            "name": "白金卡"
+                        },
+                        {
+                            "code": "5",
+                            "name": "世界卡"
+                        }
+                    ],
+                    "name": "卡等级",
+                    "selectedCode": "all"
+                }
+            ],
+            "cardList": [
+                {
+                    "cardName": "招行Young卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "新户送899元拉杆箱",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "每月首笔取现免费",
+                            "highlight": "0"
+                        },
+                        {
+                            "rightsDesc": "100%取现额度",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_5103_logoUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=5103",
+                    "activityTag": ""
+                },
+                {
+                    "cardName": "浦发简约白金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "消费100%送红包",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "指定五星级酒店住3付2",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_5103_logoUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1701",
+                    "activityTag": ""
+                },
+                {
+                    "cardName": "广发DIY卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "消费享3倍积分礼遇",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "积分500:1折抵欠款",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_1010_logoUrl.png",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1010",
+                    "activityTag": ""
+                },
+                {
+                    "cardName": "民生in卡主题金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "民生爱奇艺八月专享会员",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "全国万家商户特惠",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_5801_logoUrl.png",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=5801",
+                    "activityTag": "送会员"
+                },
+                {
+                    "cardName": "建行龙卡优享卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "境外消费笔笔返现1%",
+                            "highlight": "1"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_5402_logoUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=5402",
+                    "activityTag": ""
+                },
+                {
+                    "cardName": "招行标准金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "新户送1000招行积分",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "积分永久有效",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_5102_logoUrl.png",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=5102",
+                    "activityTag": ""
+                },
+                {
+                    "cardName": "兴业星座信用卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "兴业爱奇艺八月专享会员",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "最低6积分兑星巴克",
+                            "highlight": "0"
+                        },
+                        {
+                            "rightsDesc": "200万航空意外险",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_1103_logoAldUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1103",
+                    "activityTag": "送会员"
+                },
+                {
+                    "cardName": "民生自定义信用卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "民生爱奇艺八月专享会员",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "有效期内免年费",
+                            "highlight": "0"
+                        },
+                        {
+                            "rightsDesc": "自定义卡面选择多",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_5804_logoUrl.jpg",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=5804",
+                    "activityTag": "送会员"
+                },
+                {
+                    "cardName": "兴业淘宝网联名金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "兴业爱奇艺八月专享会员",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "淘宝网购可享积分奖励",
+                            "highlight": "0"
+                        },
+                        {
+                            "rightsDesc": "200万航空意外险",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_1102_logoUrl.png",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1102",
+                    "activityTag": "送会员"
+                },
+                {
+                    "cardName": "兴业标准金卡",
+                    "rightsList": [
+                        {
+                            "rightsDesc": "兴业爱奇艺八月专享会员",
+                            "highlight": "1"
+                        },
+                        {
+                            "rightsDesc": "酒店机票优惠",
+                            "highlight": "0"
+                        },
+                        {
+                            "rightsDesc": "200万航空意外险",
+                            "highlight": "0"
+                        }
+                    ],
+                    "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_1105_logoUrl.png",
+                    "url": "\/creditserver\/apply\/redirect?cardCode=1105",
+                    "activityTag": "送会员"
+                }
+            ],
+            "paginator": {
+                "pageNo": 1,
+                "pageSize": 10,
+                "totalCount": 50,
+                "totalPage": 5
+            }
+        }
+    }
+}

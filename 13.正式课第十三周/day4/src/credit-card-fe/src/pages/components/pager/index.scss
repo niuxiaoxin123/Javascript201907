@@ -1,0 +1,36 @@
+@import '../../../common/css/mixins.scss';
+.pager {
+    position: absolute;
+    max-height: 100%;
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
+}
+
+.pagerTips {
+    text-align: center;
+    line-height: px2rem(218);
+    min-height: px2rem(218);
+
+    .tipsAnimation {
+        display: inline-block;
+        width: px2rem(86);
+        height: 100%;
+        animation: rotate 1s infinite linear;
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.tabHole {
+    height: px2rem(200);
+}

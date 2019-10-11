@@ -1,0 +1,19 @@
+{
+    "bannerList": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "mateList": [{
+                    "name": "广告图",
+                    "image": "https://banker.cdn.bcebos.com/4nln3_1568192946.jpg",
+                    "jumpUrl": "https://site.cc.cmbimg.com/CampaignWeb/index.shtml#/gainUser/home?cn=XX666C0727&channelName=XX_SCPX_1210_46&channelId=UvhxzK7Jl0ktEMvwkQiyhw%3D%3D%0D%0A"
+                },
+                {
+                    "name": "广告图",
+                    "image": "https://banker.cdn.bcebos.com/4nln3_1568192946.jpg",
+                    "jumpUrl": "https://xinyongka.baidu.com"
+                }
+            ]
+        }
+    }
+}

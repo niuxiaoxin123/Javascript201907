@@ -1,0 +1,53 @@
+@import '../../../common/css/mixins.scss';
+
+.navBrowser {
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  height: px2rem(145);
+  width: 100%;
+  position: relative;
+  z-index: 100;
+  justify-content: space-between;
+  padding: 0 px2rem(48);
+  box-sizing: border-box;
+  color: #fff;
+  background: #508DF9;
+  border-bottom: 1px solid #508DF9;
+  @include font-dpr(14px);
+  .navSlogan {
+    line-height: 1;
+    overflow: hidden;
+    span:nth-child(1) {
+      font-family: PingFangSC-Medium;
+      padding-right: px2rem(30);
+    }
+    span:nth-child(2) {
+      border-left: 1px solid #fff;
+      color: rgba($color: #fff, $alpha: 0.67);
+      padding-left: px2rem(30);
+    }
+  }
+  .zpBugImg {
+    width: px2rem(631);
+  }
+
+  a {
+    color: #fff;
+  }
+}
+
+.fixedTop {
+  position: fixed;
+  top: 0;
+}
+
+.noBgColor {
+  background: red;
+  border-bottom-color: none;
+}
+
+.noColor {
+  background: none;
+  border-bottom: none;
+}

@@ -1,0 +1,89 @@
+{
+  "cardDetail": {
+    "ret": 0,
+    "msg": "",
+    "content": {
+      "cardCode": "1103",
+      "bankCode": "3015",
+      "cardDesc": "卡片概述",
+      "cardTitle": "兴业银行信用卡",
+      "cardName": "兴业星座信用卡",
+      "logoUrl": "https://banker.cdn.bcebos.com/cardlogo/bbs_1103_logoUrl.jpg",
+
+      "sid": "ljk:004,cdd:010",
+      "cardDetail": [
+        {
+          "title": "专属权益",
+          "key": "newRightsInfo",
+          "content": [
+            [
+              {
+                "text": "新户",
+                "isHighlight": "false"
+              },
+              {
+                "text": "刷卡满额即赠",
+                "isHighlight": "true"
+              },
+              {
+                "text": "拉杆箱或电动剃须刀",
+                "isHighlight": "false"
+              }
+            ],
+            [
+              {
+                "text": "高达",
+                "isHighlight": "false"
+              },
+              {
+                "text": "100%的取现额度",
+                "isHighlight": "true"
+              }
+            ],
+            [
+              {
+                "text": "生日月",
+                "isHighlight": "false"
+              },
+              {
+                "text": "尊享双倍积分尊享双倍积分尊享双倍积分",
+                "isHighlight": "true"
+              },
+              {
+                "text": "，每月积分上限为2000分/户",
+                "isHighlight": "false"
+              }
+            ],
+            [
+              {
+                "text": "每月每月每月",
+                "isHighlight": "false"
+              },
+              {
+                "text": "首笔取现免手续费首笔取现免手续费",
+                "isHighlight": "true"
+              }
+            ]
+          ]
+        },
+        {
+          "title": "相关费用",
+          "key": "chargeInfo",
+          "content": "<h5>年费</h5><p><br></p><ul><li>首年免年费，任意刷卡六笔免次年年费</li></ul><h5><br></h5><h5>可取现比例</h5><p><br></p><ul><li>信用额度的100%</li></ul><h5><br></h5><h5>取现手续费</h5><p><br></p><ul><li>境内每笔1%，最低收取￥10/笔；境外(含港、澳、台)每笔3%，最低收取￥30/笔或$3/笔</li></ul><h5><br></h5><h5>免息期</h5><p><br></p><ul><li>20-50天</li></ul>"
+        }
+      ],
+      "tags": [
+        "金卡",
+        "单币",
+        "银联"
+      ],
+      "applyCount": "9999",
+      "grade": "2",
+      "hasActivity": "1",
+      "activityInfo": {
+        "url": "/bkrcredit/activityDetail?couponActivityId=1",
+        "title": "核卡成功即送爱奇艺乐卡会员"
+      }
+    }
+  }
+}

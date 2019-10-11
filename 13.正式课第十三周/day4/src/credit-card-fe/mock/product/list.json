@@ -1,0 +1,202 @@
+{
+    "productList": {
+        "ret": 0,
+        "msg": "",
+        "content": {
+            "bannerList": [
+                {
+                    "image": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/b82gp_1560135709.jpg",
+                    "jumpUrl": ""
+                }
+            ],
+            "productList": [
+                {
+                    "tabName": "全部",
+                    "insuranceList": [
+                        {
+                            "list": [
+                                {
+                                    "productId": "256",
+                                    "productName": "儿童",
+                                    "productLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/0qwhy_1559727300.png",
+                                    "acceptInsuranceOrg": "340688",
+                                    "acceptInsuranceOrgLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/989hl_1559612047.jpg",
+                                    "period": "可选期限",
+                                    "keyword": [
+                                        "啦啦"
+                                    ],
+                                    "desc": [
+                                        "1",
+                                        "2"
+                                    ],
+                                    "minYearInsurance": "890",
+                                    "maxAmount": "1.99万",
+                                    "insuranceType": "340695",
+                                    "url": "\/creditserver\/product\/apply?productId=256&sid=%2Chc%3A006%2Chkp008&needDetail=1"
+                                }
+                            ],
+                            "insuranceType": 340695,
+                            "insuranceName": "车强险",
+                            "idx": "3"
+                        },
+                        {
+                            "list": [
+                                {
+                                    "productId": "251",
+                                    "productName": "保险保险-老人",
+                                    "productLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/nsi0t_1559706662.png",
+                                    "acceptInsuranceOrg": "340687",
+                                    "acceptInsuranceOrgLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/fcsgz_1559716976.jpg",
+                                    "period": "终身",
+                                    "keyword": [],
+                                    "desc": [
+                                        "保险保险111保险保险111保险保险111保险保险111保险保险111保险保险111保险保险111保险保险111",
+                                        "保险保险111保险保险111",
+                                        "保险保险111保",
+                                        "1234"
+                                    ],
+                                    "minYearInsurance": "88888.88万",
+                                    "maxAmount": "8888.99万",
+                                    "insuranceType": "340692",
+                                    "url": "\/creditserver\/product\/apply?productId=251&sid=%2Chc%3A006%2Chkp008&needDetail=1"
+                                },
+                                {
+                                    "productId": "253",
+                                    "productName": "守卫68号-老人-儿童",
+                                    "productLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/xe2ug_1559717211.jpg",
+                                    "acceptInsuranceOrg": "340687",
+                                    "acceptInsuranceOrgLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/fcsgz_1559716976.jpg",
+                                    "period": "20年",
+                                    "keyword": [
+                                        "热卖"
+                                    ],
+                                    "desc": [
+                                        "累计赔付高达11次",
+                                        "重疾保额递增",
+                                        "保障全面保费低"
+                                    ],
+                                    "minYearInsurance": "291.00",
+                                    "maxAmount": "5万",
+                                    "insuranceType": "340692",
+                                    "url": "\/creditserver\/product\/apply?productId=253&sid=%2Chc%3A006%2Chkp008&needDetail=1"
+                                }
+                            ],
+                            "insuranceType": 340692,
+                            "insuranceName": "延误险",
+                            "idx": "10"
+                        }
+                    ]
+                },
+                {
+                    "insuranceList": [
+                        {
+                            "list": [
+                                {
+                                    "productId": "256",
+                                    "productName": "儿童",
+                                    "productLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/0qwhy_1559727300.png",
+                                    "acceptInsuranceOrg": "340688",
+                                    "acceptInsuranceOrgLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/989hl_1559612047.jpg",
+                                    "period": "可选期限",
+                                    "keyword": [
+                                        "啦啦"
+                                    ],
+                                    "desc": [
+                                        "1",
+                                        "2"
+                                    ],
+                                    "minYearInsurance": "890",
+                                    "maxAmount": "1.99万",
+                                    "insuranceType": "340695",
+                                    "url": "\/creditserver\/product\/apply?productId=256&sid=%2Chc%3A006%2Chkp008&needDetail=1"
+                                }
+                            ],
+                            "insuranceType": 340695,
+                            "insuranceName": "车强险",
+                            "idx": "3"
+                        },
+                        {
+                            "list": [
+                                {
+                                    "productId": "253",
+                                    "productName": "守卫68号-老人-儿童",
+                                    "productLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/xe2ug_1559717211.jpg",
+                                    "acceptInsuranceOrg": "340687",
+                                    "acceptInsuranceOrgLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/fcsgz_1559716976.jpg",
+                                    "period": "20年",
+                                    "keyword": [
+                                        "热卖"
+                                    ],
+                                    "desc": [
+                                        "累计赔付高达11次",
+                                        "重疾保额递增",
+                                        "保障全面保费低"
+                                    ],
+                                    "minYearInsurance": "291.00",
+                                    "maxAmount": "5万",
+                                    "insuranceType": "340692",
+                                    "url": "\/creditserver\/product\/apply?productId=253&sid=%2Chc%3A006%2Chkp008&needDetail=1"
+                                }
+                            ],
+                            "insuranceType": 340692,
+                            "insuranceName": "延误险",
+                            "idx": "10"
+                        }
+                    ],
+                    "tabName": "儿童"
+                },
+                {
+                    "insuranceList": [
+                        {
+                            "list": [
+                                {
+                                    "productId": "251",
+                                    "productName": "保险保险-老人",
+                                    "productLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/nsi0t_1559706662.png",
+                                    "acceptInsuranceOrg": "340687",
+                                    "acceptInsuranceOrgLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/fcsgz_1559716976.jpg",
+                                    "period": "终身",
+                                    "keyword": [],
+                                    "desc": [
+                                        "保险保险111保险保险111保险保险111保险保险111保险保险111保险保险111保险保险111保险保险111",
+                                        "保险保险111保险保险111",
+                                        "保险保险111保",
+                                        "1234"
+                                    ],
+                                    "minYearInsurance": "88888.88万",
+                                    "maxAmount": "8888.99万",
+                                    "insuranceType": "340692",
+                                    "url": "\/creditserver\/product\/apply?productId=251&sid=%2Chc%3A006%2Chkp008&needDetail=1"
+                                },
+                                {
+                                    "productId": "253",
+                                    "productName": "守卫68号-老人-儿童",
+                                    "productLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/xe2ug_1559717211.jpg",
+                                    "acceptInsuranceOrg": "340687",
+                                    "acceptInsuranceOrgLogo": "https:\/\/banker.cdn.bcebos.com\/cardlogo\/fcsgz_1559716976.jpg",
+                                    "period": "20年",
+                                    "keyword": [
+                                        "热卖"
+                                    ],
+                                    "desc": [
+                                        "累计赔付高达11次",
+                                        "重疾保额递增",
+                                        "保障全面保费低"
+                                    ],
+                                    "minYearInsurance": "291.00",
+                                    "maxAmount": "5万",
+                                    "insuranceType": "340692",
+                                    "url": "\/creditserver\/product\/apply?productId=253&sid=%2Chc%3A006%2Chkp008&needDetail=1"
+                                }
+                            ],
+                            "insuranceType": 340692,
+                            "insuranceName": "延误险",
+                            "idx": "10"
+                        }
+                    ],
+                    "tabName": "老人"
+                }
+            ]
+        }
+    }
+}

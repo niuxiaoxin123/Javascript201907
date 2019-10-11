@@ -1,0 +1,115 @@
+@import '../../common/css/mixins.scss';
+
+.wrapper {
+    height: 100%;
+    .content {
+        background:#f1f1f1;
+        box-sizing: border-box;
+        padding-bottom: px2rem(50);
+        .articleContent, .listWrapper {
+            background: #fff;
+        }
+        .articleContent {
+            padding: px2rem(50) px2rem(50) 0;
+        }
+
+        h1 {
+            font-size: px2rem(72);
+            line-height: px2rem(105);
+        }
+        h6 {
+            line-height: 1;
+            font-size: px2rem(36);
+            color: #999;
+            margin: px2rem(44) 0 px2rem(36);
+        }
+
+        article {
+            margin-top: px2rem(38);
+            line-height: px2rem(90);
+            font-size: px2rem(57);
+
+            img {
+                width: 100%;
+            }
+            ul {
+                list-style: disc;
+                margin-left: px2rem(50);
+            }
+            ol {
+                list-style: decimal;
+                margin-left: px2rem(64);
+            }
+            p,
+            span {
+                font-size: px2rem(57) !important;
+            }
+        }
+
+        .listWrapper {
+            margin-top: px2rem(20);
+            padding: 0 px2rem(50) 0;
+            box-sizing: border-box;
+            h2 {
+                padding: px2rem(58) 0 px2rem(48) 0;
+                border-bottom: 1px solid #f1f1f1;
+                font-size: px2rem(54);
+                line-height: 1;
+                color: #000;
+            }
+            a {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: px2rem(50) 0;
+                border-bottom: 1px solid #f1f1f1;
+
+                img {
+                    width: 33.3%;
+                    padding: 0 px2rem(12);
+                    box-sizing: border-box;
+                }
+
+                .detailWrapper {
+                    width: 50%;
+                    padding: 0 px2rem(14);
+                    box-sizing: border-box;
+
+                    h5 {
+                        font-size: px2rem(48);
+                        line-height: px2rem(78);
+                        @include clamp(1);
+                    }
+
+                    .detail,
+                    .info {
+                        font-size: px2rem(42);
+                        line-height: px2rem(72);
+                    }
+
+                    .detail {
+                        @include clamp(1);
+                    }
+
+                    .info {
+                        span {
+                            margin-right: px2rem(20);
+                        }
+                    }
+                }
+
+                .apply {
+                    text-align: center;
+                    width: 16.6%;
+                    line-height: px2rem(84);
+                    padding: 0 px2rem(24);
+                    border: px2rem(3) solid #707379;
+                    color: #000;
+                    border-radius: px2rem(9);
+                    box-sizing: border-box;
+                    font-size: px2rem(36);
+                }
+            }
+        }
+    }
+}
