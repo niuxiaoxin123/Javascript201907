@@ -1,0 +1,24 @@
+*{
+  margin: 0;
+  padding:0;
+}
+.nav-footer{
+    position: fixed;
+    bottom:0;
+    height:56px;
+    width:100%;
+    border-top: 1px solid #ccc;
+    display: flex;
+    a{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex:1;
+      text-decoration: none;
+      &.active{
+         color:red;
+      }
+    }
+
+}
