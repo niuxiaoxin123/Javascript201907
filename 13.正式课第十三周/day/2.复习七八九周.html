@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="app">
+    <li v-for="a in arr"></li>
+    <hand></hand>
+</div>
+<template id="abc">
+    <div></div>
+</template>
+<script>
+    // ajax
+    // 浏览器地址栏输入url到页面展示经历什么？
+    // ajax
+    // http  https
+    // 三次握手，四次挥手
+    // readState  0  1  2  3 4
+    // 常见的状态码都有什么？
+    // status :
+
+    // jquery 的ajax
+    //  axios : 基于promise封装的ajax
+
+    // 接口文档
+    // 前后端联调
+
+    // VUE :
+    // v- 指令； v-model  v-for  v-if  v-else v-else-if  v-on  v-bind  v-html  v-text  v-once  v-show v-cloak
+
+    new Vue({
+        el:"#app",
+        data(){
+            return {
+                // data数据双向绑定，会放到实例上
+                msg:'hello',
+                arr:[1,2,3]
+            }
+        },
+        methods:{
+            fn1(){
+                //this--> vue的实例
+                this.msg="world";
+            }
+        },
+        computed:{
+            // 当前属性是依赖于其他数据计算而来的；
+            // 会有缓存，多对一
+            //不支持异步；
+            mg:{
+                get(){
+                },
+                set(){
+                }
+            },
+            hh(){
+                // 默认执行get;
+            }
+        },
+        watch:{
+            // 一对多；支持异步；当一个发生变化，会引起多个属性发生改变；
+        },
+        created(){
+
+        },
+        mounted(){
+            // DOM的渲染是异步的；
+            this.arr.push(4)
+            console.log(this.arr);
+            // $nextTick: 当DOM异步渲染完毕之后，会执行的 $nextTick中的回调函数；
+        },
+        updated(){
+
+        },
+        destroyed(){
+
+        }
+    });
+
+    // vue的组件
+    /*Vue.component("hand",{
+        data(){
+            return {}
+        },
+        template:"#abc"
+    });*/
+    let hand={
+        data(){
+            return {}
+        },
+        template:"#abc"
+    };
+    let vm1 = new Vue({
+        el:"#app",
+        components:{
+            hand
+        }
+    })
+    // 组件数据传递
+    // 1. 父传子  props
+    // 2. eventBus
+    // 3. vuex
+
+    let store = new Vuex.Store({
+        // state  getters  mutations  actions  module
+        mutations:{
+            add(state){
+                state.count++;
+            }
+        },
+        actions:{// 支持异步的；
+            add({commit}){
+                commit("add",1)
+            }
+        }
+    })
+
+    // 路由
+    /*let a = {};
+    let routes = [{path:"/home",component:()=>import("../page/home.vue")}]
+    let router = new VueRouter({
+        routes
+    });*/
+    //router-link  router-view
+
+
+    // webpack : 打包的工具
+    // 书城项目；
+
+
+
+
+
+</script>
+</body>
+</html>

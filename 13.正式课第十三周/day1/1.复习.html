@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 正式课第一周： 变量提升  作用域
+    // 在当前作用域下，对var和function关键字进行提前声明，var只声明，不定义，function不仅声明，而且定义；
+    // var  function  let
+    console.log(fn);//
+    if([]==[]){
+        fn();
+        function fn() {
+        }
+    }
+    console.log(s);
+    function f(a) {
+        /*var h = 1;
+        g = 2;
+        let r = 1;*/
+        y =9;
+        function s() {
+            console.log(y);// undefined
+            y = 12;
+            //var y = 1;
+            /*function y() {
+                
+            }*/
+            let y = 8;
+        }
+        s();
+        console.log(y);// 9
+    }
+    f();
+
+    // 全局作用域和私有作用域；
+    // 私有作用域：立即销毁  不销毁  不立即销毁
+    /*function fn() {
+        return 100;
+    }
+    fn()*/
+
+    /*function t() {
+//        return {}
+        return function () {
+
+        }
+    }
+    let obj = {};
+    obj.u = t()
+
+    let r = {
+        f:(function () {
+           return function () {
+
+           }
+        })
+    }*/
+    // 1. 提供代码运行环境
+    // 2. 存储值；
+    let i = 100;
+    let obj = {};
+    function fn() {
+        let i =1;
+        obj.n = function () {
+            console.log(i);// 1
+        }
+    }
+    fn();
+    obj.n()
+
+    // 闭包：什么是闭包？
+
+    function fn() {
+        let  r = 1;
+        return function () {
+            console.log(r);
+            let r = 8;
+        }
+    }
+    // this : 关键字；在作用域有特殊的意义；指向了不同的东西；
+    let f = {
+        fn:()=>{
+            console.log(this);
+        }
+    }
+    f.fn();// this--> window
+
+    // call apply  bind : 改变this的指向
+    // call(88)
+    /*fn.call(88,2,3,6)
+    fn.apply(88,[2,3,6])
+    fn.bind(8,5,3,5)
+    <div Onclick={()=>{fn(12)}}></div>
+    <div Onclick={fn.bind(null,12)}></div>*/
+
+    // 三类 ： 原生  框架   项目   项目场景
+    //原型
+    // 面向对象：类的继承、封装、多态（重载和重写）
+    // 单例模式   构造函数   原型模式
+    // jquery的源码
+
+    function Fn() {
+        //let obj = {}
+        this.a = 100;
+        //return obj;
+    }
+    Fn.prototype.f = function () {
+        
+    }
+    new Fn();
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

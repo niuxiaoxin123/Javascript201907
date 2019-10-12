@@ -111,15 +111,13 @@ export default async function request(url, options, unhyphenate = true, type = '
         }
         if (options.encAndDec) { // 需要解密
             ret.data.content = JSON.parse(aesDecrypt(ret.data.content.content));
-        }
-        return ret;
+}
+return ret;
 
 
-    } catch (e) {
-        if (noerror) {
-            return;
-        }
-
-        // error('网络错误');
+} catch (e) {
+    if (noerror) {
+        return;
     }
+}
 }

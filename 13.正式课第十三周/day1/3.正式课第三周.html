@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 1. JS 盒子模型
+    // client
+    // clientWidth clientHeight  clientLeft clientTop
+    // offset
+    // offsetWidth offsetHeight offsetTop offsetLeft offsetParent (position会影响父级参照物)
+    // scroll
+    // scrollWidth  scrollHeight  scrollTop  scrollLeft
+
+    // getCss  setCss  css
+    // 操作DOM  虚拟的DOM
+    // 浏览器的性能优化：
+    // 1. 代码压缩
+    // 2. 尽量 减少图片的请求，雪碧图
+    // 3. 尽可能减少请求的次数
+    // 4. http 缓存；
+    // 5. 懒加载
+
+    // 重构：重新构建；
+    //
+    // 图片延迟加载
+    // 上拉加载，下拉刷新
+    // onload 
+    window.onload=function () {
+        
+    };
+    $(document).ready(function () {
+        
+    })
+    // window.location
+    // window.history
+
+    // ES6 : Es6新增特性
+    // 1. let  const
+    // 2. 解构赋值
+    // 3. 箭头函数
+    // 4. 块级作用域
+    // 5. promise  async  await
+    // 6. proxy  generator
+/*    let {name,age}={name:100};
+    function fn({user}) {
+
+    }
+    fn({user:"12"});
+    function f(num1=100,num2) {
+        // 如果num1传过来是undefined；如果传一个值，那么该值会覆盖默认值
+    }
+    f(undefined);*/
+
+   //import {user} from "../"
+    // 箭头函数
+   /* var  fn = function () {};
+    fn();
+    fn();
+    function fn() {};*/
+    //let fn =(num,num1)=>100;
+    // 代码执行
+    // 1. 箭头函数中没有this，会默认指向上一级作用域中的this；
+    // 2. 没有arguments
+    // 3. 不能被new
+    // 4. 不能使用yield命令
+    //fn();
+    //let num =100;
+   /* if([]){
+        let num =1;
+        function fn() {
+
+        }
+    }
+    let i =10;
+    for(let i=0;i<3;i++){
+        // 每循环一次，会形成一个子作用域，子作用域的外层作用域是for循环形成的父作用域
+        console.log(i);
+    }
+*/
+    // class
+   /* class A{
+        constructor(){
+
+        }
+        getX(){
+
+        }
+    }
+     class A extends B{
+        constructor(){
+            super();
+        }
+     }*/
+     // 继承私有和公有；
+    // 继承： 原型继承 寄生组合继承  中间类继承  class继承 call继承
+    //B.prototype=new A;
+    //B.prototype=Object.create(A.prototype);// call
+    //__proto__
+
+    for(var i=0;i<5;i++){
+        setTimeout(function () {
+            console.log(i);
+        },1000);
+    }
+    // onscroll , onmousemove
+
+
+
+</script>
+</body>
+</html>

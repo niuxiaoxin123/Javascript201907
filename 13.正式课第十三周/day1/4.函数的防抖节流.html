@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box" style="width:300px;height:300px;background: #ccc;text-align: center;line-height: 300px;color:red;font-size: 40px">0</div>
+<script>
+    // 函数的防抖和节流： 降低高频率的事件执行函数；提高性能；
+    // onmousemove  onscroll onresize
+    // 函数的节流： 让函数在一定时间 内执行一次；
+    let box = document.getElementById("box");
+    let num =0;
+    function count() {
+        box.innerHTML=++num;
+    }
+    // box的onmousemove绑定了debounce的返回值；
+    box.onmousemove = throttle(count,1000);
+
+  /*  function debounce(fn,time) {
+        let timer;
+        return function () {
+            let context = this;
+            let arg = arguments;
+            if(timer){clearTimeout(timer)};
+            timer = setTimeout(()=>{
+                fn.apply(context,arg);
+            },time)
+        }
+    }*/
+    /*function debounce(fn,time) {
+        let timer;
+        return function () {
+            let context = this;
+            let arg = arguments;
+            if(timer){clearTimeout(timer)};
+            let callNow = !timer;
+            timer = setTimeout(()=>{
+                timer=null;
+            },time)
+            if(callNow){fn.apply(context,arg)};
+        }
+    }
+    function debounce(fn,time,immediate) {
+        let timer;
+        return function () {
+            let context = this;
+            let arg = arguments;
+            if(timer){clearTimeout(timer)};
+            if(immediate){
+                let callNow = !timer;
+                timer = setTimeout(()=>{
+                    timer=null;
+                },time)
+                if(callNow){fn.apply(context,arg)};
+            }else{
+                timer = setTimeout(()=>{
+                    fn.apply(context,arg);
+                },time)
+            }
+        }
+    }*/
+    // 防抖：
+    // 节流：
+    // 时间戳版
+    /*function  throttle(fn,wait) {
+        let previous = 0;
+        return function () {
+            let context = this;
+            let arg = arguments;
+            let now = Date.now();
+            //每隔一段时间执行一次；
+            if(now-previous>wait){
+                fn.apply(context,arg);
+                previous=now;
+            }
+        }
+    }*/
+    function throttle(fn,wait) {
+        let timer;
+        return function () {
+            let context = this;
+            let arg = arguments;
+            if(!timer){
+                timer=setTimeout(()=>{
+                    timer=null;
+                    fn.apply(context,arg);
+                },wait)
+            }
+        }
+    }
+
+    function throttle(fn,wait,type) {
+        if(type===1){
+            let previous = 0;
+        }else{
+            let timer;
+        }
+        return function () {
+            let context = this;
+            let arg = arguments;
+
+            if(type===1){
+                let now = Date.now();
+                //每隔一段时间执行一次；
+                if(now-previous>wait){
+                    fn.apply(context,arg);
+                    previous=now;
+                }
+            }else if(type===2){
+                if(!timer){
+                    timer=setTimeout(()=>{
+                        timer=null;
+                        fn.apply(context,arg);
+                    },wait)
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
