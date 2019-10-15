@@ -3,6 +3,7 @@
    height:56px;
    background: black;
    width:100%;
+  z-index:100;
   img{
     width:45%;
   }
@@ -26,4 +27,52 @@
         border-top:1px solid #ccc;
       }
   }
+}
+// .home-slider
+.home-slider{
+  position: relative;
+   div{
+      div{
+         div{
+           img{
+             width:100%;
+             height:160px;
+           }
+         }
+      }
+   }
+  .focus{
+    width:100%;
+    height:20px;
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    span{
+      width:20px;
+      height:20px;
+      display: inline-block;
+      border-radius: 50%;
+      background: pink;
+      margin-right:2px;
+      &.active{
+        background: red;
+      }
+    }
+  }
+}
+.home-content{
+    padding:5px;
+  ul{
+    li{
+      list-style: none;
+      img{
+        width:100%;
+        height:160px;
+      }
+    }
+  }
+}
+.container{
+  padding-top:56px;
+  overflow-y:scroll;
 }

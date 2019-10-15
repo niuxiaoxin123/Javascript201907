@@ -5,13 +5,23 @@ import App from "./pages/App";
 import Home from "./pages/Home/index";
 import Lesson from "./pages/Lesson/index";
 import Profile from "./pages/Profile/index";
-ReactDOM.render(<Router>
-    <App>
-        <Switch>
-            <Route path="/" exact={true} component={Home}/>
-            <Route path="/home" component={Home}/>
-            <Route path="/lesson"  component={Lesson}/>
-            <Route path="/profile"  component={Profile}/>
-        </Switch>
-    </App>
-</Router>,document.querySelector("#root"));
+import Login from "./pages/Login/index";
+import Register from "./pages/Register/index";
+import {Provider} from "react-redux";
+import store from "./store/index";
+ReactDOM.render(
+    <Provider store={store}>
+        <Router>
+            <App>
+                <Switch>
+                    <Route path="/" exact={true} component={Home}/>
+                    <Route path="/home" component={Home}/>
+                    <Route path="/lesson"  component={Lesson}/>
+                    <Route path="/profile"  component={Profile}/>
+                    <Route path="/login"  component={Login}/>
+                    <Route path="/register"  component={Register}/>
+                </Switch>
+            </App>
+        </Router>
+    </Provider>
+   ,document.querySelector("#root"));

@@ -31,15 +31,13 @@ export default class HomeHeader extends React.Component{
                    <ul className="home-course" style={{
                     ...defaultStyle,
                     ...transitionStyles[state]
-                }}>
-                        <li>全部课程</li>
-                        <li>Vue课程</li>
-                        <li>React课程</li>
+                }} onClick={(e)=>{this.props.change(e.target.dataset.type)}}>
+                        <li data-type="all">全部课程</li>
+                        <li data-type="vue">Vue课程</li>
+                        <li date-type="react">React课程</li>
                     </ul>
                 )}
             </Transition>
-
-
         </div>
     }
 }
